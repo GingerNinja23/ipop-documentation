@@ -29,3 +29,5 @@
 ### Run socialvpn with new credentials
 
     python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
+
+You can also setup a TURN server in cases where your network firewall does not allow direct connections. I recommend this implementation http://turnserver.sourceforge.net/index.php?n=Main.HomePage
