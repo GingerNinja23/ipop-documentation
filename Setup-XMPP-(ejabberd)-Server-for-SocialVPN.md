@@ -17,7 +17,7 @@
 * username = svpnuser
 * password = password
 
-### (Optional) If you are running this on the cloud, make to open ports
+### (Optional) If you are running this on the cloud, make sure to open ports
 
 * TCP - 5222, 5269, 5280
 * UDP - 3478
