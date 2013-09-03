@@ -12,7 +12,7 @@
     cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
 
-### You can add more users by going to http://ip-address-of-vm:5280/admin, then click on virtual hosts => users
+### You can add more users by going to http://ip-address-of-vm:5280/admin
 
 * username = svpnuser
 * password = password
