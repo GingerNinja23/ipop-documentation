@@ -21,3 +21,11 @@
 
 * TCP - 5222, 5269, 5280
 * UDP - 3478
+
+### Update vpn_controller.py (line 15) to point to new STUN server
+
+    STUN = "ip-address-of-vm:3478"
+
+### Run socialvpn with new credentials
+
+    python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
