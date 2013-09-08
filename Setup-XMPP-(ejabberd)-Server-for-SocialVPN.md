@@ -2,15 +2,15 @@
 
     sudo apt-get install ejabberd
 
-### Create default user
-
-    sudo ejabberdctl svpnuser ejabberd password
-
 ### Update configuration and restart
 
     wget -O ejabberd.cfg http://goo.gl/Oc3pQi
     cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
+
+### Create default user
+
+    sudo ejabberdctl register svpnuser ejabberd password
 
 ### You can add more users by going to http://ip-address-of-vm:5280/admin
 
