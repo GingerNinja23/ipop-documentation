@@ -30,4 +30,6 @@
 
     python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
 
+ejabberd limits the number of sessions per user to 10, you can change this with the _max_user_sessions_ parameter in the ejabberd configuration file.
+
 You can also setup a TURN server in cases where your network firewall does not allow direct connections. I recommend this implementation http://turnserver.sourceforge.net/index.php?n=Main.HomePage
