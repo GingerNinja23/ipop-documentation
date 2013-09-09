@@ -4,7 +4,7 @@
 
 ### Update configuration and restart
 
-    wget -O ejabberd.cfg http://goo.gl/Oc3pQi
+    wget -O ejabberd.cfg http://goo.gl/5dh54j
     cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
 
@@ -29,7 +29,5 @@
 ### Run socialvpn with new credentials
 
     python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
-
-ejabberd limits the number of sessions per user to 10, you can change this with the _max_user_sessions_ parameter in the ejabberd configuration file.
 
 You can also setup a TURN server in cases where your network firewall does not allow direct connections. I recommend this implementation http://turnserver.sourceforge.net/index.php?n=Main.HomePage
