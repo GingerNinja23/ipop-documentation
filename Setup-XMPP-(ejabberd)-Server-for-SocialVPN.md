@@ -1,33 +1,34 @@
-### Install ejabberd on Ubuntu 12.04
-
+1. Install ejabberd on Ubuntu 12.04
+```bash
     sudo apt-get install ejabberd
-
-### Update configuration and restart
-
+```
+2. Update configuration and restart
+```bash
     wget -O ejabberd.cfg http://goo.gl/iObOjl
     cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
-
-### Create default user
-
+```
+3. Create default user
+```bash
     sudo ejabberdctl register svpnuser ejabberd password
+```
+4. You can add more users by going to http://ip-address-of-vm:5280/admin (click on Virtual Hosts ==> ejabberd ==> Users)
 
-### You can add more users by going to http://ip-address-of-vm:5280/admin
-
-* username = svpnuser
+* username = svpnuser@ejabberd
 * password = password
 
-### (Optional) If you are running this on the cloud, make sure to open ports
+5. (Optional) If you are running this on the cloud, make sure to open ports
 
 * TCP - 5222, 5269, 5280
 * UDP - 3478
 
-### Update vpn_controller.py (line 15) to point to new STUN server
-
+6. Update vpn_controller.py (line 15) to point to new STUN server
+```python
     STUN = "ip-address-of-vm:3478"
-
-### Run socialvpn with new credentials
-
+```
+7. Run socialvpn with new credentials
+```bash
     python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
+```
 
 You can also setup a TURN server in cases where your network firewall does not allow direct connections. I recommend this implementation http://turnserver.sourceforge.net/index.php?n=Main.HomePage
