@@ -4,7 +4,7 @@
 
 ### Update configuration and restart
 
-    wget -O ejabberd.cfg http://goo.gl/Oc3pQi
+    wget -O ejabberd.cfg http://goo.gl/iObOjl
     cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
 
