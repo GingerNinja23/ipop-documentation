@@ -27,3 +27,9 @@ http://turnserver.sourceforge.net/
 ```bash
     netstat -aupn | grep 19302
 ```
+7. Update your svpn controller with the TURN settings https://github.com/socialvpn/svpn-jingle/blob/master/src/controllers/svpn_controller.py
+```python
+    TURN = "public-ip-address-turn-server"
+    TURN_USER = "svpnjingle"
+    TURN_PASS = "1234567890"
+```
