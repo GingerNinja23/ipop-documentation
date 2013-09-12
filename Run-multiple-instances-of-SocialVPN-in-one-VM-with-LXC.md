@@ -16,7 +16,14 @@ These instructions will explain how to run multiple versions of SocialVPN on one
 ```bash
     sudo lxc-console -n container1
 ```
-5. You can exit out of a container with Ctrl-a,q then shutdown the container
+5. You can check to see if socialvpn is running with the following commands
+```bash
+    ps aux | grep svpn-jingle
+    ps aux | grep controller.py
+    /sbin/ifconfig
+    ping 172.31.0.101
+```
+6. You can exit out of a container with Ctrl-a,q then shutdown the container
 ```bash
     sudo lxc-shutdown -n container1
 ```
