@@ -29,7 +29,7 @@ http://turnserver.sourceforge.net/
 ```
 7. Update your svpn controller with the TURN settings https://github.com/socialvpn/svpn-jingle/blob/master/src/controllers/svpn_controller.py
 ```python
-    TURN = "public-ip-address-turn-server"
+    TURN = "public-ip-address-turn-server:19302"
     TURN_USER = "svpnjingle"
     TURN_PASS = "1234567890"
 ```
