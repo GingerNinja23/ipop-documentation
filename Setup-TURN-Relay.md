@@ -12,7 +12,7 @@ http://turnserver.sourceforge.net/
 ```
 3. Download and extract pre-packaged TURN binaries
 ```bash
-    wget -O turn.tgz http://goo.gl/rvWhba
+    wget -O turn.tgz http://goo.gl/uXRxmm
     tar xzvf turn.tgz
 ```
 4. Update the TURN config file with the public IP address
@@ -21,7 +21,7 @@ http://turnserver.sourceforge.net/
 ```
 5. Run the TURN server
 ```bash
-    cd turn; ./turnserver -c turn.conf &> log.txt &
+    cd turn; ./turnserver -c turn.conf
 ```
 6. Verify TURN server is running
 ```bash
