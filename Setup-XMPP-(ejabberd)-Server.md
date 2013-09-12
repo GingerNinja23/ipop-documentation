@@ -1,24 +1,24 @@
 1. Install ejabberd on Ubuntu 12.04
 ```bash
-    sudo apt-get install ejabberd
+sudo apt-get install ejabberd
 ```
 2. Update configuration and restart
 ```bash
-    wget -O ejabberd.cfg http://goo.gl/iObOjl
-    cp ejabberd.cfg /etc/ejabberd/
-    sudo service ejabberd restart
+wget -O ejabberd.cfg http://goo.gl/iObOjl
+cp ejabberd.cfg /etc/ejabberd/
+sudo service ejabberd restart
 ```
 3. Create default user
 ```bash
-    sudo ejabberdctl register svpnuser ejabberd password
+sudo ejabberdctl register svpnuser ejabberd password
 ```
 4. Update vpn_controller.py (line 15) to point to new STUN server
 ```python
-    STUN = "ip-address-of-vm:3478"
+STUN = "ip-address-of-vm:3478"
 ```
 5. Run socialvpn with new credentials
 ```bash
-    python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
+python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
 ```
 
 ---
