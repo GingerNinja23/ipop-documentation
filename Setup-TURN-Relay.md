@@ -22,7 +22,7 @@ sed -i 's/listen_address = .*/listen_address = { "public-ip-address" }/g' turn/t
 ```
 5. Run the TURN server
 ```bash
-cd turn; ./turnserver -c turn.conf
+cd turn; ./turnserver -c turn.conf; cd ..
 ```
 6. Verify TURN server is running
 ```bash
