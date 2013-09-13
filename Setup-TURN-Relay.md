@@ -4,6 +4,7 @@ http://turnserver.sourceforge.net/
 
 1. Install TURN implementation dependencies
 ```bash
+sudo apt-get update
 sudo apt-get install libconfuse0
 ```
 2. If you are running on the cloud (e.g. EC2), you need to use IP aliasing to allow the TURN server to bind your public IP address
