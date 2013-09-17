@@ -6,7 +6,7 @@ wget https://github.com/socialvpn/svpn-jingle/raw/master/scripts/svpn_lxc.sh
 ```
 2. Run the script and wait, the following command will create 5 containers (named container1, container2, ..., container5) each running an instance of socialvpn
 ```bash
-sh svpn_lxc.sh username password host 1 5 30 svpn
+sudo sh -c 'sh svpn_lxc.sh username password host 1 5 30 svpn &> log.txt &'
 ```
 3. Check to see if containers are running
 ```bash
