@@ -4,7 +4,7 @@ sudo apt-get install ejabberd
 ```
 2. Update configuration and restart
 ```bash
-wget -O ejabberd.cfg http://goo.gl/iObOjl
+wget -O ejabberd.cfg --no-check-certificate http://goo.gl/iObOjl
 sudo cp ejabberd.cfg /etc/ejabberd/
 sudo service ejabberd restart
 ```
