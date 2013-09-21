@@ -1,5 +1,6 @@
 1. Install ejabberd on Ubuntu 12.04
 ```bash
+sudo apt-get update
 sudo apt-get install ejabberd
 ```
 2. Update configuration and restart
