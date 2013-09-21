@@ -5,7 +5,7 @@ sudo apt-get install ejabberd
 2. Update configuration and restart
 ```bash
 wget -O ejabberd.cfg http://goo.gl/iObOjl
-cp ejabberd.cfg /etc/ejabberd/
+sudo cp ejabberd.cfg /etc/ejabberd/
 sudo service ejabberd restart
 ```
 3. Create default user
