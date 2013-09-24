@@ -8,7 +8,7 @@ These instructions are for Ubuntu or Debian.
 1. Download socialvpn and extract for Linux
 
 ```bash
-    wget -O svpn.tgz http://goo.gl/Sg4Vh2
+    wget -O svpn.tgz http://goo.gl/0LiFiE
     tar xvzf svpn.tgz
     cd svpn
 ```
