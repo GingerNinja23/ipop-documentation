@@ -46,7 +46,7 @@ Accept License Agreement, click on jdk-6u45-linux-x64.bin for 64bit Linux
     export JAVA_HOME=`pwd`/jdk1.6.0_45
     export PATH="$JAVA_HOME"/bin:`pwd`/depot_tools:"$PATH"
 ```
-### Get the libjingle and socialvpn source code
+### Get the libjingle and ipop-tincan source code
 
 1. Configure gclient to download libjingle code
 
@@ -59,14 +59,14 @@ Accept License Agreement, click on jdk-6u45-linux-x64.bin for 64bit Linux
 ```bash
     gclient sync --force
 ```
-3. Download socialvpn from github.com/socialvpn
+3. Download ipop-tincan from github.com/ipop-project
 
 ```bash
-    cd trunk/talk; mkdir socialvpn; cd socialvpn
-    git clone https://github.com/socialvpn/svpn-core.git
-    git clone https://github.com/socialvpn/svpn-jingle.git
+    cd trunk/talk; mkdir ipop-project; cd ipop-project
+    git clone https://github.com/ipop-project/ipop-tap.git
+    git clone https://github.com/ipop-project/ipop-tincan.git
 ```
-## Building socialvpn
+## Building ipop-tincan
 
 ### For Linux
 
@@ -78,8 +78,8 @@ Accept License Agreement, click on jdk-6u45-linux-x64.bin for 64bit Linux
 2. Copy modified gyp files to trunk/talk directory
 
 ```bash
-    cp talk/socialvpn/svpn-jingle/build/socialvpn.gyp talk/
-    cp talk/socialvpn/svpn-jingle/build/all.gyp .
+    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/all.gyp .
 ```
 2b. (Optional) Add this step on a 32-bit machine
 
@@ -91,15 +91,15 @@ Accept License Agreement, click on jdk-6u45-linux-x64.bin for 64bit Linux
 ```bash
     gclient runhooks --force
 ```
-4. Build socialvpn for linux (binary localed at out/Release/svpn-jingle)
+4. Build tincan for linux (binary localed at out/Release/ipop-tincan)
 
 ```bash
-    ninja -C out/Release svpn-jingle
+    ninja -C out/Release ipop-tincan
 ```
 5. To build debug version with gdb symbols (but creates 25 MB binary)
 
 ```bash
-    ninja -C out/Debug svpn-jingle
+    ninja -C out/Debug ipop-tincan
 ```
 
 ### For Android
@@ -121,13 +121,13 @@ Accept License Agreement, click on jdk-6u45-linux-x64.bin for 64bit Linux
 ```bash
     gclient runhooks --force
 ```
-4. Build socialvpn for android (binary located at out/Release/svpn-jingle)
+4. Build tincan for android (binary located at out/Release/ipop-tincan)
 
 ```bash
-    ninja -C out/Release svpn-jingle
+    ninja -C out/Release ipop-tincan
 ```
 5. To build debug version with gdb symbols (but creates 25 MB binary)
 
 ```bash
-    ninja -C out/Debug svpn-jingle
+    ninja -C out/Debug ipop-tincan
 ```
