@@ -51,7 +51,7 @@ Linux) to download.
 1.  Configure gclient to download libjingle code
 
     ```bash
-    gclient config http://webrtc.googlecode.com/svn/branches/3.40
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.44
     echo "target_os = ['android', 'unix']" >> .gclient
     ```
 
