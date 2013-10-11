@@ -30,7 +30,6 @@
     ```bash
     python svpn_controller.py svpnuser@ejabberd password 
     ```
-or
 
     ```bash
     python gvpn_controller.py svpnuser@ejabberd password ip-address-of-vm
