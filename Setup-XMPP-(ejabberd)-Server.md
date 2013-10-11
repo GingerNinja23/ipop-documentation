@@ -19,18 +19,22 @@
     sudo ejabberdctl register svpnuser ejabberd password
     ```
 
-4.  Update vpn_controller.py (line 15) to point to new STUN server
+4.  Update svpn_controller.py (or gvpn_controller.py) to point to new STUN server
 
     ```python
     STUN = "ip-address-of-vm:3478"
     ```
 
-5.  Run socialvpn with new credentials
+5.  Run socialvpn (or groupvpn) with new credentials
 
     ```bash
-    python vpn_controller.py svpnuser@ejabberd password <ip-address-of-vm>
+    python svpn_controller.py svpnuser@ejabberd password 
     ```
+or
 
+    ```bash
+    python gvpn_controller.py svpnuser@ejabberd password ip-address-of-vm
+    ```
 ---
 
 -   You can add more users by going to `http://ip-address-of-vm:5280/admin`
