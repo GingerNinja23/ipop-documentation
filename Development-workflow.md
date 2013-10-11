@@ -1,62 +1,83 @@
 1.  [Fork the repo](http://help.github.com/fork-a-repo/).
 
-2.  Clone your newly-forked repo to your local machine (copy the clone
+2.  Clone your newly-forked repo to your local machine (use the clone
     URL from the repository page on GitHub):
 
-        $ git clone <clone URL>
+        $ git clone git@github.com:<username>/ipop-tincan.git
+        $ cd ipop-tincan
 
-3.  Configure the upstream remote (copy the clone URL from the
-    corresponding ipop-project repo page):
+    Git will refer to this repository (your fork) as `origin`.
 
-        $ cd <reponame>
-        $ git remote add upstream <clone URL>
+3.  Configure the upstream remote (use the clone URL from the page
+    for the corresponding
+    [ipop-project](https://github.com/ipop-project/) repository):
 
-4.  Create a branch for the feature you're working on:
+        $ git remote add upstream git@github.com:ipop-project/ipop-tincan.git
+
+    You can use `upstream` to refer to this repository.
+
+4.  Create a branch for the feature you will work on:
 
         $ git checkout -b my-feature
 
-5.  Develop on **my-feature** branch only, but **Do not merge the
-    upstream master with your development branch!!**
+5.  Develop on the **my-feature** branch.
 
-6.  Commit changes to **my-feature** branch:
+    *   Edit code.
 
-        $ git add .
-        $ git commit -m "commit message"
+    *   Commit changes to **my-feature** branch:
 
-7.  Push branch to GitHub, to allow your mentor to review your code:
+            $ git add .
+            $ git commit -m "commit message"
 
-        $ git push origin my-feature
+        Always keep the first line of the commit message shorter than 55
+        characters. If you need to write a longer commit message, use
+        just `git commit` (no `-m` flag) which will open your $EDITOR
+        for you to write the commit message. Make sure to use a blank
+        line to separate the first line from the rest of the commit
+        message.
 
-8.  Repeat steps 5-7 till development is complete.
+    *   Push your branch to GitHub periodically.
 
-9.  Fetch upstream changes that were done by other contributors:
+            $ git push origin my-feature
+
+    Caution: Don't **pull** or **merge** from upstream. Doing so creates
+    weird-looking merge commits and makes the history messy. Instead,
+    when you want to incorporate upstream commits into your branch, you
+    should **rebase**, as described below.
+
+7.  Fetch upstream changes that were done by other contributors:
 
         $ git fetch upstream
 
-10. Rebase **my-feature** branch on top of the upstream master:
+8.  Rebase your branch on top of the upstream master:
 
         $ git rebase upstream/master
 
-11. In the process of the **rebase**, it may discover conflicts. In that
-    case it will stop and allow you to fix the conflicts. After fixing
-    conflicts, use `git add .` to update the index with those
+    In the process of the **rebase**, Git may discover conflicts. In
+    that case it will stop and allow you to fix the conflicts. After
+    fixing conflicts, use `git add .` to update the index with those
     contents, and then run:
 
         $ git rebase --continue
 
-12. [Force] push branch to GitHub. If there were conflicts in the
-    previous step, rebasing will have re-created your commits, so a
-    regular push will fail. **NEVER `--force` to a branch that other
-    people are using!**
+    Run `git status` liberally during a rebase if you are confused. It
+    will tell you what you need to do to continue.
+
+9.  Push your branch to GitHub.
+
+        $ git push origin my-feagture
+
+    If you rebased earlier, your commits will have been re-written and
+    GitHub may deny your push because it would involve overwriting
+    commits you pushed earlier. In that case you will have to use the
+    `--force` flag.  **NEVER `--force` to a branch that other people are
+    using!** (In that scenario, you should just create a new branch and
+    push it.)
 
         $ git push origin my-feature --force
 
-13. Only after all testing is done - Send a [pull
-    request](http://help.github.com/send-pull-requests/). Attention:
-    Please recheck that in your pull request you send only your changes,
-    and no other changes!! Check it by command:
-
-        $ git diff my-new-check upstream/master
+10. When ready, send a [pull
+    request](http://help.github.com/send-pull-requests/).
 
 More detailed information you can find on
 [Git-Workflow](https://github.com/diaspora/diaspora/wiki/Git-Workflow),
@@ -64,7 +85,7 @@ More detailed information you can find on
 Page)](http://kernel.org/pub/software/scm/git/docs/git-rebase.html) and
 [Rebasing](http://book.git-scm.com/4_rebasing.html).
 
-- - - 
+* * *
 
 This document is based on
 <https://github.com/sevntu-checkstyle/sevntu.checkstyle/wiki/Development-workflow-with-Git%3A-Fork,-Branching,-Commits,-and-Pull-Request>.
