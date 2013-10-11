@@ -28,10 +28,10 @@
 5.  Run socialvpn (or groupvpn) with new credentials
 
     ```bash
-    python svpn_controller.py svpnuser@ejabberd password 
-    ```
+    # this starts socialvpn
+    python svpn_controller.py svpnuser@ejabberd password
 
-    ```bash
+    # this starts groupvpn
     python gvpn_controller.py svpnuser@ejabberd password ip-address-of-vm
     ```
 ---
