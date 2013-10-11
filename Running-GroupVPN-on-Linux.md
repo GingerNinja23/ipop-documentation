@@ -16,7 +16,7 @@ These instructions are for Ubuntu or Debian (64-bit).
     sudo sh -c './ipop-tincan 1> out.log 2> err.log &'
     ```
 
-3.  Log into XMPP (Google Chat or Jabber.org) using credentials
+3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address
 
     ```bash
     python gvpn_controller.py username password xmpp-host ip-address
