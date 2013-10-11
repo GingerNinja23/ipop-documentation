@@ -13,7 +13,7 @@ These instructions are for Ubuntu or Debian (64-bit).
 2.  Launch socialvpn
 
     ```bash
-    sudo sh -c './svpn-jingle &> log.txt &'
+    sudo sh -c './svpn-jingle 1> out.log 2> err.log &'
     ```
 
 3.  Log into XMPP (Google Chat or Jabber.org) using credentials
