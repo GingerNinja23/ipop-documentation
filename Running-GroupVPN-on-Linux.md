@@ -13,7 +13,7 @@ These instructions are for Ubuntu or Debian (64-bit).
 2.  Launch groupvpn
 
     ```bash
-    sudo sh -c './ipop-tincan &> log.txt &'
+    sudo sh -c './ipop-tincan 1> out.log 2> err.log &'
     ```
 
 3.  Log into XMPP (Google Chat or Jabber.org) using credentials
