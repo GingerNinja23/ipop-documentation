@@ -19,10 +19,10 @@
     sudo ejabberdctl register svpnuser ejabberd password
     ```
 
-4.  Update svpn_controller.py (or gvpn_controller.py) to point to new STUN server
+4.  Update svpn_controller.py (or gvpn_controller.py) to point to new STUN server, we recommend that you use the public IP address (not DNS) of the STUN server, especially if server is running on a public cloud (i.e. Amazon EC2).
 
     ```python
-    STUN = "ip-address-of-vm:3478"
+    STUN = "numeric-ip-address-of-stun-server:3478"
     ```
 
 5.  Run socialvpn (or groupvpn) with new credentials
