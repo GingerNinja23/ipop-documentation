@@ -5,7 +5,7 @@ These instructions are for Ubuntu or Debian (64-bit).
 1.  Download groupvpn and extract for Linux
 
     ```bash
-    wget -O ipop.tgz http://goo.gl/cR7CtG
+    wget -O ipop.tgz http://goo.gl/4ecwqn
     tar xvzf ipop.tgz
     cd ipop
     ```
