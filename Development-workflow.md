@@ -20,25 +20,21 @@
 
         $ git checkout -b my-feature
 
-5.  Develop on the **my-feature** branch.
+5.  Develop on the **my-feature** branch. Commit changes to **my-feature**
+    branch:
 
-    *   Edit code.
+        $ git add .
+        $ git commit -m "commit message"
 
-    *   Commit changes to **my-feature** branch:
+    Always keep the first line of the commit message shorter than 55
+    characters. If you need to write a longer commit message, use just `git
+    commit` (no `-m` flag) which will open your $EDITOR for you to write the
+    commit message. Make sure to use a blank line to separate the first line
+    from the rest of the commit message.
 
-            $ git add .
-            $ git commit -m "commit message"
+6.  Push your branch to GitHub periodically.
 
-        Always keep the first line of the commit message shorter than 55
-        characters. If you need to write a longer commit message, use
-        just `git commit` (no `-m` flag) which will open your $EDITOR
-        for you to write the commit message. Make sure to use a blank
-        line to separate the first line from the rest of the commit
-        message.
-
-    *   Push your branch to GitHub periodically.
-
-            $ git push origin my-feature
+        $ git push origin my-feature
 
     Caution: Don't **pull** or **merge** from upstream. Doing so creates
     weird-looking merge commits and makes the history messy. Instead,
