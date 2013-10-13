@@ -1,3 +1,5 @@
+[**Handy reference for Git commands**](http://gitref.org/index.html)
+
 1.  [Fork the repo](http://help.github.com/fork-a-repo/).
 
 2.  Clone your newly-forked repo to your local machine (use the clone
@@ -14,7 +16,7 @@
 
         $ git remote add upstream git@github.com:ipop-project/ipop-tincan.git
 
-    You can use `upstream` to refer to this repository.
+    Git will refer to this repository as `upstream`.
 
 4.  Create a branch for the feature you will work on:
 
@@ -45,7 +47,8 @@
 
         $ git fetch upstream
 
-8.  Rebase your branch on top of the upstream master:
+8.  If you need to incorporate new upstream changes into your branch,
+    **rebase** your branch on top of the upstream master:
 
         $ git rebase upstream/master
 
@@ -66,7 +69,7 @@
     If you rebased earlier, your commits will have been re-written and
     GitHub may deny your push because it would involve overwriting
     commits you pushed earlier. In that case you will have to use the
-    `--force` flag.  **NEVER `--force` to a branch that other people are
+    `--force` flag.  **Never `--force` to a branch that other people are
     using!** (In that scenario, you should just create a new branch and
     push it.)
 
@@ -75,11 +78,8 @@
 10. When ready, send a [pull
     request](http://help.github.com/send-pull-requests/).
 
-More detailed information you can find on
-[Git-Workflow](https://github.com/diaspora/diaspora/wiki/Git-Workflow),
-[Git-rebase (Manual
-Page)](http://kernel.org/pub/software/scm/git/docs/git-rebase.html) and
-[Rebasing](http://book.git-scm.com/4_rebasing.html).
+For more information on Git workflows and commands, see the resources
+here: <http://git-scm.com/documentation/external-links>
 
 * * *
 
