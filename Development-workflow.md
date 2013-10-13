@@ -64,7 +64,7 @@
 
 9.  Push your branch to GitHub.
 
-        $ git push origin my-feagture
+        $ git push origin my-feature
 
     If you rebased earlier, your commits will have been re-written and
     GitHub may deny your push because it would involve overwriting
