@@ -6,9 +6,24 @@ These instructions are from these links:
 
 ## Installing tools and code
 
-### Install Oracle Java6
+### Install Java
 
 Our code does not need Java to compile or run, but the setup tools require it.
+
+On Debian, you can simply install the `default-jdk`:
+
+```bash
+sudo apt-get install default-jdk
+```
+
+And then set the `JAVA_HOME` environment variable:
+
+```bash
+echo 'export JAVA_HOME=/usr/lib/jvm/default-java' >> ~/.profile
+export JAVA_HOME=/usr/lib/jvm/default-java
+```
+
+#### (Alternate) Oracle Java
 
 Download [Java 6][] and accept the license agreement. Click on
 `jdk-6u45-linux-x64.bin` for 64bit Linux (or `jdk-6u45-linux-i586.bin` for 32bit
