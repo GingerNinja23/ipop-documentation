@@ -14,7 +14,7 @@
     for the corresponding
     [ipop-project](https://github.com/ipop-project/) repository):
 
-        $ git remote add upstream git@github.com:ipop-project/ipop-tincan.git
+        $ git remote add upstream https://github.com/ipop-project/ipop-tincan.git
 
     Git will refer to this repository as `upstream`.
 
