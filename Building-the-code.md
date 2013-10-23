@@ -98,16 +98,16 @@ Linux) to download.
 
     a.  Run:
 
-        ```bash
-        cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
-        cp talk/ipop-project/ipop-tincan/build/all.gyp .
-        ```
+    ```bash
+    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/all.gyp .
+    ```
 
     b.  (Optional) Add this step on a 32-bit machine
 
-        ```bash
-        export GYP_DEFINES="target_arch=ia32"
-        ```
+    ```bash
+    export GYP_DEFINES="target_arch=ia32"
+    ```
 
 3.  Generate ninja build files
 
