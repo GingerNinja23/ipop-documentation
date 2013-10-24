@@ -30,28 +30,24 @@ Download [Java 6][] and accept the license agreement. Click on
 Linux) to download.
 
   [Java 6]: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR
-
-1.  Do the following to extract Java
-
-    ```bash
-    chmod 755 jdk-6u45-linux-x64.bin
-    ./jdk-6u45-linux-x64.bin
-    ```
+```bash
+chmod 755 jdk-6u45-linux-x64.bin
+./jdk-6u45-linux-x64.bin
+```
 
 ### Install necessary libraries and chromium tools
 
 1.  This works on Debian-based distros
 
     ```bash
-    sudo apt-get install libnss3-dev libasound2-dev libpulse-dev libjpeg62-dev \ 
-                         libxv-dev libgtk2.0-dev libexpat1-dev libssl-dev git \
+    sudo apt-get install libnss3-dev libgtk2.0-dev libexpat1-dev libssl-dev git \
                          subversion build-essential
     ```
 
 2.  Download depot_tools for chromium repo
 
     ```bash
-    git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    git clone --depth 1 -b master https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
 3.  Set up environmental variables
