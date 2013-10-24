@@ -40,7 +40,7 @@ chmod 755 jdk-6u45-linux-x64.bin
 1.  This works on Debian-based distros
 
     ```bash
-    sudo apt-get install libnss3-dev libgtk2.0-dev libexpat1-dev libssl-dev git \
+    sudo apt-get install libnss3-dev libgtk2.0-dev libexpat1-dev git \
                          subversion build-essential
     ```
 
