@@ -1,1 +1,1 @@
-Welcome to the svpn-jingle wiki!
+Welcome to the ipop-tincan wiki!
