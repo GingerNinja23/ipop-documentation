@@ -28,7 +28,7 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 1.  This works on Debian-based distros
 
     ```bash
-    sudo apt-get install libgtk2.0-dev libexpat1-dev git subversion build-essential
+    sudo apt-get install libexpat1-dev git subversion build-essential
     ```
 
 2.  Download depot_tools for chromium repo
