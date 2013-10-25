@@ -10,7 +10,7 @@ These instructions are from these links:
 
 Our code does not need Java to compile or run, but the setup tools require it.
 
-On Debian, you can simply install the `default-jdk`:
+On Debian/Ubuntu, you can simply install the `default-jdk`:
 
 ```bash
 sudo apt-get install default-jdk
