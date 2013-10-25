@@ -23,18 +23,6 @@ echo 'export JAVA_HOME=/usr/lib/jvm/default-java' >> ~/.profile
 export JAVA_HOME=/usr/lib/jvm/default-java
 ```
 
-#### (Alternate) Oracle Java
-
-Download [Java 6][] and accept the license agreement. Click on
-`jdk-6u45-linux-x64.bin` for 64bit Linux (or `jdk-6u45-linux-i586.bin` for 32bit
-Linux) to download.
-
-  [Java 6]: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR
-```bash
-chmod 755 jdk-6u45-linux-x64.bin
-./jdk-6u45-linux-x64.bin
-```
-
 ### Install necessary libraries and chromium tools
 
 1.  This works on Debian-based distros
@@ -53,8 +41,7 @@ chmod 755 jdk-6u45-linux-x64.bin
 3.  Set up environmental variables
 
     ```bash
-    export JAVA_HOME="$(pwd)/jdk1.6.0_45"
-    export PATH="$JAVA_HOME/bin:$(pwd)/depot_tools:$PATH"
+    export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
 ### Get the libjingle and ipop-tincan source code
@@ -63,7 +50,6 @@ chmod 755 jdk-6u45-linux-x64.bin
 
     ```bash
     gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.44
-    echo "target_os = ['android', 'unix']" >> .gclient
     ```
 
 2.  Download libjingle and dependencies (this takes a while)
@@ -112,41 +98,6 @@ chmod 755 jdk-6u45-linux-x64.bin
     ```
 
 4.  Build tincan for linux (binary localed at out/Release/ipop-tincan)
-
-    ```bash
-    ninja -C out/Release ipop-tincan
-    ```
-
-5.  To build debug version with gdb symbols (but creates 25 MB binary)
-
-    ```bash
-    ninja -C out/Debug ipop-tincan
-    ```
-
-### For Android
-
-1.  Assuming you have just compiled for Linux for instructions above, move
-    binaries to avoid overwriting them
-
-    ```bash
-    mv out out.x86_64
-    ```
-
-2.  Set up android environmental variables
-
-    ```bash
-    source build/android/envsetup.sh
-    export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 \
-                        libjingle_java=0 $GYP_DEFINES"
-    ```
-
-3.  Create ninja build files
-
-    ```bash
-    gclient runhooks --force
-    ```
-
-4.  Build tincan for android (binary located at out/Release/ipop-tincan)
 
     ```bash
     ninja -C out/Release ipop-tincan
