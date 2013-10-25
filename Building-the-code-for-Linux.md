@@ -82,6 +82,7 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 
     ```bash
     cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
     ```
 
