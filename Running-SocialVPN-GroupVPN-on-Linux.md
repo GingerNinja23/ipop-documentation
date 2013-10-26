@@ -18,6 +18,14 @@ These instructions are for Ubuntu or Debian (64-bit).
 
 3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address
 
+    a.   For SocialVPN
+
+    ```bash
+    python svpn_controller.py username password xmpp-host
+    ```
+
+    a.   For GroupVPN
+
     ```bash
     python gvpn_controller.py username password xmpp-host ip-address
     ```
@@ -28,10 +36,11 @@ These instructions are for Ubuntu or Debian (64-bit).
     /sbin/ifconfig ipop
     ```
 
-5.  Kill groupvpn
+5.  Kill socialvpn or groupvpn
 
     ```bash
     pkill ipop-tincan
+    pkill svpn_controller.py
     pkill gvpn_controller.py
     ```
 
