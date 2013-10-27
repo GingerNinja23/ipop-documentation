@@ -3,7 +3,7 @@
 1.  This works on Debian-based distros
 
     ```bash
-    sudo apt-get install libexpat1-dev git subversion build-essential
+    sudo apt-get install libexpat1-dev git subversion build-essential binutils-gold
     ```
 
 2.  Download depot_tools for chromium repo
@@ -64,20 +64,27 @@
     ```
 
 3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi" to "hard" for arm_version 6
+
+4.  Update the gold linker to arm version
+
+    ```bash
+    mv third-party/gold/gold32 third-party/gold/gold32.bak
+    ln -s /usr/bin/gold third-party/gold/gold32
+    ```
     
-4.  Generate ninja build files
+5.  Generate ninja build files
 
     ```bash
     gclient runhooks --force
     ```
 
-5.  Build tincan for Raspbian (binary localed at out/Release/ipop-tincan)
+6.  Build tincan for Raspbian (binary localed at out/Release/ipop-tincan)
 
     ```bash
     make ipop-tincan BUILDTYPE=Release
     ```
 
-6.  To build debug version with gdb symbols (but creates 25 MB binary)
+7.  To build debug version with gdb symbols (but creates 25 MB binary)
 
     ```bash
     make ipop-tincan BUILDTYPE=Debug
