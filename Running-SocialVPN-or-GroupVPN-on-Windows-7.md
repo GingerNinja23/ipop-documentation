@@ -14,8 +14,6 @@ This has been tested on Windows 7 (32-bit) but it should also work on Win7 64bit
 
 4.  Install Python 2.7 for Windows (http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
 
-5.  Download groupvpn/socialvpn http://goo.gl/fUc4Xa and unzip
-
 ## Download and run binaries
 
 1.  Download groupvpn/socialvpn http://goo.gl/fUc4Xa and unzip
