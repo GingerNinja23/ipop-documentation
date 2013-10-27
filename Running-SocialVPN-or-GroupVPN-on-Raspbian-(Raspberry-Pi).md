@@ -2,7 +2,7 @@ These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard fl
 
 ## Download and run binaries
 
-1.  Download groupvpn and extract for Linux
+1.  Download groupvpn/socialvpn and extract for Linux
 
     ```bash
     wget -O ipop-rpi.tgz http://goo.gl/y056nb
