@@ -2,7 +2,7 @@ These instructions are for Ubuntu or Debian (64-bit).
 
 ## Download and run binaries
 
-1.  Download groupvpn and extract for Linux
+1.  Download groupvpn/socialvpn and extract for Linux
 
     ```bash
     wget -O ipop.tgz http://goo.gl/4ecwqn
