@@ -1,0 +1,83 @@
+### Install necessary libraries and chromium tools
+
+1.  This works on Debian-based distros
+
+    ```bash
+    sudo apt-get install libexpat1-dev git subversion build-essential
+    ```
+
+2.  Download depot_tools for chromium repo
+
+    ```bash
+    git clone --depth 1 -b master https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    ```
+
+3.  Set up environmental variables
+
+    ```bash
+    export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-armhf/
+    export PATH="$(pwd)/depot_tools:$PATH"
+    export GYP_GENERATORS="make"
+    export GYP_DEFINES="target_arch=arm arm_version=6"
+    export C_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
+    export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
+    ```
+
+### Get the libjingle and ipop-tincan source code
+
+1.  Configure gclient to download libjingle code
+
+    ```bash
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.44
+    ```
+
+2.  Download libjingle and dependencies (this takes a while)
+
+    ```bash
+    gclient sync --force
+    ```
+
+3.  Download ipop-tincan from github.com/ipop-project
+
+    ```bash
+    cd trunk/talk; mkdir ipop-project; cd ipop-project
+    git clone https://github.com/ipop-project/ipop-tap.git
+    git clone https://github.com/ipop-project/ipop-tincan.git
+    ```
+
+## Building ipop-tincan
+
+### For Linux
+
+1.  Return to libjingle trunk directory
+
+    ```bash
+    cd ../../
+    ```
+
+2.  Copy modified gyp files to trunk/talk directory
+
+    ```bash
+    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/all.gyp .
+    cp talk/ipop-project/ipop-tincan/build/common.gypi build/
+    ```
+
+3.  Generate ninja build files
+
+    ```bash
+    gclient runhooks --force
+    ```
+
+4.  Build tincan for Raspbian (binary localed at out/Release/ipop-tincan)
+
+    ```bash
+    make ipop-tincan BUILDTYPE=Release
+    ```
+
+5.  To build debug version with gdb symbols (but creates 25 MB binary)
+
+    ```bash
+    make ipop-tincan BUILDTYPE=Debug
+    ```
