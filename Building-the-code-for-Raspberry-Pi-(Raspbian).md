@@ -61,22 +61,23 @@
     cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
-    cp talk/ipop-project/ipop-tincan/build/common.gypi build/
     ```
 
-3.  Generate ninja build files
+3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi" to "hard" for arm_version 6
+    
+4.  Generate ninja build files
 
     ```bash
     gclient runhooks --force
     ```
 
-4.  Build tincan for Raspbian (binary localed at out/Release/ipop-tincan)
+5.  Build tincan for Raspbian (binary localed at out/Release/ipop-tincan)
 
     ```bash
     make ipop-tincan BUILDTYPE=Release
     ```
 
-5.  To build debug version with gdb symbols (but creates 25 MB binary)
+6.  To build debug version with gdb symbols (but creates 25 MB binary)
 
     ```bash
     make ipop-tincan BUILDTYPE=Debug
