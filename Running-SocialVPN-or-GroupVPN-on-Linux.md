@@ -44,5 +44,5 @@ These instructions are for Ubuntu or Debian (64-bit).
     pkill gvpn_controller.py
     ```
 
-**Run groupvpn on another machine using same credentials and they will connect
+**Run groupvpn/socialvpn on another machine using same credentials and they will connect
 with each other.**
