@@ -30,81 +30,57 @@ This uses Qemu mipsel to run OpenWRT malta (which is designed specifically for t
     echo "nameserver 8.8.8.8" >> /etc/resolv.conf
     ```
 
-2.  Launch the newly created AVD
+2.  Update packages list and install dependencies
 
     ```bash
-    tools/emulator64-arm -avd svpn-android-4.1 -no-window -no-audio -no-skin \
-                         &> log.txt &
+    sed -i 's/le/generic/g' /etc/opkg.conf 
+    sed -i 's/\/overlay/\/tmp/g' /etc/opkg.conf
+    opkg update; opkg install python librt libstdcpp kmod-tun ip6tables wget
     ```
 
-3.  Wait about one minute and test emulator is running with following command (a
-    list of network devices along with ip addresses should appear)
+### Download and run binaries
+
+1.  Download socialvpn/groupvpn and extract for OpenWRT
 
     ```bash
-    platform-tools/adb shell netcfg
+    wget -O ipop-openwrt.tgz --no-check-certificate http://goo.gl/RM6yvy
+    tar xvzf ipop-openwrt.tgz
+    cd ipop-openwrt
     ```
 
-### Download and run Android SocialVPN
-
-1.  Create directory for socialvpn files
+2.  Launch groupvpn
 
     ```bash
-    platform-tools/adb shell mkdir data/svpn
-    platform-tools/adb shell mkdir data/svpn/python27
+    ./ipop-tincan 1> out.log 2> err.log &
     ```
 
-2.  Download socialvpn and Python 2.7 for android
+3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address
+
+    a.   For SocialVPN
 
     ```bash
-    wget -O svpn-arm.tgz http://goo.gl/eBrvy1
-    wget -O python27.tgz http://goo.gl/jjJxyd
-    tar xzvf python27.tgz; tar xzvf svpn-arm.tgz
+    python svpn_controller.py username password xmpp-host
     ```
 
-3.  Use `adb push` to copy downloaded files to AVD
+    a.   For GroupVPN
 
     ```bash
-    platform-tools/adb push svpn-arm /data/svpn
-    platform-tools/adb push python27 /data/svpn/python27
+    python gvpn_controller.py username password xmpp-host ip-address
     ```
 
-4.  Access the AVD shell and go to svpn directory
+4.  Check the network devices and ip address for your device
 
     ```bash
-    platform-tools/adb shell
-    cd /data/svpn
+    /sbin/ifconfig ipop
     ```
 
-5.  Launch socialvpn
+5.  Kill socialvpn or groupvpn
 
     ```bash
-    chmod 755 svpn-jingle-android
-    ./svpn-jingle-android &> log.txt &
+    ps
+    kill <process-id-ipop-tincan>
+    kill <process-id-svpn_controller.py>
     ```
 
-6.  Log into XMPP (Google Chat or Jabber.org) using credentials
-
-    ```bash
-    sh start_controller.sh username password xmpp-host
-    ```
-
-7.  Check the network devices and ip address for your device
-
-    ```bash
-    netcfg
-    ```
-
-8.  Kill socialvpn process and terminate the AVD
-
-    >   It is important to kill svpn-jingle-android process in order to exit
-    >   shell.
-
-    ```bash
-    jobs
-    kill %1 # or the appropriate job number
-    exit
-    platform-tools/adb shell emu kill
-    ```
-
-Run socialvpn on another machine using same credentials and they will connect
-with each other.
+**Run groupvpn/socialvpn on another machine using same credentials and they will connect
+with each other.**
