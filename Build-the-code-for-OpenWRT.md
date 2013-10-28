@@ -14,7 +14,6 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
     cd ../../third-party
     wget http://downloads.openwrt.org/attitude_adjustment/12.09-rc1/malta/generic/OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
     tar xjvf OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
-    ln -s OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2 openwrt-sdk
     ```
 2. Install libexpat in openwrt-sdk
 
@@ -31,13 +30,15 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
 2.  Set up OpenWRT environmental variables
 
     ```bash
-    export GYP_DEFINES="target_arch=mipsel"
-    export STAGING_DIR="`pwd`/third-party/openwrt-sdk/staging_dir"
-    export CC="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc"
-    export CXX="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-g++"
-    export AR="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar"
+    export OPENWRT_SDK = `pwd`/third-party/OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
+    export STAGING_DIR=$OPENWRT_SDK/staging_dir
+    export TOOLCHAIN=$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/
+    export CC="$TOOLCHAIN/bin/mipsel-openwrt-linux-uclibc-gcc"
+    export CXX="$TOOLCHAIN/bin/mipsel-openwrt-linux-uclibc-g++"
+    export AR="$TOOLCHAIN/bin/mipsel-openwrt-linux-uclibc-ar"
     export CC_host="gcc"
     export CXX_host="g++"
+    export GYP_DEFINES="target_arch=mipsel"
     ```
 
 3.  Create ninja build files
