@@ -32,12 +32,12 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
 
     ```bash
     export GYP_DEFINES="target_arch=mipsel"
-    export STAGING_DIR=`pwd`/third-party/openwrt-sdk/staging_dir
+    export STAGING_DIR="`pwd`/third-party/openwrt-sdk/staging_dir"
     export CC="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc"
     export CXX="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-g++"
-    export AR=$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar
-    export CC_host=gcc
-    export CXX_host=g++
+    export AR="$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar"
+    export CC_host="gcc"
+    export CXX_host="g++"
     ```
 
 3.  Create ninja build files
