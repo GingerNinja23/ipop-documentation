@@ -1,3 +1,5 @@
+This is for OpenWRT malta device which is designed for Qemu Mipsel (http://wiki.openwrt.org/doc/howto/qemu).
+
 Go on the Building the code for Linux page (https://github.com/ipop-project/ipop-tincan/wiki/Building-the-code-for-Linux) and follow the instructions for the following sections
 
 * Install Java
@@ -6,20 +8,24 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
 
 ## Set up OpenWRT build environment and build code
 
-1.  Return to libjingle root directory, update .gclient file and download Android dependencies
+1.  Download OpenWRT SDK for openwrt malta
 
     ```bash
-    cd ../../../
-    echo "target_os = ['android', 'unix']" >> .gclient
-    gclient sync --force
+    cd ../../third-party
+    wget http://downloads.openwrt.org/attitude_adjustment/12.09-rc1/malta/generic/OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+    tar xjvf OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+    ln -s OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2 openwrt-sdk
     ```
-2.  Set up android environmental variables (ignore message asking for Oracle Java)
+2.  Set up OpenWRT environmental variables
 
     ```bash
-    cd trunk
-    source build/android/envsetup.sh
-    export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 \
-                        libjingle_java=0 $GYP_DEFINES"
+    export GYP_DEFINES="target_arch=mipsel"
+    export STAGING_DIR=`pwd`/third-party/openwrt-sdk/staging_dir
+    export CC="$STAGING_DIR/tools/bin/mipsel-openwrt-linux-uclibc-gcc"
+    export CXX="$STAGING_DIR/tools/bin/mipsel-openwrt-linux-uclibc-g++"
+    export AR=$STAGING_DIR/tools/bin/mipsel-openwrt-linux-uclibc-ar
+    export CC_host=gcc
+    export CXX_host=g++
     ```
 
 3.  Create ninja build files
@@ -28,7 +34,7 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
     gclient runhooks --force
     ```
 
-4.  Build tincan for android (binary located at out/Release/ipop-tincan)
+4.  Build tincan for OpenWrt (binary located at out/Release/ipop-tincan)
 
     ```bash
     ninja -C out/Release ipop-tincan
