@@ -25,7 +25,7 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
 3.  Set up OpenWRT environmental variables
 
     ```bash
-    export OPENWRT_SDK =`pwd`/OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
+    export OPENWRT_SDK=`pwd`/OpenWrt-SDK-malta-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
     export STAGING_DIR=$OPENWRT_SDK/staging_dir
     export TOOLCHAIN=$STAGING_DIR/toolchain-mipsel_r2_gcc-4.6-linaro_uClibc-0.9.33.2/
     export CC="$TOOLCHAIN/bin/mipsel-openwrt-linux-uclibc-gcc"
