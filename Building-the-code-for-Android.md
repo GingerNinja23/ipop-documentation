@@ -4,7 +4,7 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
-### For Android
+### Set up Android build environment and build code
 
 1.  Return to libjingle root directory, update .gclient file and download Android dependencies
 
