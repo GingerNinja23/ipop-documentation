@@ -1,7 +1,7 @@
 These instructions are for Ubuntu 12.04. Your VM should have 1GB RAM or more.
 
 [You can create such a VM on
-FutureGrid](https://portal.futuregrid.org/manual/openstack/grizzly).
+FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
 ### Install necessary packages
 
