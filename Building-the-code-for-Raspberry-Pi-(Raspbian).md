@@ -65,6 +65,11 @@
 
 3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi" to "hard" for arm_version 6
 
+    ```bash
+    sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi 
+    sed -i "s/'arm_fpu%': '',/'arm_fpu%': 'vfp',/g" build/common.gypi
+    ```
+
 4.  Update the gold linker to arm version
 
     ```bash
