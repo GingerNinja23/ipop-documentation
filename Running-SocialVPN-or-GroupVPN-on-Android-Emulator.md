@@ -61,15 +61,15 @@ FutureGrid](https://portal.futuregrid.org/manual/openstack/grizzly).
 2.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget -O svpn-arm.tgz http://goo.gl/eBrvy1
+    wget -O ipop-android.tgz http://goo.gl/tMrQMG
     wget -O python27.tgz http://goo.gl/jjJxyd
-    tar xzvf python27.tgz; tar xzvf svpn-arm.tgz
+    tar xzvf python27.tgz; tar xzvf ipop-android.tgz
     ```
 
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push svpn-arm /data/svpn
+    platform-tools/adb push ipop-android /data/svpn
     platform-tools/adb push python27 /data/svpn/python27
     ```
 
@@ -83,8 +83,8 @@ FutureGrid](https://portal.futuregrid.org/manual/openstack/grizzly).
 5.  Launch socialvpn
 
     ```bash
-    chmod 755 svpn-jingle-android
-    ./svpn-jingle-android &> log.txt &
+    chmod 755 ipop-tincan
+    ./ipop-tincan &> log.txt &
     ```
 
 6.  Log into XMPP (Google Chat or Jabber.org) using credentials
