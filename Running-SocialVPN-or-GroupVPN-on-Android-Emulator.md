@@ -90,6 +90,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 6.  Log into XMPP (Google Chat or Jabber.org) using credentials
 
     ```bash
+    ln -s svpn_controller.py vpn_controller.py
     sh start_controller.sh username password xmpp-host
     ```
 
