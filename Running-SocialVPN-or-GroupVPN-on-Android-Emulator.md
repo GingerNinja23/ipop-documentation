@@ -84,7 +84,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
     ```bash
     chmod 755 ipop-tincan
-    ./ipop-tincan &> log.txt &
+    ./ipop-tincan 1> out.log 2> err.log &
     ```
 
 6.  Log into XMPP (Google Chat or Jabber.org) using credentials
