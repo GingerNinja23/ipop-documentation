@@ -35,7 +35,7 @@ This uses Qemu mipsel to run OpenWRT malta (which is designed specifically for t
     ```bash
     sed -i 's/le/generic/g' /etc/opkg.conf 
     sed -i 's/\/overlay/\/tmp/g' /etc/opkg.conf
-    opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 wget
+    opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
     ```
 
 ### Download and run binaries
