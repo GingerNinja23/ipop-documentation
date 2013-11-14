@@ -17,6 +17,7 @@ EOF
 ### Update OpenWRT iptables
 
 ```bash
+cat <<EOF >> /etc/config/firewall
 config zone
         option name             ipop
         option network          'ipop'
@@ -27,6 +28,7 @@ config zone
 config forwarding
         option src              ipop
         option dest             lan
+EOF
 ```
 
 ### Running GroupVPN on your OpenWRT router
