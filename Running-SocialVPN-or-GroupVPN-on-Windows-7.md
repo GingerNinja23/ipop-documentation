@@ -2,9 +2,10 @@ This has been tested on Windows 7 (32-bit) but it should also work on Win7 64bit
 
 ##Install Dependencies
 
-1.  Install tap-installer from OpenVPN (http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe)
+1.  Install tap-installer from OpenVPN (http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe) - Choose 'Virtual Ethernet Interface' option. 
 
-2.  Rename the newly installed tap-device to ipop (http://support.microsoft.com/kb/2729523)
+2.  1) Go to Control Panel-> Network and Internet -> Network Connections (http://support.microsoft.com/kb/2729523)
+    2) Rename the newly installed tap-device to "ipop" 
 
 3.  Configure tap device with static ip address
 
