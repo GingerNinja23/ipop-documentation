@@ -2,7 +2,7 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ##Install Dependencies
 
-1.  Install tap-installer from OpenVPN (http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe) - Make sure the 'Virtual Ethernet Interface' option is selected. 
+1.  Install tap-installer from OpenVPN (http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe)
 
 2.  1) Go to Control Panel-> Network and Internet -> Network Connections (http://support.microsoft.com/kb/2729523)
     2) Rename the newly installed tap-device to "ipop" 
@@ -17,18 +17,22 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ## Download and run binaries
 
-1.  Download SocialVPN http://goo.gl/fUc4Xa and unzip
+1.  Download SocialVPN http://goo.gl/fUc4Xa 
 
-2.  Open unzipped folder and double-click on ipop-tincan.exe
+2.  Look for a file called "0B8NEUuVLBLpkS0E3VlM3QThTZVk" in your downloads directory and rename "ipop-win32.zip"
 
-3.  Open a Windows command shell (type cmd in search window) and set Python binaries in path and navigate to the folder where you extracted the SocialVPN files.
+3.  Right-click on the file, and click on "Extract All"
+
+4.  Open unzipped folder and double-click on ipop-tincan.exe
+
+5.  Open a Windows command shell (type cmd in search window) and set Python binaries in path and navigate to the folder where you extracted the SocialVPN files.
 
     ```bash
     set PATH=%PATH%;C:\Python27
     cd <path of extracted socialvp folder>
     ```
 
-3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address, in the following example, we are using our Google login credentials
+6.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address, in the following example, we are using our Google login credentials
 
     ```bash
     python svpn_controller.py [username]@gmail.com <password> <talk.google.com>
