@@ -17,7 +17,7 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ## Download and run binaries
 
-1.  Download SocialVPN http://goo.gl/fUc4Xa 
+1.  Download our software from [http://goo.gl/fUc4Xa]
 
 2.  Look for a file called "0B8NEUuVLBLpkS0E3VlM3QThTZVk" in your downloads directory and rename "ipop-win32.zip"
 
