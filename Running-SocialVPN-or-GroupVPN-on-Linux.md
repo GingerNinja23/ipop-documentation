@@ -1,4 +1,4 @@
-These instructions are for Ubuntu or Debian (64-bit).
+These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-bit).
 
 ## Download and run binaries
 
