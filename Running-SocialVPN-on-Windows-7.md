@@ -25,7 +25,7 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 4.  Open unzipped folder and double-click on ipop-tincan.exe
 
-5.  Open a Windows command shell (type cmd in search window) and set Python binaries in path and navigate to the folder where you extracted the SocialVPN files.
+5.  Open a Windows command shell (type "cmd" in search window) and set Python binaries in path and navigate to the folder where you extracted the SocialVPN files.
 
     ```bash
     set PATH=%PATH%;C:\Python27
