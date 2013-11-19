@@ -11,6 +11,7 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
     ```bash
     netsh interface ip set address "ipop" static 172.31.0.100 255.255.255.0
+    netsh interface ipv4 set subinterface "ipop" mtu=1280 store=persistent
     ```
 
 4.  Install Python 2.7 for Windows (http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
