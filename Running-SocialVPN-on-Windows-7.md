@@ -10,9 +10,9 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ## Install binaries
 
-1.  Download our software from http://goo.gl/F5TF1Y
+1.  Download our software from http://goo.gl/bQv9d1
 
-2.  Look for a file called "0B8NEUuVLBLpkaGFlS25Nck5NZ2M" in your downloads directory and rename "ipop-win32.zip"
+2.  Look for a file called "0B8NEUuVLBLpkVjZJZ2lzU29MN0E" in your downloads directory and rename "ipop-win32.zip"
 
 3.  Right-click on the file, and click on "Extract All"
 
