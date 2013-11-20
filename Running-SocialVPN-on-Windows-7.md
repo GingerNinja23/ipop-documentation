@@ -18,7 +18,7 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 3.  Right-click on setup-interface file, and click on "Run as administrator"
 
-4.  Open config.txt with Notepad and update with your Google username and password
+4.  Right-click config file and click on "Edit". Update with your Google username and password
 
 ## Run SocialVPN
 
