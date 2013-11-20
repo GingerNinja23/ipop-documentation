@@ -2,11 +2,11 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ##Install Dependencies
 
-1.  Install tap-installer from OpenVPN http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe
+1.  Install Python 2.7 for Windows http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi
 
-2.  Rename the newly installed device "ipop" http://support.microsoft.com/kb/2729523
+2.  Install tap-installer from OpenVPN http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe
 
-3.  Install Python 2.7 for Windows http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi
+3.  Rename the newly installed device "ipop" http://support.microsoft.com/kb/2729523
 
 ## Install binaries
 
