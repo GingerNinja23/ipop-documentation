@@ -2,43 +2,27 @@ This has been tested on Windows 7 but it should also work on Windows XP and Wind
 
 ##Install Dependencies
 
-1.  Install tap-installer from OpenVPN (http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe)
+1.  Install tap-installer from OpenVPN http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe
 
-2.  1) Go to Control Panel-> Network and Internet -> Network Connections (http://support.microsoft.com/kb/2729523)
-    2) Rename the newly installed tap-device to "ipop" 
+2.  Rename the newly installed device "ipop" http://support.microsoft.com/kb/2729523
 
-3.  Open command prompt as administrator and run the command below to configure the IP address of the newly created IPOP interface (http://technet.microsoft.com/en-us/library/cc947813(v=ws.10).aspx) 
+3.  Install Python 2.7 for Windows http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi
 
-    ```bash
-    netsh interface ip set address "ipop" static 172.31.0.100 255.255.255.0
-    netsh interface ipv4 set subinterface "ipop" mtu=1280 store=persistent
-    ```
+## Install binaries
 
-4.  Install Python 2.7 for Windows (http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
+1.  Download our software from http://goo.gl/gyIDOy
 
-## Download and run binaries
-
-1.  Download our software from http://goo.gl/fUc4Xa
-
-2.  Look for a file called "0B8NEUuVLBLpkS0E3VlM3QThTZVk" in your downloads directory and rename "ipop-win32.zip"
+2.  Look for a file called "0B8NEUuVLBLpkTlNOdTFKWVV6ajQ" in your downloads directory and rename "ipop-win32.zip"
 
 3.  Right-click on the file, and click on "Extract All"
 
-4.  Open unzipped folder and double-click on ipop-tincan.exe
+3.  Right-click on setup-interface file, and click on "Run as administrator"
 
-5.  Open a Windows command shell (type "cmd" in search window) and set Python binaries in path and navigate to the folder where you extracted the SocialVPN files.
+4.  Open config.txt with Notepad and update with your Google username and password
 
-    ```bash
-    set PATH=%PATH%;C:\Python27
-    cd <path of extracted socialvp folder>
-    ```
+## Run SocialVPN
 
-6.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address, in the following example, we are using our Google login credentials
-
-    ```bash
-    python svpn_controller.py [username]@gmail.com <password> <talk.google.com>
-    ```
-
+1.  Double-click on start file and two command shell windows will show up showing that it is running
 
 **Run socialvpn on another machine using same credentials and they will connect
 with each other.**
