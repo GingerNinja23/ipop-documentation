@@ -46,21 +46,18 @@ http://turnserver.sourceforge.net/
     netstat -aupn | grep 19302
     ```
 
-7.  Update your [svpn controller][] with the TURN settings
+7.  Update your config.json file with your TURN settings
 
-    ```python
-    TURN = "public-ip-address-turn-server:19302"
-    TURN_USER = "svpnjingle"
-    TURN_PASS = "1234567890"
-    ```
+```bash
+{
+    "ip4": "172.31.0.100",
+    "xmpp_username": "user",
+    "xmpp_password": "blah",
+    "xmpp_host": "example.com",
+    "stun": ["public-ip-of-your-vm:19302"],
+    "turn": [
+        {"server": "public-ip-of-your-vm:19302", "user": "bob", "pass": "apple"}
+    ],
+}
+```
 
-8.  If you are using the [lxc script you can add the turn settings to
-    it](http://github.com/ipop-project/ipop-scripts/blob/master/svpn_lxc.sh#L32)
-
-    ```bash
-    TURN="public-ip-address-turn-server:19302"
-    TURN_USER="svpnjingle"
-    TURN_PASS="1234567890"
-    ```
-
-  [svpn controller]: https://github.com/ipop-project/socialvpn

@@ -1,3 +1,5 @@
+These instructions have only been tested on Ubuntu 12.04
+
 1.  Install ejabberd on Ubuntu 12.04
 
     ```bash
@@ -19,21 +21,21 @@
     sudo ejabberdctl register svpnuser ejabberd password
     ```
 
-4.  Update svpn_controller.py (or gvpn_controller.py) to point to new STUN server, we recommend that you use the public IP address (not DNS) of the STUN server, especially if server is running on a public cloud (i.e. Amazon EC2).
+4.  Update config.json file to point to new STUN
+    server, we recommend that you use the public IP address (not DNS) of the 
+    STUN server, especially if server is running on a public cloud (i.e. 
+    Amazon EC2)
 
-    ```python
-    STUN = "numeric-ip-address-of-stun-server:3478"
-    ```
+```bash
+{
+    "ip4": "172.31.0.100",
+    "xmpp_username": "user",
+    "xmpp_password": "blah",
+    "xmpp_host": "example.com",
+    "stun": ["public-ip-of-your-vm:3478"],
+}
+```
 
-5.  Run socialvpn (or groupvpn) with new credentials
-
-    ```bash
-    # this starts socialvpn
-    python svpn_controller.py svpnuser@ejabberd password
-
-    # this starts groupvpn
-    python gvpn_controller.py svpnuser@ejabberd password ip-address-of-vm
-    ```
 ---
 
 -   You can add more users by going to `http://ip-address-of-vm:5280/admin`

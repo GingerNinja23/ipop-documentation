@@ -2,7 +2,7 @@ This is for OpenWRT malta device which is designed for
 [Qemu Mipsel](http://wiki.openwrt.org/doc/howto/qemu) and have been tested
 on Debian Wheezy 64-bit.
 
-Go on the [Building the code for Linux page](Building-the-code-for-Linux) 
+Go on the [[Building the code for Linux page|Building the code for Linux]]
 and follow the instructions for the following sections:
 
 * Install necessary libraries and chromium tools

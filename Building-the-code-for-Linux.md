@@ -84,4 +84,5 @@ These instructions are derived from these links:
     ninja -C out/Debug ipop-tincan
     ```
 
-6.  The generated binary is located at out/Release/ipop-tincan or out/Debug/ipop-tincan
+6.  The generated binary is located at `out/Release/ipop-tincan` or
+    `out/Debug/ipop-tincan`

@@ -5,9 +5,9 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
 1.  Download groupvpn/socialvpn and extract for Linux
 
     ```bash
-    wget -O ipop.tgz http://goo.gl/4ecwqn
-    tar xvzf ipop.tgz
-    cd ipop
+    wget -O ipop-linux_0.1.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_0.1.tgz
+    tar xvzf ipop-linux_0.1.tgz
+    cd ipop-linux_0.1
     ```
 
 2.  Update config file with proper credentials

@@ -31,15 +31,13 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 1.  Define and create Android Virtual Device (AVD) (this also takes a while)
 
     ```bash
-    tools/android create avd -n svpn-android-4.1 -t android-16 -c 1024M \
-                             --abi armeabi-v7a
+    tools/android create avd -n svpn-android-4.1 -t android-16 -c 1024M --abi armeabi-v7a
     ```
 
 2.  Launch the newly created AVD
 
     ```bash
-    tools/emulator64-arm -avd svpn-android-4.1 -no-window -no-audio -no-skin \
-                         &> log.txt &
+    tools/emulator64-arm -avd svpn-android-4.1 -no-window -no-audio -no-skin &> log.txt &
     ```
 
 3.  Wait about one minute and test emulator is running with following command (a

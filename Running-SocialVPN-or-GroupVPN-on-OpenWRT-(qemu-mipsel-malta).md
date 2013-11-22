@@ -1,4 +1,4 @@
-This uses Qemu mipsel to run OpenWRT malta (which is designed specifically for that)
+This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 ### Install Qemu and running OpenWRT on your system
 
@@ -43,7 +43,7 @@ This uses Qemu mipsel to run OpenWRT malta (which is designed specifically for t
 1.  Download socialvpn/groupvpn and extract for OpenWRT
 
     ```bash
-    wget -O ipop-openwrt.tgz --no-check-certificate http://goo.gl/RM6yvy
+    wget -O ipop-openwrt.tgz --no-check-certificate http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt.tgz
     tar xvzf ipop-openwrt.tgz
     cd ipop-openwrt
     ```
