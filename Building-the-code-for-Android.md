@@ -1,6 +1,6 @@
-Go on the Building the code for Linux page (https://github.com/ipop-project/ipop-tincan/wiki/Building-the-code-for-Linux) and follow the instructions for the following sections
+Go on the [Building the code for Linux page](Building-the-code-for-Linux.md) 
+and follow the instructions for the following sections:
 
-* Install Java
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
@@ -13,13 +13,13 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
     echo "target_os = ['android', 'unix']" >> .gclient
     gclient sync --force
     ```
+
 2.  Set up android environmental variables (ignore message asking for Oracle Java)
 
     ```bash
     cd trunk
     source build/android/envsetup.sh
-    export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 \
-                        libjingle_java=0 $GYP_DEFINES"
+    export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_java=0 $GYP_DEFINES"
     ```
 
 3.  Create ninja build files
@@ -39,3 +39,4 @@ Go on the Building the code for Linux page (https://github.com/ipop-project/ipop
     ```bash
     ninja -C out/Debug ipop-tincan
     ```
+

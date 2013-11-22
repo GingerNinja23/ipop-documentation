@@ -1,45 +1,30 @@
-These instructions are from these links:
+Tested on Ubuntu 12.04 and Debian Wheezy.
 
--   https://sites.google.com/a/chromium.org/dev/developers/how-tos/install-depot-tools
--   https://sites.google.com/site/webrtc/reference/getting-started/prerequisite-sw
--   https://sites.google.com/site/webrtc/reference/getting-started
+These instructions are derived from these links:
 
-## Installing tools and code
-
-### Install Java
-
-Our code does not need Java to compile or run, but the setup tools require it.
-
-On Debian/Ubuntu, you can simply install the `default-jdk`:
-
-```bash
-sudo apt-get install default-jdk
-```
-
-And then set the `JAVA_HOME` environment variable:
-
-```bash
-echo 'export JAVA_HOME=/usr/lib/jvm/default-java' >> ~/.profile
-export JAVA_HOME=/usr/lib/jvm/default-java
-```
+* https://sites.google.com/a/chromium.org/dev/developers/how-tos/install-depot-tools
+* https://sites.google.com/site/webrtc/reference/getting-started/prerequisite-sw
+* https://sites.google.com/site/webrtc/reference/getting-started
 
 ### Install necessary libraries and chromium tools
 
-1.  This works on Debian-based distros
+1.  Install dependencies
 
     ```bash
-    sudo apt-get install libexpat1-dev git subversion build-essential
+    sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
     ```
 
 2.  Download depot_tools for chromium repo
 
     ```bash
+    mkdir libjingle; cd libjingle
     git clone --depth 1 -b master https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
 3.  Set up environmental variables
 
     ```bash
+    export JAVA_HOME=/usr/lib/jvm/default-java
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
@@ -48,10 +33,10 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 1.  Configure gclient to download libjingle code
 
     ```bash
-    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.44
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
     ```
 
-2.  Download libjingle and dependencies (this takes a while)
+2.  Download libjingle and dependencies (this may take a while)
 
     ```bash
     gclient sync --force
@@ -61,13 +46,11 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone https://github.com/ipop-project/ipop-tap.git
-    git clone https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Building ipop-tincan
-
-### For Linux
+### Building ipop-tincan
 
 1.  Return to libjingle trunk directory
 
@@ -77,18 +60,10 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 
 2.  Copy modified gyp files to trunk/talk directory
 
-    a.  Run:
-
     ```bash
     cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
-    ```
-
-    b.  (Optional) Add this step on a 32-bit machine
-
-    ```bash
-    export GYP_DEFINES="target_arch=ia32"
     ```
 
 3.  Generate ninja build files
@@ -108,3 +83,5 @@ export JAVA_HOME=/usr/lib/jvm/default-java
     ```bash
     ninja -C out/Debug ipop-tincan
     ```
+
+6.  The generated binary is located at out/Release/ipop-tincan or out/Debug/ipop-tincan

@@ -1,17 +1,19 @@
-This is for OpenWRT malta device which is designed for Qemu Mipsel (http://wiki.openwrt.org/doc/howto/qemu).
+This is for OpenWRT malta device which is designed for
+[Qemu Mipsel](http://wiki.openwrt.org/doc/howto/qemu) and have been tested
+on Debian Wheezy 64-bit.
 
-Go on the Building the code for Linux page (https://github.com/ipop-project/ipop-tincan/wiki/Building-the-code-for-Linux) and follow the instructions for the following sections
+Go on the [Building the code for Linux page](Building-the-code-for-Linux.md) 
+and follow the instructions for the following sections:
 
-* Install Java
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
 ## Set up OpenWRT build environment and build code
 
-1. Install ccache and svn
+1. Install ccache
 
    ```bash
-   sudo apt-get install ccache svn
+   sudo apt-get install ccache
    ```
 
 2.  Go to trunk/third-party directory and download OpenWRT SDK for openwrt malta
