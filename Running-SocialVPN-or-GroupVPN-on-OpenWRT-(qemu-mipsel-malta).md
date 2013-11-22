@@ -48,24 +48,30 @@ This uses Qemu mipsel to run OpenWRT malta (which is designed specifically for t
     cd ipop-openwrt
     ```
 
-2.  Launch groupvpn
+2.  Update config file with appropriate credentials
+
+    ```bash
+    vi config.json
+    ```
+
+3.  Launch groupvpn
 
     ```bash
     ./ipop-tincan 1> out.log 2> err.log &
     ```
 
-3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address
+4.  Start the appropriate controller
 
     a.   For SocialVPN
 
     ```bash
-    python svpn_controller.py username password xmpp-host
+    ./svpn_controller.py -c config.json
     ```
 
     a.   For GroupVPN
 
     ```bash
-    python gvpn_controller.py username password xmpp-host ip-address
+    ,/gvpn_controller.py -c config.json
     ```
 
 4.  Check the network devices and ip address for your device

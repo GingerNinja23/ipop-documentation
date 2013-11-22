@@ -1,3 +1,11 @@
+These instructions have been tested on Raspbian on a Raspberry Pi device.
+
+These instructions are derived from these links:
+
+* https://sites.google.com/a/chromium.org/dev/developers/how-tos/install-depot-tools
+* https://sites.google.com/site/webrtc/reference/getting-started/prerequisite-sw
+* https://sites.google.com/site/webrtc/reference/getting-started
+
 ### Install necessary libraries and chromium tools
 
 1.  This works on Debian-based distros
@@ -28,7 +36,7 @@
 1.  Configure gclient to download libjingle code
 
     ```bash
-    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.44
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
     ```
 
 2.  Download libjingle and dependencies (this takes a while)
@@ -41,13 +49,11 @@
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone https://github.com/ipop-project/ipop-tap.git
-    git clone https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tap.git
+    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Building ipop-tincan
-
-### For Linux
+### Building ipop-tincan
 
 1.  Return to libjingle trunk directory
 

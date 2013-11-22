@@ -54,30 +54,36 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 1.  Create directory for socialvpn files
 
     ```bash
-    platform-tools/adb shell mkdir data/svpn
-    platform-tools/adb shell mkdir data/svpn/python27
+    platform-tools/adb shell mkdir data/ipop
+    platform-tools/adb shell mkdir data/ipop/python27
     ```
 
 2.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget -O ipop-android.tgz http://goo.gl/tMrQMG
+    wget -O ipop-android.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-android.tgz
     wget -O python27.tgz http://goo.gl/jjJxyd
     tar xzvf python27.tgz; tar xzvf ipop-android.tgz
+    ```
+
+3.  Use the config.json file with Google credentials (or Jabber)
+
+    ```bash
+    vi config.json
     ```
 
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-android /data/svpn
-    platform-tools/adb push python27 /data/svpn/python27
+    platform-tools/adb push ipop-android /data/ipop
+    platform-tools/adb push python27 /data/ipop/python27
     ```
 
 4.  Access the AVD shell and go to svpn directory
 
     ```bash
     platform-tools/adb shell
-    cd /data/svpn
+    cd /data/ipop
     ```
 
 5.  Launch socialvpn
@@ -91,7 +97,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
     ```bash
     ln -s svpn_controller.py vpn_controller.py
-    sh start_controller.sh username password xmpp-host
+    sh start_controller.sh -c config.json
     ```
 
 7.  Check the network devices and ip address for your device

@@ -10,33 +10,39 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     cd ipop
     ```
 
-2.  Launch groupvpn
+2.  Update config file with proper credentials
+
+    ```bash
+    vi config.json
+    ```
+
+3.  Launch groupvpn
 
     ```bash
     sudo sh -c './ipop-tincan 1> out.log 2> err.log &'
     ```
 
-3.  Log into XMPP (e.g. Google Chat, Jabber.org, or your own private XMPP server) using username/password credentials and configuring a virtual IP address
+4.  Start the appropriate controller
 
     a.   For SocialVPN
 
     ```bash
-    python svpn_controller.py username password xmpp-host
+    ./svpn_controller.py -c config.json
     ```
 
     a.   For GroupVPN
 
     ```bash
-    python gvpn_controller.py username password xmpp-host ip-address
+    ./gvpn_controller.py -c config.json
     ```
 
-4.  Check the network devices and ip address for your device
+5.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
     ```
 
-5.  Kill socialvpn or groupvpn
+6.  Kill socialvpn or groupvpn
 
     ```bash
     pkill ipop-tincan

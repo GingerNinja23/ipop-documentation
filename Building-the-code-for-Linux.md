@@ -46,8 +46,8 @@ These instructions are derived from these links:
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tap.git
+    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tincan.git
     ```
 
 ### Building ipop-tincan

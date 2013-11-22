@@ -1,4 +1,4 @@
-Go on the [Building the code for Linux page](Building-the-code-for-Linux.md) 
+Go on the [Building the code for Linux page](Building-the-code-for-Linux) 
 and follow the instructions for the following sections:
 
 * Install necessary libraries and chromium tools
