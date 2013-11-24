@@ -1,12 +1,14 @@
+Tested on Ubuntu 12.04 and Debian Wheezy.
+
 Go on the [[Building the code for Linux page|Building the code for Linux]]
-and follow the instructions for the following sections:
+and follow the instructions in the first two sections:
 
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
-### Set up Android build environment and build code
+### Download Android dependencies
 
-1.  Return to libjingle root directory, update .gclient file and download Android dependencies
+1.  Return to libjingle root directory, update .gclient file to download Android dependencies
 
     ```bash
     cd ../../../
@@ -22,19 +24,21 @@ and follow the instructions for the following sections:
     export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_java=0 $GYP_DEFINES"
     ```
 
-3.  Create ninja build files
+### Build the code
+
+1.  Create ninja build files
 
     ```bash
     gclient runhooks --force
     ```
 
-4.  Build tincan for android (binary located at out/Release/ipop-tincan)
+2.  Build tincan for android (binary located at out/Release/ipop-tincan)
 
     ```bash
     ninja -C out/Release ipop-tincan
     ```
 
-5.  To build debug version with gdb symbols (but creates 25 MB binary)
+3.  To build debug version with gdb symbols (but creates 25 MB binary)
 
     ```bash
     ninja -C out/Debug ipop-tincan

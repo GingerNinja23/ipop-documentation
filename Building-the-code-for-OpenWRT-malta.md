@@ -3,12 +3,12 @@ This is for OpenWRT malta device which is designed for
 on Debian Wheezy 64-bit.
 
 Go on the [[Building the code for Linux page|Building the code for Linux]]
-and follow the instructions for the following sections:
+and follow the instructions for the first two sections:
 
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
-## Set up OpenWRT build environment and build code
+## Download OpenWRT toolchain and libraries
 
 1. Install ccache
 
@@ -48,13 +48,15 @@ and follow the instructions for the following sections:
     cd ../../
     ```
 
-5.  Create ninja build files
+### Building the code
+
+1.  Create ninja build files
 
     ```bash
     gclient runhooks --force
     ```
 
-6. Update ninja build files to use ```-msoft-float``` and ```-fno-stack-protector```
+2. Update ninja build files to use ```-msoft-float``` and ```-fno-stack-protector```
 
     ```bash
     sed -i 's/mhard-float/msoft-float/g' `find out/Release -name *.ninja`
@@ -63,13 +65,13 @@ and follow the instructions for the following sections:
     sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Debug -name *.ninja`
     ```
 
-6.  Build tincan for OpenWrt (binary located at out/Release/ipop-tincan)
+3.  Build tincan for OpenWrt (binary located at out/Release/ipop-tincan)
 
     ```bash
     ninja -C out/Release ipop-tincan
     ```
 
-7.  To build debug version with gdb symbols (but creates 25 MB binary)
+4.  To build debug version with gdb symbols (but creates 25 MB binary)
 
     ```bash
     ninja -C out/Debug ipop-tincan

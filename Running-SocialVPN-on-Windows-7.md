@@ -1,4 +1,7 @@
-This has been tested on Windows 7 but it should also work on Windows XP and Windows 8. Also, P2P connections are not encrypted on Windows because libjingle library currently uses SChannel for Windows which does not have DTLS support.
+This has been tested on Windows 7 but it is buggy so you will experience 
+random crashes. Also, P2P connections are not encrypted on Windows because 
+libjingle library currently uses SChannel for Windows which does not have 
+DTLS support.
 
 ##Install Dependencies
 
