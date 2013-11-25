@@ -1,3 +1,5 @@
+These instructions are for Ubuntu 12.04 or Debian Wheezy
+
 This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 ### Install Qemu and running OpenWRT on your system
@@ -15,7 +17,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     wget http://downloads.openwrt.org/attitude_adjustment/12.09-rc1/malta/generic/openwrt-malta-le-vmlinux.elf
     ```
 
-3.  Run OpenWRT image on Qemu (make sure you use ```-nographic`` flag), press enter to activate console
+3.  Run OpenWRT image on Qemu (make sure you use ```-nographic`` flag)
 
     ```bash
     qemu-system-mipsel -kernel openwrt-malta-le-vmlinux.elf -m 256 -nographic
@@ -38,12 +40,12 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
     ```
 
-### Download and run binaries
+### Download and configure SocialVPN
 
 1.  Download socialvpn/groupvpn and extract for OpenWRT
 
     ```bash
-    wget -O ipop-openwrt.tgz --no-check-certificate http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt.tgz
+    wget -O ipop-openwrt.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt.tgz
     tar xvzf ipop-openwrt.tgz
     cd ipop-openwrt
     ```
@@ -54,13 +56,15 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     vi config.json
     ```
 
-3.  Launch groupvpn
+### Running SocialVPN
+
+1.  Launch ipop-tincan
 
     ```bash
     ./ipop-tincan 1> out.log 2> err.log &
     ```
 
-4.  Start the appropriate controller
+2.  Start the appropriate controller
 
     a.   For SocialVPN
 
@@ -74,13 +78,15 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ,/gvpn_controller.py -c config.json
     ```
 
-4.  Check the network devices and ip address for your device
+3.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
     ```
 
-5.  Kill socialvpn or groupvpn
+### Closing SocialVPN
+
+1.  Kill socialvpn or groupvpn
 
     ```bash
     ps

@@ -1,6 +1,6 @@
 These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-bit).
 
-## Download and run binaries
+### Download and configure SocialVPN
 
 1.  Download groupvpn/socialvpn and extract for Linux
 
@@ -16,13 +16,15 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     vi config.json
     ```
 
-3.  Launch groupvpn
+### Running SocialVPN
+
+1.  Launch ipop-tincan
 
     ```bash
     sudo sh -c './ipop-tincan 1> out.log 2> err.log &'
     ```
 
-4.  Start the appropriate controller
+2.  Start the appropriate controller
 
     a.   For SocialVPN
 
@@ -36,13 +38,15 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     ./gvpn_controller.py -c config.json
     ```
 
-5.  Check the network devices and ip address for your device
+3.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
     ```
 
-6.  Kill socialvpn or groupvpn
+### Closing SocialVPN
+
+1.  Kill socialvpn or groupvpn
 
     ```bash
     pkill ipop-tincan

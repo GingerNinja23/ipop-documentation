@@ -47,7 +47,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     platform-tools/adb shell netcfg
     ```
 
-### Download and run Android SocialVPN
+### Download SocialVPN and dependencies
 
 1.  Create directory for socialvpn files
 
@@ -77,34 +77,36 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
-4.  Access the AVD shell and go to svpn directory
+### Running SocialVPN in Android Emulator
+
+1.  Access the AVD shell and go to svpn directory
 
     ```bash
     platform-tools/adb shell
     cd /data/ipop
     ```
 
-5.  Launch socialvpn
+2.  Launch socialvpn
 
     ```bash
     chmod 755 ipop-tincan
     ./ipop-tincan 1> out.log 2> err.log &
     ```
 
-6.  Log into XMPP (Google Chat or Jabber.org) using credentials
+3.  Log into XMPP (Google Chat or Jabber.org) using credentials
 
     ```bash
     ln -s svpn_controller.py vpn_controller.py
     sh start_controller.sh -c config.json
     ```
 
-7.  Check the network devices and ip address for your device
+4.  Check the network devices and ip address for your device
 
     ```bash
     netcfg
     ```
 
-8.  Kill socialvpn process and terminate the AVD
+5.  Kill socialvpn process and terminate the AVD
 
     >   It is important to kill svpn-jingle-android process in order to exit
     >   shell.

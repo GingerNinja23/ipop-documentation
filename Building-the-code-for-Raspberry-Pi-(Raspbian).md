@@ -69,8 +69,7 @@ These instructions are derived from these links:
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
     ```
 
-3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi"
-    to "hard" for arm_version 6
+3.  Update build/common.gypi configurations
 
     ```bash
     sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi 

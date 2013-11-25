@@ -1,8 +1,8 @@
 These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard floating point.
 
-## Download and run binaries
+## Download and configure SocialVPN
 
-1.  Download groupvpn/socialvpn and extract for Linux
+1.  Download groupvpn/socialvpn and extract for Raspberry Pi
 
     ```bash
     wget -O ipop-rpi.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi.tgz
