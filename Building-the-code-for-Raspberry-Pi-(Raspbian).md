@@ -17,7 +17,7 @@ These instructions are derived from these links:
 2.  Download depot_tools for chromium repo
 
     ```bash
-    git clone --depth 1 -b master https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
 3.  Set up environmental variables
@@ -49,8 +49,8 @@ These instructions are derived from these links:
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
 ### Building ipop-tincan
@@ -69,7 +69,8 @@ These instructions are derived from these links:
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
     ```
 
-3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi" to "hard" for arm_version 6
+3.  Update build/common.gypi by setting "arm_fpu" to "vfp" and "arm_float_abi"
+    to "hard" for arm_version 6
 
     ```bash
     sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi 

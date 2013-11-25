@@ -18,7 +18,7 @@ These instructions are derived from these links:
 
     ```bash
     mkdir libjingle; cd libjingle
-    git clone --depth 1 -b master https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
 3.  Set up environmental variables
@@ -46,8 +46,8 @@ These instructions are derived from these links:
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 -b master https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
+    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
 ### Building ipop-tincan
@@ -86,3 +86,4 @@ These instructions are derived from these links:
 
 6.  The generated binary is located at `out/Release/ipop-tincan` or
     `out/Debug/ipop-tincan`
+
