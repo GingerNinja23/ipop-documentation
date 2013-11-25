@@ -106,7 +106,9 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     netcfg
     ```
 
-5.  Kill socialvpn process and terminate the AVD
+### Closing SocialVPN
+
+1.  Kill socialvpn process and terminate the AVD
 
     >   It is important to kill svpn-jingle-android process in order to exit
     >   shell.

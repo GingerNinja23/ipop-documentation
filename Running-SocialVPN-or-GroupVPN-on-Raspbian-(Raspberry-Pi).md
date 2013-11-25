@@ -16,13 +16,15 @@ These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard fl
     vi config.json
     ```
 
-3.  Launch ipop-tincan
+### Running SocialVPN
+
+1.  Launch ipop-tincan
 
     ```bash
     sudo sh -c './ipop-tincan-rpi 1> out.log 2> err.log &'
     ```
 
-4.  Lunch the appropriate controller
+2.  Lunch the appropriate controller
 
     a.   For SocialVPN
 
@@ -36,13 +38,15 @@ These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard fl
     ./gvpn_controller -c config.json
     ```
 
-4.  Check the network devices and ip address for your device
+3.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
     ```
 
-5.  Kill socialvpn or groupvpn
+### Closing SocialVPN
+
+1.  Kill socialvpn or groupvpn
 
     ```bash
     pkill ipop-tincan-rpi
