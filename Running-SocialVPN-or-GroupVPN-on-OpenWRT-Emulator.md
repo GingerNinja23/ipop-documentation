@@ -2,7 +2,7 @@ These instructions are for Ubuntu 12.04 or Debian Wheezy
 
 This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
-### Install Qemu and running OpenWRT on your system
+## Install Qemu and running OpenWRT on your system
 
 1.  Update Debian/Ubuntu repo
 
@@ -23,7 +23,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     qemu-system-mipsel -kernel openwrt-malta-le-vmlinux.elf -m 256 -nographic
     ```
 
-### Configuring OpenWRT for SocialVPN
+## Configuring OpenWRT for SocialVPN
 
 1.  Run DHCP on bridge interface br-lan to get internet connectivity and set up DNS server
 
@@ -40,7 +40,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
     ```
 
-### Download and configure SocialVPN
+## Download and configure SocialVPN
 
 1.  Download socialvpn/groupvpn and extract for OpenWRT
 
@@ -56,7 +56,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     vi config.json
     ```
 
-### Running SocialVPN
+## Running SocialVPN
 
 1.  Launch ipop-tincan
 
@@ -84,7 +84,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     /sbin/ifconfig ipop
     ```
 
-### Closing SocialVPN
+## Closing SocialVPN
 
 1.  Kill socialvpn or groupvpn
 

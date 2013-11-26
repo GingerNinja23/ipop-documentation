@@ -6,7 +6,7 @@ and follow the instructions in the first two sections:
 * Install necessary libraries and chromium tools
 * Get the libjingle and ipop-tincan source code
 
-### Download Android dependencies
+## Download Android dependencies
 
 1.  Return to libjingle root directory, update .gclient file to download Android dependencies
 
@@ -24,7 +24,7 @@ and follow the instructions in the first two sections:
     export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_java=0 $GYP_DEFINES"
     ```
 
-### Build the code
+## Build the code
 
 1.  Create ninja build files
 

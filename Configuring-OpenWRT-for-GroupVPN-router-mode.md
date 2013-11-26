@@ -3,7 +3,7 @@ without having to install GroupVPN on each individual device. They
 automatically get GroupVPN connectivity by connecting to an OpenWRT 
 router. OpenWRT needs to be configured to enable this feature.
 
-### Update OpenWRT network
+## Update OpenWRT network
 
 First, you need to add the GroupVPN interface (ipop) to the network file,
 this network is configured for 192.168.0.0/16 therefore any packet destined
@@ -19,7 +19,7 @@ config interface ipop
 EOF
 ```
 
-### Update OpenWRT iptables
+## Update OpenWRT iptables
 
 ```bash
 cat <<EOF >> /etc/config/firewall
@@ -36,7 +36,7 @@ config forwarding
 EOF
 ```
 
-### Running GroupVPN on your OpenWRT router
+## Running GroupVPN on your OpenWRT router
 Follow the instructions on this [page](https://github.com/ipop-project/ipop-tincan/wiki/Running-SocialVPN-or-GroupVPN-on-OpenWRT-(qemu-mipsel-malta).
 When running GroupVPN, make sure you set your IP address to the corresponding
 subnet of your br-lan device, using the lowest address in the subnet. For 

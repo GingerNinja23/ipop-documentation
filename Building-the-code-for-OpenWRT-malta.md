@@ -48,7 +48,7 @@ and follow the instructions for the first two sections:
     cd ../../
     ```
 
-### Building the code
+## Building the code
 
 1.  Create ninja build files
 

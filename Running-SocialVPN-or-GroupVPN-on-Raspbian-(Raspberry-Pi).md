@@ -16,7 +16,7 @@ These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard fl
     vi config.json
     ```
 
-### Running SocialVPN
+## Running SocialVPN
 
 1.  Launch ipop-tincan
 
@@ -44,7 +44,7 @@ These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard fl
     /sbin/ifconfig ipop
     ```
 
-### Closing SocialVPN
+## Closing SocialVPN
 
 1.  Kill socialvpn or groupvpn
 

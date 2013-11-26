@@ -3,7 +3,7 @@ These instructions are for Ubuntu 12.04. Your VM should have 1GB RAM or more.
 [You can create such a VM on
 FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
-### Install necessary packages
+## Install necessary packages
 
 1.  Update Debian/Ubuntu repo
 
@@ -26,7 +26,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     tools/android update sdk -u -t platform-tools,android-16,sysimg-16
     ```
 
-### Instantiate Android Virtual Device
+## Instantiate Android Virtual Device
 
 1.  Define and create Android Virtual Device (AVD) (this also takes a while)
 
@@ -47,7 +47,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     platform-tools/adb shell netcfg
     ```
 
-### Download SocialVPN and dependencies
+## Download SocialVPN and dependencies
 
 1.  Create directory for socialvpn files
 
@@ -77,7 +77,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
-### Running SocialVPN in Android Emulator
+## Running SocialVPN in Android Emulator
 
 1.  Access the AVD shell and go to svpn directory
 
@@ -106,7 +106,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     netcfg
     ```
 
-### Closing SocialVPN
+## Closing SocialVPN
 
 1.  Kill socialvpn process and terminate the AVD
 
