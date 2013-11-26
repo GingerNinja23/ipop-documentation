@@ -100,3 +100,6 @@ These instructions are derived from these links:
     ```bash
     make ipop-tincan BUILDTYPE=Debug
     ```
+
+8.  The generated binary is located at `out/Release/ipop-tincan` or
+    `out/Debug/ipop-tincan`

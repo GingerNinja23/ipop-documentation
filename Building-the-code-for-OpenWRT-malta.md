@@ -76,3 +76,5 @@ and follow the instructions for the first two sections:
     ```bash
     ninja -C out/Debug ipop-tincan
     ```
+5.  The generated binary is located at `out/Release/ipop-tincan` or
+    `out/Debug/ipop-tincan`

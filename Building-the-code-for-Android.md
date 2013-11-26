@@ -44,3 +44,5 @@ and follow the instructions in the first two sections:
     ninja -C out/Debug ipop-tincan
     ```
 
+4.  The generated binary is located at `out/Release/ipop-tincan` or
+    `out/Debug/ipop-tincan`
