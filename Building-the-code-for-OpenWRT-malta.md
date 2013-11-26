@@ -5,10 +5,10 @@ on Debian Wheezy 64-bit.
 Go on the [[Building the code for Linux page|Building the code for Linux]]
 and follow the instructions for the first two sections:
 
-* Install necessary libraries and chromium tools
-* Get the libjingle and ipop-tincan source code
+* Download dependencies
+* Download source code
 
-## Download OpenWRT toolchain and libraries
+## Download OpenWRT toolchain
 
 1. Install ccache
 
@@ -48,7 +48,7 @@ and follow the instructions for the first two sections:
     cd ../../
     ```
 
-## Building the code
+## Build ipop-tincan for OpenWRT
 
 1.  Create ninja build files
 

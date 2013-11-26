@@ -6,7 +6,7 @@ These instructions are derived from these links:
 * https://sites.google.com/site/webrtc/reference/getting-started/prerequisite-sw
 * https://sites.google.com/site/webrtc/reference/getting-started
 
-## Install necessary libraries and chromium tools
+## Download dependencies
 
 1.  Install dependencies
 
@@ -28,7 +28,7 @@ These instructions are derived from these links:
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
-## Get the libjingle and ipop-tincan source code
+## Download source code
 
 1.  Configure gclient to download libjingle code
 
@@ -50,7 +50,7 @@ These instructions are derived from these links:
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Building ipop-tincan
+## Build ipop-tincan for Linux
 
 1.  Return to libjingle trunk directory
 

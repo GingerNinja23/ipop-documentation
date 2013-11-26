@@ -3,8 +3,8 @@ Tested on Ubuntu 12.04 and Debian Wheezy.
 Go on the [[Building the code for Linux page|Building the code for Linux]]
 and follow the instructions in the first two sections:
 
-* Install necessary libraries and chromium tools
-* Get the libjingle and ipop-tincan source code
+* Download dependencies
+* Download source code
 
 ## Download Android dependencies
 
@@ -24,7 +24,7 @@ and follow the instructions in the first two sections:
     export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_java=0 $GYP_DEFINES"
     ```
 
-## Build the code
+## Build ipop-tincan for Android
 
 1.  Create ninja build files
 

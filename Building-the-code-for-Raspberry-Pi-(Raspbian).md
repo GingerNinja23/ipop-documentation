@@ -6,7 +6,7 @@ These instructions are derived from these links:
 * https://sites.google.com/site/webrtc/reference/getting-started/prerequisite-sw
 * https://sites.google.com/site/webrtc/reference/getting-started
 
-## Install necessary libraries and chromium tools
+## Download dependencies
 
 1.  This works on Debian-based distros
 
@@ -31,7 +31,7 @@ These instructions are derived from these links:
     export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
     ```
 
-## Get the libjingle and ipop-tincan source code
+## Download source code
 
 1.  Configure gclient to download libjingle code
 
@@ -53,7 +53,7 @@ These instructions are derived from these links:
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Building ipop-tincan
+## Build ipop-tincan for Raspbian
 
 1.  Return to libjingle trunk directory
 
