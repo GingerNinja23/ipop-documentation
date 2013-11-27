@@ -8,7 +8,7 @@
     * [[Android|Running SocialVPN or GroupVPN on Android Emulator]]
     * [[OpenWRT|Running SocialVPN or GroupVPN on OpenWRT Emulator]]
     * [[Raspberry Pi|Running SocialVPN or GroupVPN on Raspbian (Raspberry Pi)]]
-    * [[Windows|Running SocialVPN on Windows 7]]
+    * [[Windows 7|Running SocialVPN on Windows 7]]
 * **Independent Deployment**
     * [[XMPP Service|Installing XMPP server]]
     * [[TURN Service|Installing TURN server]]
