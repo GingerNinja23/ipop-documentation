@@ -120,5 +120,5 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
     platform-tools/adb shell emu kill
     ```
 
-Run socialvpn on another machine using same credentials and they will connect
-with each other.
+**Run socialvpn on another machine using same credentials and they will connect
+with each other.**

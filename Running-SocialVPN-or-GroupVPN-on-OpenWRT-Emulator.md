@@ -2,9 +2,9 @@ These instructions are for Ubuntu 12.04 or Debian Wheezy
 
 This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
-## Install Qemu and running OpenWRT on your system
+## Run OpenWRT on Qemu
 
-1.  Update Debian/Ubuntu repo
+1.  Install qemu and necessary utils
 
     ```bash
     sudo apt-get update
