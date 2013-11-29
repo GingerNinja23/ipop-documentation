@@ -12,7 +12,7 @@ These instructions have only been tested on Ubuntu 12.04
 2.  Update configuration and restart
 
     ```bash
-    wget -O ejabberd.cfg --no-check-certificate http://goo.gl/iObOjl
+    wget -O ejabberd.cfg http://goo.gl/iObOjl
     sudo cp ejabberd.cfg /etc/ejabberd/
     sudo service ejabberd restart
     ```
@@ -33,10 +33,10 @@ These instructions have only been tested on Ubuntu 12.04
     ```bash
     {
         "ip4": "172.31.0.100",
-        "xmpp_username": "user",
-        "xmpp_password": "blah",
-        "xmpp_host": "example.com",
-        "stun": ["public-ip-of-your-vm:3478"],
+        "xmpp_username": "svpnuser@ejabberd",
+        "xmpp_password": "password",
+        "xmpp_host": "public-ip-of-ejabberd-vm",
+        "stun": ["public-ip-of-ejabberd-vm:3478"],
     }
     ```
 

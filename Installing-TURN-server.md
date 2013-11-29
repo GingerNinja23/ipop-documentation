@@ -57,9 +57,9 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     ```bash
     {
         "ip4": "172.31.0.100",
-        "xmpp_username": "user",
-        "xmpp_password": "blah",
-        "xmpp_host": "example.com",
+        "xmpp_username": "svpnuser@ejabberd",
+        "xmpp_password": "password",
+        "xmpp_host": "public-ip-of-ejabberd-server",
         "stun": ["public-ip-of-your-vm:19302"],
         "turn": [
             {"server": "public-ip-of-your-vm:19302", "user": "svpnjingle", "pass": "1234567890"}
