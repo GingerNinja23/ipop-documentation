@@ -1,7 +1,7 @@
 These instructions are for Ubuntu 12.04. Your VM should have 1GB RAM or more.
 
-[You can create such a VM on
-FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
+You can create such a VM on
+[FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
 ## Install necessary packages
 
@@ -71,7 +71,7 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
         "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com",
+        "xmpp_host": "talk.google.com"
     }
     ```
 

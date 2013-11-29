@@ -1,4 +1,4 @@
-These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-bit).
+These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
 ## Download and configure SocialVPN
 
@@ -10,14 +10,14 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     cd ipop-linux_14.01.pre1
     ```
 
-2.  Update config file with proper credentials
+2.  Update config file with proper credentials (see below)
 
     ```bash
     {
         "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com",
+        "xmpp_host": "talk.google.com"
     }
     ```
 
@@ -26,7 +26,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
 1.  Launch ipop-tincan
 
     ```bash
-    sudo sh -c './ipop-tincan 1> out.log 2> err.log &'
+    sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
 
 2.  Start the appropriate controller
@@ -43,6 +43,8 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     ./gvpn_controller.py -c config.json
     ```
 
+    [[controller.png]]
+
 3.  Check the network devices and ip address for your device
 
     ```bash
@@ -56,7 +58,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
 1.  Kill socialvpn or groupvpn
 
     ```bash
-    pkill ipop-tincan
+    pkill ipop-tincan-x86_64
     pkill svpn_controller.py
     pkill gvpn_controller.py
     ```

@@ -12,6 +12,8 @@
 * **Independent Deployment**
     * [[XMPP Service|Installing XMPP server]]
     * [[TURN Service|Installing TURN server]]
-* [[IPOP-Tincan API|api]]
-
+* **Developer Docs**
+    * [[IPOP-Tincan API|api]]
+    * [[OpenWRT Configuration|OpenWRT Configuration]]
+    * [[Writing a controller|Writting a controller]]
 

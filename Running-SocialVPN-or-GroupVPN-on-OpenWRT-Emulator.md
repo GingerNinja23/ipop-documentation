@@ -57,7 +57,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
         "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com",
+        "xmpp_host": "talk.google.com"
     }
     ```
 
@@ -82,6 +82,8 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ```bash
     ./gvpn_controller.py -c config.json
     ```
+
+    [[controller.png]]
 
 3.  Check the network devices and ip address for your device
 
