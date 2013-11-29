@@ -50,7 +50,7 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     netstat -aupn | grep 19302
     ```
 
-## Configure SocialVPN/GroupVPN to use TURN
+## Configure SocialVPN/GroupVPN 
 
 1.  Update your config.json file with your TURN settings, see below for template 
 
