@@ -59,15 +59,20 @@ FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 2.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget -O ipop-android.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-android.tgz
-    wget -O python27.tgz http://goo.gl/jjJxyd
-    tar xzvf python27.tgz; tar xzvf ipop-android.tgz
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.pre1.tgz
+    wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
+    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre1.tgz
     ```
 
 3.  Use the config.json file with Google credentials (or Jabber)
 
     ```bash
-    vi config.json
+    {
+        "ip4": "172.31.0.100",
+        "xmpp_username": "username@gmail.com",
+        "xmpp_password": "enter-password-here",
+        "xmpp_host": "talk.google.com",
+    }
     ```
 
 3.  Use `adb push` to copy downloaded files to AVD

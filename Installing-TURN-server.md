@@ -54,7 +54,7 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
 
 1.  Update your config.json file with your TURN settings, see below for template 
 
-    ```bash
+    ```
     {
         "ip4": "172.31.0.100",
         "xmpp_username": "svpnuser@ejabberd",

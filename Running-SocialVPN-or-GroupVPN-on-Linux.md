@@ -5,15 +5,20 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
 1.  Download groupvpn/socialvpn and extract for Linux
 
     ```bash
-    wget -O ipop-linux_0.1.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_0.1.tgz
-    tar xvzf ipop-linux_0.1.tgz
-    cd ipop-linux_0.1
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_14.01.pre1.tgz
+    tar xvzf ipop-linux_14.01.pre1.tgz
+    cd ipop-linux_14.01.pre1
     ```
 
 2.  Update config file with proper credentials
 
     ```bash
-    vi config.json
+    {
+        "ip4": "172.31.0.100",
+        "xmpp_username": "username@gmail.com",
+        "xmpp_password": "enter-password-here",
+        "xmpp_host": "talk.google.com",
+    }
     ```
 
 ## Running SocialVPN
@@ -43,6 +48,8 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy or later (64-
     ```bash
     /sbin/ifconfig ipop
     ```
+
+    [[ifconfig.png]]
 
 ## Closing SocialVPN
 

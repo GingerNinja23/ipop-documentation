@@ -45,15 +45,20 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 1.  Download socialvpn/groupvpn and extract for OpenWRT
 
     ```bash
-    wget -O ipop-openwrt.tgz http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt.tgz
-    tar xvzf ipop-openwrt.tgz
-    cd ipop-openwrt
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt-malta_14.01.pre1.tgz
+    tar xvzf ipop-openwrt-malta_14.01.pre1.tgz
+    cd ipop-openwrt-malta_14.01.pre1.tgz
     ```
 
 2.  Update config file with appropriate credentials
 
     ```bash
-    vi config.json
+    {
+        "ip4": "172.31.0.100",
+        "xmpp_username": "username@gmail.com",
+        "xmpp_password": "enter-password-here",
+        "xmpp_host": "talk.google.com",
+    }
     ```
 
 ## Running SocialVPN
@@ -75,7 +80,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     a.   For GroupVPN
 
     ```bash
-    ,/gvpn_controller.py -c config.json
+    ./gvpn_controller.py -c config.json
     ```
 
 3.  Check the network devices and ip address for your device
@@ -83,6 +88,8 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ```bash
     /sbin/ifconfig ipop
     ```
+
+    [[ifconfig.png]]
 
 ## Closing SocialVPN
 
