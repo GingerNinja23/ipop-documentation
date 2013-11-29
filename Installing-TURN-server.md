@@ -48,16 +48,16 @@ http://turnserver.sourceforge.net/
 
 7.  Update your config.json file with your TURN settings
 
-```bash
-{
-    "ip4": "172.31.0.100",
-    "xmpp_username": "user",
-    "xmpp_password": "blah",
-    "xmpp_host": "example.com",
-    "stun": ["public-ip-of-your-vm:19302"],
-    "turn": [
-        {"server": "public-ip-of-your-vm:19302", "user": "bob", "pass": "apple"}
-    ],
-}
-```
+    ```bash
+    {
+        "ip4": "172.31.0.100",
+        "xmpp_username": "user",
+        "xmpp_password": "blah",
+        "xmpp_host": "example.com",
+        "stun": ["public-ip-of-your-vm:19302"],
+        "turn": [
+            {"server": "public-ip-of-your-vm:19302", "user": "bob", "pass": "apple"}
+        ],
+    }
+    ```
 
