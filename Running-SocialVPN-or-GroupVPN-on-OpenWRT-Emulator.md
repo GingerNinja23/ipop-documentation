@@ -50,7 +50,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     cd ipop-openwrt-malta_14.01.pre1.tgz
     ```
 
-2.  Update config file with appropriate credentials
+2.  Update the `config.json` file with appropriate credentials
 
     ```bash
     {

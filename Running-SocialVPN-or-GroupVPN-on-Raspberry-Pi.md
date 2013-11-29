@@ -11,7 +11,7 @@ floating point.
     cd ipop-rpi_14.01.pre1
     ```
 
-2.  Update config.json with proper credentials
+2.  Update the `config.json` with proper credentials
 
     ```bash
     {

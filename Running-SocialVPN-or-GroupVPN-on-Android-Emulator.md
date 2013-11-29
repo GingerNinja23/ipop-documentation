@@ -64,7 +64,7 @@ You can create such a VM on
     tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre1.tgz
     ```
 
-3.  Use the config.json file with Google credentials (or Jabber)
+3.  Use the `config.json` file with Google credentials (or Jabber)
 
     ```bash
     {

@@ -10,7 +10,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     cd ipop-linux_14.01.pre1
     ```
 
-2.  Update config file with proper credentials (see below)
+2.  Update the `config.json` file with proper credentials (see below)
 
     ```bash
     {
