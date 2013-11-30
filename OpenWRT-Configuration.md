@@ -36,6 +36,32 @@ config forwarding
 EOF
 ```
 
+## Update config.json
+It is important to include the following configurations in your `config.json`
+file, you have to enable router_mode, along with `router_ip4_mask`,
+`router_ip6_mask`, `subnet_mask`, and `router_ip`. It should looks as the 
+following:
+
+```
+{
+    "ip4": "192.168.1.0",
+    "xmpp_username": "username@gmail.com",
+    "xmpp_host": "talk.google.com",
+    "xmpp_password": "password",
+    "router_mode": true,
+    "router_ip": "192.168.0.0",
+    "router_ip4_mask": 16,
+    "router_ip6_mask": 64,
+    "subnet_mask": 24
+}
+```
+
+* `router_mode`: should be set to true
+* `router_ip`: should be the network that IPOP will handle
+* `router_ip4_mask`: IPv4 network mask
+* `router_ip6_mask`: IPv6 network mask
+* `subnet_mask`: network mask for the router
+
 ## Running GroupVPN on your OpenWRT router
 Follow the instructions on this [[page|Running SocialVPN or GroupVPN on OpenWRT Emulator]].
 When running GroupVPN, make sure you set your IP address to the corresponding
