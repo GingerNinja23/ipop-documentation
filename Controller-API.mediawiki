@@ -2,7 +2,7 @@ IPOP-Tincan provides a JSON-RPC API over UDP which enables developers
 to extend the functionality of the P2PVPN. This page explain the
 basic functions available over this API.
 
-== Register_svc ==
+== register_svc ==
 This function is designed to allow IPOP-Tincan to register to a
 backend service which will be used to discover social peers and
 bootstrap encrypted P2P connections. Since we currently only support
@@ -22,6 +22,61 @@ XMPP service, this is basically the XMPP username and password.
 |the password used to login to the XMPP service
 |}
 
+== create_link ==
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|overlay_id
+|integer
+|IPOP-Tincan will support multiple overlays in the future (e.g. XMPP, Gnunet)
+so we need an ID for each overlay. Currently, we only support two hardcoded
+IDs (0 for controller, 1 for XMPP service). For now, always set this to 1.
+|-
+|uid
+|string
+|every user has a unique identifier that is determined by the controller. This
+identifier has to be a 40-byte long hexadecimal.
+|-
+|fpr
+|string
+|this is the X509 fingerprint (hash of X509 certificate) of the user. This is
+obtained from the `get_state` api call described below. IPOP-Tincan generates
+an X.509 certificate everytime it runs which resides in main memory.
+|-
+|stun
+|string
+|this parameter specifies the TURN server that will be used for this connection
+(e.g. stun.google.com:19302). You can provide an empty string for this
+parameter but the connection will only succeed if one of the two peers are
+not behind a NAT.
+|-
+|turn
+|string
+|this parameter specifies the TURN server that will be used for this connection
+(e.g. ip-of-turn-server:port). This can be an empty string and is only required
+if both peers are behind symmetric NATs.
+|-
+|turn_user
+|string
+|the username for accessing the TURN server, can be empty string.
+|-
+|turn_pass
+|string
+|the password for accessing the TURN server, can be empty string.
+|-
+|cas
+|string
+|a specifially formatted string that contain a list of IP addresses and
+connection credentials necessary for boostrapping an ICE connection.
+[See ICE RFC](http://tools.ietf.org/html/rfc5245) for more information.
+|-
+|sec
+|boolean
+|this parameter specifies whether or not the connection should be encrypted.
+|}
 
 == Getstate ==
 
