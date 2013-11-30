@@ -2,7 +2,7 @@ IPOP-Tincan provides a JSON-RPC API over UDP which enables developers
 to extend the functionality of the P2PVPN. This page explain the
 basic functions available over this API.
 
-## Register_svc
+== Register_svc ==
 This function is designed to allow IPOP-Tincan to register to a
 backend service which will be used to discover social peers and
 bootstrap encrypted P2P connections. Since we currently only support
@@ -23,7 +23,7 @@ XMPP service, this is basically the XMPP username and password.
 |}
 
 
-Getstate
+== Getstate ==
 
 {| class="wikitable"
 !Parameter
