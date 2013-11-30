@@ -122,7 +122,10 @@ for more than one IP address, this parameter specifies the subnet
 it should route for.
 |}
 
-= getstate =
+= set_remote_ip =
+This call essentially builds the routing that for IPOP-Tincan, it maps
+IP addresses to remote peer uids and uids are mapped to P2P connections.
+Thus this maps IP addresses to P2P connections.
 
 {| class="wikitable"
 !Parameter
@@ -131,7 +134,112 @@ it should route for.
 |-
 |uid
 |string
-|the unique identifier
+|the unique identifier of the remote peer
+|-
+|ip4
+|string
+|the IPv4 address that the remote peer is mapped to, it should fall within
+the subnet of the ipop virtual NIC defined in the ''create_link'' call.
+|-
+|ip6
+|string
+|the IPv6 address that the remote peer is mapped to, it should fall within
+the subnet of the ipop virtual NIC defined in the ''create_link'' call.
+|}
+
+
+= trim_link =
+The P2P library (libjingle) keeps tracks of live P2P connections by sending
+a STUN requests over the link every 0.5 seconds which enables the detection of
+dead links. A dead link triggers an dead connection event which updates the
+status of a connection from online to offline. This trim call provides a 
+mechanism to kill P2P connections whether they are online or offline.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|uid
+|string
+|the unique identifier of the remote peer specifying which P2P connection to
+kill
+|}
+
+
+= set_cb_endpoint =
+IPOP-Tincan currently notifies the controller of two main events: 1) a
+connection request/reply and 2) a link state change (i.e from online to
+offline). This call registers the endpoint that IPOP-Tincan sends the
+notifications to.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|ip
+|string
+|the IP address of the controller
+|-
+|port
+|integer
+|the port number of the controller
+|}
+
+= send_msg =
+This call allows the controller to send an arbitrary message to another
+peer via the overlay specified by the overlay_id. This serves as a secondary
+out-of-band channel to bootstrap P2P connections.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|overlay_id
+|integer
+|this parameter specifies which overlay should be used to send the message.
+This should be set to 1 because we only support ''send_msg'' over the XMPP
+overlay.
+|-
+|uid
+|string
+|the unique identifier of the remote peer that will receive the message
+|}
+
+
+= set_logging =
+By default, IPOP-Tincan prints various debugging messages to stdout, this
+call allows developers to turn off logging.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|flag
+|integer
+|if flag is less zero then logging is disabled.
+|}
+
+= getstate =
+This is a very important call because it allows developers to query the
+state of IPOP-Tincan. In return, IPOP-Tincan replies with the state of
+the local peer and the state of each peer that attempted to connect.
+If the uid of a remote peer is provided, then only the peer state of the
+peer matching the uid is given. If it is an empty string, then all state
+is returned.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|uid
+|string
+|the unique identifier of the remote peer that we want state information
+about. If this is an empty string, then all state is returned.
 |}
 
 
