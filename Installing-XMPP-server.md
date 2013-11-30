@@ -55,5 +55,5 @@ These instructions have only been tested on Ubuntu 12.04
 
 ---
 
-You can also [[setup a TURN server|Installing TURN Relay]] in cases where your
+You can also [[setup a TURN server|Installing TURN Server]] in cases where your
 network firewall does not allow direct connections.
