@@ -16,5 +16,5 @@
 * **Developer Docs**
     * [[Controller API|Controller API]]
     * [[OpenWRT Configuration|OpenWRT Configuration]]
-    * [[Writing a controller|Writting a controller]]
+    * [[Writing a controller|Writing a controller]]
 
