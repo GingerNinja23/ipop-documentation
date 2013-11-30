@@ -37,7 +37,7 @@ EOF
 ```
 
 ## Running GroupVPN on your OpenWRT router
-Follow the instructions on this [page](https://github.com/ipop-project/ipop-tincan/wiki/Running-SocialVPN-or-GroupVPN-on-OpenWRT-(qemu-mipsel-malta).
+Follow the instructions on this [[page|Running SocialVPN or GroupVPN on OpenWRT Emulator]].
 When running GroupVPN, make sure you set your IP address to the corresponding
 subnet of your br-lan device, using the lowest address in the subnet. For 
 example, if your br-lan device has the ip address 192.168.1.1 then you should
