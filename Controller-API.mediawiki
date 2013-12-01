@@ -1,6 +1,6 @@
 IPOP-Tincan provides a JSON-RPC API over UDP which enables developers
-to extend the functionality of the P2PVPN. This page explain the
-basic functions available over this API.
+to extend the functionality of SocialVPN/GroupVPN. This page explain the
+function calls available through the API.
 
 = register_svc =
 This function is designed to allow IPOP-Tincan to register to a
