@@ -39,7 +39,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     ./svpn_controller.py -c config.json
     ```
 
-    a.   For GroupVPN
+    b.   For GroupVPN
 
     ```bash
     ./gvpn_controller.py -c config.json
@@ -55,15 +55,22 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     [[ifconfig.png]]
 
+**Run groupvpn/socialvpn on another machine using same credentials and they will connect
+with each other.**
+
 ## Closing SocialVPN
 
 1.  Kill socialvpn or groupvpn
 
+    a.   For SocialVPN
+
     ```bash
     pkill ipop-tincan-x86_64
     pkill svpn_controller.py
+    ```
+    b.   For GroupVPN
+
+    ```bash
+    pkill ipop-tincan-x86_64
     pkill gvpn_controller.py
     ```
-
-**Run groupvpn/socialvpn on another machine using same credentials and they will connect
-with each other.**
