@@ -64,7 +64,10 @@ You can create such a VM on
     tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre1.tgz
     ```
 
-3.  Use the `config.json` file with Google credentials (or Jabber)
+3.  Update the `config.json` file with proper credentials. For SocialVPN, you
+    don't have to change the *ip4* address, but for GroupVPN it is important
+    to use a different IPv4 address for each machine.
+
 
     ```bash
     {

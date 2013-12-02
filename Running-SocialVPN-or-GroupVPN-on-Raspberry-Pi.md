@@ -11,7 +11,10 @@ floating point.
     cd ipop-rpi_14.01.pre1
     ```
 
-2.  Update the `config.json` with proper credentials
+2.  Update the `config.json` file with proper credentials. For SocialVPN, you
+    don't have to change the *ip4* address, but for GroupVPN it is important
+    to use a different IPv4 address for each machine.
+
 
     ```bash
     {

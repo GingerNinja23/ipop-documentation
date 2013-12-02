@@ -28,7 +28,10 @@ for Windows which does not have DTLS support.
     [[4.jpg]]
 
 4. Right-click "_config.txt_" file and click on "_Edit_". Update with your
-   XMPP service credential. 
+   XMPP service credential.  For SocialVPN, you
+   don't have to change the *ip4* address, but for GroupVPN it is important
+   to use a different IPv4 address for each machine.
+
 
     <Example>
 

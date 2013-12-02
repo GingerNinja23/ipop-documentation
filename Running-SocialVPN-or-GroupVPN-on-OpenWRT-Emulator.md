@@ -50,7 +50,10 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     cd ipop-openwrt-malta_14.01.pre1.tgz
     ```
 
-2.  Update the `config.json` file with appropriate credentials
+2.  Update the `config.json` file with proper credentials. For SocialVPN, you
+    don't have to change the *ip4* address, but for GroupVPN it is important
+    to use a different IPv4 address for each machine.
+
 
     ```bash
     {
