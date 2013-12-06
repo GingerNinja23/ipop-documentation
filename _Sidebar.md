@@ -10,12 +10,12 @@
     * [[Windows 7|Running SocialVPN on Windows 7]]
 * **Running GroupVPN**
     * [[Linux|Running GroupVPN on Linux]]
-    * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
-    * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
     * [[Watchdog Mode|Running GroupVPN in Watchdog Mode]]
+    * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
+    * [[OpenWRT Configuration|OpenWRT Configuration]]
+    * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
 * **Extending the code**
     * [[Controller API|Controller API]]
-    * [[OpenWRT Configuration|OpenWRT Configuration]]
     * [[Writing a controller|Writing a controller]]
     * [[Development Workflow|Development Workflow]]
 * **Deploying services**
