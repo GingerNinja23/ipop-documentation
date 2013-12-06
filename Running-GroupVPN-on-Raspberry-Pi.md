@@ -1,31 +1,29 @@
 These instructions are for Raspbian (Raspberry Pi) compiled with vfp and hard
 floating point.
 
-## Download and configure SocialVPN
+## Download and configure GroupVPN
 
-1.  Download groupvpn/socialvpn and extract for Raspberry Pi
+1.  Download groupvpn/ and extract for Raspberry Pi
 
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.pre1.tgz
     tar xvzf ipop-rpi_14.01.pre1.tgz
     cd ipop-rpi_14.01.pre1
     ```
-
-2.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    don't have to change the *ip4* address, but for GroupVPN it is important
-    to use a different IPv4 address for each machine.
-
+2.  Update the `config.json` file with proper credentials. For GroupVPN it is 
+    important to use a different IPv4 address for each machine (e.g.
+    192.168.5.1 for machine 1 and 192.168.5.2 for machine 2).
 
     ```bash
     {
-        "ip4": "172.31.0.100",
+        "ip4": "192.168.5.1",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
         "xmpp_host": "talk.google.com"
     }
     ```
 
-## Running SocialVPN
+## Running GroupVPN
 
 1.  Launch ipop-tincan
 
@@ -34,14 +32,6 @@ floating point.
     ```
 
 2.  Lunch the appropriate controller
-
-    a.   For SocialVPN
-
-    ```bash
-    ./svpn_controller -c config.json
-    ```
-
-    a.   For GroupVPN
 
     ```bash
     ./gvpn_controller -c config.json
@@ -57,15 +47,14 @@ floating point.
 
     [[ifconfig.png]]
 
-## Closing SocialVPN
+## Closing GroupVPN
 
-1.  Kill socialvpn or groupvpn
+1.  Kill groupvpn
 
     ```bash
     pkill ipop-tincan
-    pkill svpn_controller.py
     pkill gvpn_controller.py
     ```
 
-**Run groupvpn/socialvpn on another machine using same credentials and they will connect
+**Run groupvpn on another machine using same credentials and they will connect
 with each other.**

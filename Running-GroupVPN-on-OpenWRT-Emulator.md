@@ -23,7 +23,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     qemu-system-mipsel -kernel openwrt-malta-le-vmlinux.elf -m 256 -nographic
     ```
 
-## Configuring OpenWRT for SocialVPN
+## Configuring OpenWRT for GroupVPN
 
 1.  Run DHCP on bridge interface br-lan to get internet connectivity and set up DNS server
 
@@ -40,9 +40,9 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
     ```
 
-## Download and configure SocialVPN
+## Download and configure GroupVPN
 
-1.  Download socialvpn/groupvpn and extract for OpenWRT
+1.  Download groupvpn and extract for OpenWRT
 
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt-malta_14.01.pre1.tgz
@@ -50,21 +50,32 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     cd ipop-openwrt-malta_14.01.pre1.tgz
     ```
 
-2.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    don't have to change the *ip4* address, but for GroupVPN it is important
-    to use a different IPv4 address for each machine.
+2.  Update `config.json`. It is important to include the following configurations
+    in your `config.json` file, you have to enable router_mode, along with 
+    `router_ip4_mask`, `router_ip6_mask`, `subnet_mask`, and `router_ip`. 
+    It should looks as the following:
 
-
-    ```bash
+    ```
     {
-        "ip4": "172.31.0.100",
+        "ip4": "192.168.1.0",
         "xmpp_username": "username@gmail.com",
-        "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com"
+        "xmpp_host": "talk.google.com",
+        "xmpp_password": "password",
+        "router_mode": true,
+        "router_ip": "192.168.0.0",
+        "router_ip4_mask": 16,
+        "router_ip6_mask": 64,
+        "subnet_mask": 24
     }
     ```
 
-## Running SocialVPN
+    * `router_mode`: should be set to true
+    * `router_ip`: should be the network that IPOP will handle
+    * `router_ip4_mask`: IPv4 network mask
+    * `router_ip6_mask`: IPv6 network mask
+    * `subnet_mask`: network mask for the router
+
+## Running GroupVPN
 
 1.  Launch ipop-tincan
 
@@ -73,14 +84,6 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ```
 
 2.  Start the appropriate controller
-
-    a.   For SocialVPN
-
-    ```bash
-    ./svpn_controller.py -c config.json
-    ```
-
-    a.   For GroupVPN
 
     ```bash
     ./gvpn_controller.py -c config.json
@@ -96,15 +99,15 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
     [[ifconfig.png]]
 
-## Closing SocialVPN
+## Closing GroupVPN
 
-1.  Kill socialvpn or groupvpn
+1.  Kill groupvpn
 
     ```bash
     ps
-    kill <process-id-ipop-tincan>
-    kill <process-id-svpn_controller.py>
+    kill <process-id-of-ipop-tincan>
+    kill <process-id-of-gvpn_controller.py>
     ```
 
-**Run groupvpn/socialvpn on another machine using same credentials and they will connect
+**Run groupvpn on another machine using same credentials and they will connect
 with each other.**

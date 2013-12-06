@@ -3,7 +3,7 @@ floating point.
 
 ## Download and configure SocialVPN
 
-1.  Download groupvpn/socialvpn and extract for Raspberry Pi
+1.  Download socialvpn and extract for Raspberry Pi
 
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.pre1.tgz
@@ -12,8 +12,7 @@ floating point.
     ```
 
 2.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    don't have to change the *ip4* address, but for GroupVPN it is important
-    to use a different IPv4 address for each machine.
+    don't have to change the *ip4* address.
 
 
     ```bash
@@ -35,16 +34,8 @@ floating point.
 
 2.  Lunch the appropriate controller
 
-    a.   For SocialVPN
-
     ```bash
     ./svpn_controller -c config.json
-    ```
-
-    a.   For GroupVPN
-
-    ```bash
-    ./gvpn_controller -c config.json
     ```
 
     [[controller.png]]
@@ -59,13 +50,12 @@ floating point.
 
 ## Closing SocialVPN
 
-1.  Kill socialvpn or groupvpn
+1.  Kill socialvpn 
 
     ```bash
     pkill ipop-tincan
     pkill svpn_controller.py
-    pkill gvpn_controller.py
     ```
 
-**Run groupvpn/socialvpn on another machine using same credentials and they will connect
+**Run socialvpn on another machine using same credentials and they will connect
 with each other.**
