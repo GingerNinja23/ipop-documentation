@@ -17,6 +17,7 @@
     * [[Controller API|Controller API]]
     * [[OpenWRT Configuration|OpenWRT Configuration]]
     * [[Writing a controller|Writing a controller]]
+    * [[Development Workflow|Development Workflow]]
 * **Deploying services**
     * [[XMPP Service|Installing XMPP server]]
     * [[TURN Service|Installing TURN server]]
