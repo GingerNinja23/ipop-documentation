@@ -3,18 +3,21 @@
     * [[Android|Building the code for Android]]
     * [[OpenWRT|Building the code for OpenWRT malta]]
     * [[Raspberry Pi|Building the code for Raspberry Pi]]
-* **Running the code**
-    * [[Linux|Running SocialVPN or GroupVPN on Linux]]
-    * [[Android|Running SocialVPN or GroupVPN on Android Emulator]]
-    * [[OpenWRT|Running SocialVPN or GroupVPN on OpenWRT Emulator]]
-    * [[Raspberry Pi|Running SocialVPN or GroupVPN on Raspberry Pi]]
+* **Running SocialVPN**
+    * [[Linux|Running SocialVPN on Linux]]
+    * [[Android|Running SocialVPN on Android Emulator]]
+    * [[Raspberry Pi|Running SocialVPN on Raspberry Pi]]
     * [[Windows 7|Running SocialVPN on Windows 7]]
+* **Running GroupVPN**
+    * [[Linux|Running GroupVPN on Linux]]
+    * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
+    * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
     * [[Watchdog Mode|Running GroupVPN in Watchdog Mode]]
-* **Independent Deployment**
-    * [[XMPP Service|Installing XMPP server]]
-    * [[TURN Service|Installing TURN server]]
-* **Developer Docs**
+* **Extending the code**
     * [[Controller API|Controller API]]
     * [[OpenWRT Configuration|OpenWRT Configuration]]
     * [[Writing a controller|Writing a controller]]
+* **Deploying services**
+    * [[XMPP Service|Installing XMPP server]]
+    * [[TURN Service|Installing TURN server]]
 
