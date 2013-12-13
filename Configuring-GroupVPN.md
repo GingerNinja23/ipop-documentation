@@ -10,6 +10,7 @@ GroupVPN has two modes on establishing the P2P connection. One create P2P connec
 
 `
 "on-demand_connection": true,
+
 "on-demand_inactive_timeout": 600
 `
 
