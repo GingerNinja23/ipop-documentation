@@ -10,6 +10,7 @@
     * [[Raspberry Pi|Running SocialVPN on Raspberry Pi]]
 * **Running GroupVPN**
     * [[Linux|Running GroupVPN on Linux]]
+    * [[Linux|Configuring GroupVPN]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
 * **Extending the code**
