@@ -5,12 +5,11 @@
     * [[Raspberry Pi|Building the code for Raspberry Pi]]
 * **Running SocialVPN**
     * [[Linux|Running SocialVPN on Linux]]
+    * [[Windows 7|Running SocialVPN on Windows 7]]
     * [[Android|Running SocialVPN on Android Emulator]]
     * [[Raspberry Pi|Running SocialVPN on Raspberry Pi]]
-    * [[Windows 7|Running SocialVPN on Windows 7]]
 * **Running GroupVPN**
     * [[Linux|Running GroupVPN on Linux]]
-    * [[Watchdog Mode|Running GroupVPN in Watchdog Mode]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[OpenWRT Configuration|OpenWRT Configuration]]
     * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]

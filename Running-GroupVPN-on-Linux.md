@@ -47,9 +47,6 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     [[ifconfig.png]]
 
-**Run groupvpn on another machine using same credentials and they will connect
-with each other.**
-
 ## Closing GroupVPN
 
 1.  Kill groupvpn
@@ -58,3 +55,23 @@ with each other.**
     pkill ipop-tincan-x86_64
     pkill gvpn_controller.py
     ```
+
+**Run groupvpn on another machine using same credentials and they will connect
+with each other.**
+
+## Running GroupVPN in Watchdog mode
+
+It is common practice to use a watchdog process to monitor and respawn
+long running processes. We have designed a simple watchdog process that
+spawns ipop-tincan and respawns it up to three times if necessary.
+
+Our watchdog process automatically starts the ipop-tincan, so that you 
+do not have to run it separately. (the path of the binary should be specified
+in configuration file). If the ipop-tincan crashes or is not responding, 
+the watchdog process terminates the ipop-tincan process and starts it as a 
+new process.
+
+```
+sudo ./watchdog.py -c config.json
+```
+
