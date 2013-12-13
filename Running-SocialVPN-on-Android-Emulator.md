@@ -61,11 +61,13 @@ You can create such a VM on
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.pre1.tgz
     wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
+    wget http://github.com/ipop-project/ipop-scripts/raw/master/start_controller.sh
     tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre1.tgz
+    mv start_controller.sh ipop-android_14.01.pre1
     ```
 
 3.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    don't have to change the *ip4* address.
+    do not have to change the *ip4* address.
 
 
     ```bash
@@ -103,8 +105,7 @@ You can create such a VM on
 3.  Log into XMPP (Google Chat or Jabber.org) using credentials
 
     ```bash
-    ln -s svpn_controller.py vpn_controller.py
-    sh start_controller.sh -c config.json
+    sh start_controller.sh svpn_controller.py -c config.json
     ```
 
 4.  Check the network devices and ip address for your device
