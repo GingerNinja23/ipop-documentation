@@ -71,6 +71,8 @@ You can create such a VM on
 
 
     ```bash
+    cd ipop-android_14.01.pre1
+    cat config.json
     {
         "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
@@ -82,7 +84,7 @@ You can create such a VM on
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-android /data/ipop
+    platform-tools/adb push ipop-android_14.01.pre1 /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
