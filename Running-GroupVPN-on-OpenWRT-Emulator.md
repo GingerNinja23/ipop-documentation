@@ -69,11 +69,43 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     }
     ```
 
+    * `ip4`: should be set to the subnet of the local LAN, you can find that information under `ect/config/dhcp`
     * `router_mode`: should be set to true
     * `router_ip`: should be the network that IPOP will handle
     * `router_ip4_mask`: IPv4 network mask
     * `router_ip6_mask`: IPv6 network mask
     * `subnet_mask`: network mask for the router
+
+3. Configure your OpenWRT system
+
+First, you need to add the GroupVPN interface (ipop) to the network file,
+this network is configured for 192.168.0.0/16 therefore any packet destined
+for that subnet will be sent to ipop interface.
+
+    ```bash
+    cat <<EOF >> /etc/config/network
+    config interface ipop
+            option ifname   ipop
+            option proto    static
+            option ipaddr   192.168.0.0
+            option netmask  255.255.0.0
+    EOF
+    ```
+
+    ```bash
+    cat <<EOF >> /etc/config/firewall
+    config zone
+            option name             ipop
+            option network          'ipop'
+            option input            ACCEPT
+            option output           ACCEPT
+            option forward          ACCEPT
+
+    config forwarding
+            option src              ipop
+            option dest             lan
+    EOF
+    ```
 
 ## Running GroupVPN
 
@@ -111,3 +143,20 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 **Run groupvpn on another machine using same credentials and they will connect
 with each other.**
+
+## Running GroupVPN in Watchdog mode
+
+It is common practice to use a watchdog process to monitor and respawn
+long running processes. We have designed a simple watchdog process that
+spawns ipop-tincan and respawns it up to three times if necessary.
+
+Our watchdog process automatically starts the ipop-tincan, so that you 
+do not have to run it separately. (the path of the binary should be specified
+in configuration file). If the ipop-tincan crashes or is not responding, 
+the watchdog process terminates the ipop-tincan process and starts it as a 
+new process.
+
+```
+sudo ./watchdog.py -c config.json
+```
+
