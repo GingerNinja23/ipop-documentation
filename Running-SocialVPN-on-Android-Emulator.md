@@ -107,7 +107,7 @@ You can create such a VM on
 3.  Log into XMPP (Google Chat or Jabber.org) using credentials
 
     ```bash
-    sh start_controller.sh svpn_controller.py -c config.json
+    sh start_controller.sh svpn_controller.py -c config.json &> log.txt &
     ```
 
 4.  Check the network devices and ip address for your device
@@ -125,7 +125,7 @@ You can create such a VM on
 
     ```bash
     jobs
-    kill %1 # or the appropriate job number
+    kill %1 %2 # or the appropriate job number
     exit
     platform-tools/adb shell emu kill
     ```
