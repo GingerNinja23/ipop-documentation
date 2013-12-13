@@ -76,11 +76,9 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     * `router_ip6_mask`: IPv6 network mask
     * `subnet_mask`: network mask for the router
 
-3. Configure your OpenWRT system
-
-First, you need to add the GroupVPN interface (ipop) to the network file,
-this network is configured for 192.168.0.0/16 therefore any packet destined
-for that subnet will be sent to ipop interface.
+3.  Configure your OpenWRT system by adding the GroupVPN interface (ipop) to the 
+    network file, this network is configured for 192.168.0.0/16 therefore any
+    packet destined for that subnet will be sent to ipop interface.
 
     ```bash
     cat <<EOF >> /etc/config/network
