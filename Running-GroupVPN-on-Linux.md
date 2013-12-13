@@ -1,6 +1,6 @@
 These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
-## Download and configure SocialVPN
+## Download and configure GroupVPN
 
 1.  Download groupvpn and extract for Linux
 
