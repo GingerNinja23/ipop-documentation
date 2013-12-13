@@ -21,7 +21,6 @@ and follow the instructions in the first two sections:
     ```bash
     cd trunk
     source build/android/envsetup.sh
-    export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_java=0 $GYP_DEFINES"
     ```
 
 ## Build ipop-tincan for Android
