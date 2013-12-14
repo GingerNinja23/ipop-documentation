@@ -79,8 +79,8 @@ These instructions are derived from these links:
 4.  Update the gold linker to arm version
 
     ```bash
-    mv third-party/gold/gold32 third-party/gold/gold32.bak
-    ln -s /usr/bin/gold third-party/gold/gold32
+    mv third_party/gold/gold32 third_party/gold/gold32.bak
+    ln -s /usr/bin/gold third_party/gold/gold32
     ```
     
 5.  Generate ninja build files

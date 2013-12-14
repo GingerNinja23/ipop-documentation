@@ -1,5 +1,12 @@
 
-This file explains the main components of controller design.
+This file explains the main components of controller design. It is important
+to do the following before things can start working:
+
+* Create and register a UDP socket for communication with tincan
+* Set the local uid and IPv4/IPv6
+* Login to the XMPP service
+* Call get_state to update local state
+* Listen on UDP sockets and process the different packet types
 
 ```python
 class UdpServer(object):
