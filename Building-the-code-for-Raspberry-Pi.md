@@ -17,6 +17,7 @@ These instructions are derived from these links:
 2.  Download depot_tools for chromium repo
 
     ```bash
+    mkdir libjingle; cd libjingle
     git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
