@@ -47,7 +47,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt-malta_14.01.pre2.tgz
     tar xvzf ipop-openwrt-malta_14.01.pre2.tgz
-    cd ipop-openwrt-malta_14.01.pre2.tgz
+    cd ipop-openwrt-malta_14.01.pre2
     ```
 
 2.  Update `config.json`. It is important to include the following configurations
