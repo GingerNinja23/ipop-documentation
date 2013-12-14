@@ -25,6 +25,12 @@ floating point.
 
 ## Running GroupVPN
 
+1. Enable ipv6
+
+    ```bash
+    sudo modprobe ipv6
+    ```
+
 1.  Launch ipop-tincan
 
     ```bash
