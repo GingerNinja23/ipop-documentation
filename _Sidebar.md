@@ -12,7 +12,6 @@
     * [[Linux|Running GroupVPN on Linux]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
-    * [[On-demand GroupVPN|Configuring GroupVPN]]
 * **Extending the code**
     * [[Controller API|Controller API]]
     * [[Writing a controller|Writing a controller]]
