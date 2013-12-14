@@ -37,7 +37,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     ```bash
     sed -i 's/le/generic/g' /etc/opkg.conf 
     sed -i 's/\/overlay/\/tmp/g' /etc/opkg.conf
-    opkg update; opkg install python librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
+    opkg update; opkg install python-mini librt libstdcpp kmod-tun kmod-ipv6 libpthread wget
     ```
 
 ## Download and configure GroupVPN
