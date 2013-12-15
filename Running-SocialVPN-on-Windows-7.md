@@ -1,6 +1,7 @@
-This has been tested on Windows 7 only. Also, P2P connections are not
-encrypted on Windows because libjingle library currently uses SChannel 
-for Windows which does not have DTLS support.
+This has been tested on Windows 7 (32bit and 64bit). The libjingle library
+currently uses SChannel for Windows which does not have DTLS support 
+meaning the connection to the XMPP server is encrypted but
+**the P2P VPN connections are not encrypted**.
 
 ## Install dependencies
 
