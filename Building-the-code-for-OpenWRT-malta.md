@@ -10,10 +10,10 @@ and follow the instructions for the first two sections:
 
 ## Download OpenWRT toolchain
 
-1. Install ccache
+1. Install dependencies
 
    ```bash
-   sudo apt-get install ccache libncurses5-dev zlib1g-dev gawk unzip
+   sudo apt-get install ccache libncurses5-dev zlib1g-dev gawk unzip libc6:i386 libstdc++6:i386 zlib1g:i386
    ```
 
 2.  Go to trunk/third-party directory and download OpenWRT SDK for openwrt malta
