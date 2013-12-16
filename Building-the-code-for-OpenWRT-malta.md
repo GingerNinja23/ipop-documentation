@@ -13,7 +13,7 @@ and follow the instructions for the first two sections:
 1. Install ccache
 
    ```bash
-   sudo apt-get install ccache
+   sudo apt-get install ccache ncurses zlib awk unzip
    ```
 
 2.  Go to trunk/third-party directory and download OpenWRT SDK for openwrt malta
