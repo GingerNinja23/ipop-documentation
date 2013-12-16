@@ -1,4 +1,4 @@
-[**Handy reference for Git commands**](http://gitref.org/index.html)
+[**Handy reference for Git commands**](http://git-scm.com/docs/gittutorial)
 
 1.  [Fork the repo](http://help.github.com/fork-a-repo/).
 
