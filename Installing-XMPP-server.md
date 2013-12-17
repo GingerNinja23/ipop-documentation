@@ -1,3 +1,7 @@
+IPOP allows you to connect to existing XMPP/STUN/TURN services. It is also possible to deploy your own private Online Social Network and NAT traversal services using the ejabberd open-source software and an open-source TURN service. 
+
+With this setup, you can create your own users and user relationships directly on the ejabberd server. This is especially useful when running GroupVPN - it allows you to define your own groups and endpoint IDs.
+
 These instructions have only been tested on Ubuntu 12.04
 
 ## Install and configure ejabberd
