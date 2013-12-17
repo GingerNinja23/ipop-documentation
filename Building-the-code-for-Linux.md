@@ -37,7 +37,7 @@ These instructions are derived from these links:
     ```
 
 2.  Download libjingle and dependencies (this may take a while). Ignore eror messages 
-    about pkg-config looking for gobject-2.0 gthread-2.0 gtk+-2.0
+    about pkg-config looking for `gobject-2.0 gthread-2.0 gtk+-2.0`
 
     ```bash
     gclient sync --force
