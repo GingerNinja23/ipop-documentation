@@ -17,6 +17,6 @@
     * [[Writing a controller|Writing a controller]]
     * [[Development Workflow|Development Workflow]]
 * **Deploying private services**
-    * [[XMPP Service|Installing XMPP+STUN server]]
+    * [[XMPP+STUN Service|Installing XMPP server]]
     * [[TURN Service|Installing TURN server]]
 
