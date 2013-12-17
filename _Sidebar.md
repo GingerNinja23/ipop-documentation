@@ -12,11 +12,11 @@
     * [[Linux|Running GroupVPN on Linux]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Raspberry Pi|Running GroupVPN on Raspberry Pi]]
+* **Deploying your own services**
+    * [[XMPP+STUN Service|Installing XMPP server]]
+    * [[TURN Service|Installing TURN server]]
 * **Extending the code**
     * [[Controller API|Controller API]]
     * [[Writing a controller|Writing a controller]]
     * [[Development Workflow|Development Workflow]]
-* **Deploying private services**
-    * [[XMPP+STUN Service|Installing XMPP server]]
-    * [[TURN Service|Installing TURN server]]
 
