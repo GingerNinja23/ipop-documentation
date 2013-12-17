@@ -52,7 +52,10 @@ You can create such a VM on
 1.  Create directory for socialvpn files
 
     ```bash
-    platform-tools/adb shell mkdir data/ipop
+    platform-tools/adb shell
+    su
+    mkdir ipop; chmod 777 ipop
+    exit
     platform-tools/adb shell mkdir data/ipop/python27
     ```
 
