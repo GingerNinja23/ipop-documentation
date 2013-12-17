@@ -36,7 +36,8 @@ These instructions are derived from these links:
     gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
     ```
 
-2.  Download libjingle and dependencies (this may take a while)
+2.  Download libjingle and dependencies (this may take a while). Ignore eror messages 
+    about pkg-config looking for gobject-2.0 gthread-2.0 gtk+-2.0
 
     ```bash
     gclient sync --force
