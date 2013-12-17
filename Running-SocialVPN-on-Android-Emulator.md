@@ -62,11 +62,9 @@ You can create such a VM on
 2.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.pre2.tgz
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.pre3.tgz
     wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
-    wget http://github.com/ipop-project/ipop-scripts/raw/master/start_controller.sh
-    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre2.tgz
-    mv start_controller.sh ipop-android_14.01.pre2
+    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre3.tgz
     ```
 
 3.  Update the `config.json` file with proper credentials. For SocialVPN, you
@@ -74,7 +72,7 @@ You can create such a VM on
 
 
     ```bash
-    cd ipop-android_14.01.pre2
+    cd ipop-android_14.01.pre3
     cat config.json
     {
         "ip4": "172.31.0.100",
@@ -87,7 +85,7 @@ You can create such a VM on
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-android_14.01.pre2 /data/ipop
+    platform-tools/adb push ipop-android_14.01.pre3 /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 

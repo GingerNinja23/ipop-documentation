@@ -6,9 +6,9 @@ floating point.
 1.  Download groupvpn/ and extract for Raspberry Pi
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.pre2.tgz
-    tar xvzf ipop-rpi_14.01.pre2.tgz
-    cd ipop-rpi_14.01.pre2
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.pre3.tgz
+    tar xvzf ipop-rpi_14.01.pre3.tgz
+    cd ipop-rpi_14.01.pre3
     ```
 2.  Update the `config.json` file with proper credentials. For GroupVPN it is 
     important to use a different IPv4 address for each machine (e.g.
