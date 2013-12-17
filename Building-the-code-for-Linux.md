@@ -28,6 +28,12 @@ These instructions are derived from these links:
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
+4.   (Optional) For 32-bit compilation in cross-compiling environment, set target_arch
+
+    ```bash
+    export GYP_DEFINES="target_arch=ia32"
+    ```
+
 ## Download source code
 
 1.  Configure gclient to download libjingle code
