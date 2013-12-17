@@ -11,7 +11,7 @@ These instructions are derived from these links:
 1.  Install dependencies
 
     ```bash
-    sudo apt-get install libexpat1-dev git subversion build-essential
+    sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
     ```
 
 2.  Download depot_tools for chromium repo
@@ -24,6 +24,7 @@ These instructions are derived from these links:
 3.  Set up environmental variables
 
     ```bash
+    export JAVA_HOME=/usr/lib/jvm/default-java
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
