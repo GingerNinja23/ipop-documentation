@@ -39,8 +39,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 3.  Check on the current status of your network using netcat
 
     ```bash
-    netcat -u 127.0.0.1 5800
-    {"m":"get_state"}
+    echo '{"m":"get_state"}' | netcat -u 127.0.0.1 5800
     ```
 
 4.  Check the network devices and ip address for your device
