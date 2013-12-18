@@ -33,12 +33,17 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 2.  Start the appropriate controller
 
     ```bash
-    ./svpn_controller.py -c config.json
+    ./svpn_controller.py -c config.json &> log.txt &
     ```
 
-    [[controller.png]]
+3.  Check on the current status of your network using netcat
 
-3.  Check the network devices and ip address for your device
+    ```bash
+    netcat -u 127.0.0.1 5800
+    {"m":"get_state"}
+    ```
+
+4.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
