@@ -240,9 +240,9 @@ call allows developers to turn off logging.
 !Type
 !Description
 |-
-|flag
+|logging
 |integer
-|if flag is less zero then logging is disabled.
+|sets the logging severity, 0 = no logging, 1 = error logging, 2 = info logging
 |}
 
 
