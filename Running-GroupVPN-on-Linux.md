@@ -10,9 +10,10 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     cd ipop-linux_14.01.pre3
     ```
 
-2.  Update the `config.json` file with proper credentials. For GroupVPN it is 
-    important to use a different IPv4 address for each machine (e.g.
-    192.168.5.1 for machine 1 and 192.168.5.2 for machine 2).
+2.  Update the `config.json` file with proper XMPP server address, and the
+    user name and password of the XMPP user. GroupVPN currently supports static
+    IPv4 address assignment - you must configure a different IPv4 address for each 
+    machine (e.g. 192.168.5.1 for machine 1 and 192.168.5.2 for machine 2).
 
     ```bash
     {
@@ -25,13 +26,13 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
 ## Running GroupVPN
 
-1.  Launch ipop-tincan
+1.  First, launch the ipop-tincan program
 
     ```bash
     sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
 
-2.  Start the appropriate controller
+2.  Second, start the GroupVPN controller
 
     ```bash
     ./gvpn_controller.py -c config.json &> log.txt &
@@ -51,7 +52,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     [[ifconfig.png]]
 
-## Closing GroupVPN
+## Stopping GroupVPN
 
 1.  Kill groupvpn
 
