@@ -11,7 +11,9 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     ```
 
 2.  Update the `config.json` file with proper XMPP server address, and the
-    user name and password of the XMPP user. GroupVPN currently supports static
+    user name and password of the XMPP user. You can use existing public XMPP services,
+    or you can also [[setup your own XMPP server|Installing XMPP Server]].
+    GroupVPN currently supports static
     IPv4 address assignment - you must configure a different IPv4 address for each 
     machine (e.g. 192.168.5.1 for machine 1 and 192.168.5.2 for machine 2).
 
