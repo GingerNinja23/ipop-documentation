@@ -10,8 +10,8 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     cd ipop-linux_14.01.pre3
     ```
 
-2.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    don't have to change the *ip4* address.
+2.  Update the `config.json` file with the XMPP server address, and the user name
+    and password. You don't need to change the *ip4* address.
 
     ```bash
     {
@@ -24,13 +24,13 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
 ## Running SocialVPN
 
-1.  Launch ipop-tincan
+1.  First, you need to start the ipop-tincan program
 
     ```bash
     sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
 
-2.  Start the appropriate controller
+2.  Second, start the SocialVPN controller with the configuration file you created:
 
     ```bash
     ./svpn_controller.py -c config.json &> log.txt &
@@ -50,10 +50,10 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     [[ifconfig.png]]
 
-**Run socialvpn on another machine using same credentials and they will connect
+**Run socialvpn on another machine using the same credentials and they will connect
 with each other.**
 
-## Closing SocialVPN
+## Stopping SocialVPN
 
 1.  Kill socialvpn 
 
