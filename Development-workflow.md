@@ -1,3 +1,5 @@
+For code contributors, the process of developing and committing code to IPOP is outlined below.
+
 [**Handy reference for Git commands**](http://git-scm.com/docs/gittutorial)
 
 1.  [Fork the repo](http://help.github.com/fork-a-repo/).
