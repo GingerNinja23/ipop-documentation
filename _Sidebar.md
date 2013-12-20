@@ -21,3 +21,4 @@
     * [[Development Workflow|Development Workflow]]
 * **General documentation**
     * [[FAQs|FAQs]]
+    * [[Known issues|Known issues]]
