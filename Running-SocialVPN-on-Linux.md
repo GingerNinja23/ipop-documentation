@@ -36,7 +36,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     ./svpn_controller.py -c config.json &> log.txt &
     ```
 
-3.  Check on the current status of your network using netcat
+3.  Check on the current status of your network. This will show you the IP addresses of other nodes connected to your SocialVPN:
 
     ```bash
     echo '{"m":"get_state"}' | netcat -u 127.0.0.1 5800
