@@ -19,6 +19,5 @@
     * [[Controller API|Controller API]]
     * [[Writing a controller|Writing a controller]]
     * [[Development Workflow|Development Workflow]]
-* **General documentation**
-    * [[FAQs|FAQs]]
-    * [[Known issues|Known issues]]
+
+
