@@ -23,4 +23,4 @@
 
 4.  What XMPP services are known to work with IPOP?
 
-    It is know to work with Google XMPP service (with the exception of known issues), and with ejabberd-based servers (e.g. www.jabber.org).
+    It is know to work with Google XMPP service (with exceptions; see [[known issues|Known issues]]), and with ejabberd-based servers (e.g. www.jabber.org).
