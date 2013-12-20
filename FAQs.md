@@ -1,6 +1,6 @@
 1.  How do I check the IP address of peers in my SocialVPN?
 
-    Currently, this can be done using an API call to the running tincan process. In Linux:
+    Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
 
     ```bash
     echo '{"m":"get_state"}' | netcat -u 127.0.0.1 5800
