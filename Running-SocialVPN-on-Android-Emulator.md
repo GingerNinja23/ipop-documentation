@@ -64,7 +64,7 @@ You can create such a VM on
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.rc1.tgz
     wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
-    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre3.tgz
+    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.rc1.tgz
     ```
 
 3.  Update the `config.json` file with proper credentials. For SocialVPN, you
@@ -85,7 +85,7 @@ You can create such a VM on
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-android_14.01.pre3 /data/ipop
+    platform-tools/adb push ipop-android_14.01.rc1 /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
