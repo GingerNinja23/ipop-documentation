@@ -62,7 +62,7 @@ You can create such a VM on
 2.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.pre3.tgz
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.rc1.tgz
     wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
     tar xzvf python27.tgz; tar xzvf ipop-android_14.01.pre3.tgz
     ```
