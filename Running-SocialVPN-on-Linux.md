@@ -6,8 +6,8 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_14.01.rc1.tgz
-    tar xvzf ipop-linux_14.01.pre3.tgz
-    cd ipop-linux_14.01.pre3
+    tar xvzf ipop-linux_14.01.rc1.tgz
+    cd ipop-linux_14.01.rc1
     ```
 
 2.  Update the `config.json` file with the XMPP server address, and the user name
