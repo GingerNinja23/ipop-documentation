@@ -6,9 +6,9 @@ floating point.
 1.  Download socialvpn and extract for Raspberry Pi
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.pre3.tgz
-    tar xvzf ipop-rpi_14.01.pre3.tgz
-    cd ipop-rpi_14.01.pre3
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.rc1.tgz
+    tar xvzf ipop-rpi_14.01.rc1.tgz
+    cd ipop-rpi_14.01.rc1
     ```
 
 2.  Update the `config.json` file with proper credentials. For SocialVPN, you
