@@ -72,7 +72,7 @@ You can create such a VM on
 
 
     ```bash
-    cd ipop-android_14.01.pre3
+    cd ipop-android_14.01.rc1
     cat config.json
     {
         "ip4": "172.31.0.100",
