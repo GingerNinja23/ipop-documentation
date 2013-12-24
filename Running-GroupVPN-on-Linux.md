@@ -5,7 +5,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 1.  Download groupvpn and extract for Linux
 
     ```bash
-    wget http://www.acis.ufl.edu/~xetron/Downloads/ipop-linux_14.01.rc1.tar.gz
+    wget http://www.acis.ufl.edu/~xetron/Downloads/ipop-linux_14.01.rc2.tar.gz
     tar xvzf ipop-linux_14.01.rc1.tgz
     cd ipop-linux_14.01.rc1
     ```
