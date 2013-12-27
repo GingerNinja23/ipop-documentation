@@ -2,6 +2,7 @@
     * [[Linux|Building the code for Linux]]
     * [[Android|Building the code for Android]]
     * [[OpenWRT|Building the code for OpenWRT malta]]
+    * [[Raspberry Pi|Building the code for Raspberry Pi]]
 * **Running SocialVPN nodes**
     * [[Linux|Running SocialVPN on Linux]]
     * [[Windows 7|Running SocialVPN on Windows 7]]
