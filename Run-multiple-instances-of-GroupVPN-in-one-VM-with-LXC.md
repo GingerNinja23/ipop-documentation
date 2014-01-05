@@ -4,7 +4,7 @@ This tutorial shows how to use gvpn_lxc.sh script, which helps easily desploy lx
 
   ```bash
   wget https://github.com/ipop-project/ipop-scripts/raw/master/gvpn_lxc.sh
-  ``
+  ```
 
 2. Make it executable. Simply run this script will show help session. 
  ```bash
