@@ -26,7 +26,7 @@ This script consists of two operation mode. Mode 1 simply create LXC instance an
    dpkg -l | grep lxc
    ```
 
-5. Place your ipop-tincan binary and controllers at your working directory and run below. In this example, the script copies the executables and configure its ipop node with IP address 172.16.0.2, 172.16.0.3 and 172.16.0.4 consecutively with the instance name ipop0, ipop1 and ipop2 respectively. 
+5. Place your ipop-tincan binary, controllers and config file at your working directory and run below(The file name should be "ipop-tincan-x86_64, gvpn_controller.py, config.json) In this example, the script copies the executables and configure its ipop node with IP address 172.16.0.2, 172.16.0.3 and 172.16.0.4 consecutively with the instance name ipop0, ipop1 and ipop2 respectively. 
 
    ```bash
    ./gvpn_lxc -m 2 -p ipop -i 3 -a 172.16.0.2
