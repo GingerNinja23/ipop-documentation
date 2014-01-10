@@ -45,7 +45,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 1.  Download groupvpn and extract for OpenWRT
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt-malta_14.01.pre3.tgz
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-openwrt-malta_14.01.tgz
     tar xvzf ipop-openwrt-malta_14.01.pre3.tgz
     cd ipop-openwrt-malta_14.01.pre3
     ```
