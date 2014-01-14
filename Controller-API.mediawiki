@@ -63,7 +63,7 @@ for more than one IP address, this parameter specifies the subnet
 it should route for. If not running in router mode, just set to 32.
 |}
 
-= Function: getstate =
+= Function: get_state =
 This is a very important call because it allows developers to query the
 state of IPOP-Tincan. In return, IPOP-Tincan replies with the state of
 the local peer and the state of each peer that attempted to connect.
