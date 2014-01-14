@@ -245,7 +245,7 @@ call allows developers to turn off logging.
 |sets the logging severity, 0 = no logging, 1 = error logging, 2 = info logging
 |}
 
-= notification: local_state =
+= Notification: local_state =
 This notification is sent to the controller as a result of the ''get_state'' function
 call. It contains information about the local node.
 
@@ -275,7 +275,7 @@ call. It contains information about the local node.
 |the X.509 certificate fingerprint of the local node
 |}
 
-= notification: peer_state =
+= Notification: peer_state =
 This notification is sent to the controller as a result of the ''get_state'' function
 call. It contains information about a single peer node.
 
@@ -322,7 +322,7 @@ alive and working
 |list of IP addresses showing the endpoints used for each connection
 |}
 
-= notification: con_stat =
+= Notification: con_stat =
 This notification is sent to the controller when a P2P connection changes state either
 from ''unknown'' to ''online'' or ''offline''.
 
@@ -344,7 +344,7 @@ from ''unknown'' to ''online'' or ''offline''.
 the connection has just been initialized
 |}
 
-= notification: con_req =
+= Notification: con_req =
 This notification is sent to the controller when a new node joins the network and also
 represents the ping mechanism over XMPP; therefore controllers will see this message
 every 120 seconds.
@@ -368,7 +368,7 @@ every 120 seconds.
 information containing public IP address, credentials, and connection type
 |}
 
-= notification: con_resp =
+= Notification: con_resp =
 This notification is sent to the controller after a node has received a connection
 request from the remote node.
 
