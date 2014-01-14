@@ -2,7 +2,7 @@ IPOP-Tincan provides a JSON-RPC API over UDP which enables developers
 to extend the functionality of SocialVPN/GroupVPN. This page explain the
 function calls available through the API.
 
-= Function:register_svc =
+= Function: register_svc =
 This function is designed to allow IPOP-Tincan to register to a
 backend service which will be used to discover social peers and
 bootstrap encrypted P2P connections. Since we currently only support
@@ -247,7 +247,7 @@ call allows developers to turn off logging.
 
 = notification: local_state =
 This notification is sent to the controller as a result of the ''get_state'' function
-call. It contains information about the local node
+call. It contains information about the local node.
 
 {| class="wikitable"
 !Parameter
@@ -273,4 +273,51 @@ call. It contains information about the local node
 |_fpr
 |string
 |the X.509 certificate fingerprint of the local node
+|}
+
+= notification: peer_state =
+This notification is sent to the controller as a result of the ''get_state'' function
+call. It contains information about a single peer node.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|type
+|string
+|set to ''peer_state'' to indicate that it contains information about the peer node
+|-
+|uid
+|string
+|the UID of the peer node
+|-
+|ip4
+|string
+|the IPv4 address of the peer node
+|-
+|ip6
+|string
+|the IPv6 address of the peer node
+|-
+|fpr
+|string
+|the X.509 certificate fingerprint of the peer node
+|-
+|status
+|string
+|set to either ''online'' or ''offline''. It indicates whether the P2P connection is
+alive and working
+|-
+|security
+|string
+|set to either ''none'' or ''dtls''. It indicates whether the P2P connection is encrypted or not
+|-
+|stats
+|string
+|long string delimited by '':''. It measures the number of bytes sent over the P2P connection
+|-
+|stats_cons
+|string
+|list of IP addresses showing the endpoints used for each connection
 |}
