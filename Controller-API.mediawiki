@@ -338,6 +338,7 @@ from ''unknown'' to ''online'' or ''offline''.
 |uid
 |string
 |the UID of the peer node
+|-
 |data
 |string
 |set to the current status either ''online'', ''offline'', or ''unknown''. Unknown means
