@@ -321,3 +321,72 @@ alive and working
 |string
 |list of IP addresses showing the endpoints used for each connection
 |}
+
+= notification: con_stat =
+This notification is sent to the controller when a P2P connection changes state either
+from ''unknown'' to ''online'' or ''offline''.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|type
+|string
+|set to ''con_stat'' to indicate that it contains connection status information.
+|-
+|uid
+|string
+|the UID of the peer node
+|data
+|string
+|set to the current status either ''online'', ''offline'', or ''unknown''. Unknown means
+the connection has just been initialized
+|}
+
+= notification: con_req =
+This notification is sent to the controller when a new node joins the network and also
+represents the ping mechanism over XMPP; therefore controllers will see this message
+every 120 seconds.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|type
+|string
+|set to ''con_req'' to indicate that it is a connection request or ping message
+|-
+|uid
+|string
+|the UID of the peer node
+|-
+|data
+|string
+|contains the X.509 fingerprint of the peer node and optionally followed by ICE
+information containing public IP address, credentials, and connection type
+|}
+
+= notification: con_resp =
+This notification is sent to the controller after a node has received a connection
+request from the remote node.
+
+{| class="wikitable"
+!Parameter
+!Type
+!Description
+|-
+|type
+|string
+|set to ''con_resp'' to indicate that it is a connection response
+|-
+|uid
+|string
+|the UID of the peer node
+|-
+|data
+|string
+|contains the X.509 fingerprint of the peer node and followed by ICE
+information containing public IP address, credentials, and connection type
+|}
