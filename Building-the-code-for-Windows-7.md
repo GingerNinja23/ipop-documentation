@@ -60,15 +60,13 @@ These instructions are derived from these links:
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Build ipop-tincan for Windows 7
-
-1.  Return to libjingle trunk directory
+5.  Return to libjingle trunk directory
 
     ```bash
     cd ..\..
     ```
 
-2.  Copy modified gyp files to trunk/talk directory
+6.  Copy modified gyp files to trunk/talk directory
 
     ```bash
     copy talk\ipop-project\ipop-tincan\build\ipop-tincan.gyp talk\
@@ -76,7 +74,7 @@ These instructions are derived from these links:
     copy talk\ipop-project\ipop-tincan\build\all.gyp .
     ```
 
-3.  Generate ninja build files
+7.  Generate ninja build files
 
     ```bash
     gclient runhooks --force
