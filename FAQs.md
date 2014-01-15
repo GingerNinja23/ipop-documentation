@@ -17,6 +17,11 @@
     "logging": 1
     ```
 
+    * **logging_level** - sets the Python logging module for the controller with possible values
+      *logging.DEBUG*, *logging.INFO*, *logging.WARNING*, *logging.ERROR*, *logging.CRITICAL*
+    * **logging** - set the logging level for IPOP-Tincan, 0 = no logging, 1 = error logging,
+      2 = info logging (recommended), 3 = verbose logging
+
 3.  How do you configure IPOP to restart on its own if there is a failure?
 
     Currently, this is supported for the GroupVPN controller in Linux with the use of a watchdog. Check the documentation on [[running GroupVPN on Linux|Running GroupVPN on Linux]] for details.
