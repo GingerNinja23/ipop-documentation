@@ -74,7 +74,7 @@ These instructions are derived from these links:
     copy talk\ipop-project\ipop-tincan\build\all.gyp .
     ```
 
-7.  Generate ninja build files
+7.  Generate Visual Studio solution files
 
     ```
     gclient runhooks --force
