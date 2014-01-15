@@ -36,7 +36,7 @@ system for packet flow.
 |uid
 |string
 |the unique identifier for the local peer, one example, is to use the
-hexdigest of the *sh1* hash module in Python.
+hexdigest of the sha1 hash module in Python.
 |-
 |ip4
 |string
