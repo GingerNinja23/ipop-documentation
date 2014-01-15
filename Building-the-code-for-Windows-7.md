@@ -85,7 +85,7 @@ These instructions are derived from these links:
 1.  Download and extract [pthreads-win32](ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip) and move the Pre-built.2 folder into the third party directory
 
     ```
-    move Pre-built.2\ third_party\pthreads_win32
+    move Pre-built.2\ <path-to-libjingle>\trunk\third_party\pthreads_win32
     ```
 
 2.  At the moment, you have to cross-compile IPOP-Tap for Windows on Ubuntu (or Debian)
