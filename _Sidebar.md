@@ -8,7 +8,7 @@
     * [[Linux|Running SocialVPN on Linux]]
     * [[Windows 7|Running SocialVPN on Windows 7]]
     * [[Android|Running SocialVPN on Android Emulator]]
-    * [[Raspberry|Running SocialVPN on Raspberry Pi]]
+    * [[Raspberry Pi|Running SocialVPN on Raspberry Pi]]
 * **Running GroupVPN nodes**
     * [[Linux|Running GroupVPN on Linux]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
