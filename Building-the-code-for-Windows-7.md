@@ -102,7 +102,8 @@ These instructions are derived from these links:
 
 4.  On Windows, open a **Visual Studio Command Prompt** by typing that in the run box
 
-5.  Navigate to the IPOP-Tap bin folder and run lib tool
+5.  Navigate to the IPOP-Tap bin folder and run lib tool which will create ipoptab.lib for
+    Visual C++ to use
 
     ```bash
     cd <path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin
