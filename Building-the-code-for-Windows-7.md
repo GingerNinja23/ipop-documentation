@@ -36,25 +36,25 @@ These instructions are derived from these links:
 
 1.  Open a windows cmd shell and create libjingle folder
 
-    ```bash
+    ```
     mkdir libjingle; cd libjingle
     ```
 
 2.  Configure gclient to download libjingle code
 
-    ```bash
+    ```
     gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
     ```
 
 3.  Download libjingle and dependencies (this may take a while).
 
-    ```bash
+    ```
     gclient sync --force
     ```
 
 4.  Download ipop-tincan from github.com/ipop-project
 
-    ```bash
+    ```
     cd trunk\talk; mkdir ipop-project; cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
@@ -62,13 +62,13 @@ These instructions are derived from these links:
 
 5.  Return to libjingle trunk directory
 
-    ```bash
+    ```
     cd ..\..
     ```
 
 6.  Copy modified gyp files to trunk/talk directory
 
-    ```bash
+    ```
     copy talk\ipop-project\ipop-tincan\build\ipop-tincan.gyp talk\
     copy talk\ipop-project\ipop-tincan\build\libjingle.gyp talk\
     copy talk\ipop-project\ipop-tincan\build\all.gyp .
@@ -76,7 +76,7 @@ These instructions are derived from these links:
 
 7.  Generate ninja build files
 
-    ```bash
+    ```
     gclient runhooks --force
     ```
 
@@ -84,7 +84,7 @@ These instructions are derived from these links:
 
 1.  Download and extract [pthreads-win32](ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip) and move the Pre-built.2 folder into the third party directory
 
-    ```bash
+    ```
     move Pre-built.2\ third_party\pthreads_win32
     ```
 
@@ -105,7 +105,7 @@ These instructions are derived from these links:
 5.  Navigate to the IPOP-Tap bin folder and run lib tool which will create ipoptab.lib for
     Visual C++ to use
 
-    ```bash
+    ```
     cd <path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin
     lib /DEF:ipoptap.def
     ```
