@@ -60,7 +60,7 @@ These instructions are derived from these links:
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
-## Build ipop-tincan for Linux
+## Build ipop-tincan for Windows 7
 
 1.  Return to libjingle trunk directory
 
