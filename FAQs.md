@@ -29,3 +29,7 @@
 4.  What XMPP services are known to work with IPOP?
 
     It is know to work with Google XMPP service (with exceptions; see [[known issues|Known issues]]), and with ejabberd-based servers (e.g. www.jabber.org).
+
+5.  How do I report an issue/bug?
+
+    We use Github's issue tracker: https://github.com/ipop-project/ipop-tincan/issues
