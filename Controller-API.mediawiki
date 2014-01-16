@@ -20,6 +20,10 @@ XMPP service, this is basically the XMPP username and password.
 |password
 |string
 |the password used to login to the XMPP service
+|-
+|host
+|string
+|the host name or IP address of the XMPP server (e.g. talk.google.com)
 |}
 
 = Function: set_local_ip =
