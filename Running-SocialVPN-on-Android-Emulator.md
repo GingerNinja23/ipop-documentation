@@ -64,7 +64,7 @@ You can create such a VM on
     ```bash
     wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-android_14.01.tgz
     wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
-    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.rc1.tgz
+    tar xzvf python27.tgz; tar xzvf ipop-android_14.01.tgz
     ```
 
 3.  Update the `config.json` file with proper credentials. For SocialVPN, you
