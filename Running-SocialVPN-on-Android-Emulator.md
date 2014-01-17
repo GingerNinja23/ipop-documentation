@@ -88,7 +88,7 @@ You can create such a VM on
 3.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-android_14.01.rc1 /data/ipop
+    platform-tools/adb push ipop-android_14.01 /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
