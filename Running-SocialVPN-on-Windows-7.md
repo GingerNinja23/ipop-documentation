@@ -21,7 +21,7 @@ meaning the connection to the XMPP server is encrypted but
 
 1. [Download SocialVPN for Windows](http://www.acis.ufl.edu/~ptony82/ipop/ipop-win32_14.01.zip).
 
-2. Extract "ipop-win32_14.01.pre3.zip".
+2. Extract "ipop-win32_14.01.zip".
 
 3. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
