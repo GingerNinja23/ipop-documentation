@@ -72,13 +72,16 @@ You can create such a VM on
 
 
     ```bash
-    cd ipop-android_14.01.rc1
+    cd ipop-android_14.01
     cat config.json
     {
-        "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com"
+        "xmpp_host": "talk.google.com",
+        "ip4": "172.31.0.100",
+        "ip4_mask": 24,
+        "tincan_logging": 0,
+        "controller_logging": "logging.INFO"
     }
     ```
 
