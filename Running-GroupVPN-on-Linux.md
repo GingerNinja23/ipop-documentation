@@ -5,9 +5,9 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 1.  Download groupvpn and extract for Linux
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_14.01.rc3.tgz
-    tar xvzf ipop-linux_14.01.rc3.tgz
-    cd ipop-linux_14.01.rc3
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_14.01.tgz
+    tar xvzf ipop-linux_14.01.tgz
+    cd ipop-linux_14.01
     ```
 
 2.  Update the `config.json` file with proper XMPP server address, and the
@@ -19,10 +19,13 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 
     ```bash
     {
-        "ip4": "192.168.5.1",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com"
+        "xmpp_host": "talk.google.com",
+        "ip4": "172.31.0.100",
+        "ip4_mask": 24,
+        "tincan_logging": 0,
+        "controller_logging": "logging.INFO"
     }
     ```
 
