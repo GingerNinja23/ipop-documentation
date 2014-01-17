@@ -6,9 +6,9 @@ floating point.
 1.  Download socialvpn and extract for Raspberry Pi
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.rc1.tgz
-    tar xvzf ipop-rpi_14.01.rc1.tgz
-    cd ipop-rpi_14.01.rc1
+    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.tgz
+    tar xvzf ipop-rpi_14.01.tgz
+    cd ipop-rpi_14.01
     ```
 
 2.  Update the `config.json` file with proper credentials. For SocialVPN, you
@@ -17,10 +17,13 @@ floating point.
 
     ```bash
     {
-        "ip4": "172.31.0.100",
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com"
+        "xmpp_host": "talk.google.com",
+        "ip4": "172.31.0.100",
+        "ip4_mask": 24,
+        "tincan_logging": 0,
+        "controller_logging": "logging.INFO"
     }
     ```
 
