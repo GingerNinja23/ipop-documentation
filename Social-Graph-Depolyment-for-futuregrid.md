@@ -9,6 +9,7 @@ chmod +x ./social_graph.sh
 ```
 
 2. Below command will create 300 nodes with random friends list. 
+
 ```bash
 ./social_graph.sh -m 1 -n 300
 ```
