@@ -21,7 +21,7 @@ If you want to configure the social graph itself, you can login to created xmpp 
 nova list
 ping 
 ```
-4 - Below command will copy IPOP executables and config file to each LXC instance, then run it. Also, it  configure each username or IP Address properly accordingly. Note that, you should provide the list of IP address of each VMs. 
+4 - Below command will copy IPOP executables and config file to each LXC instance, then run it. Also, it  configure each username or IP Address accordingly. Note that, you should provide the list of IP address of each VMs. 
 
 ```bash
 ./social_graph.sh -m 3 -i "10.35.23.165,10.35.23.178" -l 50 -p "SVPN"
