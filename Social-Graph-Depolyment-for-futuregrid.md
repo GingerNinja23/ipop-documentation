@@ -2,11 +2,11 @@ This tutorial shows the deployment of Social VPN in a form of Social Network Gra
 
 1. Download the social_graph.sh script and take a look at info. 
 
-```bash
+`bash
 wget https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
 chmod +x ./social_graph.sh
 ./social_graph.sh
-```
+`
 
 2. Below command will create 300 nodes with random friends list. 
 
