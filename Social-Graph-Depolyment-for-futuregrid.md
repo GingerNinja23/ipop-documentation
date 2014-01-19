@@ -13,6 +13,7 @@ chmod +x ./social_graph.sh
 ```bash
 ./social_graph.sh -m 1 -n 300
 ```
+
 If you want to configure the social graph itself, you can login to created xmpp instance and take a look "synthesis_graph.py".
 
 3. Below command will create 6 VMs and each VM contains 50 LXC instances. Creating VMs are done in a sequential manner. But creating LXCs are done in parallel to reduce time load, so that each VMs are creating LXC instances at the same time. The stdout is messy and there is a possibility that few of created VMs are not functioning well. You may want to ping test to each VMs. 
