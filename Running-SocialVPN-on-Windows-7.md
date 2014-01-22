@@ -19,7 +19,7 @@ meaning the connection to the XMPP server is encrypted but
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/Iw4OMZ).
+1. [Download SocialVPN for Windows](http://goo.gl/leX2Qm).
 
 2. Extract "ipop-win32_14.01.zip".
 
