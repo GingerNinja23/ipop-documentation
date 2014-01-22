@@ -6,7 +6,7 @@ floating point.
 1.  Download socialvpn and extract for Raspberry Pi
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-rpi_14.01.tgz
+    wget -O ipop-rpi_14.01.tgz http://goo.gl/50gD2t
     tar xvzf ipop-rpi_14.01.tgz
     cd ipop-rpi_14.01
     ```
