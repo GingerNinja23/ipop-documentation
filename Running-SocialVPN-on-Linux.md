@@ -5,7 +5,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 1.  Download socialvpn and extract for Linux
 
     ```bash
-    wget http://www.acis.ufl.edu/~ptony82/ipop/ipop-linux_14.01.tgz
+    wget http://goo.gl/GEG3RP
     tar xvzf ipop-linux_14.01.tgz
     cd ipop-linux_14.01
     ```
