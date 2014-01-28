@@ -1,3 +1,9 @@
+1. **What are the main differences between SocialVPN and GroupVPN?**
+
+    These are both social virtual networks, but with different use cases and controller implementations. In SocialVPN, social relationships have an individual perspective: relationships are independently managed by each individual, and VPN links are friend-to-friend. In GroupVPN, social relationships have a group perspective: there is the concept of a group leader or manager, and once a user joins a group, VPN links are established among all devices that belong to the group.
+
+    From a technical standpoint, the main difference between the two controllers is with respect to the allocation and translation of IPv4 address spaces. SocialVPN assigns and translates private IPv4 subnets and addresses dynamically between any two users/nodes such that it can scale to large numbers of users of online social networks without creating address conflicts. GroupVPN assigns a single private subnet to a group of user/nodes, and does not perform any address translation.
+
 1. **How do I check the IP address of peers in my SocialVPN?**
 
     Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
