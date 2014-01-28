@@ -13,7 +13,8 @@
     * [[Linux|Running GroupVPN on Linux]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
 * **Deploying OSN and NAT traversal services**
-    * [[XMPP+STUN Service|Installing XMPP server]]
+    * [[XMPP+STUN Service - Ubuntu|Installing XMPP server]]
+    * [[XMPP Service - RHEL|Ejabberd-RHEL]]
     * [[TURN Service|Installing TURN server]]
 * **Extending the code**
     * [[Controller API|Controller API]]
