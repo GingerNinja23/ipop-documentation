@@ -11,6 +11,22 @@ P2P connections between nodes behind NATs whereas Tinc needs publicly addressabl
 traffic. As a result, SocialVPN has much lower latencies and better bandwidth because traffic is not routed
 via any middleman (unless nodes are behind symmetric NATs hence requiring TURN servers).
 
+1. **Why use SocialVPN over Hamachi?**
+
+    Hamachi is no longer free. Also Hamachi is closed source. Hamachi is very similar to SocialVPN because
+it creates direct P2P connections whenever possible and uses relaying when direct connections are not
+possible. However, Hamachi uses its own proprietary server technologies and manages public keys. SocialVPN
+uses the XMPP protocol to establish P2P connections and users can use Google accounts to connect. For
+relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL.
+Basically, SocialVPN is based on mature open technologies.
+
+1. **Why use SocialVPN over Pertino?**
+
+    Pertino is only free for a limited number of devices (9 max). Also, Pertino is very similar to Tinc
+because all IP traffic has to flow through middle nodes housed in the cloud. This creates extra latency
+and bandwidth overhead. SocialVPN finds the shortest path between two nodes using P2P technology without
+a middleman.
+
 1. **How do I check the IP address of peers in my SocialVPN?**
 
     Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
