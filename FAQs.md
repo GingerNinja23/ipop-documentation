@@ -4,6 +4,13 @@
 
     From a technical standpoint, the main difference between the two controllers is with respect to the allocation and translation of IPv4 address spaces. SocialVPN assigns and translates private IPv4 subnets and addresses dynamically between any two users/nodes such that it can scale to large numbers of users of online social networks without creating address conflicts. GroupVPN assigns a single private subnet to a group of user/nodes, and does not perform any address translation.
 
+1. **Why use use SocialVPN over Tinc?**
+
+    SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
+P2P connections between nodes behind NATs whereas Tinc needs publicly addressable servers to help route
+traffic. As a result, SocialVPN has much lower latencies and better bandwidth because traffic is not routed
+via any middleman (unless nodes are behind symmetric NATs hence requiring TURN servers).
+
 1. **How do I check the IP address of peers in my SocialVPN?**
 
     Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
