@@ -8,7 +8,7 @@
 
     IPOP's SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
 P2P connections between nodes behind NATs, whereas Tinc needs publicly addressable servers to help route
-traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
+traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. Furthermore, IPOP/SocialVPN does not require manual configuration of any NAT/firewall rules - it performs NAT hole-punching automatically and transparently to the user, without requiring access to NAT/firewall devices. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
 
 1. **Why use IPOP/SocialVPN over Hamachi?**
 
