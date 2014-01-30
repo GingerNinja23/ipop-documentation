@@ -4,28 +4,23 @@
 
     From a technical standpoint, the main difference between the two controllers is with respect to the allocation and translation of IPv4 address spaces. SocialVPN assigns and translates private IPv4 subnets and addresses dynamically between any two users/nodes such that it can scale to large numbers of users of online social networks without creating address conflicts. GroupVPN assigns a single private subnet to a group of user/nodes, and does not perform any address translation.
 
-1. **Why use use SocialVPN over Tinc?**
+1. **Why use IPOP/SocialVPN over Tinc?**
 
-    SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
-P2P connections between nodes behind NATs whereas Tinc needs publicly addressable servers to help route
-traffic. As a result, SocialVPN has much lower latencies and better bandwidth because traffic is not routed
-via any middleman (unless nodes are behind symmetric NATs hence requiring TURN servers).
+    IPOP's SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
+P2P connections between nodes behind NATs, whereas Tinc needs publicly addressable servers to help route
+traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
 
-1. **Why use SocialVPN over Hamachi?**
+1. **Why use IPOP/SocialVPN over Hamachi?**
 
-    Hamachi is no longer free. Also Hamachi is closed source. Hamachi is very similar to SocialVPN because
+    Hamachi is no longer free, and it is closed source. Hamachi is very similar to SocialVPN because
 it creates direct P2P connections whenever possible and uses relaying when direct connections are not
 possible. However, Hamachi uses its own proprietary server technologies and manages public keys. SocialVPN
 uses the XMPP protocol to establish P2P connections and users can use Google accounts to connect. For
-relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL.
-Basically, SocialVPN is based on mature open technologies.
+relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL. SocialVPN is implemented on mature, open-source technologies, and can be extended by the community.
 
-1. **Why use SocialVPN over Pertino?**
+1. **Why use IPOP/SocialVPN over Pertino?**
 
-    Pertino is only free for a limited number of devices (9 max). Also, Pertino is very similar to Tinc
-because all IP traffic has to flow through middle nodes housed in the cloud. This creates extra latency
-and bandwidth overhead. SocialVPN finds the shortest path between two nodes using P2P technology without
-a middleman.
+    Pertino is not open-source, and it is only free for a limited number of devices (up to 9). Also, Pertino is very similar to Tinc because all IP traffic has to flow through intermediary nodes housed in the cloud. This creates latency and bandwidth overheads. SocialVPN finds a direct P2P Internet path between two nodes, even if nodes are behind NATs.
 
 1. **How do I check the IP address of peers in my SocialVPN?**
 
