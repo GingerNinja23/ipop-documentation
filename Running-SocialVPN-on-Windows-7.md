@@ -7,6 +7,8 @@ meaning the connection to the XMPP server is encrypted but
 
 ## Install dependencies
 
+1. Install [MS Visual C++ Redistributable](http://www.microsoft.com/en-us/download/details.aspx?id=5555)
+
 1. Install [Python 2.7 for Windows](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi).
 
 2. Install [tap-installer from OpenVPN](http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe).
