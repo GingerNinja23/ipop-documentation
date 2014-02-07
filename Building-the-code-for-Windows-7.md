@@ -55,7 +55,9 @@ These instructions are derived from these links:
 4.  Download ipop-tincan from github.com/ipop-project
 
     ```
-    cd trunk\talk; mkdir ipop-project; cd ipop-project
+    cd trunk\talk
+    mkdir ipop-project
+    cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
