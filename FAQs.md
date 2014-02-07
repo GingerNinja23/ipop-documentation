@@ -54,9 +54,9 @@ relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 cert
 
     It is know to work with Google XMPP service (with exceptions; see [[known issues|Known issues]]), and with ejabberd-based servers (e.g. www.jabber.org).
 
-1.  **How do I enable IPv6 on Raspberry Pi?**
+1.  **How do I enable IPv6 on Raspberry Pi (and other linux based systems)?**
 
-    Our implementation requires IPv6 to function properly. Here is how you enable it on Raspberry Pi
+    Our implementation requires IPv6 to function properly. You can easily enable it with the following command
 
     ```bash
     sudo modprobe ipv6
