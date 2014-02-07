@@ -22,7 +22,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
         "xmpp_host": "talk.google.com",
-        "ip4": "172.31.0.100",
+        "ip4": "192.168.5.1",
         "ip4_mask": 24,
         "tincan_logging": 0,
         "controller_logging": "logging.INFO"
