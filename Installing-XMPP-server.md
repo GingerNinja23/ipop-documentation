@@ -42,7 +42,7 @@ These instructions have only been tested on Ubuntu 12.04
         "xmpp_username": "svpnuser@ejabberd",
         "xmpp_password": "password",
         "xmpp_host": "public-ip-of-ejabberd-vm",
-        "stun": ["public-ip-of-ejabberd-vm:3478"],
+        "stun": ["public-ip-of-ejabberd-vm:3478"]
     }
     ```
 
