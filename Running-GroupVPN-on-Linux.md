@@ -64,7 +64,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
     ```bash
     pkill ipop-tincan-x86_64
     ps aux | grep gvpn_controller.py
-    kill <uid-of-process>
+    kill <pid-of-gvpn_controller.py>
     ```
 
 **Run groupvpn on another machine using same credentials and they will connect
