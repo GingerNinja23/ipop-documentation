@@ -37,7 +37,7 @@ relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 cert
     Generally you don't need to enable logging unless you are a developer, but if you run into errors/crashes, providing a log file is very useful. The logging level is determined in the JSON configuration file by adding the following parameters:
 
     ```bash
-    "controller_logging" : "DEBUG",
+    "controller_logging" : "logging.DEBUG",
     "tincan_logging": 2
     ```
     * **logging_level** - sets the Python logging module for the controller with possible values
