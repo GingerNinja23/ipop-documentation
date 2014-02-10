@@ -62,5 +62,6 @@ with each other.**
 
     ```bash
     pkill ipop-tincan-x86_64
-    pkill svpn_controller.py
+    ps aux | grep svpn_controller.py
+    kill <pid-of-svpn-controller.py>
     ```
