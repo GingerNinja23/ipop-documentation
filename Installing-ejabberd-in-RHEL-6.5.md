@@ -11,12 +11,6 @@ Before you can install EPEL packages, you must have a GPG certificate.  To get i
 
 Install ejabberd
 
-    # for 64-bit
-    rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-
-    # for 32-bit
-    rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
     yum install ejabberd
 
 Enable it at boot time
