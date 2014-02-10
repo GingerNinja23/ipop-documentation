@@ -52,7 +52,8 @@ These instructions have only been tested on Ubuntu 12.04
     >   username = svpnuser@ejabberd  
     >   password = password
 
--   If you are running this on the cloud, make sure to open ports
+-   If you are running this on the cloud, make sure to open ports (port 3478 is necessary because ejabberd
+    runs a STUN server as well)
 
     > TCP - 5222, 5269, 5280  
     > UDP - 3478
