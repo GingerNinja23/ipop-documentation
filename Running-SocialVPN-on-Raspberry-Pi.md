@@ -61,7 +61,8 @@ floating point.
 
     ```bash
     pkill ipop-tincan
-    pkill svpn_controller.py
+    ps aux | grep svpn_controller.py
+    kill <uid-of-svpn-controller.py>
     ```
 
 **Run socialvpn on another machine using same credentials and they will connect
