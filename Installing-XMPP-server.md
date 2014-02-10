@@ -1,4 +1,6 @@
-IPOP allows you to connect to existing XMPP/STUN/TURN services. It is also possible to deploy your own private Online Social Network and NAT traversal services using the ejabberd open-source software and an open-source TURN service. 
+IPOP allows you to connect to existing XMPP/STUN/TURN services. It is also possible to deploy your own private Online Social Network and NAT traversal services using the ejabberd open-source software and an open-source TURN service.
+
+The ejabberd software also runs a STUN server as part of its implementation. Therefore ejabberd serves as both XMPP server and STUN server.
 
 With this setup, you can create your own users and user relationships directly on the ejabberd server. This is especially useful when running GroupVPN - it allows you to define your own groups and endpoint IDs.
 
