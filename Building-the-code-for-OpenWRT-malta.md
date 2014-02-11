@@ -79,3 +79,12 @@ and follow the instructions for the first two sections:
     ```
 5.  The generated binary is located at `out/Release/ipop-tincan` or
     `out/Debug/ipop-tincan`
+
+## Download controllers
+
+1.  Download socialvpn and groupvpn controllers
+
+    ```
+    wget http://github.com/ipop-project/socialvpn/raw/master/src/svpn_controller.py
+    wget http://github.com/ipop-project/groupvpn/raw/master/src/gvpn_controller.py
+    ````
