@@ -1,4 +1,4 @@
-Tested on Ubuntu 12.04 and Debian Wheezy.
+Tested on Ubuntu 12.04, Debian Wheezy, and CentOS 6.
 
 These instructions are derived from these links:
 
@@ -10,8 +10,16 @@ These instructions are derived from these links:
 
 1.  Install dependencies
 
+    a. For Ubuntu and Debian
+
     ```bash
     sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
+    ```
+
+    a. For CentOS 6
+
+    ```bash
+    sudo yum install java-1.7.0-openjdk expat-devel git subversion make 
     ```
 
 2.  Download depot_tools for chromium repo
@@ -23,8 +31,17 @@ These instructions are derived from these links:
 
 3.  Set up environmental variables
 
+    a. For Ubuntu and Debian
+
     ```bash
     export JAVA_HOME=/usr/lib/jvm/default-java
+    export PATH="$(pwd)/depot_tools:$PATH"
+    ```
+
+    b. For CentOS 6
+
+    ```bash
+    export JAVA_HOME=/usr/lib/jvm/jre
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
