@@ -132,3 +132,12 @@ These instructions are derived from these links:
     * ipoptap.dll located in `<path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin`
     * pthreadGC2.dll and pthreadVC2.dll located in
       `<path-to-libjingle>\trunk\third_party\pthreads_win32\bin`
+
+## Download controllers
+
+1.  Download socialvpn and groupvpn controllers
+
+    ```
+    wget http://github.com/ipop-project/socialvpn/raw/master/src/svpn_controller.py
+    wget http://github.com/ipop-project/groupvpn/raw/master/src/gvpn_controller.py
+    ````
