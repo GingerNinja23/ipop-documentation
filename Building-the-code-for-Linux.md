@@ -19,7 +19,7 @@ These instructions are derived from these links:
     a. For CentOS 6
 
     ```bash
-    sudo yum install java-1.7.0-openjdk expat-devel git subversion make gcc gcc-c++ python
+    sudo yum install java-1.7.0-openjdk-devel expat-devel git subversion make gcc gcc-c++ python
     ```
 
 2.  Download depot_tools for chromium repo
@@ -34,14 +34,14 @@ These instructions are derived from these links:
     a. For Ubuntu and Debian
 
     ```bash
-    export JAVA_HOME=/usr/lib/jvm/default-java
+    export JAVA_HOME=/usr/lib/jvm/java
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
     b. For CentOS 6
 
     ```bash
-    export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.51.x86_64/
+    export JAVA_HOME=/usr/bin/java
     export PATH="$(pwd)/depot_tools:$PATH"
     sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
     ```
