@@ -42,7 +42,7 @@ These instructions are derived from these links:
     b. For CentOS 6
 
     ```bash
-    export JAVA_HOME=/usr/lib/jvm/jre
+    export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.51.x86_64/
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
