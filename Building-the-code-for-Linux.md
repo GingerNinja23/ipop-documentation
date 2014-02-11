@@ -19,8 +19,8 @@ These instructions are derived from these links:
     a. For CentOS 6
 
     ```bash
-    sudo yum install java-1.7.0-openjdk expat-devel git subversion
-    sudo yum groupinstall "Development Tools"
+    sudo yum install java-1.7.0-openjdk expat-devel git subversion make gcc gcc-c++
+    sudo yum install glibc-devel libstdc++-devel
     ```
 
 2.  Download depot_tools for chromium repo
