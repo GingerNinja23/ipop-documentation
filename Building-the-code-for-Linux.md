@@ -20,6 +20,7 @@ These instructions are derived from these links:
 
     ```bash
     sudo yum install java-1.7.0-openjdk expat-devel git subversion make gcc gcc-c++ python
+    sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
     ```
 
 2.  Download depot_tools for chromium repo
