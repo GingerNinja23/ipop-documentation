@@ -34,7 +34,7 @@ These instructions are derived from these links:
     a. For Ubuntu and Debian
 
     ```bash
-    export JAVA_HOME=/usr/lib/jvm/java
+    export JAVA_HOME=/usr/lib/jvm/default-java
     export PATH="$(pwd)/depot_tools:$PATH"
     ```
 
