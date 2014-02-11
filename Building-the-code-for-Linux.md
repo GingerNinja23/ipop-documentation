@@ -20,7 +20,6 @@ These instructions are derived from these links:
 
     ```bash
     sudo yum install java-1.7.0-openjdk expat-devel git subversion make gcc gcc-c++
-    sudo yum install glibc-devel libstdc++-devel
     ```
 
 2.  Download depot_tools for chromium repo
