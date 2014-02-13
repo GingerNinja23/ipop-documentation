@@ -19,6 +19,7 @@ Right click on the certificate and choose install from the context menu. Chose t
 4. Rename the newly installed tap-device to "_ipop_".
 
 From the Control Panel choose _View network status and tasks_ under Network and Internet. On the right side-bar click _change adapter settings_. Select the _TAP Windows Adapter V9_ and rename it to "ipop".
+
     [[1.jpg]]
     [[2.jpg]]
 
