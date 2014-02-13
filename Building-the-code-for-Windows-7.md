@@ -13,7 +13,7 @@ These instructions are derived from these links:
 
 2.  Right-click on **depot_tools.zip** and click on **extract all**.
 
-3.  Add depot_tools folder to your environmental PATH
+3.  Add depot_tools folder to your environmental variables PATH
 
     1. Control Panel > User Accounts > User Accounts > Change my environment variables
     2. Add a PATH user variable: *%PATH%;C:\path\to\depot_tools*
@@ -31,6 +31,8 @@ These instructions are derived from these links:
 4.  Download and install [Visual C++ SP1 Compiler Update](http://www.microsoft.com/en-us/download/details.aspx?id=4422)
 
 5.  Download and install [Windows Driver Kit 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=11800)
+
+6.  Add environmental user variable: WDK_DIR= *C:\WinDDK\7600.16385.1*
 
 ## Download source code
 
