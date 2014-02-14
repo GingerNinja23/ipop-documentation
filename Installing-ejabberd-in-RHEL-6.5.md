@@ -52,5 +52,5 @@ How to install ejabberd on a RHEL 6.5 running on the RHN.
 8. Add the default user
 
     ```
-    ejabberdctl register svpnuser ejabberd password
+    ejabberdctl register ipopuser ejabberd password
     ```
