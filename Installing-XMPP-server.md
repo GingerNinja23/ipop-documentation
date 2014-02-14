@@ -58,7 +58,7 @@ These instructions have only been tested on Ubuntu 12.04
 -   You can add more users by going to `http://ip-address-of-vm:5280/admin`
     (click on Virtual Hosts ==\> ejabberd ==\> Users)
 
-    >   username = svpnuser@ejabberd  
+    >   username = ipopuser@ejabberd  
     >   password = password
 
 -   If you are running this on the cloud, make sure to open ports (port 3478 is necessary because ejabberd
