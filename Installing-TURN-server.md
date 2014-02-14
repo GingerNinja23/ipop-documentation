@@ -57,7 +57,7 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     ```
     {
         "ip4": "172.31.0.100",
-        "xmpp_username": "svpnuser@ejabberd",
+        "xmpp_username": "ipopuser@ejabberd",
         "xmpp_password": "password",
         "xmpp_host": "public-ip-of-ejabberd-server",
         "stun": ["public-ip-of-your-vm:19302"],
