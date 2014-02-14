@@ -11,6 +11,7 @@
     * [[Raspberry Pi|Running SocialVPN on Raspberry Pi]]
 * **Running GroupVPN nodes**
     * [[Linux|Running GroupVPN on Linux]]
+    * [[Windows| Running GroupVPN on Windows]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
 * **Deploying OSN and NAT traversal services**
     * [[XMPP+STUN Service - Ubuntu|Installing XMPP server]]
