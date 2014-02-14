@@ -18,15 +18,22 @@ These instructions have only been tested on Ubuntu 12.04
 2.  Update configuration and restart
 
     ```bash
-    wget -O ejabberd.cfg http://goo.gl/iObOjl
-    sudo cp ejabberd.cfg /etc/ejabberd/
+    sudo vi /etc/ejabberd/ejabberd.cfg
+
+    #update line
+    %% Admin user
+    {acl, admin, {user, "ipopuser", "ejabberd"}}.
+
+    %% Hostname
+    {hosts, ["localhost", "ejabberd"]}.
+
     sudo service ejabberd restart
     ```
 
 3.  Create default user
 
     ```bash
-    sudo ejabberdctl register svpnuser ejabberd password
+    sudo ejabberdctl register ipopuser ejabberd password
     ```
 
 ## Configure SocialVPN/GroupVPN
@@ -39,7 +46,7 @@ These instructions have only been tested on Ubuntu 12.04
     ```bash
     {
         "ip4": "172.31.0.100",
-        "xmpp_username": "svpnuser@ejabberd",
+        "xmpp_username": "ipopuser@ejabberd",
         "xmpp_password": "password",
         "xmpp_host": "public-ip-of-ejabberd-vm",
         "stun": ["public-ip-of-ejabberd-vm:3478"]
