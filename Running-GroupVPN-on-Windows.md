@@ -13,8 +13,7 @@ meaning the connection to the XMPP server is encrypted but
 
 2. Install [tap-installer from OpenVPN](http://swupdate.openvpn.org/community/releases/tap-windows-9.9.2_3.exe).
 
-3. Download and install the [XMPP server certificate] (https://www.acis.ufl.edu/~ptony82/t/ejabberd.crt).
-Right click on the certificate and choose install from the context menu. Chose to _place the certificate in the following store_ and browse to _Trusted Root Certification Authorities_. Click OK and through to finish.
+3. If you are using an XMPP server with a self-signed certificate. Download and install the XMPP server certificate -Right click on the certificate and choose install from the context menu. Chose to _place the certificate in the following store_ and browse to _Trusted Root Certification Authorities_. Click OK and through to finish.
 
 4. Rename the newly installed tap-device to "_ipop_".
 From the Control Panel choose _View network status and tasks_ under Network and Internet. On the right side-bar click _change adapter settings_. Select the _TAP Windows Adapter V9_ and rename it to "ipop".
