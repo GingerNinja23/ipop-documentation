@@ -77,7 +77,7 @@ multiple LXC container talk to each other over GroupVPN
 1.  Launch ipop-tincan (`-nt` flag is really important for this setup to disable translation)
 
     ```bash
-    ./ipop-tincan -nt 1> out.log 2> err.log &
+    ./ipop-tincan-x86_64 -nt 1> out.log 2> err.log &
     ```
 
 2.  Start the appropriate controller
