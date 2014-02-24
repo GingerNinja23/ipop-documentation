@@ -107,10 +107,10 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 ## Running GroupVPN
 
-1.  Launch ipop-tincan
+1.  Launch ipop-tincan (`-nt` flag is really important for this setup to disable translation)
 
     ```bash
-    ./ipop-tincan 1> out.log 2> err.log &
+    ./ipop-tincan -nt 1> out.log 2> err.log &
     ```
 
 2.  Start the appropriate controller
