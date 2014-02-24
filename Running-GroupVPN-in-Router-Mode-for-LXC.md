@@ -11,10 +11,10 @@ multiple LXC container talk to each other over GroupVPN
 
     ```bash
     LXC_BRIDGE="lxcbr0"
-    LXC_ADDR="192.168.1.1"
+    LXC_ADDR="172.16.1.1"
     LXC_NETMASK="255.255.255.0"
-    LXC_NETWORK="192.168.1.0/24"
-    LXC_DHCP_RANGE="192.168.1.2,192.168.1.254"
+    LXC_NETWORK="172.16.1.0/24"
+    LXC_DHCP_RANGE="172.16.1.2,172.16.1.254"
     LXC_DHCP_MAX="253"
     ```
 
@@ -53,12 +53,12 @@ multiple LXC container talk to each other over GroupVPN
 
     ```
     {
-        "ip4": "192.168.1.0",
+        "ip4": "172.16.1.0",
         "xmpp_username": "username@gmail.com",
         "xmpp_host": "talk.google.com",
         "xmpp_password": "password",
         "router_mode": true,
-        "router_ip": "192.168.0.0",
+        "router_ip": "172.16.0.0",
         "router_ip4_mask": 16,
         "router_ip6_mask": 64,
         "subnet_mask": 24
