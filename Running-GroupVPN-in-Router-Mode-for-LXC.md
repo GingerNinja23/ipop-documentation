@@ -30,6 +30,11 @@ multiple LXC container talk to each other over GroupVPN
     sudo iptables -F -t nat
     ```
 
+1.  (Optional) Add masquerade rule to enable Internet connectivity inside containers
+
+    ```bash
+    iptables -t nat -A POSTROUTING -s 192.168.1.0/24 ! -d 192.168.0.0 -j MASQUERADE
+    ```
 ## Download and configure GroupVPN
 
 1.  Download groupvpn and extract for linux
