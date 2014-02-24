@@ -1,4 +1,6 @@
-This has been testing on Ubuntu 12.04
+This has been testing on Ubuntu 12.04.
+
+**Important note** - Running the network on FutureGrid causes issues if you select any subnet in the 192.168.x.y range. So I recommend using the 172.16.x.y through 172.31.x.y subnet. 
 
 This tutorial explains how you can run GroupVPN in router mode so that you can have
 multiple LXC container talk to each other over GroupVPN
