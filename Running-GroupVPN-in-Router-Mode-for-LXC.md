@@ -5,7 +5,7 @@ This has been testing on Ubuntu 12.04.
 This tutorial explains how you can run GroupVPN in router mode so that you can have
 multiple LXC container talk to each other over GroupVPN
 
-## Configure LXC network
+## Configure LXC network and iptables
 
 1.  Edit `/etc/default/lxc`
 
