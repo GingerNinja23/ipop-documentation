@@ -40,7 +40,7 @@ multiple LXC container talk to each other over GroupVPN
 1.  Download groupvpn and extract for linux
 
     ```bash
-    wget wget -O ipop-linux_14.01.tgz http://goo.gl/fZSLhY
+    wget -O ipop-linux_14.01.tgz http://goo.gl/fZSLhY
     tar xvzf ipop-linux_14.01.tgz
     cd ipop-linux_14.01
     ```
@@ -64,7 +64,7 @@ multiple LXC container talk to each other over GroupVPN
     }
     ```
 
-    * `ip4`: should be set to the subnet of the local LAN, you can find that information under `ect/config/dhcp`
+    * `ip4`: should be set to the subnet of the local LAN
     * `router_mode`: should be set to true
     * `router_ip`: should be the network that IPOP will handle
     * `router_ip4_mask`: IPv4 network mask
