@@ -1,3 +1,5 @@
+## THIS PAGE IS OUTDATED
+
 These instructions will explain how to run multiple versions of SocialVPN on one
 VM using LXC.
 
