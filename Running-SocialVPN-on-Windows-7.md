@@ -62,5 +62,7 @@ meaning the connection to the XMPP server is encrypted but
 2. Run socialvpn on another machine using same credentials and they will
    connect with each other.
 
+    By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
+
 ### Close SocialVPN software
 1. Close two shell windows.
