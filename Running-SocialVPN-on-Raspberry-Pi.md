@@ -46,6 +46,7 @@ floating point.
     ```bash
     echo '{"m":"get_state"}' | netcat -u 127.0.0.1 5800
     ```
+    By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
 
 4.  Check the network devices and ip address for your device
 
