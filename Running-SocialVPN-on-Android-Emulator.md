@@ -120,6 +120,8 @@ You can create such a VM on
     netcfg
     ```
 
+   By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
+
 ## Closing SocialVPN
 
 1.  Kill socialvpn process and terminate the AVD
