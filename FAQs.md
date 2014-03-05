@@ -36,13 +36,14 @@ relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 cert
 
     If you would like to statically assign addresses to SocialVPN peers, you can do so through an additional configuration file that can be loaded with the -p argument (e.g. -p ip_config.json). In this file, you specify the UID of a node, the virtual IP address, and a label, as in the following example:
 
-    [
+    ```[
         {
             "uid": "54f2b14f80e5374f8af7ad1b4838145ea7eaaf57",
             "ipv4": "172.31.0.101",
             "desc": "Linux VM"
         }
-    ] 
+    ]
+    ```
 
 1. **How do I enable logging for debugging?**
 
