@@ -41,7 +41,12 @@ relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 cert
         {
             "uid": "54f2b14f80e5374f8af7ad1b4838145ea7eaaf57",
             "ipv4": "172.31.0.101",
-            "desc": "Linux VM"
+            "desc": "Alice"
+        },
+        {
+            "uid": "2561b75dd81575044d9aef9a4db83aa2a7a23a9b",
+            "ipv4": "172.31.0.102",
+            "desc": "Bob"
         }
     ]
     ```
