@@ -4,13 +4,13 @@
 
     From a technical standpoint, the main difference between the two controllers is with respect to the allocation and translation of IPv4 address spaces. SocialVPN assigns and translates private IPv4 subnets and addresses dynamically between any two users/nodes such that it can scale to large numbers of users of online social networks without creating address conflicts. GroupVPN assigns a single private subnet to a group of user/nodes, and does not perform any address translation.
 
-1. **Why use IPOP/SocialVPN over Tinc?**
+1. **Why use IPOP/SocialVPN instead of Tinc?**
 
     IPOP's SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
 P2P connections between nodes behind NATs, whereas Tinc needs publicly addressable servers to help route
 traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. Furthermore, IPOP/SocialVPN does not require manual configuration of any NAT/firewall rules - it performs NAT hole-punching automatically and transparently to the user, without requiring access to NAT/firewall devices. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
 
-1. **Why use IPOP/SocialVPN over Hamachi?**
+1. **Why use IPOP/SocialVPN instead of Hamachi?**
 
     Hamachi is no longer free, and it is closed source. Hamachi is very similar to SocialVPN because
 it creates direct P2P connections whenever possible and uses relaying when direct connections are not
@@ -18,7 +18,7 @@ possible. However, Hamachi uses its own proprietary server technologies and mana
 uses the XMPP protocol to establish P2P connections and users can use Google accounts to connect. For
 relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL. SocialVPN is implemented on mature, open-source technologies, and can be extended by the community.
 
-1. **Why use IPOP/SocialVPN over Pertino?**
+1. **Why use IPOP/SocialVPN instead of Pertino?**
 
     Pertino is not open-source, and it is only free for a limited number of devices (up to 9). Also, Pertino is very similar to Tinc because all IP traffic has to flow through intermediary nodes housed in the cloud. This creates latency and bandwidth overheads. SocialVPN finds a direct P2P Internet path between two nodes, even if nodes are behind NATs.
 
@@ -31,6 +31,18 @@ relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 cert
     ```
 
     A feature for future releases is to provide a Web-based interface to browse the status of peers.
+
+1. **How do I configure the IP address of peers in my SocialVPN?**
+
+    If you would like to statically assign addresses to SocialVPN peers, you can do so through an additional configuration file that can be loaded with the -p argument (e.g. -p ip_config.json). In this file, you specify the UID of a node, the virtual IP address, and a label, as in the following example:
+
+[
+        {
+            "uid": "54f2b14f80e5374f8af7ad1b4838145ea7eaaf57",
+            "ipv4": "172.31.0.101",
+            "desc": "Linux VM"
+        }
+] 
 
 1. **How do I enable logging for debugging?**
 
