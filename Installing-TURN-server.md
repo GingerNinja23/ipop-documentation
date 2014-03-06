@@ -63,7 +63,7 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
         "stun": ["public-ip-of-your-vm:19302"],
         "turn": [
             {"server": "public-ip-of-your-vm:19302", "user": "svpnjingle", "pass": "1234567890"}
-        ],
+        ]
     }
     ```
 
