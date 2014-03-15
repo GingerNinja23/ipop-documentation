@@ -86,9 +86,10 @@ These instructions are derived from these links:
 2.  Copy modified gyp files to trunk/talk directory
 
     ```bash
-    cp -af talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
-    cp -af talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
-    cp -af talk/ipop-project/ipop-tincan/build/all.gyp .
+    rm -f all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
+    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
+    cp talk/ipop-project/ipop-tincan/build/all.gyp .
     ```
 
 3.  Generate ninja build files
