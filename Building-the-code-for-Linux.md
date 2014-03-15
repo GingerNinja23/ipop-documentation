@@ -94,6 +94,7 @@ These instructions are derived from these links:
 3.  Generate ninja build files
 
     ```bash
+    cd ..
     gclient runhooks --force
     ```
 
