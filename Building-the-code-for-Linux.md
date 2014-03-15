@@ -1,4 +1,4 @@
-Tested on Ubuntu 12.04, Debian Wheezy, and CentOS 6.
+Tested on Ubuntu 12.04, Debian Wheezy, and CentOS 6.5.
 
 These instructions are derived from these links:
 
@@ -41,7 +41,7 @@ These instructions are derived from these links:
     b. For CentOS 6
 
     ```bash
-    export JAVA_HOME=/usr/bin/java
+    export JAVA_HOME=/usr/lib/jvm/java
     export PATH="$(pwd)/depot_tools:$PATH"
     sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
     ```
