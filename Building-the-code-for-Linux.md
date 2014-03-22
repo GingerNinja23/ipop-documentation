@@ -46,7 +46,7 @@ These instructions are derived from these links:
     sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
     ```
 
-4.   (Optional) For 32-bit compilation in cross-compiling environment, set target_arch
+4.   (Optional) For 32-bit compilation set target_arch
 
     ```bash
     export GYP_DEFINES="target_arch=ia32"
