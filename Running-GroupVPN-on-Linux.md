@@ -5,9 +5,9 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 1.  Download groupvpn and extract for Linux
 
     ```bash
-    wget wget -O ipop-linux_14.01.tgz http://goo.gl/fZSLhY
-    tar xvzf ipop-linux_14.01.tgz
-    cd ipop-linux_14.01
+    wget wget -O ipop-14.01.1-x86_64_centos6.tar.gz http://goo.gl/1Fqxtj
+    tar xvzf ipop-14.01.1-x86_64_centos6.tar.gz
+    cd ipop-14.01.1-x86_64_centos6
     ```
 
 2.  Update the `config.json` file with proper XMPP server address, and the
