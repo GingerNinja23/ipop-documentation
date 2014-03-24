@@ -21,9 +21,9 @@ meaning the connection to the XMPP server is encrypted but
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/leX2Qm).
+1. [Download SocialVPN for Windows](http://goo.gl/t7HxnU).
 
-2. Extract "ipop-win32_14.01.zip".
+2. Extract "ipop-14.01.1-x86_32_win7".
 
 3. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
