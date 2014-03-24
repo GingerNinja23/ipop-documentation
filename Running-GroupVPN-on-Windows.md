@@ -23,9 +23,9 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 ## Install binaries
 
-1. [Download GroupVPN for Windows](http://goo.gl/leX2Qm).
+1. [Download SocialVPN for Windows](http://goo.gl/t7HxnU).
 
-2. Extract "ipop-win32_14.01.zip".
+2. Extract "ipop-14.01.1-x86_32_win7".
 
 3. You must then edit the "_setup-interface.bat_" and "_config.txt_". Each 
 peer that participates in the group VPN must be assigned a unique static IP v4
