@@ -15,7 +15,7 @@ These instructions have only been tested on Ubuntu 12.04
     sudo apt-get install ejabberd
     ```
 
-2.  Update configuration and restart
+2.  Update configuration
 
     ```bash
     sudo vi /etc/ejabberd/ejabberd.cfg
