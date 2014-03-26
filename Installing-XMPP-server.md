@@ -20,17 +20,38 @@ These instructions have only been tested on Ubuntu 12.04
     ```bash
     sudo vi /etc/ejabberd/ejabberd.cfg
 
-    #update line
+    #update lines with ipopuser and ejabberd host
     %% Admin user
     {acl, admin, {user, "ipopuser", "ejabberd"}}.
 
     %% Hostname
     {hosts, ["localhost", "ejabberd"]}.
+    ```
 
+3.  Add the following to the ejabberd.cfg file to enable STUN
+    ```bash
+    sudo vi /etc/ejabberd/ejabberd.cfg
+
+    {listen,
+     [
+      {5222, ejabberd_c2s, [
+                            {access, c2s},
+                            {shaper, c2s_shaper},
+                            {max_stanza_size, 65536},
+                            %%zlib,
+                            starttls, {certfile, "/etc/ejabberd/ejabberd.pem"}
+                           ]},
+
+      %% this is the new line to enable stun
+      {{3478, udp}, ejabberd_stun, []},
+    ```
+4.  Restart ejabberd service
+
+    ```bash
     sudo service ejabberd restart
     ```
 
-3.  Create default user
+5.  Create default user
 
     ```bash
     sudo ejabberdctl register ipopuser ejabberd password
