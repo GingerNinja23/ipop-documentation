@@ -21,7 +21,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
         "ip4": "172.31.0.100",
         "ip4_mask": 24,
         "tincan_logging": 0,
-        "controller_logging": "logging.INFO"
+        "controller_logging": "INFO"
     }
     ```
 
