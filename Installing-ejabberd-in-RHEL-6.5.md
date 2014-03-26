@@ -28,29 +28,50 @@ How to install ejabberd on a RHEL 6.5 running on the RHN.
     yum install ejabberd
     ```
 
-5. Enable it at boot time
+5.  Update configuration
 
-    ```
-    chkconfig ejabberd on
-    ```
+    ```bash
+    sudo vi /etc/ejabberd/ejabberd.cfg
 
-6. Get/install the config file
+    #update lines with ipopuser and ejabberd host
+    %% Admin user
+    {acl, admin, {user, "ipopuser", "ejabberd"}}.
 
-    ```
-    cd /etc/ejabberd
-    mv ejabberd.cfg ejabberd.cfg.orig
-    wget -O ejabberd.cfg http://goo.gl/iObOjl --no-check-certificate
-    chown ejabberd.ejabberd ejabberd.cfg
+    %% Hostname
+    {hosts, ["localhost", "ejabberd"]}.
     ```
 
-7. Start it
+6.  Add the following to the ejabberd.cfg file to enable STUN
+    ```bash
+    sudo vi /etc/ejabberd/ejabberd.cfg
 
+    {listen,
+     [
+      {5222, ejabberd_c2s, [
+                            {access, c2s},
+                            {shaper, c2s_shaper},
+                            {max_stanza_size, 65536},
+                            %%zlib,
+                            starttls, {certfile, "/etc/ejabberd/ejabberd.pem"}
+                           ]},
+
+      %% this is the new line to enable stun
+      {{3478, udp}, ejabberd_stun, []},
     ```
+6.  Restart ejabberd service
+
+    ```bash
     /etc/init.d/ejabberd start
     ```
 
-8. Add the default user
+7.  Create default user
+
+    ```bash
+    sudo ejabberdctl register ipopuser ejabberd password
+    ```
+
+8. Enable it at boot time
 
     ```
-    ejabberdctl register ipopuser ejabberd password
+    chkconfig ejabberd on
     ```
