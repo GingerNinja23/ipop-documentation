@@ -1,5 +1,5 @@
 These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
-Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) for additional platforms.
+Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) to get packages for additional platforms.
 
 ## Download and configure GroupVPN
 
