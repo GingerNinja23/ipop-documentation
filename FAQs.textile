@@ -6,17 +6,11 @@
 
 1. **Why use IPOP/SocialVPN instead of Tinc?**
 
-    IPOP's SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct
-P2P connections between nodes behind NATs, whereas Tinc needs publicly addressable servers to help route
-traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. Furthermore, IPOP/SocialVPN does not require manual configuration of any NAT/firewall rules - it performs NAT hole-punching automatically and transparently to the user, without requiring access to NAT/firewall devices. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
+    IPOP's SocialVPN uses [Google's libjingle](https://developers.google.com/talk/libjingle/) to create direct P2P connections between nodes behind NATs, whereas Tinc needs publicly addressable servers to help route traffic. As a result, SocialVPN can achieve much lower latencies and higher bandwidth because traffic is not routed via any intermediary node. Furthermore, IPOP/SocialVPN does not require manual configuration if any NAT/firewall rules - it performs NAT hole-punching automatically and transparently to the user, without requiring access to NAT/firewall devices. SocialVPN only requires an intermediary node (using TURN) when behind symmetric NATs, which are not the common case.
 
 1. **Why use IPOP/SocialVPN instead of Hamachi?**
 
-    Hamachi is no longer free, and it is closed source. Hamachi is very similar to SocialVPN because
-it creates direct P2P connections whenever possible and uses relaying when direct connections are not
-possible. However, Hamachi uses its own proprietary server technologies and manages public keys. SocialVPN
-uses the XMPP protocol to establish P2P connections and users can use Google accounts to connect. For
-relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL. SocialVPN is implemented on mature, open-source technologies, and can be extended by the community.
+    Hamachi is no longer free, and it is closed source. Hamachi is very similar to SocialVPN because it creates direct P2P connections whenever possible and uses relaying when direct connections are not possible. However, Hamachi uses its own proprietary server technologies and manages public keys. SocialVPN uses the XMPP protocol to establish P2P connections and users can use Google accounts to connect. For relaying, SocialVPN uses TURN servers. For encryption, SocialVPN uses X.509 certificates and OpenSSL. SocialVPN is implemented on mature, open-source technologies, and can be extended by the community.
 
 1. **Why use IPOP/SocialVPN instead of Pertino?**
 
