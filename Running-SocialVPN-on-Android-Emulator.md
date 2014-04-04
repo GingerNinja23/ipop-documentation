@@ -143,9 +143,15 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
 ## Running SocialVPN on Android Device
 ### Prepare directories and SocialVPN files
-1.  Create directories for SocialVPN files. Main difference with running SocialVPN on Android Emulator is that 
-every single command must run as root. You are able to get root access per a terminal by typing `su`.
+1.  Create directories for SocialVPN files. Main difference with running SocialVPN on Android Emulator is that most commands in this instruction must run as root. You are able to get root access per a terminal by typing `su`.
 
+  ```bash
+    platform-tools/adb shell
+    su
+    mkdir /data/ipop
+    cd /data/ipop
+    mkdir data/ipop/python27
+    ```
 
 **Run socialvpn on another machine using same credentials and they will connect
 with each other.**
