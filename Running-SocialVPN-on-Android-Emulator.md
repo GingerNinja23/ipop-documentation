@@ -153,7 +153,16 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     mkdir data/ipop/python27
     ```
 
-2.  Use `adb push` to copy downloaded files to AVD
+2.  Create directories for copying downloaded files. First difference is that every file copy into the device must be through `/sdcard`
+
+ ```bash
+
+    cd ../../sdcard
+    mkdir ipop
+    mkdir python
+    ```
+
+3.  Use `adb push` to copy downloaded files to the device. 
 
     ```bash
     platform-tools/adb push ipop-14.01.1-arm_android /data/ipop
