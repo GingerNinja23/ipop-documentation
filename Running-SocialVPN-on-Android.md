@@ -1,6 +1,6 @@
 These instructions are for Ubuntu 12.04. 
 
-If you use Android Virtual Device(ADV), your VM should have 1GB RAM or more.
+If you use Android Virtual Device(AVD), your VM should have 1GB RAM or more.
 You can create such a VM on
 [FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
