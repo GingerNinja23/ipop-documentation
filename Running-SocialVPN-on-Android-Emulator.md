@@ -58,7 +58,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     }
     ```
 
-## Running SocialVPN on AVD
+## Running SocialVPN on Android Emulator
 ### Instantiate Android Virtual Device
 
 1.  Define and create Android Virtual Device (AVD) (this also takes a while)
