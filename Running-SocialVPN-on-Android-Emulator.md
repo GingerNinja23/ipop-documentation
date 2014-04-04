@@ -153,5 +153,12 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     mkdir data/ipop/python27
     ```
 
+2.  Use `adb push` to copy downloaded files to AVD
+
+    ```bash
+    platform-tools/adb push ipop-14.01.1-arm_android /data/ipop
+    platform-tools/adb push python27 /data/ipop/python27
+    ```
+
 **Run socialvpn on another machine using same credentials and they will connect
 with each other.**
