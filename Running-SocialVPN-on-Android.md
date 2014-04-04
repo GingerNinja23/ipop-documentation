@@ -30,7 +30,36 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     tools/android update sdk -u -t platform-tools,android-16,sysimg-16
     ```
 
-## Instantiate Android Virtual Device
+## Download SocialVPN and dependencies
+
+1.  Download socialvpn and Python 2.7 for android
+
+    ```bash
+    wget -O ipop-14.01.1-arm_android.tar.gz http://goo.gl/kfcRSL
+    wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
+    tar xzvf python27.tgz; tar xzvf ipop-14.01.1-arm_android.tar.gz
+    ```
+
+2.  Update the `config.json` file with proper credentials. For SocialVPN, you
+    do not have to change the *ip4* address.
+
+
+    ```bash
+    cd ipop-14.01.1-arm_android
+    cat config.json
+    {
+        "xmpp_username": "username@gmail.com",
+        "xmpp_password": "enter-password-here",
+        "xmpp_host": "talk.google.com",
+        "ip4": "172.31.0.100",
+        "ip4_mask": 24,
+        "tincan_logging": 0,
+        "controller_logging": "INFO"
+    }
+    ```
+
+## Running SocialVPN on Android Virtual Device
+### Instantiate Android Virtual Device
 
 1.  Define and create Android Virtual Device (AVD) (this also takes a while)
 
@@ -49,6 +78,16 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
     ```bash
     platform-tools/adb shell netcfg
+    ```
+
+4.  Create directory for socialvpn files
+
+    ```bash
+    platform-tools/adb shell
+    su
+    mkdir /data/ipop; chmod 777 /data/ipop
+    exit
+    platform-tools/adb shell mkdir data/ipop/python27
     ```
 
 ## Download SocialVPN and dependencies
