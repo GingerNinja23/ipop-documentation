@@ -1,11 +1,11 @@
 These instructions are for Ubuntu 12.04. 
 
-If you use Android Emulator, your VM should have 1GB RAM or more.
+If you use Android Virtual Device(ADV), your VM should have 1GB RAM or more.
 You can create such a VM on
 [FutureGrid](http://manual.futuregrid.org/openstackgrizzly.html).
 
-If you use real Android device, your device must be rooted to run SocialVPN.
-The instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
+If you use real Android devices, your devices must be rooted to run SocialVPN.
+These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
 ## Install necessary packages
 
