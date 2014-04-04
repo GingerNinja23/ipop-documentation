@@ -162,11 +162,11 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     mkdir python
     ```
 
-3.  Use `adb push` to copy downloaded files to the device. 
+3.  Use `adb push` to copy downloaded files to the device. First copy SocialVPN files to `sdcard/ipop` and `sdcard/python27`.
 
     ```bash
-    platform-tools/adb push ipop-14.01.1-arm_android /data/ipop
-    platform-tools/adb push python27 /data/ipop/python27
+    platform-tools/adb push ipop-14.01.1-arm_android /sdcard/ipop
+    platform-tools/adb push python27 /sdcard/python27
     ```
 
 **Run socialvpn on another machine using same credentials and they will connect
