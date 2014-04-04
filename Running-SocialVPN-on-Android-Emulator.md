@@ -80,8 +80,8 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     platform-tools/adb shell netcfg
     ```
 
-### Prepare directories and socialvpn files 
-1.  Create directory for socialvpn files. Android Emulator automatically gives you root access from adb shell.
+### Prepare directories and SocialVPN files 
+1.  Create directories for SocialVPN files. Android Emulator automatically gives you root access from adb shell.
 
     ```bash
     platform-tools/adb shell
@@ -90,54 +90,16 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     platform-tools/adb shell mkdir data/ipop/python27
     ```
 
-## Download SocialVPN and dependencies
-
-1.  Create directory for socialvpn files
-
-    ```bash
-    platform-tools/adb shell
-    su
-    mkdir /data/ipop; chmod 777 /data/ipop
-    exit
-    platform-tools/adb shell mkdir data/ipop/python27
-    ```
-
-2.  Download socialvpn and Python 2.7 for android
-
-    ```bash
-    wget -O ipop-14.01.1-arm_android.tar.gz http://goo.gl/kfcRSL
-    wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
-    tar xzvf python27.tgz; tar xzvf ipop-14.01.1-arm_android.tar.gz
-    ```
-
-3.  Update the `config.json` file with proper credentials. For SocialVPN, you
-    do not have to change the *ip4* address.
-
-
-    ```bash
-    cd ipop-14.01.1-arm_android
-    cat config.json
-    {
-        "xmpp_username": "username@gmail.com",
-        "xmpp_password": "enter-password-here",
-        "xmpp_host": "talk.google.com",
-        "ip4": "172.31.0.100",
-        "ip4_mask": 24,
-        "tincan_logging": 0,
-        "controller_logging": "INFO"
-    }
-    ```
-
-3.  Use `adb push` to copy downloaded files to AVD
+2.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
     platform-tools/adb push ipop-14.01.1-arm_android /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
-## Running SocialVPN in Android Emulator
+### Run SocialVPN
 
-1.  Access the AVD shell and go to svpn directory
+1.  Access the AVD shell and go to SocialVPN directory
 
     ```bash
     platform-tools/adb shell
@@ -165,7 +127,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
    By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
 
-## Closing SocialVPN
+### Close SocialVPN
 
 1.  Kill socialvpn process and terminate the AVD
 
@@ -178,6 +140,12 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     exit
     platform-tools/adb shell emu kill
     ```
+
+## Running SocialVPN on Android Device
+### Prepare directories and SocialVPN files
+1.  Create directories for SocialVPN files. Main difference with running SocialVPN on Android Emulator is that 
+every single command must run as root. You are able to get root access per a terminal by typing `su`.
+
 
 **Run socialvpn on another machine using same credentials and they will connect
 with each other.**
