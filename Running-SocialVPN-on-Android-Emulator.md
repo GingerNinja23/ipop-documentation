@@ -80,11 +80,10 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     platform-tools/adb shell netcfg
     ```
 
-4.  Create directory for socialvpn files. Android Emulator automatically gives root access from adb shell
+4.  Create directory for socialvpn files. Android Emulator automatically gives root access from adb shell.
 
     ```bash
     platform-tools/adb shell
-    su
     mkdir /data/ipop; chmod 777 /data/ipop
     exit
     platform-tools/adb shell mkdir data/ipop/python27
