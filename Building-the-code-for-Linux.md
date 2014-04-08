@@ -13,13 +13,13 @@ These instructions are derived from these links:
     a. For Ubuntu and Debian
 
     ```bash
-    sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
+    sudo apt-get install default-jdk libexpat1-dev git subversion pkg-config build-essential
     ```
 
     a. For CentOS 6
 
     ```bash
-    sudo yum install java-1.7.0-openjdk-devel expat-devel git subversion make gcc gcc-c++ python
+    sudo yum install java-1.7.0-openjdk-devel expat-devel git subversion pkg-config make gcc gcc-c++ python
     ```
 
 2.  Download depot_tools for chromium repo
