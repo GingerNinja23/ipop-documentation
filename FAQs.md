@@ -65,7 +65,15 @@
 
 1. **What XMPP services are known to work with IPOP?**
 
-    It is know to work with Google XMPP service (with exceptions; see [[known issues|Known issues]]), and with ejabberd-based servers (e.g. www.jabber.org).
+    It is known to work with Google XMPP service, and with ejabberd-based servers (e.g. www.jabber.org).
+
+1.  **I have two-factor authentication enabled for my Google account, and I can't log in.**
+
+    We currently have no interface to support Google's 2FA. As an alternative, you can set up an "Application Specific Password". This is a long, random password that can be revoked at any time. [Go to your account management page](https://www.google.com/settings/security), and click on the "Security" tab. Click on the "Settings" option for "App passwords". There you should be able to create a new application-specific password for IPOP.
+
+    ![Example 2FA setup page](http://i.imgur.com/DB1YK9X.png)
+
+    Use this password when setting up IPOP, instead of your normal Google password.
 
 1.  **How do I enable IPv6 on Raspberry Pi (and other linux based systems)?**
 
