@@ -13,7 +13,8 @@ These instructions are derived from these links:
     a. For Ubuntu and Debian
 
     ```bash
-    sudo apt-get install default-jdk libexpat1-dev git subversion pkg-config build-essential
+    sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
+    sudo apt-get install pkg-config libgtk2.0-dev libnss3-dev
     ```
 
     a. For CentOS 6
