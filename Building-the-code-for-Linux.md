@@ -49,7 +49,7 @@ These instructions are derived from these links:
 4.   (Optional) For 32-bit compilation set target_arch
 
     ```bash
-    export GYP_DEFINES="target_arch=ia32"
+    export GYP_DEFINES="target_arch=ia32 use_openssl=1"
     ```
 
 ## Download source code
