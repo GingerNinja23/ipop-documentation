@@ -169,5 +169,53 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     platform-tools/adb push python27 /sdcard/python27
     ```
 
+4. Change the binary file's mode as executable
+
+    ```bash
+    su
+    cd sdcard
+    chmod 755 ipop/ipop-tincan
+    chmod 755 python27/files/python/bin/python
+    ```
+
+5. Move downloaded files from `sdcard` to `data`
+
+    ```bash
+    cp -R python27 /data/ipop/python27
+    cp -R ipop /data/ipop
+    ```
+
+### Run SocialVPN
+   
+   Running SocialVPN on Android devices is same as the case of Android Virtual Device.
+
+1.  Launch socialvpn
+
+    ```bash
+    cd /data/ipop
+    ./ipop-tincan 1> out.log 2> err.log &
+    ```
+
+2.  Log into XMPP (Google Chat or Jabber.org) using credentials
+
+    ```bash
+    sh start_controller.sh svpn_controller.py -c config.json &> log.txt &
+    ```
+
+3.  Check the network devices and ip address for your device
+
+    ```bash
+    netcfg
+    ```
+
+### Close SocialVPN
+
+1.  Find SocialVPN process id and kill it
+
+    ```bash
+    ps | grep ipop-tincan
+    kill [SocialVPN pid]
+    ```
+
 **Run socialvpn on another machine using same credentials and they will connect
 with each other.**
