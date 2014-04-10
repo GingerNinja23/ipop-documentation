@@ -14,7 +14,7 @@ These instructions are derived from these links:
 
     ```bash
     sudo apt-get install default-jdk libexpat1-dev git subversion build-essential
-    sudo apt-get install pkg-config libgtk2.0-dev libnss3-dev
+    sudo apt-get install pkg-config libgtk2.0-dev libnss3-dev libssl-dev
     ```
 
     a. For CentOS 6
