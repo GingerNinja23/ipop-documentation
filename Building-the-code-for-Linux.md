@@ -14,14 +14,15 @@ These instructions are derived from these links:
 
     ```bash
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
-    sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev
+    sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
+    sudo apt-get install libxss-dev libxtst-dev libdbus-1-dev libdrm-dev libgconf2-dev
     ```
 
     a. For CentOS 6
 
     ```bash
     sudo yum install java-1.7.0-openjdk-devel git subversion pkg-config make gcc gcc-c++ python
-    sudo yum install expat-devel gtk2-devel libnss3-devel openssl-devel libxss-dev libxtst-dev
+    sudo yum install expat-devel gtk2-devel libnss3-devel openssl-devel
     ```
 
 2.  Download depot_tools for chromium repo
