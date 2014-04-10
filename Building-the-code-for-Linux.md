@@ -16,6 +16,7 @@ These instructions are derived from these links:
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     sudo apt-get install libxss-dev libxtst-dev libdbus-1-dev libdrm-dev libgconf2-dev
+    sudo apt-get install libgnome-keyring-dev libgcrypt11-dev
     ```
 
     a. For CentOS 6
