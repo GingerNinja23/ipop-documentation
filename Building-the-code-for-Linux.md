@@ -15,8 +15,6 @@ These instructions are derived from these links:
     ```bash
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
-    sudo apt-get install libxss-dev libxtst-dev libdbus-1-dev libdrm-dev libgconf2-dev
-    sudo apt-get install libgnome-keyring-dev libgcrypt11-dev libpci-dev libudev-dev
     ```
 
     a. For CentOS 6
@@ -53,7 +51,7 @@ These instructions are derived from these links:
 4.   (Optional) For 32-bit compilation set target_arch
 
     ```bash
-    export GYP_DEFINES="target_arch=ia32 use_openssl=1"
+    export GYP_DEFINES="target_arch=ia32"
     ```
 
 ## Download source code
