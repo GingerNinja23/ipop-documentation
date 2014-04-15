@@ -39,8 +39,6 @@ meaning the connection to the XMPP server is encrypted but
 
     [[3.jpg]]
 
-    [[4.jpg]]
-
 
 ## Run SocialVPN
 
