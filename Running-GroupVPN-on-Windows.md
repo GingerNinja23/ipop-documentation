@@ -27,13 +27,10 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 2. Extract "ipop-14.01.1-x86_32_win7".
 
-3. You must then edit the "_setup-interface.bat_" and "_config.txt_". Each 
+3. You must then edit the  "_config.txt_". Each 
 peer that participates in the group VPN must be assigned a unique static IP v4
-address. On each node this must be set in two places:
- 1) In "_setup-interface.bat_", set your preferred static IP. This will be the 
-    IP address for the ipop adapter.
- 2) In the "_config.txt_", set the ip4 value to the same address you assigned 
-    to the ipop adapter for the current node.
+address. On each node this must be set. In the "_config.txt_", set the ip4 value
+to the same address you assigned to the ipop adapter for the current node.
 You can also set your xmpp username and password at this point and save the changes
 made to both files.
 
