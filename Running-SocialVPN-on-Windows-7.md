@@ -25,20 +25,22 @@ meaning the connection to the XMPP server is encrypted but
 
 2. Extract "ipop-14.01.1-x86_32_win7".
 
-3. Right-click on "_setup-interface.bat_" file, and click on
-    "_Run as administrator_".
-
-    [[3.jpg]]
-
-    [[4.jpg]]
-
-4. Right-click "_config.txt_" file and click on "_Edit_". Update with your
+3. Right-click "_config.txt_" file and click on "_Edit_". Update with your
    XMPP service credential.  For SocialVPN, you
    don't have to change the *ip4* address.
 
     <Example>
 
     [[5.jpg]]
+
+
+4. Right-click on "_setup-interface.bat_" file, and click on
+    "_Run as administrator_".
+
+    [[3.jpg]]
+
+    [[4.jpg]]
+
 
 ## Run SocialVPN
 
