@@ -47,7 +47,9 @@
 
 1. **How do I enable logging for debugging?**
 
-    Generally you don't need to enable logging unless you are a developer, but if you run into errors/crashes, providing a log file is very useful. The logging level is determined in the JSON configuration file by adding the following parameters:
+    Generally you don't need to enable logging unless you are a developer, but if you run into errors/crashes, providing a log file is very useful. *Remember, enabling tincan_logging can reduce
+nextwork performance due to I/O overhead in the packet handling thread*. The logging level is 
+determined in the JSON configuration file by adding the following parameters:
 
     ```bash
     "controller_logging" : "DEBUG",
