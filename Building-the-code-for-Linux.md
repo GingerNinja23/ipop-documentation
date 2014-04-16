@@ -72,6 +72,8 @@ These instructions are derived from these links:
     gclient sync --force
     ```
 
+    _On CentOS, you will see some errors, ignore them_
+
 3.  Download ipop-tincan from github.com/ipop-project
 
     ```bash
