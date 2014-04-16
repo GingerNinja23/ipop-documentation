@@ -29,7 +29,7 @@ These instructions are derived from these links:
     export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-armhf/
     export PATH="$(pwd)/depot_tools:$PATH"
     export GYP_GENERATORS="make"
-    export GYP_DEFINES="target_arch=arm arm_version=6 use_openssl=1"
+    export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6"
     export C_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
     export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
     ```
