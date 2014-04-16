@@ -33,6 +33,18 @@ meaning the connection to the XMPP server is encrypted but
 
     [[5.jpg]]
 
+    ```bash
+    {
+        "xmpp_username": "username@gmail.com",
+        "xmpp_password": "enter-password-here",
+        "xmpp_host": "talk.google.com",
+        "ip4": "172.31.0.100",
+        "ip4_mask": 24,
+        "tincan_logging": 0,
+        "controller_logging": "DEBUG"
+    }
+    ```
+
 
 4. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
