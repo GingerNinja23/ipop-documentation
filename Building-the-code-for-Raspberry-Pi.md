@@ -11,6 +11,7 @@ These instructions are derived from these links:
 1.  This works on Debian-based distros
 
     ```bash
+    sudo apt-get update
     sudo apt-get install pkg-config git subversion make gcc g++ python binutils-gold
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev
     ```
