@@ -77,7 +77,7 @@ These instructions are derived from these links:
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 https://github.com/ptony82/ipop-tincan.git -b feature/migration_3.52
+    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
 
 ## Build ipop-tincan for Linux
