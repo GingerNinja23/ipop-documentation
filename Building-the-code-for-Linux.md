@@ -22,7 +22,7 @@ These instructions are derived from these links:
 
     ```bash
     sudo yum install java-1.7.0-openjdk-devel git subversion pkg-config make gcc gcc-c++ python
-    sudo yum install expat-devel gtk2-devel libnss3-devel openssl-devel
+    sudo yum install expat-devel gtk2-devel nss-devel openssl-devel
     ```
 
 2.  Download depot_tools for chromium repo
