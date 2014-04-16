@@ -13,6 +13,7 @@ These instructions are derived from these links:
     a. For Ubuntu and Debian
 
     ```bash
+    sudo apt-get update
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     ```
