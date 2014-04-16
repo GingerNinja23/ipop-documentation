@@ -38,6 +38,7 @@ These instructions are derived from these links:
     ```bash
     export JAVA_HOME=/usr/lib/jvm/default-java
     export PATH="$(pwd)/depot_tools:$PATH"
+    export GYP_DEFINES="use_openssl=1"
     ```
 
     b. For CentOS 6
@@ -45,13 +46,14 @@ These instructions are derived from these links:
     ```bash
     export JAVA_HOME=/usr/lib/jvm/java
     export PATH="$(pwd)/depot_tools:$PATH"
+    export GYP_DEFINES="use_openssl=1"
     sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
     ```
 
 4.   (Optional) For 32-bit compilation set target_arch
 
     ```bash
-    export GYP_DEFINES="target_arch=ia32"
+    export GYP_DEFINES="target_arch=ia32 use_openssl=1"
     ```
 
 ## Download source code
@@ -59,7 +61,7 @@ These instructions are derived from these links:
 1.  Configure gclient to download libjingle code
 
     ```bash
-    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
     ```
 
 2.  Download libjingle and dependencies (this may take a while). Ignore eror messages 
@@ -74,7 +76,7 @@ These instructions are derived from these links:
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 https://github.com/ptony82/ipop-tincan.git -b feature/migration_3.52
     ```
 
 ## Build ipop-tincan for Linux
@@ -88,10 +90,11 @@ These instructions are derived from these links:
 2.  Copy modified gyp files to trunk/talk directory
 
     ```bash
-    rm -f all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
+    rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
     cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
+    cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```
 
 3.  Generate ninja build files
@@ -120,6 +123,7 @@ These instructions are derived from these links:
 1.  Download socialvpn and groupvpn controllers
 
     ```
-    wget http://github.com/ipop-project/controllers/raw/master/src/svpn_controller.py
-    wget http://github.com/ipop-project/controllers/raw/master/src/gvpn_controller.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/ipoplib.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/svpn_controller.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/gvpn_controller.py
     ````
