@@ -36,7 +36,7 @@ and follow the instructions for the first two sections:
     export AR="$TOOLCHAIN/bin/mipsel-openwrt-linux-uclibc-ar"
     export CC_host="gcc"
     export CXX_host="g++"
-    export GYP_DEFINES="target_arch=mipsel use_openssl=1"
+    export GYP_DEFINES="$GYP_DEFINES target_arch=mipsel"
     ```
 
 4. Install libexpat for OpenWRT toolchain
