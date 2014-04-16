@@ -93,12 +93,16 @@ These instructions are derived from these links:
     move ipop-dll\ipoptap.def <path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin
     ```
 
-3.  (Optional) At the moment, you have to cross-compile IPOP-Tap for Windows on Ubuntu (or Debian)
-    using mingw with the following command from Ubuntu shell. You do not need to perform this step
-    if you decide to use the prebuilt DLL from step two. By running the commands below, `make win32_dll`
-    will create a bin folder, you need to copy the bin folder to the ipop-tap directory on Window
+3.  (Optional) If you would like to build your own IPOP-Tap dll, you have to cross-compile IPOP-Tap
+    for Windows on Ubuntu (or Debian) using mingw with the following command from Ubuntu shell.
+    You do not need to perform this step if you decide to use the prebuilt DLL from step two.
+    By running the commands below, `make win32_dll` will create a bin folder, you need to copy the
+    bin folder to the ipop-tap directory to your Windows machine and place it under the
+    `<path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin` directory.
 
     ```bash
+    # perform these commands on an Ubuntu or Debian machine
+
     sudo apt-get install gcc-mingw-w64-i686
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     cd ipop-tap
