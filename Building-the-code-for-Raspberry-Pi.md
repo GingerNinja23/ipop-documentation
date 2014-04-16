@@ -11,7 +11,8 @@ These instructions are derived from these links:
 1.  This works on Debian-based distros
 
     ```bash
-    sudo apt-get install libexpat1-dev git subversion build-essential binutils-gold
+    sudo apt-get install pkg-config git subversion make gcc g++ python binutils-gold
+    sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev
     ```
 
 2.  Download depot_tools for chromium repo
@@ -27,7 +28,7 @@ These instructions are derived from these links:
     export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-armhf/
     export PATH="$(pwd)/depot_tools:$PATH"
     export GYP_GENERATORS="make"
-    export GYP_DEFINES="target_arch=arm arm_version=6"
+    export GYP_DEFINES="target_arch=arm arm_version=6 use_openssl=1"
     export C_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
     export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/arm-linux-gnueabihf
     ```
@@ -37,7 +38,7 @@ These instructions are derived from these links:
 1.  Configure gclient to download libjingle code
 
     ```bash
-    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.46
+    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
     ```
 
 2.  Download libjingle and dependencies (this takes a while)
@@ -51,7 +52,7 @@ These instructions are derived from these links:
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
+    git clone --depth 1 https://github.com/ptony82/ipop-tincan.git -b feature/migration_3.52
     ```
 
 ## Build ipop-tincan for Raspbian
@@ -65,9 +66,11 @@ These instructions are derived from these links:
 2.  Copy modified gyp files to trunk/talk directory
 
     ```bash
+    rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
     cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
+    cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```
 
 3.  Update build/common.gypi configurations
@@ -110,6 +113,7 @@ These instructions are derived from these links:
 1.  Download socialvpn and groupvpn controllers
 
     ```
-    wget http://github.com/ipop-project/controllers/raw/master/src/svpn_controller.py
-    wget http://github.com/ipop-project/controllers/raw/master/src/gvpn_controller.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/ipoplib.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/svpn_controller.py
+    wget http://github.com/ipop-project/controllers/raw/devel/src/gvpn_controller.py
     ````
