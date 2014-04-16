@@ -74,6 +74,11 @@ These instructions are derived from these links:
     cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```
 
+3.  Sync again to download OpenSSL from chromium repository
+
+    ```bash
+    gclient sync --force
+    ```
 3.  Update build/common.gypi configurations
 
     ```bash
