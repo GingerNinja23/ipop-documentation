@@ -4,11 +4,16 @@ We are using below pictures as an example.
 
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
 
-Changing lxcbr ip address. Modifies both two files, then restart network. 
+Changing lxcbr ip address. Modifies field "LXC_ADDR" of below two files.
 
 ```
 /etc/default/lxc-net
 /etc/init/lxc-net.conf
+```
+
+Then restart lxc network
+
+```
 sudo service lxc-net restart
 ```
 
