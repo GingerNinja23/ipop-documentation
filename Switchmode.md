@@ -6,11 +6,11 @@ We are using below pictures as an example.
 
 Changing lxcbr ip address. Modifies both two files, then restart network. 
 
-'''
+```
 /etc/default/lxc-net
 /etc/init/lxc-net.conf
 sudo service lxc-net restart
-'''
+```
 
 Controller config file
 ```
