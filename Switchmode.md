@@ -8,7 +8,13 @@ This feature is not yet in main distribution. You can download it below for the 
 
 [ipoplib.py](https://raw.githubusercontent.com/ipop-project/controllers/devel/src/ipoplib.py)
 
-[gvon_controller.py](https://raw.githubusercontent.com/ipop-project/controllers/devel/src/gvpn_controller.py)
+[gvpn_controller.py](https://raw.githubusercontent.com/ipop-project/controllers/devel/src/gvpn_controller.py)
+
+
+Make it excutable
+```
+chmod +x ipop-tincan gvpn_controller.py
+```
 
 
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
