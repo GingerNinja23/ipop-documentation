@@ -2,6 +2,9 @@ Ipop-tincan supports so called switch-mode with linux bridge. In this mode, ipop
 
 In this example, we are using linux bridge
 
+![](www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
+
+
   ipop    lxcbr0   i0   i1
    |
 ---|---------------------------  
