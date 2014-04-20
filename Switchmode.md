@@ -2,6 +2,9 @@ Ipop-tincan supports so called switch-mode with linux bridge. In this mode, ipop
 
 We are using below pictures as an example. 
 
+This feature is not yet in main distribution. You can download it below for the test.
+
+
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
 
 Changing lxcbr ip address. Modifies field "LXC_ADDR" of below two files.
