@@ -18,11 +18,14 @@ These instructions are derived from these links:
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     ```
 
-    a. For CentOS 6
+    a. For CentOS 6.5
 
     ```bash
     sudo yum install java-1.7.0-openjdk-devel git subversion pkg-config make gcc gcc-c++ python
     sudo yum install expat-devel gtk2-devel nss-devel openssl-devel
+    sudo wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -P /etc/yum.repos.d
+    sudo sh -c 'echo "enabled=1" >> /etc/yum.repos.d/devtools-1.1.repo'
+    sudo yum install devtoolset-1.1
     ```
 
 2.  Download depot_tools for chromium repo
@@ -49,6 +52,7 @@ These instructions are derived from these links:
     export PATH="$(pwd)/depot_tools:$PATH"
     export GYP_DEFINES="use_openssl=1"
     sudo ln -s /usr/lib64/libpython2.6.so.1.0 /usr/lib/
+    scl enable devtoolset-1.1 bash
     ```
 
 4.   (Optional) For 32-bit compilation set target_arch
