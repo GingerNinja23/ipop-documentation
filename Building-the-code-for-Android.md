@@ -52,6 +52,7 @@ and follow the instructions in the first two sections:
 1.  Download socialvpn and groupvpn controllers
 
     ```
+    wget http://github.com/ipop-project/controllers/raw/master/src/ipoplib.py
     wget http://github.com/ipop-project/controllers/raw/master/src/svpn_controller.py
     wget http://github.com/ipop-project/controllers/raw/master/src/gvpn_controller.py
     ````
