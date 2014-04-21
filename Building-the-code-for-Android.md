@@ -1,4 +1,4 @@
-Tested on Ubuntu 12.04 and Debian Wheezy.
+Tested on Ubuntu 12.04 and Debian 7.
 
 Go on the [[Building the code for Linux page|Building the code for Linux]]
 and follow the instructions in the first two sections:
