@@ -1,4 +1,4 @@
-Tested on Ubuntu 12.04, Debian Wheezy, and CentOS 6.5.
+Tested on Ubuntu 12.04, Debian 7, and CentOS 6.5.
 
 These instructions are derived from these links:
 
