@@ -52,3 +52,7 @@ After tincan connection established, you can ping from 10.0.3.5 to ping 10.0.3.7
 Known issues and bugs
  - ICMP redirect message
  - duplicate packet upon ping to ipop
+
+# Switch Mode under the Hood
+
+![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode_underthehood.png)
