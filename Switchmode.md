@@ -64,10 +64,15 @@ IPOP switch mode capture ARP packet and replicate it on a peer’s local network
 
 
 ① Upon ping command, veth0 sends arp request messages to all interfaces on lxcbr0.
+
 ② Ipop captures arp request message and create json format arp_request RPC call to all of its peers  
+
 ③ ipop receives RPC call and create arp request message and broadcast on local lxcbr0 network. 
+
 ④ target(10.0.3.103) instance receives the arp request messages and reply with arp reply message
+
 ⑤ ipop receives ARP reply message and broadcast arp_reply RPC call to all of its peers. 
+
 ⑥ ipop0 receives arp_reply RPC call and update local arp_table then broadcast ARP reply message to local lxcbr0. 
 
 Now, ARP is solicited. From now on, IP packets destined to 10.0.3.104 is forwarded through P2P connection. Since the controller keeps the table of the ARP mapping, upon the addition on ARP table, ARP request is solicited locally without having to broadcast arp_request RPC and receive arp_reply RPC from peers. So when certain time expires then the O/S ARP cache evicted the mapping and sends the ARP request message again, ARP is solicited only in a locally manner not broadcasting the ARP request messages to its peers. 
