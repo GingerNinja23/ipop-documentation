@@ -55,12 +55,9 @@ Known issues and bugs
 
 # Switch Mode under the Hood
 
-
-IPOP switch mode capture ARP packet and replicate it on a peer’s local network. Below will give explanation how the switch mode works with an example scenario. In this scenario, LXC Instance with Veth0(10.0.3.3) try to send ping packet to LXC instance veth3(10.0.3.104). 
-
+IPOP switch mode capture ARP packet and sends RPC to replicate it on remote peer’s network. Below will give explanation how the switch mode works with an example scenario. In this scenario, LXC Instance with Veth0(10.0.3.3) try to send ping packet to LXC instance veth3(10.0.3.104). 
 
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode_underthehood.png)
-
 
 
 ① Upon ping command, veth0 sends arp request messages to all interfaces on lxcbr0.
