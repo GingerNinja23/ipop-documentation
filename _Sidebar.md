@@ -13,6 +13,7 @@
     * [[Linux|Running GroupVPN on Linux]]
     * [[Windows| Running GroupVPN on Windows]]
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
+    * [[Generating GroupVPN configurations|Generating GroupVPN configurations]]
 * **Deploying OSN and NAT traversal services**
     * [[XMPP+STUN Service - Ubuntu|Installing XMPP server]]
     * [[XMPP Service - RHEL 6.5|Installing ejabberd in RHEL 6.5]]
