@@ -27,6 +27,7 @@ floating point.
     }
     ```
 3. Enable IPv6 on Raspbian
+
     ```bash
     sudo modprobe ipv6
     ```
