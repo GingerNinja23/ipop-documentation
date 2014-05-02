@@ -26,6 +26,10 @@ floating point.
         "controller_logging": "DEBUG"
     }
     ```
+3. Enable IPv6 on Raspbian
+    ```bash
+    sudo modprobe ipv6
+    ```
 
 ## Running SocialVPN
 
