@@ -23,13 +23,13 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/t7HxnU).
+1. [Download GroupVPN for Windows](http://goo.gl/t7HxnU).
 
 2. Extract "ipop-14.01.1-x86_32_win7".
 
 3. You must then edit the  "_config.txt_". Each 
-peer that participates in the group VPN must be assigned a unique static IP v4
-address. On each node this must be set. In the "_config.txt_", set the ip4 value
+peer that participates in the group VPN must be assigned a unique static IPv4
+address. On each node this must be set. In the "_config.txt_", set the _ip4_ value
 to the same address you assigned to the ipop adapter for the current node.
 You can also set your xmpp username and password at this point and save the changes
 made to both files.
