@@ -51,8 +51,7 @@ made to both files.
 1. Double-click on "_start_gvpn.bat_" file whenever you want to run GroupVPN and
    then two command shell windows will show up showing that it is running.
 
-    [[6.jpg]]
-    
+    [[6.jpg]] 
     * _fpr_ is the X509 fingerprint of the local user
     * _ip4_ is the IPv4 address of the local user
     * _ip6_ is the IPv6 address of the local user
