@@ -1,9 +1,4 @@
-_Disclaimer: currently the Windows port should be consider a demonstration - it tunnels IP, but lacks a key feature (DTLS encryption support) and it is not as stable as the Linux port which is our primary target. If you are a Windows expert who would like to help with hardening this version, please contact us!_
- 
-This has been tested on Windows 7 (32bit and 64bit). The libjingle library
-currently uses SChannel for Windows which does not have DTLS support 
-meaning the connection to the XMPP server is encrypted but
-**the P2P VPN connections are not encrypted**.
+_Disclaimer: GroupVPN releases 14.01.1 (and below) does not provide encryption for P2P connections. P2P encryption is available on release 14.01.2 and above.
 
 ## Install dependencies
 
