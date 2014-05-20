@@ -45,6 +45,14 @@ These instructions have only been tested on Ubuntu 12.04
       %% this is the new line to enable stun
       {{3478, udp}, ejabberd_stun, []},
     ```
+
+3.  (Optional) Create a new self-signed certificate. If you change the hostname from _ejabberd_
+    to something else, you need to create a new self-signed certificate and place it under /ect/ejabberd
+
+    ```bash
+    openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout ejabberd.pem -out ejabberd.pem
+    ```
+
 4.  Restart ejabberd service
 
     ```bash
