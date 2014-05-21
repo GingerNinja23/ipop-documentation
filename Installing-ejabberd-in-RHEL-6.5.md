@@ -64,7 +64,7 @@ How to install ejabberd on a RHEL 6.5 running on the RHN.
     the new hostname that you have chosen and place it under /ect/ejabberd
 
     ```bash
-    openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout ejabberd.pem -out ejabberd.pem
+    openssl req -x509 -nodes -days 3650 -newkey rsa:1024 -keyout ejabberd.pem -out ejabberd.pem
     ```
 
 6.  Restart ejabberd service
