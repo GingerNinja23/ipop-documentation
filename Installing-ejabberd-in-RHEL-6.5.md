@@ -58,6 +58,15 @@ How to install ejabberd on a RHEL 6.5 running on the RHN.
       %% this is the new line to enable stun
       {{3478, udp}, ejabberd_stun, []},
     ```
+
+5.  (Optional) Create a new self-signed certificate. If you change the hostname from _ejabberd_
+    to something else, you need to create a new self-signed certificate and set CN (common name) to
+    the new hostname that you have chosen and place it under /ect/ejabberd
+
+    ```bash
+    openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout ejabberd.pem -out ejabberd.pem
+    ```
+
 6.  Restart ejabberd service
 
     ```bash
