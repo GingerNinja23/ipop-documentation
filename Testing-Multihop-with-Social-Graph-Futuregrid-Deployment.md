@@ -11,7 +11,10 @@ wget -q http://current.cs.ucsb.edu/socialmodels/code/fittingCode.zip
 sudo apt-get install unzip
 unzip fittingCode.zip
 cp fittingCode/socialModels.py .
+sudo apt-get install python-setuptools
+sudo easy_install decorator
 wget https://github.com/ipop-project/ipop-scripts/raw/master/synthesis_graph.py
+
 chmod +x synthesis_graph.sh 
 vi synthesis_graph.sh 
 # Then change the line g = nx.barabasi_albert_graph(200, 2) as you prefer. 
