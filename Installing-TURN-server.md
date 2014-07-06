@@ -49,7 +49,8 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     allocation_lifetime = 720000
     ```
 2.  (Optional) Increase file descriptor limit to allow for thousands of TURN connections by
-    adding following to `/etc/security/limits.conf` file
+    adding following to `/etc/security/limits.conf` file. Be sure to log out and log back in for
+    changes to take effect.
 
     ```
     ubuntu    hard    nofile    100000
