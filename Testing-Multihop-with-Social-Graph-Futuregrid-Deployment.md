@@ -2,7 +2,7 @@
 
    1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
   
-   1.2 Or you can use preexising XMPP server and deploy XMPP credential with below script.
+   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
 ```
 wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
 tar xzvf networkx-1.9.tar.gz
