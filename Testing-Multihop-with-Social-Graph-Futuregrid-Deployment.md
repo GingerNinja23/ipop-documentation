@@ -4,7 +4,9 @@
   
    1.2 Or you can use preexising XMPP server and deploy XMPP credential with below script.
 ```
-   wget https://github.com/ipop-project/ipop-scripts/raw/master/synthesis_graph.sh
-   chmod +x synthesis_graph.sh 
-   ./synthesis_graph
+wget https://github.com/ipop-project/ipop-scripts/raw/master/synthesis_graph.py
+chmod +x synthesis_graph.sh 
+vi synthesis_graph.sh 
+# Then change the line g = nx.barabasi_albert_graph(200, 2) as you prefer. 
+./synthesis_graph
 ```
