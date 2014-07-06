@@ -37,14 +37,21 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     sed -i 's/listen_address = .*/listen_address = { "public-ip-address" }/g' turn/turn.conf
     ```
 
-2.  Run the TURN server
+2.  (Optional) Increase file descriptor limit to allow for thousands of TURN connections by
+    adding following to `/etc/security/limits.conf` file
+
+    ```
+    ubuntu    hard    nofile    100000
+    ubuntu    soft    nofile    100000
+    ```
+
+3.  Run the TURN server
 
     ```bash
-    sudo bash; ulimit -n 16000
     cd turn; ./turnserver -c turn.conf; cd ..
     ```
 
-3.  Verify TURN server is running
+4.  Verify TURN server is running
 
     ```bash
     netstat -aupn | grep 19302
