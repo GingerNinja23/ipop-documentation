@@ -37,6 +37,17 @@ These instructions have only been tested on Ubuntu 12.04 (64-bit).
     sed -i 's/listen_address = .*/listen_address = { "public-ip-address" }/g' turn/turn.conf
     ```
 
+2. (Optional) Update turn.conf to increase number of sessions per users
+
+    ```bash
+    vi turn/turn.conf
+
+    ## Max relay per username.
+    max_relay_per_username = 100000
+
+    ## Allocation lifetime.
+    allocation_lifetime = 720000
+    ```
 2.  (Optional) Increase file descriptor limit to allow for thousands of TURN connections by
     adding following to `/etc/security/limits.conf` file
 
