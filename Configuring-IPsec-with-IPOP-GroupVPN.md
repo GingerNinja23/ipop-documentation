@@ -12,7 +12,8 @@ IPsec can be tunneled over IPOP to provide end-to-end security within a virtual 
 
 1.  First, we need to install racoon
 
-    ```apt-get install racoon
+    ```
+    apt-get install racoon
     mkdir /etc/racoon/certs
     cd /etc/racoon
     mv racoon.conf racoon.conf-original
