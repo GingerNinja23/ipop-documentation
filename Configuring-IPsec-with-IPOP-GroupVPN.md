@@ -23,7 +23,8 @@ IPsec can be tunneled over IPOP to provide end-to-end security within a virtual 
 
 This configuration varies depending on policies you would like for your security framework; the following is one example that uses X.509 certificates:
 
-    ```path pre_shared_key "/etc/racoon/psk.txt";
+    ```
+    path pre_shared_key "/etc/racoon/psk.txt";
     path certificate "/etc/racoon/certs";
     
     remote anonymous {
@@ -50,7 +51,8 @@ This configuration varies depending on policies you would like for your security
 
 There is one configuration file (ipsec-tools.conf) which needs to be setup with policies indicating that traffic within the IPOP/GroupVPN address space is subject to IPsec. Therefore, this file needs to be configured dynamically based on the IP address range of the GroupVPN. For instance, assuming a private address space of 192.168.0.0/16, this file should be configured as follows:
 
-    ```spdadd 192.168.0.0/16 192.168.0.0/16 any -P out ipsec
+    ```
+    spdadd 192.168.0.0/16 192.168.0.0/16 any -P out ipsec
             esp/transport//require;
     spdadd 192.168.0.0/16 192.168.0.0/16 any -P in ipsec
             esp/transport//require;
@@ -64,6 +66,7 @@ There are three files that need to be setup in /etc/racoon/certs, per node. the 
 
 The IPsec Racoon service needs to be started up after IPOP is started, as follows:
 
-    ```/etc/ipsec-tools.conf
+    ```
+    /etc/ipsec-tools.conf
     /etc/init.d/racoon restart
     ```
