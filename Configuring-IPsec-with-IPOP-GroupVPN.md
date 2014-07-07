@@ -60,7 +60,7 @@ There is one configuration file (ipsec-tools.conf) which needs to be setup with 
 
 4. Putting certificates, keys in the right place
 
-There are three files that need to be setup in /etc/racoon/certs, per node. the CA certificate file (cacert.pem), the host certificate file (host-cert.pem), and the host's private key (host-key.pem). Note, the host certificate needs to have the subjectAltName extension set. You can use tools such as [https://www.openssl.org/docs/HOWTO/certificates.txt OpenSSL to create and sign certificates] - this is not covered in this documentation. For GroupVPN, you may decide to configure Racoon such that it does not verify subjectAltName against a host name or IP address; in essence, any host with a certificate signed by the trusted CA is allowed into the VPN.
+There are three files that need to be setup in /etc/racoon/certs, per node. the CA certificate file (cacert.pem), the host certificate file (host-cert.pem), and the host's private key (host-key.pem). Note, the host certificate needs to have the subjectAltName extension set. You can use tools such as [https://www.openssl.org/docs/HOWTO/certificates.txt|OpenSSL to create and sign certificates] - this is not covered in this documentation. For GroupVPN, you may decide to configure Racoon such that it does not verify subjectAltName against a host name or IP address; in essence, any host with a certificate signed by the trusted CA is allowed into the VPN.
 
 5. Starting things up
 
