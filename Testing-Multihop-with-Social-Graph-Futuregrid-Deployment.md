@@ -1,6 +1,9 @@
 # 1. Prepare XMPP server
 
    1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
+```
+wget https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
+```
   
    1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
 ```
