@@ -23,3 +23,7 @@ vi synthesis_graph.sh
 
 This will subscribe social graph credentials in XMPP and create a file "distance_table". This file shows the distance from one node to the all the other node in terms of shortest distance. For example, {0: {1:[1, 2, 3], 2:[4, 5, 6]}}, means that node 0 has direct peers 1,2 and three and has 4, 5 and 6 as a one hop distance peers(4, 5 and 6 are direct peers of 1, 2 and 3). 
 
+2. Deploy openstack and lxc instances in futuregrid. 
+```
+./social_graph.sh -m 2 -v 6 -l 50
+```
