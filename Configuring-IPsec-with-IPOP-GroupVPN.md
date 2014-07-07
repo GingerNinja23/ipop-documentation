@@ -1,10 +1,10 @@
-# Overview
+## Overview
 
 IPOP supports transport-layer security (using SSL's DTLS); for most use cases, this is a simple and sufficient approach to enforce privacy and authentication in communication among endpoints.
 
 There are use cases where IPsec over IPOP may be called for - instead of, or in addition to, DTLS-layer security. Because IPOP works at the IP layer, IPsec works unmodified on top of it. However, configuration of IPsec is typically more complex than DTLS because it often requires setup of different frameworks (e.g. racoon, or strongswan) which come with their own idiosyncrasies.
 
-# IPsec over GroupVPN with Racoon using X.509 certificates on Debian/Ubuntu Linux
+## IPsec over GroupVPN with Racoon using X.509 certificates on Debian/Ubuntu Linux
 
 IPsec can be tunneled over IPOP to provide end-to-end security within a virtual network. The general approach for configuration is to use Public Key Infrastructure (PKI), where a Certificate Authority (CA) is tasked with signing host certificates for all nodes connected to an IPOP GroupVPN. The following steps demonstrate how to configure IPsec for IPOP/GroupVPN using racoon on Debian/Ubuntu
 
