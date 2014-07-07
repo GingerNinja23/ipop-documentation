@@ -20,4 +20,6 @@ vi synthesis_graph.sh
 # Then change the line g = nx.barabasi_albert_graph(200, 2) as you prefer. 
 ./synthesis_graph
 ```
-This will create the social graph credential and 
+
+This will subscribe social graph credentials in XMPP and create a file "distance_table". This file shows the distance from one node to the all the other node in terms of shortest distance. For example, {0: {1:[1, 2, 3], 2:[4, 5, 6]}}, means that node 0 has direct peers 1,2 and three and has 4, 5 and 6 as a one hop distance peers(4, 5 and 6 are direct peers of 1, 2 and 3). 
+
