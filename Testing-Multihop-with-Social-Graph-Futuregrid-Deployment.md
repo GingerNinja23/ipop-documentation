@@ -2,7 +2,8 @@
 
 ##   1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
 ```
-wget https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
+wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
+chmod +x social_graph.sh
 ```
 
   Before running social_graph.sh script, register your public key to the nova.
@@ -37,7 +38,27 @@ This will subscribe social graph credentials in XMPP and create a file "distance
 
 # 2. Deploy openstack and lxc instances in futuregrid. 
 
+Download the script, if you haven't.
+
+```
+wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
+chmod +x social_graph.sh
+```
+
 Below command will create 6 openstack instances each containing 50 LXC instances, thus in total, 300 LXC instances created. 
 ```
 ./social_graph.sh -m 2 -v 6 -l 50
+```
+
+# 3. Running IPOPs
+
+Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should configure multihop mode.
+
+
+```
+{
+ ...
+ "multihop": true,
+ ...
+}
 ```
