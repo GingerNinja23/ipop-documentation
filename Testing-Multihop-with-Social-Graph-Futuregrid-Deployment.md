@@ -52,12 +52,13 @@ Below command will create 6 openstack instances each containing 50 LXC instances
 
 # 3. Running IPOPs
 
-Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should configure multihop mode.
+Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection).
 
 
 ```
 {
  ...
+ "icc": true,
  "multihop": true,
  ...
 }
