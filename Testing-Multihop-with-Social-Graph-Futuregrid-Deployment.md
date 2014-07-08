@@ -4,6 +4,14 @@
 ```
 wget https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
 ```
+
+  Before running social_graph.sh script, register your public key to the nova.
+  $nova keypair-list
+  If your public key does not named "public-key", you should change the variable
+KEY_NAME as your public-key in social_graph.sh file. If you don't have public key registered at all, you can register it as below command
+```
+nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
+```
   
    1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
 ```
