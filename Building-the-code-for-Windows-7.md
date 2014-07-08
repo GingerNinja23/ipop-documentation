@@ -9,7 +9,7 @@ These instructions are derived from these links:
 
 ## Download and install depot_tools
 
-1.  Install [MS Visual C++ 2013 Redistributable](http://http://www.microsoft.com/en-us/download/details.aspx?id=40784)
+1.  Install [MS Visual C++ 2013 Redistributable](http://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
 1.  Download [depot_tools for windows](https://src.chromium.org/svn/trunk/tools/depot_tools.zip)
 
