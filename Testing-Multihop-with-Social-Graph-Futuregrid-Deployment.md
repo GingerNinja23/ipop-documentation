@@ -1,6 +1,6 @@
 # 1. Prepare XMPP server
 
-   1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
+##   1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
 ```
 wget https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
 ```
@@ -13,7 +13,8 @@ KEY_NAME as your public-key in social_graph.sh file. If you don't have public ke
 nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
 ```
   
-   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
+##   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
+
 ```
 wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
 tar xzvf networkx-1.9.tar.gz
