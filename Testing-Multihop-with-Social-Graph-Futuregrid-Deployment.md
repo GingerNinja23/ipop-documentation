@@ -68,7 +68,7 @@ Below command will create 6 openstack instances each containing 50 LXC instances
 As below command, you list up the instances you created and copy and past the ip address as below command to deploy running. 
 ```
 $nova list
-./social_graph.sh -m 4 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50
+./social_graph.sh -m 3 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50 -p "SVPN"
 ```
 ### 4. Referring distance table for multihop testing
 In XMPP server, at the working directory you ran synthesis_graph.sh. You can find file name "distance_table". This file constructs as follows. It means node 0 has direct connection of nodes 10, 20 and 30 and has nodes 12, 13 and 14 as a multihop nodes (It means 12, 13 and 14 are direct peers of 10, 20 and 30)
