@@ -14,7 +14,7 @@ KEY_NAME as your public-key in social_graph.sh file. If you don't have public ke
 nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
 ```
   
-###   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
+ 1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
 
 ```
 wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
@@ -70,12 +70,23 @@ As below command, you list up the instances you created and copy and past the ip
 $nova list
 ./social_graph.sh -m 4 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50
 ```
-### 4. In XMPP server, at the working directory you ran synthesis_graph.sh. You can find file name "distance_table". This file constructs as follows. It means node 0 has direct connection of nodes 10, 20 and 30 and has nodes 12, 13 and 14 as a multihop nodes (It means 12, 13 and 14 are direct peers of 10, 20 and 30)
+### 4. Referring distance table for multihop testing
+In XMPP server, at the working directory you ran synthesis_graph.sh. You can find file name "distance_table". This file constructs as follows. It means node 0 has direct connection of nodes 10, 20 and 30 and has nodes 12, 13 and 14 as a multihop nodes (It means 12, 13 and 14 are direct peers of 10, 20 and 30)
 
 ```
 {
  0:{ 1:[10, 20, 30], 2:[12, 13, 14] .. }, 1:{ 1:[5, 6, 7], 2:[15, 16, 17] ..}  ..
 }
+```
+
+At this point, you should ssh to VM and run below to see the ipv6 of node. For example, when you created 50 LXC instances in a single VM, node 12 LXC instance locates at first VM and the LXC instance name is IPOP12. 
+```
+$sudo lxc-ls --fancy 
+```
+
+Now you can ping from node 0 to node 12 as below command.
+```
+$ping6 [ipv6 of IPOP12]
 ```
 
 
