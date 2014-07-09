@@ -1,6 +1,6 @@
-# 1. Prepare XMPP server
+### 1. Prepare XMPP server
 
-##   1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
+1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
 ```
 wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
 chmod +x social_graph.sh
@@ -14,7 +14,7 @@ KEY_NAME as your public-key in social_graph.sh file. If you don't have public ke
 nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
 ```
   
-##   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
+###   1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
 
 ```
 wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
@@ -36,7 +36,7 @@ vi synthesis_graph.sh
 
 This will subscribe social graph credentials in XMPP and create a file "distance_table". This file shows the distance from one node to the all the other node in terms of shortest distance. For example, {0: {1:[1, 2, 3], 2:[4, 5, 6]}}, means that node 0 has direct peers 1,2 and three and has 4, 5 and 6 as a one hop distance peers(4, 5 and 6 are direct peers of 1, 2 and 3). 
 
-# 2. Deploy openstack and lxc instances in futuregrid. 
+### 2. Deploy openstack and lxc instances in futuregrid. 
 
 Download the script, if you haven't.
 
@@ -50,9 +50,9 @@ Below command will create 6 openstack instances each containing 50 LXC instances
 ./social_graph.sh -m 2 -v 6 -l 50
 ```
 
-# 3. Running IPOPs
+### 3. Running IPOPs
 
-### 3.1 Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection).
+3.1 Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection).
 
 
 ```
@@ -64,8 +64,23 @@ Below command will create 6 openstack instances each containing 50 LXC instances
 }
 ```
 
-## 3.2 Then start deploy and running
+3.2 Then start deploy and running
+As below command, you list up the instances you created and copy and past the ip address as below command to deploy running. 
+```
+$nova list
+./social_graph.sh -m 4 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50
+```
+### 4. In XMPP server, at the working directory you ran synthesis_graph.sh. You can find file name "distance_table". This file constructs as follows. It means node 0 has direct connection of nodes 10, 20 and 30 and has nodes 12, 13 and 14 as a multihop nodes (It means 12, 13 and 14 are direct peers of 10, 20 and 30)
+
+```
+{
+ 0:{ 1:[10, 20, 30], 2:[12, 13, 14] .. }, 1:{ 1:[5, 6, 7], 2:[15, 16, 17] ..}  ..
+}
 ```
 
 
+### 5. Stopping LXC instances 
 ```
+./social_graph.sh -m 4 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50
+```
+
