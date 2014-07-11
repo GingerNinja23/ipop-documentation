@@ -52,6 +52,16 @@ vi synthesis_graph.sh
 
 This will subscribe social graph credentials in XMPP and create a file "distance_table". This file shows the distance from one node to the all the other node in terms of shortest distance. For example, {0: {1:[1, 2, 3], 2:[4, 5, 6]}}, means that node 0 has direct peers 1,2 and three and has 4, 5 and 6 as a one hop distance peers(4, 5 and 6 are direct peers of 1, 2 and 3). 
 
+1.3 Check XMPP server
+
+You can check that users have been created on the XMPP server as follows (replace server_ip with the XMPP server's IP address assigned by nova):
+
+```
+ssh -l ubuntu server_ip
+sudo bash
+ejabberdctl registered_users ejabberd
+```
+
 ### 2. Deploy openstack and lxc instances in futuregrid. 
 
 Download the script, if you haven't.
