@@ -1,3 +1,7 @@
+These instructions describe how to automate the process of deploying a large social network IPOP overlay on FutureGrid resources using OpenStack nova. We have created scripts that automate the creation of an XMPP server (ejabberd) virtual machine, configuration of ejabberd with a synthetic social graph, as well as virtual machines that run LXC containers, where each container runs an IPOP node.
+
+While the instructions below have been tested on FutureGrid, the same process should work on other OpenStack/nova clouds - all you should need is a baseline Ubuntu 14.04 image.
+
 ### 1. Prepare XMPP server
 
 1.1 The simplest way is to create an XMPP server and configure social graph credential automatically with the social_graph.sh script as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid).
