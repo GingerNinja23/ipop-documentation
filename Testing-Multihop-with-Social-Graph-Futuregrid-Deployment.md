@@ -28,6 +28,8 @@ To automatically deploy an XMPP server with a 300-user social network, simply ru
 ./social_graph.sh -m 1 -n 300
 ```
 
+If all goes well, you should see output showing the creation of users, and you should see a VM named XMPP in the list of your instances (nova list). If you see "Permission denied (publickey)." messages, then your SSH key is not properly configured; delete the XMPP server (nova delete XMPP), add the keypair as described above, and retry.
+
  1.2 Alternatively, you can use an existing XMPP server and use the following steps to setup the social network graph in your XMPP server:
 
 ```
