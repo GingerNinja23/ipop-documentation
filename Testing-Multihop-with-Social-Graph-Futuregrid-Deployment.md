@@ -7,7 +7,7 @@ While the instructions below have been tested on FutureGrid, the same process sh
 1.1 The simplest way is to create an XMPP server and configure social graph credential automatically with the social_graph.sh script as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid).
 ```
 ssh sierra.futuregrid.org
-wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
+wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh -O social_graph.sh
 chmod +x social_graph.sh
 ```
 
