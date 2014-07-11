@@ -99,9 +99,9 @@ The following command (-m 20 will create 6 openstack instances (-v 6) each conta
 
 This script takes a while to run, as it deploys and updates several VM instances. When the script finishes executing, if you run nova list, you should see the XMPP VM (created in step 1), and six (in this example) IPOPx VMs (created in this step). The next step is to run IPOP in all the LXC instances.
 
-### 3. Running IPOP/SocialVPN in all LXC instances
+### 4. Running IPOP/SocialVPN in all LXC instances
 
-3.1 Going back to your nova client machine (e.g. sierra.futuregrid.org), download the IPOP binary you want to deploy in the system from the [https://github.com/ipop-project/downloads/releases] releases repository. Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection). **You must also set the IP address of the XMPP server created in step 1 in xmpp_host - replace 10.10.10.10 with the actual address of the XMPP server you get from nova list**
+4.1 Going back to your nova client machine (e.g. sierra.futuregrid.org), download the IPOP binary you want to deploy in the system from the [https://github.com/ipop-project/downloads/releases] releases repository. Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection). **You must also set the IP address of the XMPP server created in step 1 in xmpp_host - replace 10.10.10.10 with the actual address of the XMPP server you get from nova list**
 
 
 ```
@@ -114,7 +114,7 @@ This script takes a while to run, as it deploys and updates several VM instances
 }
 ```
 
-3.2 To deploy and run IPOP on all the LXC instances, you now run the social_graph.sh script with -m 3, as follows. 
+4.2 To deploy and run IPOP on all the LXC instances, you now run the social_graph.sh script with -m 3, as follows. 
 Note 1: Command-line argument -i: you need to provide a comma-separated list of the IP addresses of all your IPOPx instances deployed in step 2 - you can obtain these IP addresses using the nova list command, then type them following the -i command line argument. 
 Note 2: Command-line argument -l: this specifies how many containers per VM (same as step 2)
 Note 3: Command-line argument -p: this specifies to run the SocialVPN controller (SVPN)
@@ -123,7 +123,7 @@ $nova list
 ./social_graph.sh -m 3 -i "10.35.23.19,10.35.23.20,..." -l 50 -p "SVPN"
 ```
 
-### 4. Referring distance table for multihop testing
+### 5. Referring distance table for multihop testing
 In XMPP server, at the working directory you ran synthesis_graph.sh. You can find file name "distance_table". This file constructs as follows. It means node 0 has direct connection of nodes 10, 20 and 30 and has nodes 12, 13 and 14 as a multihop nodes (It means 12, 13 and 14 are direct peers of 10, 20 and 30)
 
 ```
@@ -144,7 +144,7 @@ $sudo lxc-attach --name IPOP9 sh
 ```
 
 
-### 5. Stopping LXC instances 
+### 6. Stopping LXC instances 
 ```
 ./social_graph.sh -m 4 -i \
 "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50
