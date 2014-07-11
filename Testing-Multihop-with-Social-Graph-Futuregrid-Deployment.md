@@ -7,10 +7,14 @@ wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/mas
 chmod +x social_graph.sh
 ```
 
-  Before running social_graph.sh script, make sure that 1) you have a public key registered with nova, and 2) your public key matched the KEY_NAME variable in the social_graph.sh.
-  $nova keypair-list
-  If your public key is not named "public-key", you must change the variable
-KEY_NAME as your public-key in social_graph.sh file. If you don't have a public key registered at all, you can register it as below command
+  Before running social_graph.sh script, make sure that 1) you have a public key registered with nova, and 2) your public key matched the KEY_NAME variable in the social_graph.sh. Check your keys with:
+
+```
+$nova keypair-list
+```
+
+  If your public key is not named "public-key", you must change the variable KEY_NAME as your public-key in social_graph.sh file. If you don't have a public key registered at all, you can register it as follows:
+
 ```
 nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
 ```
