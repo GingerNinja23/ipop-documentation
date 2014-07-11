@@ -36,20 +36,31 @@ If all goes well, you should see output showing the creation of users, and you s
  1.2 Alternatively, you can use an existing XMPP server and use the following steps to setup the social network graph in your XMPP server:
 
 ```
-wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
+wget https://pypi.python.org/packages/source/n/networkx/networkx-\
+1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
+
 tar xzvf networkx-1.9.tar.gz
 
 wget -q http://current.cs.ucsb.edu/socialmodels/code/fittingCode.zip
+
 sudo apt-get install unzip
+
 unzip fittingCode.zip
+
 cp fittingCode/socialModels.py .
+
 sudo apt-get install python-setuptools
+
 sudo easy_install decorator
+
 wget https://github.com/ipop-project/ipop-scripts/raw/master/synthesis_graph.py
 
 chmod +x synthesis_graph.sh 
+
 vi synthesis_graph.sh 
+
 # Then change the line g = nx.barabasi_albert_graph(200, 2) as you prefer. 
+
 ./synthesis_graph
 ```
 
