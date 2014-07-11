@@ -76,7 +76,19 @@ sudo bash
 ejabberdctl registered_users ejabberd
 ```
 
-### 2. Deploy openstack and lxc instances in futuregrid. 
+### 2. Prepare TURN server
+
+Deploy an Ubuntu VM to run your TURN server:
+
+```
+nova boot --flavor m1.small --image futuregrid/ubuntu-14.04 --key_name public-key TURN
+```
+
+Follow the instructions in this tutorial to configure the VM with a TURN server: [Installing TURN server](Installing TURN server).
+
+Take note of the IP address of this VM as you'll need for the configuration of IPOP
+
+### 3. Deploy openstack and lxc instances in futuregrid. 
 
 Make sure you have downloaded the social_graph.sh script (see step 1).
 
