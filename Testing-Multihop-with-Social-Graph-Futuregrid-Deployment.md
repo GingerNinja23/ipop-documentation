@@ -1,20 +1,26 @@
 ### 1. Prepare XMPP server
 
-1.1 You can create XMPP server and configure social graph credential automatically as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid) 
+1.1 The simplest way is to create an XMPP server and configure social graph credential automatically with the social_graph.sh script as in [Social Graph Depolyment for futuregrid](Social Graph Depolyment for futuregrid).
 ```
+ssh sierra.futuregrid.org
 wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
 chmod +x social_graph.sh
 ```
 
-  Before running social_graph.sh script, register your public key to the nova.
+  Before running social_graph.sh script, make sure that 1) you have a public key registered with nova, and 2) your public key matched the KEY_NAME variable in the social_graph.sh.
   $nova keypair-list
-  If your public key does not named "public-key", you should change the variable
-KEY_NAME as your public-key in social_graph.sh file. If you don't have public key registered at all, you can register it as below command
+  If your public key is not named "public-key", you must change the variable
+KEY_NAME as your public-key in social_graph.sh file. If you don't have a public key registered at all, you can register it as below command
 ```
 nova keypair-add --pub_key ~/.ssh/id_rsa.pub public-key
 ```
   
- 1.2 Or you can use preexising XMPP server and deploy XMPP credential as below. 
+To automatically deploy an XMPP server with a 300-user social network, simply run:
+```
+./social_graph.sh -m 1 -n 300
+```
+
+ 1.2 Alternatively, you can use an existing XMPP server and use the following steps to setup the social network graph in your XMPP server:
 
 ```
 wget https://pypi.python.org/packages/source/n/networkx/networkx-1.9.tar.gz#md5=683ca697a9ad782cb78b247cbb5b51d6
