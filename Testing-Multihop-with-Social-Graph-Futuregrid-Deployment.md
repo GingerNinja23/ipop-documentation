@@ -112,7 +112,8 @@ $sudo lxc-ls --fancy
 
 Now you can ping from node 0 to node 12 as below command.
 ```
-$ping6 [ipv6 of IPOP12]
+$sudo lxc-attach --name IPOP9 sh
+#ping6 [ipv6 of IPOP12]
 ```
 
 
