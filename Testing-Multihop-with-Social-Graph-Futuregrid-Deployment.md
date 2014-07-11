@@ -64,19 +64,16 @@ ejabberdctl registered_users ejabberd
 
 ### 2. Deploy openstack and lxc instances in futuregrid. 
 
-Download the script, if you haven't.
+Make sure you have downloaded the social_graph.sh script (see step 1).
 
-```
-wget --no-check-certificate https://github.com/ipop-project/ipop-scripts/raw/master/social_graph.sh
-chmod +x social_graph.sh
-```
-
-Below command will create 6 openstack instances each containing 50 LXC instances, thus in total, 300 LXC instances created. 
+The following command (-m 20 will create 6 openstack instances (-v 6) each containing 50 LXC instances (-l 50), thus in total, 300 LXC instances created. Adjust the parameters, if needed, according to how you configured the XMPP server - you need one LXC instance per XMPP user.  
 ```
 ./social_graph.sh -m 2 -v 6 -l 50
 ```
 
-### 3. Running IPOPs
+At this point, if you run nova list, you should see the XMPP VM, and six (in this example) IPOPx VMs. The next step is to run IPOP in all the LXC instances.
+
+### 3. Running IPOP/SocialVPN in all LXC instances
 
 3.1 Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection).
 
