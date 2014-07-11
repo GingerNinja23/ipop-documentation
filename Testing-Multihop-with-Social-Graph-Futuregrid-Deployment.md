@@ -93,7 +93,7 @@ Note 2: Command-line argument -l: this specifies how many containers per VM (sam
 Note 3: Command-line argument -p: this specifies to run the SocialVPN controller (SVPN)
 ```
 $nova list
-./social_graph.sh -m 3 -i "10.35.23.19,10.35.23.20,10.35.23.21,10.35.23.35,10.35.23.36,10.35.23.37" -l 50 -p "SVPN"
+./social_graph.sh -m 3 -i "10.35.23.19,10.35.23.20,..." -l 50 -p "SVPN"
 ```
 
 ### 4. Referring distance table for multihop testing
