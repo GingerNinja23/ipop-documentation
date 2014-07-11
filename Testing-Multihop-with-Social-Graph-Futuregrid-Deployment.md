@@ -103,12 +103,17 @@ This script takes a while to run, as it deploys and updates several VM instances
 
 ### 4. Running IPOP/SocialVPN in all LXC instances
 
-4.1 Going back to your nova client machine (e.g. sierra.futuregrid.org), download the IPOP binary you want to deploy in the system from the [https://github.com/ipop-project/downloads/releases] releases repository. Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection). **You must also set the IP address of the XMPP server created in step 1 in xmpp_host - replace 10.10.10.10 with the actual address of the XMPP server you get from nova list**
+4.1 Going back to your nova client machine (e.g. sierra.futuregrid.org), download the IPOP binary you want to deploy in the system from the [https://github.com/ipop-project/downloads/releases] releases repository. Place executables such as ipop-tincan-x86_64, svpn_controller.py, ipoplib.py and configuration file config.json at your current working directory. In config.json file you should enable multihop mode and icc(inter-controller connection). 
 
+**You must also set the IP address of the XMPP server created in step 1 in xmpp_host - in the configuration snippet below, replace 10.35.23.19 with the IP address of the XMPP server you get from nova list, and 10.35.23.44 with the IP address of the TURN server**
 
 ```
 {
- "xmpp_host": "10.10.10.10",
+ "xmpp_host": "10.35.23.19",
+ "stun": ["10.35.23.19:3478"],
+    "turn": [
+        {"server": "10.35.23.44:19302", "user": "svpnjingle", "pass": "1234567890"}
+    ],
  ...
  "icc": true,
  "multihop": true,
