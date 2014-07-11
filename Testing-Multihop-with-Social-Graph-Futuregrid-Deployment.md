@@ -78,6 +78,8 @@ ejabberdctl registered_users ejabberd
 
 ### 2. Prepare TURN server
 
+This step is needed if you are setting up a TURN server inside FutureGrid; if you are using a public TURN server, skip this step.
+
 Deploy an Ubuntu VM to run your TURN server:
 
 ```
