@@ -42,7 +42,7 @@ These instructions are derived from these links:
     ```
     mkdir libjingle
     cd libjingle
-    fetch chromium --nosvn=True
+    set GYP_GENERATORS=msvc-ninja
     ```
 
 2.  Configure gclient to download libjingle code
