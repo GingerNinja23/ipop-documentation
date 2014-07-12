@@ -141,6 +141,36 @@ These instructions are derived from these links:
 
 ## Building the code
 
+1.  Update `<path-to-libjingle>\trunk\build\common.gypi` file to disable warning as error for
+    the following warnings numbers: 4067, 4996. You need to open the file in your editor and
+    search for _msvs_disabled_warnings_. It should look like the following
+
+    ```python
+    # line 2558
+    'msvs_disabled_warnings': [4800,4996,4067],
+
+    # line 2576
+            'msvs_disabled_warnings': [
+              4251, 4996, 4067  # class 'std::xx' needs to have dll-interface.
+            ],
+
+
+    # line 2626
+            'msvs_disabled_warnings': [
+              4251, 4996, 4067  # class 'std::xx' needs to have dll-interface.
+            ],
+
+
+    # line 4580
+        'msvs_disabled_warnings': [4351, 4355, 4396, 4503, 4819,
+          # TODO(maruel): These warnings are level 4. They will be slowly
+          # removed as code is fixed.
+          4100, 4121, 4125, 4127, 4130, 4131, 4189, 4201, 4238, 4244, 4245,
+          4310, 4428, 4481, 4505, 4510, 4512, 4530, 4610, 4611, 4701, 4702,
+          4706, 4996, 4067
+        ],
+    ```
+
 1.  Open cmd and go back to libjingle trunk directory and compile with ninja
 
     ```
