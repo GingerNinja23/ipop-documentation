@@ -58,9 +58,11 @@ These instructions are derived from these links:
     gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
     ```
 
-3.  Download libjingle and dependencies (this may take a while).
+3.  Download libjingle and dependencies (this may take a while). Running this command twice
+    ensures you have all dependencies (I think)
 
     ```
+    gclient sync --force
     gclient sync --force
     ```
 
