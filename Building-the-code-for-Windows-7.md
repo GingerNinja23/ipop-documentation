@@ -42,7 +42,14 @@ These instructions are derived from these links:
     ```
     mkdir libjingle
     cd libjingle
+    ```
+2. Set necessary environmental variables
+
+    ```
+    set DEPOT_TOOLS_WIN_TOOLCHAIN=0
     set GYP_GENERATORS=msvc
+    set GYP_MSVS_VERSION=2013e
+    # for Visual Studio Pro set GYP_MSVS_VERSION=2013
     ```
 
 2.  Configure gclient to download libjingle code
