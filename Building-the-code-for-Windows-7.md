@@ -11,6 +11,8 @@ These instructions are derived from these links:
 
 1.  Install [MS Visual C++ 2013 Redistributable](http://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
+1.  Install [MS Visual Studio Express 2013 for Desktop](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop)
+
 1.  Download [depot_tools for windows](https://src.chromium.org/svn/trunk/tools/depot_tools.zip)
 
 2.  Right-click on **depot_tools.zip** and click on **extract all**.
