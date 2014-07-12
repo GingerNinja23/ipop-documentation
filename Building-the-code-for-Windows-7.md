@@ -40,7 +40,7 @@ These instructions are derived from these links:
     ```
     mkdir libjingle
     cd libjingle
-    set GYP_GENERATORS=msvc-ninja
+    set GYP_GENERATORS=msvc
     ```
 
 2.  Configure gclient to download libjingle code
