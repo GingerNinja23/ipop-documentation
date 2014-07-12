@@ -136,7 +136,7 @@ These instructions are derived from these links:
 
     ```
     cd <path-to-libjingle>\trunk\talk\ipop-project\ipop-tap\bin
-    <path-to-depot_tools>\win_toolchain\vs2013_files\VC\bin\lib.exe /def:ipoptap.def
+    "c:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\lib.exe" /def:ipoptap.def
     ```
 
 ## Building the code
