@@ -21,7 +21,19 @@ These instructions are derived from these links:
     set PATH=%PATH%;<path-to-depot_tools-directory>\depot_tools
     ```
 
-4.  Open a cmd shell and run `gclient` which will automatically install other dependencies
+4.  Open a cmd shell and run `gclient` which will automatically install other dependencies.
+    You need to run gclient command twice and do not worry about errors that you see.
+
+    ```
+    set PATH=%PATH%;<path-to-depot_tools-directory>\depot_tools
+    gclient --version
+    gclient --version
+    git config --global user.name "My Name"
+    git config --global user.email "my-name@chromium.org"
+    git config --global core.autocrlf false
+    git config --global core.filemode false
+    git config --global branch.autosetuprebase always
+    ```
 
 ## Download source code
 
@@ -30,6 +42,7 @@ These instructions are derived from these links:
     ```
     mkdir libjingle
     cd libjingle
+    fetch chromium --nosvn=True
     ```
 
 2.  Configure gclient to download libjingle code
