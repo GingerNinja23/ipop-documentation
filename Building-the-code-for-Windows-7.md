@@ -47,7 +47,7 @@ These instructions are derived from these links:
 
     ```
     set DEPOT_TOOLS_WIN_TOOLCHAIN=0
-    set GYP_GENERATORS=msvc
+    set GYP_GENERATORS=ninja
     set GYP_MSVS_VERSION=2013e
     # for Visual Studio Pro set GYP_MSVS_VERSION=2013
     ```
