@@ -91,12 +91,6 @@ These instructions are derived from these links:
     copy talk\ipop-project\ipop-tincan\build\all.gyp .
     ```
 
-7.  Generate Visual Studio solution files
-
-    ```
-    gclient runhooks --force
-    ```
-
 ## Get additional dependencies
 
 1.  Download and extract [pthreads-win32](ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip) and move the Pre-built.2 folder into the third party directory
@@ -174,6 +168,11 @@ These instructions are derived from these links:
         ],
     ```
 
+1.  Generate Visual Studio solution files
+
+    ```
+    gclient runhooks --force
+    ```
 1.  Open cmd and go back to libjingle trunk directory and compile with ninja
 
     ```
