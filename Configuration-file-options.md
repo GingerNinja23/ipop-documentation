@@ -1,4 +1,6 @@
-*  "stun": ["stun.l.google.com:19302", "stun1.l.google.com:19302",
+*  "stun": List up STUN servers to use
+
+["stun.l.google.com:19302", "stun1.l.google.com:19302",
              "stun2.l.google.com:19302", "stun3.l.google.com:19302",
              "stun4.l.google.com:19302"],
 * "turn": [],  # Contains dicts with "server", "user", "pass" keys
