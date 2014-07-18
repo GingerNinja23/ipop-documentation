@@ -37,7 +37,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 1.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget -O ipop-14.07.0-android.tar.gz http://goo.gl/kfcRSL
+    wget -O ipop-14.07.0-android.tar.gz http://goo.gl/imA1Tm
     wget http://www.acis.ufl.edu/~ipop/files/python27.tgz
     tar xzvf python27.tgz; tar xzvf ipop-14.07.0-android.tar.gz
     ```
@@ -47,7 +47,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
 
     ```bash
-    cd ipop-14.01.1-arm_android
+    cd ipop-14.07.0-arm_android
     cat config.json
     {
         "xmpp_username": "username@gmail.com",
@@ -220,4 +220,3 @@ with each other.**
     ps | grep ipop-tincan
     kill [SocialVPN pid]
     ```
-
