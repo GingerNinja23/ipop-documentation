@@ -133,6 +133,9 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
     [[ifconfig.png]]
 
+**Run GroupVPN on another machine using same credentials and they will connect
+with each other.**
+
 ## Closing GroupVPN
 
 1.  Kill GroupVPN
@@ -143,8 +146,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     kill <process-id-of-gvpn_controller.py>
     ```
 
-**Run GroupVPN on another machine using same credentials and they will connect
-with each other.**
+***
 
 ## Running GroupVPN in Watchdog mode
 
@@ -161,4 +163,3 @@ new process.
 ```
 sudo ./watchdog.py -c config.json
 ```
-
