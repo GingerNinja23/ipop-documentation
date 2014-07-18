@@ -1,17 +1,17 @@
 In this page, we explain parameters in a configuration file in details. 
 
-    * 'ip4': 
-    * 'xmpp_username':  
-    * 'xmpp_host': 
-    * 'xmpp_password': 
-    * 'router_mode': Explanation. If it is ''True'', it means that ... 
-    * 'router_ip': The network that IPOP will handle
-    * 'router_ip4_mask': IPv4 network mask
-    * 'router_ip6_mask': IPv6 network mask
-    * 'subnet_mask': network mask for the router
-    * 'tincan_logging': Explanation. If it is ''0'', ...
-    * 'controller_logging': Explanation. If it is ''DEBUG'', ...
-    * 'sec': Explanation. If it is ''True'', ...
+*     'ip4': 
+*     'xmpp_username':  
+*     'xmpp_host': 
+*     'xmpp_password': 
+*     'router_mode': Explanation. If it is ''True'', it means that ... 
+*     'router_ip': The network that IPOP will handle
+*     'router_ip4_mask': IPv4 network mask
+*     'router_ip6_mask': IPv6 network mask
+*     'subnet_mask': network mask for the router
+*     'tincan_logging': Explanation. If it is ''0'', ...
+*     'controller_logging': Explanation. If it is ''DEBUG'', ...
+*     'sec': Explanation. If it is ''True'', ...
 
 [Example 1]
   ```bash
@@ -25,6 +25,7 @@ In this page, we explain parameters in a configuration file in details.
         "controller_logging": "DEBUG"
     }
     ```
+
 [Example 2]
 ```
     {
