@@ -1,5 +1,3 @@
-_Disclaimer: GroupVPN releases 14.01.1 (and below) does not provide encryption for P2P connections. P2P encryption is available on release 14.01.2 and above._
-
 ## Install dependencies
 
 1. Install [MS Visual C++ x86 Redistributable Packages for Visual Studio 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40784)
