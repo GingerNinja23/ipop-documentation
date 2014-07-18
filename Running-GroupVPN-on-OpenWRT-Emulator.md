@@ -42,7 +42,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 ## Download and configure GroupVPN
 
-1.  Download groupvpn and extract for OpenWRT
+1.  Download GroupVPN and extract for OpenWRT
 
     ```bash
     wget -O ipop-openwrt-malta_14.01.tgz http://goo.gl/iXB3LJ
@@ -135,7 +135,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
 
 ## Closing GroupVPN
 
-1.  Kill groupvpn
+1.  Kill GroupVPN
 
     ```bash
     ps
@@ -143,7 +143,7 @@ This uses Qemu mipsel to run OpenWRT malta (designed specifically for Qemu)
     kill <process-id-of-gvpn_controller.py>
     ```
 
-**Run groupvpn on another machine using same credentials and they will connect
+**Run GroupVPN on another machine using same credentials and they will connect
 with each other.**
 
 ## Running GroupVPN in Watchdog mode
