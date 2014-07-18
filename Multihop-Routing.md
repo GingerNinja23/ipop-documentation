@@ -9,7 +9,7 @@ To enable the multihop, you should specify "multihop" to be true in config file.
 ```
 
 ### 2. Auxiliary parameters
-Below example lists varies of parameter of multihop mode. 
+Below example lists varies of parameter of multihop mode with its default value. These parameters are configurable through config file. 
 
 ```
     "multihop_cl": 100, #Multihop connection count limit
@@ -19,4 +19,6 @@ Below example lists varies of parameter of multihop mode.
     "multihop_sr": True # Multihop source route
 ```
 
-2.
+1. multihop_cl: It is the direct connection count limit per node. If the node happen reach this limit, next new direct connection use multihop path rather than creating direct p2p connection
+2. multihop_ihc:
+
