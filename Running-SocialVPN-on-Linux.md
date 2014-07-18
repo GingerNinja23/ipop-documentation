@@ -32,7 +32,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
     ```bash
     sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
-    Note: use "ipop-tincan-x86" in place of "ipop-tincan-x86_64" for 32-bit Ubuntu machine
+    Note: use "ipop-tincan-x86" in place of "ipop-tincan-x86_64" for 32-bit Ubuntu machine.
 2.  Second, start the SocialVPN controller with the configuration file you created:
    ```bash
     chmod 755 svpn_controller.py
