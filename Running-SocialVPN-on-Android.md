@@ -209,7 +209,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     ```bash
     netcfg
     ```
-**Run socialvpn on another machine using same credentials and they will connect
+**Run SocialVPN on another machine using same credentials and they will connect
 with each other.**
 
 ### Close SocialVPN
