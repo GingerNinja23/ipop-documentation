@@ -27,3 +27,4 @@
 * **General documentation**
     * [[FAQs|FAQs]]
     * [[Known issues|Known issues]]
+    * [[Configuration]]
