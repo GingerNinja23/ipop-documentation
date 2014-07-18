@@ -68,7 +68,7 @@ These instructions have only been tested on Ubuntu 12.04
     sudo ejabberdctl register ipopuser ejabberd password
     ```
 
-6.  Create additional users and relationships
+6.  Useful ejabberd commands: create additional users and relationships, check who is online
 
     You can add more users to the XMPP server with the ejabberdctl command as shown below:
 
@@ -82,6 +82,12 @@ These instructions have only been tested on Ubuntu 12.04
     ```
     sudo ejabberdctl add-rosteritem alice ejabberd bob ejabberd bob svpn both
     sudo ejabberdctl add-rosteritem bob ejabberd alice ejabberd alice svpn both
+    ```
+
+    To check which users are online:
+    
+    ```
+    sudo ejabberdctl connected-users
     ```
 
 ## Configure SocialVPN/GroupVPN
