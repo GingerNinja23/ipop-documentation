@@ -14,7 +14,7 @@ In this page, we explain parameters in a configuration file in details.
 *     'sec': Explanation. If it is ''True'', ...
 
 [Example 1]
-  ```bash
+```bash
     {
         "xmpp_username": "ipopuser@gmail.com",
         "xmpp_password": "12345678",
@@ -24,10 +24,11 @@ In this page, we explain parameters in a configuration file in details.
         "tincan_logging": 0,
         "controller_logging": "DEBUG"
     }
-    ```
+```
+
 
 [Example 2]
-```
+```bash
     {
         "ip4": "192.168.1.0",
         "xmpp_username": "ipopuser@gmail.com",
@@ -39,4 +40,4 @@ In this page, we explain parameters in a configuration file in details.
         "router_ip6_mask": 64,
         "subnet_mask": 24
     }
-    ```
+```
