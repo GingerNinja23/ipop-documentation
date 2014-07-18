@@ -62,7 +62,9 @@ These instructions have only been tested on Ubuntu 12.04
     sudo service ejabberd restart
     ```
 
-5.  Create default user
+5.  Create your first user
+
+    Note: you can add more users to the XMPP server with the ejabberdctl command as shown below; just replace "ipopuser" and "password" by the username/password of each user you wish to add.
 
     ```bash
     sudo ejabberdctl register ipopuser ejabberd password
