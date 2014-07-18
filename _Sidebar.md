@@ -27,4 +27,5 @@
 * **General documentation**
     * [[FAQs|FAQs]]
     * [[Known issues|Known issues]]
+    * [[Reporting/troubleshooting|Troubleshooting]]
     * [[Configuration]]
