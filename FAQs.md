@@ -16,6 +16,14 @@
 
     Pertino is not open-source, and it is only free for a limited number of devices (up to 9). Also, Pertino is very similar to Tinc because all IP traffic has to flow through intermediary nodes housed in the cloud. This creates latency and bandwidth overheads. SocialVPN finds a direct P2P Internet path between two nodes, even if nodes are behind NATs.
 
+1. **When should I use GroupVPN in router mode?**
+
+    GroupVPN in router mode is recommended when you wish to connect several nodes behind a wireless router - in which case, you can run GroupVPN in the router itself using OpenWRT.
+
+1. **When should I use GroupVPN in switch mode?**
+
+    GroupVPN in switch mode is recommended when you wish to connect several virtual machines or containers running on the same server to a GroupVPN - in which case, you can run GroupVPN in the host itself in switchmode, and bind the IPOP tap device to a Linux bridge.
+
 1. **How do I check the IP address of peers in my SocialVPN?**
 
     Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
@@ -89,4 +97,4 @@ determined in the JSON configuration file by adding the following parameters:
 
     We use Github's issue tracker: https://github.com/ipop-project/ipop-tincan/issues
 
-    
+    When reporting a bug, please make sure you enable logging (as described above) and collect output files from tincan and controller.
