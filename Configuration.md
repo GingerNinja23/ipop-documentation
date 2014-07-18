@@ -2,8 +2,8 @@ In this page, we explain parameters in a configuration file in details. Default 
 
 ### Mandatory fields
 
-*     **stun**: List up STUN servers to use. If omitted google public STUN server is used.  
-*     **turn**: List TURN servers with server transport address username and password as dictonary keys
+These fields are critical so must be defined in config file. 
+
 *     **ip4**: IP address of IPOP node
 *     **xmpp_username**:  
 *     **xmpp_host**: 
@@ -12,6 +12,7 @@ In this page, we explain parameters in a configuration file in details. Default 
 
 ### Optional fields
 
+If these fields are omitted, default value at ipoplib.py file is used. 
 
 *     **router_mode**: Explanation. If it is ''True'', it means that ... 
 *     **router_ip**: The network that IPOP will handle
