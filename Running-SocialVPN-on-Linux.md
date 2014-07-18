@@ -2,7 +2,7 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) to get packages for additional platforms.
 ## Download and configure SocialVPN
 
-1.  Download socialvpn and extract for Linux
+1.  Download SocialVPN and extract for Linux
 
     ```bash
     wget -O ipop-14.01.1-x86_ubuntu12.tar.gz http://goo.gl/AKwY52
@@ -55,12 +55,12 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 
     [[ifconfig.png]]
 
-**Run socialvpn on another machine using the same credentials and they will connect
+**Run SocialVPN on another machine using the same credentials and they will connect
 with each other.**
 
 ## Stopping SocialVPN
 
-1.  Kill socialvpn 
+1.  Kill SocialVPN 
 
     ```bash
     pkill ipop-tincan-x86_64
