@@ -20,7 +20,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 1. [Download GroupVPN for Windows](http://goo.gl/t7HxnU).
 
-2. Extract "ipop-14.01.1-x86_32_win7".
+2. Extract "ipop-14.07.0-x86_win7".
 
 3. You must then edit the  "_config.txt_". Each 
 peer that participates in the group VPN must be assigned a unique static IPv4
