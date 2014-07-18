@@ -5,9 +5,9 @@ In this page, we explain parameters in a configuration file in details. Default 
 These fields are critical so must be defined in config file. 
 
 *     **ip4**: IP address of IPOP node
-*     **xmpp_username**:  
-*     **xmpp_host**: 
-*     **xmpp_password**: 
+*     **xmpp_username**: XMPP credential user ID
+*     **xmpp_host**: XMPP server domain or IP address
+*     **xmpp_password**: XMPP credential password 
 
 
 ### Optional fields
