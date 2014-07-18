@@ -34,7 +34,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
 ### Download SocialVPN and dependencies
 
-1.  Download socialvpn and Python 2.7 for android
+1.  Download SocialVPN and Python 2.7 for android
 
     ```bash
     wget -O ipop-14.07.0-android.tar.gz http://goo.gl/imA1Tm
