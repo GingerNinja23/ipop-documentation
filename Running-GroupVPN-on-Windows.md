@@ -2,7 +2,7 @@ _Disclaimer: GroupVPN releases 14.01.1 (and below) does not provide encryption f
 
 ## Install dependencies
 
-1. Install [MS Visual C++ Redistributable](http://www.microsoft.com/en-us/download/details.aspx?id=5555)
+1. Install [MS Visual C++ x86 Redistributable Packages for Visual Studio 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
 1. Install [Python 2.7 for Windows](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi).
 
@@ -20,47 +20,40 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 1. [Download GroupVPN for Windows](http://goo.gl/t7HxnU).
 
-2. Extract "ipop-14.07.0-x86_win7".
+1. Extract "ipop-14.07.0-x86_win7".
 
-3. You must then edit the  "_config.txt_". Each 
-peer that participates in the group VPN must be assigned a unique static IPv4
-address. On each node this must be set. In the "_config.txt_", set the _ip4_ value
-to the same address you assigned to the ipop adapter for the current node.
-You can also set your xmpp username and password at this point and save the changes
-made to both files.
+1. You must then edit the  "_config.json_" for each node that participates in the group. At a minimum you must set:
+ * A group-wide unique static IPv4 address and the mask.
+ * Your XMPP server, username and password.
 
-    <Example>
+ ``` json
+{
+    "xmpp_username": "username@gmail.com",
+    "xmpp_host": "talk.google.com",
+    "xmpp_password": "enter-password-here",
+    "ip4": "172.31.0.100",
+    "ip4_mask": 24,
+    "controller_logging": "INFO",
+    "tincan_logging": 0
+    "sec": true, 
+}
+ ```
 
-    [[5.jpg]]
-
-4. Right-click on "_setup-interface.bat_" file, and click on
+1. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
 
     [[3.jpg]]
 
     [[4.jpg]]
 
+1. Install IPOP Service by starting a Windows command prompt with administrative privileges. Change your current working directory to the directory containing the IPOP executables and run the following command.
+ ```
+IPoPSvc --install
+ ```
 
-## Run GroupVPN
+1. To run in the native mode as a Windows service start the service from the Windows Service Control Manager or run the command
+ ```
+net start IPoPService
+ ```
 
-1. Double-click on "_start_gvpn.bat_" file whenever you want to run GroupVPN and
-   then two command shell windows will show up showing that it is running.
-
-    [[6.jpg]] 
-    * _fpr_ is the X509 fingerprint of the local user
-    * _ip4_ is the IPv4 address of the local user
-    * _ip6_ is the IPv6 address of the local user
-    * _uid_ is the uid of the local user
-    * _type_ means this is a local state message
-
-    [[7.jpg]]
-
-    The last 5 lines are the most important lines because they show the node
-    connecting to XMPP server and becoming ONLINE. If you do not see this 
-    message, that means that you have not properly connected.
-
-2. Run GroupVPN on another machine using same credentials and they will
-   connect with each other.
-
-### Close GroupVPN software
-1. Close two shell windows.
+The service, by default, is not configured to start automatically. You are required to manually start the service each time the computer reboots or change the service start mode to Automatic (Delayed Start). This will allow Windows to automatically start the service at the appropriate time whenever the computer is rebooted.
