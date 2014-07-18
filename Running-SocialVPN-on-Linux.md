@@ -42,7 +42,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 3.  Check on the current status of your network. This will show you the IP addresses of other nodes connected to your SocialVPN:
 
     ```bash
-    echo '{"m":"get_state"}' | netcat -u 127.0.0.1 5800
+    echo -e '\x02\x01{"m":"get_state"}' | netcat -q 1 -u 127.0.0.1 5800
     ```
 
     By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
