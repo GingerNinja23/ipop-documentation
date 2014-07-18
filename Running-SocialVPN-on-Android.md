@@ -108,7 +108,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     cd /data/ipop
     ```
 
-2.  Launch socialvpn
+2.  Launch SocialVPN
 
     ```bash
     chmod 755 ipop-tincan
@@ -131,7 +131,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
 ### Close SocialVPN
 
-1.  Kill socialvpn process and terminate the AVD
+1.  Kill SocialVPN process and terminate the AVD
 
     >   It is important to kill svpn-jingle-android process in order to exit
     >   shell.
@@ -191,7 +191,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
    
    Running SocialVPN on Android devices is same as the case of Android Virtual Device.
 
-1.  Launch socialvpn
+1.  Launch SocialVPN
 
     ```bash
     cd /data/ipop
