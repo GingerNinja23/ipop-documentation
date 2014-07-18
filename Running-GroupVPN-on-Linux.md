@@ -3,7 +3,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 
 ## Download and configure GroupVPN
 
-1.  Download groupvpn and extract for Linux
+1.  Download GroupVPN and extract for Linux
 
     ```bash
     wget -O ipop-14.01.1-x86_ubuntu12.tar.gz http://goo.gl/AKwY52
@@ -63,7 +63,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 
 ## Stopping GroupVPN
 
-1.  Kill groupvpn
+1.  Kill GroupVPN
 
     ```bash
     pkill ipop-tincan-x86_64
@@ -72,7 +72,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
-**Run groupvpn on another machine using same credentials and they will connect
+**Run GroupVPN on another machine using same credentials and they will connect
 with each other.**
 
 ## Running GroupVPN in Watchdog mode
