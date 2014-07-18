@@ -7,7 +7,9 @@ You can create such a VM on
 If you use real Android devices, your devices must be rooted to run SocialVPN.
 These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
-## Install necessary packages
+## Preparation
+
+### Install necessary packages
 
 1.  Update Debian/Ubuntu repo
 
@@ -30,7 +32,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     tools/android update sdk -u -t platform-tools,android-16,sysimg-16
     ```
 
-## Download SocialVPN and dependencies
+### Download SocialVPN and dependencies
 
 1.  Download socialvpn and Python 2.7 for android
 
