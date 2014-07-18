@@ -1,5 +1,3 @@
-_Disclaimer: SocialVPN release 14.01.1 (and below) do not provide encryption for P2P connections. P2P encryption is available on release 14.01.2 and above._
-
 ## Install dependencies
 
 1. Install [MS Visual C++ Redistributable](http://www.microsoft.com/en-us/download/details.aspx?id=40784)
@@ -16,19 +14,17 @@ _Disclaimer: SocialVPN release 14.01.1 (and below) do not provide encryption for
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/t7HxnU).
+1. [Download SocialVPN for Windows](http://goo.gl/sY5yvo).
 
 2. Extract "ipop-14.07.0-x86_win7".
 
-3. Right-click "_config.txt_" file and click on "_Edit_". Update with your
+3. Right-click "_config.json_" file and click on "_Edit_". Update with your
    XMPP service credential.  For SocialVPN, you
    don't have to change the *ip4* address.
 
     <Example>
 
-    [[5.jpg]]
-
-    ```bash
+    ```json
     {
         "xmpp_username": "username@gmail.com",
         "xmpp_password": "enter-password-here",
@@ -40,7 +36,6 @@ _Disclaimer: SocialVPN release 14.01.1 (and below) do not provide encryption for
     }
     ```
 
-
 4. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
 
@@ -49,8 +44,7 @@ _Disclaimer: SocialVPN release 14.01.1 (and below) do not provide encryption for
 
 ## Run SocialVPN
 
-1. Double-click on "_start.bat_" file whenever you want to run SocialVPN and
-   then two command shell windows will show up showing that it is running.
+1. To start the IPOP Social VPN, double-click on "_start_svpn.bat_" file.Two command shell windows will appear, indicating that it is running. Unless the log level in the config file is changed from the default _INFO_ to _DEBUG_ you will not see the output described below.
 
     [[6.jpg]]
     
@@ -66,10 +60,10 @@ _Disclaimer: SocialVPN release 14.01.1 (and below) do not provide encryption for
     connecting to XMPP server and becoming ONLINE. If you do not see this 
     message, that means that you have not properly connected.
 
-2. Run SocialVPN on another machine using same credentials and they will
+1. Run SocialVPN on another machine using same credentials and they will
    connect with each other.
 
-    By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
+   By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
 
 ### Close SocialVPN software
-1. Close two shell windows.
+1. Close two console windows.
