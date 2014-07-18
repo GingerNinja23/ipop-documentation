@@ -189,6 +189,20 @@ These instructions are derived from these links:
     * pthreadGC2.dll and pthreadVC2.dll located in
       `<path-to-libjingle>\trunk\third_party\pthreads_win32\bin`
 
+## Building IPOP Service
+
+Building the code is a fairly straightforward process. At this time, it requires Git and MS Visual Studio 2013. The solution and project files are included alongside the source files. 
+
+1. Clone the project to your local filesystem.
+
+ ```
+git clone --depth 1 https://github.com/ipop-project/ipop-service.git
+ ```
+2. Open the _IPoPSvc.sln_ file in Visual Studio 2013.
+3. Select your build preference [Debug|Release].
+4. Choose Build Solution from the Build menu. The executable will be created in appropriate [Debug|Release] subfolder.
+5. Enjoy!
+
 ## Download controllers
 
 1.  Download SocialVPN and GroupVPN controllers from [controllers repo](http://github.com/ipop-project/controllers/)
