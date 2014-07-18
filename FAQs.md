@@ -21,7 +21,7 @@
     Currently, this can be done by issuing a get_state [[controller API|Controller API]] call to the running tincan process. In Linux this can be done with the command line:
 
     ```bash
-    echo '{"m":"get_state"}' | nc -q 1 -u 127.0.0.1 5800
+    echo -e '\x02\x01{"m":"get_state"}' | netcat -q 1 -u 127.0.0.1 5800
     ```
 
     A feature for future releases is to provide a Web-based interface to browse the status of peers.
