@@ -3,7 +3,7 @@ floating point.
 
 ## Download and configure SocialVPN
 
-1.  Download socialvpn and extract for Raspberry Pi
+1.  Download SocialVPN and extract for Raspberry Pi
 
     ```bash
     wget -O ipop-14.01.1-arm_raspbian.tar.gz http://goo.gl/FpMNjC
@@ -63,7 +63,7 @@ floating point.
 
 ## Closing SocialVPN
 
-1.  Kill socialvpn 
+1.  Kill SocialVPN 
 
     ```bash
     pkill ipop-tincan
@@ -71,5 +71,5 @@ floating point.
     kill <pid-of-svpn-controller.py>
     ```
 
-**Run socialvpn on another machine using same credentials and they will connect
+**Run SocialVPN on another machine using same credentials and they will connect
 with each other.**
