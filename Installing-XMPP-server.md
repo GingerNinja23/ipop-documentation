@@ -73,8 +73,8 @@ These instructions have only been tested on Ubuntu 12.04
     You can add more users to the XMPP server with the ejabberdctl command as shown below:
 
     ```
-    sudo ejabberdctl register alice ejabberd alicepassword
-    sudo ejabberdctl register bob ejabberd bobpassword
+    sudo ejabberdctl register alice ejabberd password
+    sudo ejabberdctl register bob ejabberd password
     ```
 
     You can create social links between users in the XMPP server with the ejabberd command as shown below. Note that for each friendship you wish to create, you need to run the command twice (to add Alice to Bob's roster, and to add Bob to Alice's roster):
