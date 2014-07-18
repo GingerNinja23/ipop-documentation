@@ -66,7 +66,7 @@ _Disclaimer: GroupVPN releases 14.01.1 (and below) does not provide encryption f
     connecting to XMPP server and becoming ONLINE. If you do not see this 
     message, that means that you have not properly connected.
 
-2. Run socialvpn on another machine using same credentials and they will
+2. Run SocialVPN on another machine using same credentials and they will
    connect with each other.
 
     By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
