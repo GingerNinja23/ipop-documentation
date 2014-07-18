@@ -36,7 +36,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 
     ```bash
     wget -O ipop-14.01.1-arm_android.tar.gz http://goo.gl/kfcRSL
-    wget http://www.acis.ufl.edu/~ptony82/ipop/python27.tgz
+    wget http://www.acis.ufl.edu/~ipop/files/python27.tgz
     tar xzvf python27.tgz; tar xzvf ipop-14.01.1-arm_android.tar.gz
     ```
 
