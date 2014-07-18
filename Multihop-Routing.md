@@ -20,5 +20,5 @@ Below example lists varies of parameter of multihop mode with its default value.
 ```
 
 1. multihop_cl: It is the direct connection count limit per node. If the node happen reach this limit, next new direct connection use multihop path rather than creating direct p2p connection
-2. multihop_ihc:
+2. multihop_ihc: 
 
