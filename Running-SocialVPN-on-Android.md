@@ -35,9 +35,9 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 1.  Download socialvpn and Python 2.7 for android
 
     ```bash
-    wget -O ipop-14.01.1-arm_android.tar.gz http://goo.gl/kfcRSL
+    wget -O ipop-14.07.0-android.tar.gz http://goo.gl/kfcRSL
     wget http://www.acis.ufl.edu/~ipop/files/python27.tgz
-    tar xzvf python27.tgz; tar xzvf ipop-14.01.1-arm_android.tar.gz
+    tar xzvf python27.tgz; tar xzvf ipop-14.07.0-android.tar.gz
     ```
 
 2.  Update the `config.json` file with proper credentials. For SocialVPN, you
@@ -93,7 +93,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 2.  Use `adb push` to copy downloaded files to AVD
 
     ```bash
-    platform-tools/adb push ipop-14.01.1-arm_android /data/ipop
+    platform-tools/adb push ipop-14.07.0-android /data/ipop
     platform-tools/adb push python27 /data/ipop/python27
     ```
 
@@ -165,7 +165,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
 3.  Use `adb push` to copy downloaded files to the device. First, copy SocialVPN files to `sdcard/ipop` and `sdcard/python27`.
 
     ```bash
-    platform-tools/adb push ipop-14.01.1-arm_android /sdcard/ipop
+    platform-tools/adb push ipop-14.07.0-android /sdcard/ipop
     platform-tools/adb push python27 /sdcard/python27
     ```
 
