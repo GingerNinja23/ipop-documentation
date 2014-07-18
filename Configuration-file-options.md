@@ -1,34 +1,31 @@
-*  "stun": List up STUN servers to use. If omitted default value as below is used. 
-["stun.l.google.com:19302", "stun1.l.google.com:19302",
-             "stun2.l.google.com:19302", "stun3.l.google.com:19302",
-             "stun4.l.google.com:19302"],
-* "turn": [],  # Contains dicts with "server", "user", "pass" keys
-* "ip4": "172.16.0.1",
-*  "localhost": "127.0.0.1",
-* "ip6_prefix": "fd50:0dbc:41f2:4a3c",
-*  "localhost6": "::1",
-*  "ip4_mask": 24,
-*  "ip6_mask": 64,
-*  "subnet_mask": 32,
-* "svpn_port": 5800,
-*  "contr_port": 5801,
-*  "local_uid": "",
-*  "uid_size": 40,
-*  "sec": True,
-*   "wait_time": 15,
-*   "buf_size": 65507,
-*   "router_mode": False,
-*    "on-demand_connection" : False,
-*    "on-demand_inactive_timeout" : 600,
-*  "tincan_logging": 1,
-*  "controller_logging" : "INFO",
-*  "icc" : False, # Inter-Controller Connection
-*   "icc_port" : 30000,
-*   "switchmode" : 0,
-*  "trim_enabled": False,
-*   "multihop": False,
-*  "multihop_cl": 100, #Multihop connection count limit
-*   "multihop_ihc": 3, #Multihop initial hop count
-*   "multihop_hl": 10, #Multihop maximum hop count limit
-*   "multihop_tl": 1,  # Multihop time limit (second)
-*   "multihop_sr": True # Multihop source route
+Detailed description on config file options are listed below. Default value is specified in ipoplib.py file. 
+
+* "stun": List up STUN servers to use. If omitted google public STUN server is used.  
+* "turn": List TURN servers with server transport address username and password as dictonary keys
+* "ip4": IP address of IPOP node
+* "ip6_prefix": Prefix of IPv6 address. 
+* "ip4_mask": IPv4 netmask in integer(i.e., 24 for 255.255.255.0)
+* "ip6_mask": IPv6 netmask in integer
+* "subnet_mask": 
+* "svpn_port": Port number of TinCan UDP local server
+* "contr_port": Port number of controller UDP local server
+* "local_uid": Local UID. If not specified, it is randomly generated. 
+* "uid_size": UID length
+* "sec": DTLS security 
+* "wait_time": 
+* "buf_size": 
+* "router_mode": 
+* "on-demand_connection" : 
+* "on-demand_inactive_timeout" :
+* "tincan_logging": 
+* "controller_logging" : "INFO",
+* "icc" : False, # Inter-Controller Connection
+* "icc_port" : 30000,
+* "switchmode" : 0,
+* "trim_enabled": False,
+* "multihop": False,
+* "multihop_cl": 100, #Multihop connection count limit
+* "multihop_ihc": 3, #Multihop initial hop count
+* "multihop_hl": 10, #Multihop maximum hop count limit
+* "multihop_tl": 1,  # Multihop time limit (second)
+* "multihop_sr": True # Multihop source route
