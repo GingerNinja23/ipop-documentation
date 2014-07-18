@@ -19,7 +19,6 @@ If these fields are omitted, default value at ipoplib.py file is used.
 *     **ip6_prefix**: Prefix of IPv6 address. 
 *     **ip4_mask**: IPv4 netmask in integer(i.e., 24 for 255.255.255.0)
 *     **ip6_mask**: IPv6 netmask in integer
-
 *     **router_mode**: IPOP router mode. If it sets True, the IPOP runs in router mode. It only works with OpenWRT.
 *     **router_ip**: The IP identifier of IPOP router itself. This field only valid in router_ip mode.  
 *     **router_ip4_mask**: IPv4 network mask
