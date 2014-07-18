@@ -207,6 +207,8 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     ```bash
     netcfg
     ```
+**Run socialvpn on another machine using same credentials and they will connect
+with each other.**
 
 ### Close SocialVPN
 
@@ -217,5 +219,3 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     kill [SocialVPN pid]
     ```
 
-**Run socialvpn on another machine using same credentials and they will connect
-with each other.**
