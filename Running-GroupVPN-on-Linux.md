@@ -61,6 +61,9 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 
     [[ifconfig.png]]
 
+**Run GroupVPN on another machine using same credentials and they will connect
+with each other.**
+
 ## Stopping GroupVPN
 
 1.  Kill GroupVPN
@@ -71,9 +74,6 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
     kill <pid-of-gvpn_controller.py>
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
-
-**Run GroupVPN on another machine using same credentials and they will connect
-with each other.**
 
 ## Running GroupVPN in Watchdog mode
 
