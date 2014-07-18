@@ -3,12 +3,18 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 
 ## Download and configure GroupVPN
 
-1.  Download GroupVPN and extract for Linux
+1.  Download GroupVPN and extract for Ubuntu or CentOS
 
     ```bash
-    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/5HVioc
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
     tar xvzf ipop-14.07.0_ubuntu12.tar.gz
     cd ipop-14.07.0_ubuntu12
+    ```
+
+    ```bash
+    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+    cd ipop-14.07.0-x86_64_CentOS6
     ```
 
 2.  Update the `config.json` file with proper XMPP server address, and the
