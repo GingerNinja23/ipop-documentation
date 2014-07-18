@@ -5,7 +5,10 @@ In SocialVPN mode, IPOP allows multihop routing. This allows any node can send I
 To enable the multihop, you should specify below configuration in config file. 
 
 ```
-    "multihop": True, #
+    "multihop": True, # Default False
+```
+
+```
     "multihop_cl": 100, #Multihop connection count limit
     "multihop_ihc": 3, #Multihop initial hop count
     "multihop_hl": 10, #Multihop maximum hop count limit
