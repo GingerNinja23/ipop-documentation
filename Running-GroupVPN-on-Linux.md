@@ -84,8 +84,14 @@ long running processes. We have designed a simple watchdog process that
 spawns ipop-tincan and respawns it up to three times if necessary.
 
 Our watchdog process automatically starts the ipop-tincan, so that you 
-do not have to run it separately. (the path of the binary should be specified
-in configuration file). If the ipop-tincan crashes or is not responding, 
+do not have to run it separately. The path of the binary with the file name should be specified
+in configuration file as below.
+
+```
+"tincan_path": "./ipop-tincan-x86_64"
+```
+
+If the ipop-tincan crashes or is not responding, 
 the watchdog process terminates the ipop-tincan process and starts it as a 
 new process.
 
