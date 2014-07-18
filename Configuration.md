@@ -76,3 +76,35 @@ If these fields are omitted, default value at ipoplib.py file is used.
         "subnet_mask": 24
     }
 ```
+[Example 3] 
+```bash
+{
+    "stun": ["stun.l.google.com:19302"],
+    "turn": [
+        {"server": "129.114.33.157:19302", "user": "svpnjingle", "pass": "1234567890"}
+    ],
+    "ip4": "172.16.3.10",
+    "localhost": "127.0.0.1",
+    "ip6_prefix": "fd50:0dbc:41f2:4a3c",
+    "localhost6": "::1",
+    "svpn_port": 5800,
+    "uid_size": 40,
+    "sec": true,
+    "wait_time": 30,
+    "buf_size": 65507,
+    "xmpp_username": "0@ejabberd",
+    "xmpp_password": "0",
+    "xmpp_host": "129.114.33.157",
+    "tincan_path": "../../trunk/out/Release/ipop-tincan",
+    "on-demand_connection": false,
+    "on-demand_inactive_timeout": 100,
+    "tincan_logging": 2,
+    "switchmode": 1,
+    "controller_logging": "PKTDUMP",
+    "icc": true,
+    "icc_port": 30000,
+    "multihop": false,
+    "network_ignore_list": ["virbr0", "wlan0"]
+}
+
+```
