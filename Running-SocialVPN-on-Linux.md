@@ -2,14 +2,19 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit).
 Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) to get packages for additional platforms.
 ## Download and configure SocialVPN
 
-1.  Download SocialVPN and extract for Linux
+1.  Download SocialVPN and extract for Ubuntu or CentOS
 
     ```bash
-    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/AKwY52
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
     tar xvzf ipop-14.07.0_ubuntu12.tar.gz
     cd ipop-14.07.0_ubuntu12
     ```
 
+    ```bash
+    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+    cd ipop-14.07.0-x86_64_CentOS6
+    ```
 2.  Update the `config.json` file with the XMPP server address, and the user name
     and password. You don't need to change the *ip4* address.
 
