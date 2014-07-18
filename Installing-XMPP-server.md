@@ -15,8 +15,10 @@ These instructions have only been tested on Ubuntu 12.04
     sudo apt-get install ejabberd
     ```
 
-2.  Update configuration
+2.  Update the ejabberd configuration file
 
+    This sets up the ejabberd admin user "ipopuser" and host "ejabberd". You can configure these parameters with different values, but keep in mind that other tutorials in our documentation assume the XMPP server has been configured with ipopuser and ejabberd.
+ 
     ```bash
     sudo vi /etc/ejabberd/ejabberd.cfg
 
@@ -28,7 +30,7 @@ These instructions have only been tested on Ubuntu 12.04
     {hosts, ["localhost", "ejabberd"]}.
     ```
 
-3.  Add the following to the ejabberd.cfg file to enable STUN
+3.  Add the following to the ejabberd.cfg file to enable STUN on UDP port 3478
     ```bash
     sudo vi /etc/ejabberd/ejabberd.cfg
 
