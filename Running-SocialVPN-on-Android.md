@@ -58,7 +58,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     }
     ```
 
-## Running SocialVPN on Android Emulator
+## I. Running SocialVPN on Android Emulator
 ### Instantiate Android Virtual Device
 
 1.  Define and create Android Virtual Device (AVD) (this also takes a while)
@@ -141,7 +141,7 @@ These instructions are tested for Android 3.0(Honeycomb) and 4.4.2(KitKat).
     platform-tools/adb shell emu kill
     ```
 
-## Running SocialVPN on Android Device
+## II. Running SocialVPN on Android Device
 ### Prepare directories and SocialVPN files
 1.  Create directories for SocialVPN files. Main difference with running SocialVPN on Android Emulator is that most commands in this instruction must run as root. You are able to get root access per a terminal by typing `su`.
 
