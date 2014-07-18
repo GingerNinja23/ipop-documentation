@@ -20,5 +20,8 @@ Below example lists varies of parameter of multihop mode with its default value.
 ```
 
 1. multihop_cl: It is the direct connection count limit per node. If the node happen reach this limit, next new direct connection use multihop path rather than creating direct p2p connection
-2. multihop_ihc: 
+2. multihop_ihc: This value is the initial hop count of lookup_request message. The first lookup_request message floods the IPOP overlay network from direct neighbors to given value of range hopping count. 
+3. multihop_hl: Hop count multiples by 2 unless lookup_reply message received. Flood hopping count in lookup_request message is limited by this parameter. 
+4. multihop_tl: After flood the network with lookup_request message, it either waits given time then flood the network with next hop count or concede flooding in case of reaching the multihop_hl.
+5. multihop_sr: This is multihop source route mode. If set to false, routing information is distributed across the hopping nodes reduces the overhead of source route header. In source route mode, routing information is stored at the source providing more fault-tolerance against link failures. 
 
