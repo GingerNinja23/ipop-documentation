@@ -9,6 +9,8 @@ To enable the multihop, you should specify "multihop" to be true in config file.
 ```
 
 ### 2. Auxiliary parameters
+Below example lists varies of parameter of multihop mode. 
+
 ```
     "multihop_cl": 100, #Multihop connection count limit
     "multihop_ihc": 3, #Multihop initial hop count
@@ -16,4 +18,5 @@ To enable the multihop, you should specify "multihop" to be true in config file.
     "multihop_tl": 1,  # Multihop time limit (second)
     "multihop_sr": True # Multihop source route
 ```
+
 2.
