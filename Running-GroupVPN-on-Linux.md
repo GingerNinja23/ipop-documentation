@@ -75,6 +75,8 @@ with each other.**
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
+***
+
 ## Running GroupVPN in Watchdog mode
 
 It is common practice to use a watchdog process to monitor and respawn
@@ -90,6 +92,9 @@ new process.
 ```
 sudo ./watchdog.py -c config.json
 ```
+
+***
+
 ## On-demand GroupVPN Connection mode
 
 GroupVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
