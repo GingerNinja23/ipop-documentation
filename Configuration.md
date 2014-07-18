@@ -28,8 +28,6 @@ If these fields are omitted, default value at ipoplib.py file is used.
 *     **tincan_logging**: Logging verbosity of TinCan executable. 0 for Error, 1 for Info, 2 for Debug
 *     **controller_logging**: Logging verbosity of TinCan controller. ("ERROR", "INFO", "DEBUG" and "PKTDUMP")
 *     **sec**: If set True, DTLS security is enabled.
-
-
 *     **svpn_port**: Port number of TinCan UDP local server
 *     **contr_port**: Port number of controller UDP local server
 *     **local_uid**: Local UID. If not specified, it is randomly generated. 
