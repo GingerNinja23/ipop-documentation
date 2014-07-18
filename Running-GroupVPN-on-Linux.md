@@ -37,9 +37,12 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
     ```bash
     sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
+    Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
 2.  Second, start the GroupVPN controller
-
+    ```bash
+    chmod 755 gvpn_controller.py
+    ```
     ```bash
     ./gvpn_controller.py -c config.json &> log.txt &
     ```
@@ -67,6 +70,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
     ps aux | grep gvpn_controller.py
     kill <pid-of-gvpn_controller.py>
     ```
+    Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
 **Run groupvpn on another machine using same credentials and they will connect
 with each other.**
