@@ -60,6 +60,8 @@ floating point.
     ```
 
     [[ifconfig.png]]
+**Run SocialVPN on another machine using same credentials and they will connect
+with each other.**
 
 ## Closing SocialVPN
 
@@ -71,5 +73,4 @@ floating point.
     kill <pid-of-svpn-controller.py>
     ```
 
-**Run SocialVPN on another machine using same credentials and they will connect
-with each other.**
+
