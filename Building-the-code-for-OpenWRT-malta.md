@@ -82,7 +82,7 @@ and follow the instructions for the first two sections:
 
 ## Download controllers
 
-1.  Download socialvpn and groupvpn controllers
+1.  Download SocialVPN and GroupVPN controllers
 
     ```
     wget http://github.com/ipop-project/controllers/raw/master/src/ipoplib.py
