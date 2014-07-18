@@ -133,7 +133,7 @@ These instructions are derived from these links:
 
 ## Download controllers
 
-1.  Download socialvpn and groupvpn controllers
+1.  Download SocialVPN and GroupVPN controllers
 
     ```
     wget http://github.com/ipop-project/controllers/raw/devel/src/ipoplib.py
