@@ -5,9 +5,9 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 1.  Download SocialVPN and extract for Linux
 
     ```bash
-    wget -O ipop-14.01.1-x86_ubuntu12.tar.gz http://goo.gl/AKwY52
-    tar xvzf ipop-14.01.1-x86_ubuntu12.tar.gz
-    cd ipop-14.01.1-x86_ubuntu12
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/AKwY52
+    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
+    cd ipop-14.07.0_ubuntu12
     ```
 
 2.  Update the `config.json` file with the XMPP server address, and the user name
