@@ -18,7 +18,7 @@ _Disclaimer: GroupVPN releases 14.01.1 (and below) does not provide encryption f
 
 1. [Download SocialVPN for Windows](http://goo.gl/t7HxnU).
 
-2. Extract "ipop-14.01.1-x86_32_win7".
+2. Extract "ipop-14.07.0-x86_win7".
 
 3. Right-click "_config.txt_" file and click on "_Edit_". Update with your
    XMPP service credential.  For SocialVPN, you
