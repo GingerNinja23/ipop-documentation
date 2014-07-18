@@ -70,3 +70,4 @@ with each other.**
     ps aux | grep svpn_controller.py
     kill <pid-of-svpn-controller.py>
     ```
+  Note: use "ipop-tincan-x86" in place of "ipop-tincan-x86_64" for 32-bit Ubuntu machine.
