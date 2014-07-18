@@ -12,20 +12,20 @@ Detailed description on config file options are listed below. Default value is s
 * "local_uid": Local UID. If not specified, it is randomly generated. 
 * "uid_size": UID length
 * "sec": DTLS security 
-* "wait_time": 
-* "buf_size": 
-* "router_mode": 
-* "on-demand_connection" : 
-* "on-demand_inactive_timeout" :
-* "tincan_logging": 
-* "controller_logging" : "INFO",
-* "icc" : False, # Inter-Controller Connection
-* "icc_port" : 30000,
-* "switchmode" : 0,
-* "trim_enabled": False,
-* "multihop": False,
-* "multihop_cl": 100, #Multihop connection count limit
-* "multihop_ihc": 3, #Multihop initial hop count
-* "multihop_hl": 10, #Multihop maximum hop count limit
-* "multihop_tl": 1,  # Multihop time limit (second)
-* "multihop_sr": True # Multihop source route
+* "wait_time": TinCan socket blocking period. Controller sends get_state message in this period.
+* "buf_size": Controller socket buffer size. 
+* "router_mode": TinCan controller router mode. 
+* "on-demand_connection" : IPOP only creates TinCan connection when there is actual packet needs to be transfered. 
+* "on-demand_inactive_timeout" : If the TinCan connection is inactive this given time, the connection is discarded. 
+* "tincan_logging": Logging verbosity of TinCan executable. 0 for Error, 1 for Info, 2 for Debug
+* "controller_logging" : "Logging verbosity of TinCan controller. ("ERROR", "INFO", "DEBUG" and "PKTDUMP")
+* "icc" : It stands for Inter-Controller Connection. Controller open UDP socket server for the communication among IPOP controller. (True/False)
+* "icc_port" : Inter-Controller Connection UDP socket port number (default 30,000)
+* "switchmode" : This sets switchmode (1 for enable and 0 for disable)
+* "trim_enabled": 
+* "multihop": Multihop mode (True/False)
+* "multihop_cl": Multihop connection count limit
+* "multihop_ihc": Multihop initial hop count
+* "multihop_hl": Multihop maximum hop count limit
+* "multihop_tl": Multihop time limit (second)
+* "multihop_sr": Multihop source route
