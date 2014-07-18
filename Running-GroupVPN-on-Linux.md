@@ -6,9 +6,9 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 1.  Download GroupVPN and extract for Linux
 
     ```bash
-    wget -O ipop-14.01.1-x86_ubuntu12.tar.gz http://goo.gl/AKwY52
-    tar xvzf ipop-14.01.1-x86_ubuntu12.tar.gz
-    cd ipop-14.01.1-x86_ubuntu12
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/AKwY52
+    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
+    cd ipop-14.07.0_ubuntu12
     ```
 
 2.  Update the `config.json` file with proper XMPP server address, and the
@@ -108,4 +108,3 @@ GroupVPN has two modes on establishing the P2P connection. One create P2P connec
 ```
 
 Set the "on-demand_connection" field to true allows on-demand connection. Omitting or setting false this field makes the GroupVPN run on default(proactive) mode. "On-demand_inactive_timeout" sets the threshold period of disconnecting P2P. 
-
