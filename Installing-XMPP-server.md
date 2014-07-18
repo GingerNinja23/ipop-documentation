@@ -62,15 +62,31 @@ These instructions have only been tested on Ubuntu 12.04
     sudo service ejabberd restart
     ```
 
-5.  Create your first user
-
-    Note: you can add more users to the XMPP server with the ejabberdctl command as shown below; just replace "ipopuser" and "password" by the username/password of each user you wish to add.
+5.  Create your admin user
 
     ```bash
     sudo ejabberdctl register ipopuser ejabberd password
     ```
 
+6.  Create additional users and relationships
+
+You can add more users to the XMPP server with the ejabberdctl command as shown below:
+
+    ```bash
+    sudo ejabberdctl register alice ejabberd alicepassword
+    sudo ejabberdctl register bob ejabberd bobpassword
+    ```
+
+You can create social links between users in the XMPP server with the ejabberd command as shown below. Note that for each friendship you wish to create, you need to run the command twice (to add Alice to Bob's roster, and to add Bob to Alice's roster):
+
+    ```bash
+    sudo ejabberdctl add-rosteritem alice ejabberd bob ejabberd bob svpn both
+    sudo ejabberdctl add-rosteritem bob ejabberd alice ejabberd alice svpn both
+    ```
+
 ## Configure SocialVPN/GroupVPN
+
+Once the XMPP server is configured and users are created, you need to configure your SocialVPN/GroupVPN nodes to use it:
 
 1.  Update config.json file to point to new STUN
     server, we recommend that you use the public IP address (not DNS) of the 
