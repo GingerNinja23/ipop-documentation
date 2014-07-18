@@ -18,7 +18,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 ## Install binaries
 
-1. [Download GroupVPN for Windows](http://goo.gl/t7HxnU).
+1. [Download GroupVPN for Windows](http://goo.gl/sY5yvo).
 
 1. Extract "ipop-14.07.0-x86_win7".
 
