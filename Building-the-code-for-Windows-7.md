@@ -191,4 +191,4 @@ These instructions are derived from these links:
 
 ## Download controllers
 
-1.  Download socialvpn and groupvpn controllers from [controllers repo](http://github.com/ipop-project/controllers/)
+1.  Download SocialVPN and GroupVPN controllers from [controllers repo](http://github.com/ipop-project/controllers/)
