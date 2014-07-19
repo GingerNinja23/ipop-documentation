@@ -16,7 +16,7 @@ Creating your private XMPP service entails the following tasks - for example, [[
 
 ## NAT Traversal and STUN/TURN
 
-Network Address Translators - [NATs|http://en.wikipedia.org/wiki/Network_address_translation] - are very common on the Internet today, and creating end-to-end links when nodes are "behind" a NAT adds complexity to any VPN system. While the XMPP service is concerned with users and their relationships, the NAT traversal services are concerned with ensuring the it is possible for users behind NATs to communicate with each other using IPOP. There are two NAT traversal services that can be used by IPOP:
+Network Address Translators - [NATs](http://en.wikipedia.org/wiki/Network_address_translation) - are very common on the Internet today, and creating end-to-end links when nodes are "behind" a NAT adds complexity to any VPN system. While the XMPP service is concerned with users and their relationships, the NAT traversal services are concerned with ensuring the it is possible for users behind NATs to communicate with each other using IPOP. There are two NAT traversal services that can be used by IPOP:
 
 1. The STUN service allows IPOP nodes behind a common kind of NAT (cone - the majority of NATs deployed in the Internet are of this type). 
 2. The TURN service allows IPOP nodes behind more restrictive NATs (symmetric) to communicate
