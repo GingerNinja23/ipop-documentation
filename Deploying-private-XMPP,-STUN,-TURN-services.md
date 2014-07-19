@@ -16,12 +16,12 @@ Creating your private XMPP service entails the following tasks - for example, [[
 
 ## NAT Traversal and STUN/TURN
 
-Network Address Translators - [NATs](http://en.wikipedia.org/wiki/Network_address_translation) - are very common on the Internet today, and creating end-to-end links when nodes are "behind" a NAT adds complexity to any VPN system. While the XMPP service is concerned with users and their relationships, the NAT traversal services are concerned with ensuring the it is possible for users behind NATs to communicate with each other using IPOP. There are two NAT traversal services that can be used by IPOP:
+Network Address Translators - [NATs](http://en.wikipedia.org/wiki/Network_address_translation) - are very common on the Internet today, and creating end-to-end links when nodes are "behind" a NAT adds complexity to any VPN system. While the XMPP service is concerned with users and their relationships, the NAT traversal services are concerned with ensuring that it is possible for users behind NATs to communicate with each other using IPOP. There are two NAT traversal services that can be used by IPOP:
 
 1. The STUN service allows IPOP nodes behind a common kind of NAT (cone - the majority of NATs deployed in the Internet are of this type). 
 2. The TURN service allows IPOP nodes behind more restrictive NATs (symmetric) to communicate
 
-The STUN service is the preferred method of NAT traversal, because it is light-weight allows two nodes to communicate in a peer-to-peer fashion. The TURN service is more expensive - it requires the TURN service to serve as a "proxy" for all communications between two peers. Hence, when possible, STUN should be used; when not possible, TURN is a fall-back. It is possible to deploy several STUN and TURN servers to balance the load of NAT traversal in your deployment - if you are deploying your own NAT traversal services, it is useful to be aware of the general behavior of STUN and TURN services, and the kinds of NATs that your users will be subject to to help configure these services.
+The STUN service is the preferred method of NAT traversal, because it is light-weight allows two nodes to communicate in a peer-to-peer fashion. The TURN service is more expensive - it requires the TURN service to serve as a "relay" for all communications between two peers. Hence, when possible, STUN should be used; when not possible, TURN is a fall-back. It is possible to deploy several STUN and TURN servers to balance the load of NAT traversal in your deployment - if you are deploying your own NAT traversal services, it is useful to be aware of the general behavior of STUN and TURN services, and the kinds of NATs that your users will be subject to to help configure these services.
 
 ### Deploying STUN
 
