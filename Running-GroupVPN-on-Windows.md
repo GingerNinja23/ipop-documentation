@@ -18,7 +18,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 
 1. [Download GroupVPN for Windows](http://goo.gl/sY5yvo).
 
-1. Extract "ipop-14.07.0-x86_win7".
+1. Extract "ipop-14.07.0-x86_win7", preferably to your system root, e.g., _C:\_.
 
 1. You must then edit the  "_config.json_" for each node that participates in the group. At a minimum you must set:
  * A group-wide unique static IPv4 address and the mask.
@@ -45,6 +45,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
     [[4.jpg]]
 
 1. Install IPOP Service by starting a Windows command prompt with administrative privileges. Change your current working directory to the directory containing the IPOP executables and run the following command.
+
  ```
 IPoPSvc --install
  ```
