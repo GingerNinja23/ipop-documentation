@@ -40,7 +40,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 1. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
 
-    [[3.jpg]]
+    [[SetupIface.jpg]]
 
     [[4.jpg]]
 
