@@ -40,19 +40,22 @@ From the Control Panel choose _View network status and tasks_ under Network and 
 1. Right-click on "_setup-interface.bat_" file, and click on
     "_Run as administrator_".
 
-    [[SetupIface.jpg]]
+    [[SetupIface.png]]
 
     [[4.jpg]]
 
 1. Install IPOP Service by starting a Windows command prompt with administrative privileges. Change your current working directory to the directory containing the IPOP executables and run the following command.
-
  ```
 IPoPSvc --install
  ```
+    [[RunAs.png]]
+    [[SvcInstalled.png]]
+
 
 1. To run in the native mode as a Windows service start the service from the Windows Service Control Manager or run the command
  ```
 net start IPoPService
  ```
 
-The service, by default, is not configured to start automatically. You are required to manually start the service each time the computer reboots or change the service start mode to Automatic (Delayed Start). This will allow Windows to automatically start the service at the appropriate time whenever the computer is rebooted.
+1. (Optional) The service, by default, is not configured to start automatically. You are required to manually start the service each time the computer reboots or change the service start mode to Automatic (Delayed Start). This will allow Windows to automatically start the service at the appropriate time whenever the computer is rebooted.
+    [[AutoDelayedStart.png]]
