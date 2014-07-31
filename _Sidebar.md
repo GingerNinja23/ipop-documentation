@@ -5,7 +5,7 @@
     * [[Raspberry Pi|Building the code for Raspberry Pi]]
     * [[Windows 7|Building the code for Windows 7]]
 * **IPOP packages**
-    * [[Ubuntu, Debian, CentOS, SUSE and more|http://software.opensuse.org/download/package?project=home:robomod&package=ipop]]
+    * [[Ubuntu, Debian, CentOS, SUSE and more|http://software.opensuse.org/download/package?project=network:vpn:ipop&package=ipop]]
 * **Running SocialVPN nodes**
     * [[Linux|Running SocialVPN on Linux]]
     * [[Windows 7|Running SocialVPN on Windows 7]]
