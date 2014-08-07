@@ -98,3 +98,7 @@ determined in the JSON configuration file by adding the following parameters:
     We use Github's issue tracker: https://github.com/ipop-project/ipop-tincan/issues
 
     When reporting a bug, please make sure you enable debug logging (as described above) and collect output files from tincan and controller.
+
+1. **How do I reference/acknowledge IPOP in a publication?**
+
+    Please refer to: http://ipop-project.org/learn/publications
