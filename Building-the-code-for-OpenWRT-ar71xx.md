@@ -44,6 +44,7 @@ and follow the instructions for the first two sections:
     svn export svn://svn.openwrt.org/openwrt/branches/packages_12.09/libs/expat package/expat; make
     cp build_dir/target-mips_r2_uClibc-0.9.33.2/expat-2.0.1/.libs/libexpat.a $TOOLCHAIN/lib
     cp build_dir/target-mips_r2_uClibc-0.9.33.2/expat-2.0.1/lib/*.h $TOOLCHAIN/include/
+    cp -r /usr/include/X11 $TOOLCHAIN/include/
     cd ../../
     ```
 
