@@ -12,7 +12,7 @@ and follow the instructions for the first two sections:
 
    ```bash
    sudo dpkg add-architecture i386; sudo apt-get update
-   sudo apt-get install ccache libncurses5-dev zlib1g-dev gawk unzip libc6:i386 libstdc++6:i386 zlib1g:i386
+   sudo apt-get install ccache libncurses5-dev zlib1g-dev libxss-dev gawk unzip libc6:i386 libstdc++6:i386 zlib1g:i386
    ```
 
 2.  Go to trunk/third-party directory and download OpenWRT SDK for openwrt ar71xx
