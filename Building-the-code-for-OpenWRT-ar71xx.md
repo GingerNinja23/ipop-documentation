@@ -56,13 +56,6 @@ and follow the instructions for the first two sections:
     gclient runhooks --force
     ```
 
-2. Update `webrtc/typedefs.h` file
-
-    ```bash
-    cd webrtc; rm typedefs.h
-    wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
-    cd ..
-    ```
 2. Update ninja build files to use ```-msoft-float``` and ```-fno-stack-protector```
 
     ```bash
@@ -72,6 +65,16 @@ and follow the instructions for the first two sections:
     sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Debug -name *.ninja`
     ```
 
+2. Update some files file
+
+    ```bash
+    wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
+    wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/ipop-tincan.ninja
+    move typedefs.h webrtc/typedefs.h
+    move ipop-tincan.ninja out/Release/obj/talk/ipop-tincan.ninja
+    cd ..
+    
+    ```
 3.  Build tincan for OpenWrt (binary located at out/Release/ipop-tincan)
 
     ```bash
