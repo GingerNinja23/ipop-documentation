@@ -41,7 +41,7 @@ and follow the instructions for the first two sections:
 
     ```bash
     cd $OPENWRT_SDK
-    svn export svn://svn.openwrt.org/openwrt/packages/libs/expat package/expat; make
+    svn export svn://svn.openwrt.org/openwrt/branches/packages_12.09/libs/expat package/expat; make
     cp build_dir/target-mips_r2_uClibc-0.9.33.2/expat-2.0.1/.libs/libexpat.a $TOOLCHAIN/lib
     cp build_dir/target-mips_r2_uClibc-0.9.33.2/expat-2.0.1/lib/*.h $TOOLCHAIN/include/
     cd ../../
