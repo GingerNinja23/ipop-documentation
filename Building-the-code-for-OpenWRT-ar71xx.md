@@ -56,6 +56,13 @@ and follow the instructions for the first two sections:
     gclient runhooks --force
     ```
 
+2. Update `webrtc/typedefs.h` file
+
+    ```bash
+    cd webrtc; rm typedefs.h
+    wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
+    cd ..
+    ```
 2. Update ninja build files to use ```-msoft-float``` and ```-fno-stack-protector```
 
     ```bash
