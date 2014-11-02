@@ -100,13 +100,14 @@ These instructions are derived from these links:
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
     cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```
-## Build ipop-tincan for Linux
 
 1.  Sync again to download OpenSSL from chromium repository
 
     ```bash
     gclient sync --force
     ```
+
+## Build ipop-tincan for Linux
 
 3.  Generate ninja build files
 
