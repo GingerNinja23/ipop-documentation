@@ -50,21 +50,6 @@ and follow the instructions for the first two sections:
 
 ## Build ipop-tincan for OpenWRT
 
-1.  Return to libjingle trunk directory
-
-    ```bash
-    cd ../../
-    ```
-
-2.  Copy modified gyp files to trunk/talk directory
-
-    ```bash
-    rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
-    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
-    cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
-    cp talk/ipop-project/ipop-tincan/build/all.gyp .
-    cp talk/ipop-project/ipop-tincan/build/DEPS .
-    ```
 1.  Create ninja build files
 
     ```bash
