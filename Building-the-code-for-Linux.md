@@ -85,16 +85,13 @@ These instructions are derived from these links:
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```
-
-## Build ipop-tincan for Linux
-
-1.  Return to libjingle trunk directory
+4.  Return to libjingle trunk directory
 
     ```bash
     cd ../../
     ```
 
-2.  Copy modified gyp files to trunk/talk directory
+5.  Copy modified gyp files to trunk/talk directory
 
     ```bash
     rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
@@ -103,8 +100,9 @@ These instructions are derived from these links:
     cp talk/ipop-project/ipop-tincan/build/all.gyp .
     cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```
+## Build ipop-tincan for Linux
 
-3.  Sync again to download OpenSSL from chromium repository
+1.  Sync again to download OpenSSL from chromium repository
 
     ```bash
     gclient sync --force
