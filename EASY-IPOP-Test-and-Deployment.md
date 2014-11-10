@@ -86,3 +86,12 @@ Usage instruction
   ```
   python -m unittest -v test.TestSocialVPN
   ```
+
+6. When you want to stop ipop, you can list lxc instances then stop each instance as below. 
+
+  ```
+  sudo lxc-ls --fancy
+  sudo lxc-stop -n ipop0
+  sudo lxc-stop -n ipop1
+  ...
+  ```
