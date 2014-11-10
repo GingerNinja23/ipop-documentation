@@ -1,12 +1,4 @@
 
-For easier deployment and test of ipop, we provide ipop-test script. 
-https://github.com/ipop-project/ipop-test
-
-ipop-test provides test harness for ipop and helps deploying multiple ipop-nodes in a single VM. It leverages python unittest framework (https://docs.python.org/2/library/unittest.html). With this script, you can deploy and run multiple ipop-nodes in a single blank VM.
-
-You can run this script in Amazon EC2 or openstack instance then follow below instructions. Or you can also run it with under your VMware with ubuntu 14.04 image(http://www.trendsigma.net/vmware/ubuntu1404t.html).
-
-This script is tested under Ubuntu 14.04.
 ipop-test
 =========
 
