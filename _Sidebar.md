@@ -17,6 +17,8 @@
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Generating GroupVPN configurations|Generating GroupVPN configurations]]
     * [[IPsec|Configuring-IPsec-with-IPOP-GroupVPN]]
+* **Depolying IPOP**
+    * [[Easy IPOP Deploying | EASY IPOP Test and Deployment]]
 * **Deploying OSN and NAT traversal services**
     * [[Overview: XMPP,STUN,TURN|Deploying-private-XMPP,-STUN,-TURN-services]]
     * [[XMPP+STUN Service - Ubuntu|Installing XMPP server]]
