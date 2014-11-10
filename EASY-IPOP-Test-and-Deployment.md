@@ -1,5 +1,5 @@
 
-For easier deployment and test ipop, we provide ipop-test script. 
+For easier deployment and test of ipop, we provide ipop-test script. 
 https://github.com/ipop-project/ipop-test
 
 ipop-test provides test harness for ipop and helps deploying multiple ipop-nodes in a single VM. It leverages python unittest framework (https://docs.python.org/2/library/unittest.html). With this script, you can deploy and run multiple ipop-nodes in a single blank VM.
