@@ -19,8 +19,14 @@
 2. Extract "ipop-14.07.0-x86_win7".
 
 3. Right-click "_config.json_" file and click on "_Edit_". Update with your
-   XMPP service credential.  For SocialVPN, you
-   don't have to change the *ip4* address.
+   XMPP service credential.  Note: SocialVPN translates IPv4 addresses automatically; you
+   should configure each machine with the same IPv4 address (e.g. 172.31.0.100 in the
+   configuration file below).
+   By default, addresses are assigned by SocialVPN dynamically on a round-robin fashion. 
+   Alternatively, you can assign addresses for your peers yourself through an additional 
+   configuration file. Please refer to our [[FAQs|FAQs]] for details on how to find out
+   or configure the addresses of peers.
+   If you don't need address translation, you may consider using GroupVPN instead of SocialVPN.
 
     <Example>
 
@@ -63,7 +69,7 @@
 1. Run SocialVPN on another machine using same credentials and they will
    connect with each other.
 
-   By default, addresses are assigned dynamically on a round-robin fashion. Alternatively, you can assign addresses for your peers yourself through an additional configuration file. Please refer to our [[FAQs|FAQs]] for details.
+   
 
 ### Close SocialVPN software
 1. Close two console windows.
