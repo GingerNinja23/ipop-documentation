@@ -17,13 +17,13 @@
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Generating GroupVPN configurations|Generating GroupVPN configurations]]
     * [[IPsec|Configuring-IPsec-with-IPOP-GroupVPN]]
-* **Depolying IPOP**
-    * [[Easy IPOP Deploying | EASY IPOP Test and Deployment]]
 * **Deploying OSN and NAT traversal services**
     * [[Overview: XMPP,STUN,TURN|Deploying-private-XMPP,-STUN,-TURN-services]]
     * [[XMPP+STUN Service - Ubuntu|Installing XMPP server]]
     * [[XMPP Service - RHEL 6.5|Installing ejabberd in RHEL 6.5]]
     * [[TURN Service|Installing TURN server]]
+* **Test Harness**
+    * [[Easy IPOP Deploying | EASY IPOP Test and Deployment]]
 * **Extending the code**
     * [[Controller API|Controller API]]
     * [[Writing a controller|Writing a controller]]
