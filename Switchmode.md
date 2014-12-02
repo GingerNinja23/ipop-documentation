@@ -21,7 +21,9 @@ sudo apt-get upgrade
 Then create LXC instances and clone it. 
 ```
 sudo lxc-create -t ubuntu -n c0
-sudo lxc-clone -n c0 c1
+sudo lxc-clone c0 c1
+sudo lxc-clone c0 c2
+...
 ```
 
 We are using below pictures as an example. 
