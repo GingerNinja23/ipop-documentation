@@ -16,6 +16,23 @@ Make it excutable
 chmod +x ipop-tincan gvpn_controller.py
 ```
 
+Install LXC in user VM
+
+```
+sudo apt-get update
+sudo apt-get install lxc
+```
+
+If 
+```
+sudo lxc-ls --fancy
+```
+emits error then run
+
+```
+sudo apt-get upgrade
+```
+
 We are using below pictures as an example. 
 
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
