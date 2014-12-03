@@ -56,6 +56,13 @@ Then, attach ipop tap device to lxcbr0 at both ends.
 sudo brctl addif lxcbr0 ipop
 ```
 
+If you need to change the IP address of lxcbr0, then modify below files and restart the network service
+```
+sudo vi /etc/default/lxc-net
+sudo vi /etc/init/lxc-net.conf
+sudo service lxc-net restart
+```
+
 After tincan connection established, you can ping from 10.0.3.5 to ping 10.0.3.7.  
 
 
