@@ -108,18 +108,13 @@ Note:
 3. This script sends out ASYNC invitations to users.  
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
 
+### Running adminGVPN  
+1. Update the `config.json` file with proper XMPP server address, and the
+   user name and password of the XMPP user. You can use existing public XMPP services,
+   or you can also [[setup your own XMPP server|Installing XMPP Server]].
+    IPv4 addresses will be allocated automatically by MuC room admin by running manageUsers.py script.
 
-
-  
-
-### Running adminGVPN
-    1. Update the `config.json` file with proper XMPP server address, and the
-    user name and password of the XMPP user. You can use existing public XMPP services,
-    or you can also [[setup your own XMPP server|Installing XMPP Server]].
-    GroupVPN currently supports static
-    IPv4 address assignment - will be allocated automatically by MuC room admin by running manageUsers.py script.
-
-    ```bash
+ ```bash
    {
     "xmpp_username": "ipoptester@ejabberd",
     "xmpp_host": "192.168.14.131",
@@ -130,12 +125,12 @@ Note:
     "tincan_logging": 2
 }
 
-    ```
+ ```
 2.  First, launch the ipop-tincan program
 
-    ```bash
-    sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
-    ```
+```bash
+ sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
+```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
 3.  Second, start the admin_gvpn controller
