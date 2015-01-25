@@ -67,7 +67,7 @@ network_prefix : 172.31.0.0 # All peers will get addresses in the range 172.31.X
 # JID's of peers on which action is to be taken.
 [jids]
 #ipoptester@ejabberd : None <--commented out
-ipoptester3@ejabberd : None <--action will only be performed on this JID.
+ipoptester3@ejabberd : None #<--action will only be performed on this JID.
 #ipoptester12@ejabberd : None
 #ipoptester13@ejabberd : None
 #ipoptester14@ejabberd : None
