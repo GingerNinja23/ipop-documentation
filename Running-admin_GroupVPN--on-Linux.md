@@ -87,7 +87,7 @@ To view current IP/JID allocation.
 ```python
 python manageUsers.py -s show
 ```
-Note:
+Note:  
 1. Use the same JID that was used to create the room to execute this script.  
 2. DO NOT delete jid_ip_table.db, ip_table.db and jid_table.db files as they store the mapping between IP's allocated and JIDs.  
 3. This script sends out ASYNC invitations to users.  
