@@ -92,3 +92,103 @@ Note:
 2. DO NOT delete jid_ip_table.db, ip_table.db and jid_table.db files as they store the mapping between IP's allocated and JIDs.  
 3. This script sends out ASYNC invitations to users.  
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
+
+## Download and configure admin_gvpn
+
+1.  Download admin_gvpn and extract for Ubuntu or CentOS
+
+    ```bash
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
+    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
+    cd ipop-14.07.0_ubuntu12
+    ```
+
+    ```bash
+    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+    cd ipop-14.07.0-x86_64_CentOS6
+    ```
+
+2.  Update the `config.json` file with proper XMPP server address, and the
+    user name and password of the XMPP user. You can use existing public XMPP services,
+    or you can also [[setup your own XMPP server|Installing XMPP Server]].
+    GroupVPN currently supports static
+    IPv4 address assignment - will be allocated automatically by MuC room admin by running manageUsers.py script.
+
+    ```bash
+   {
+    "xmpp_username": "ipoptester@ejabberd",
+    "xmpp_host": "192.168.14.131",
+    "nick": "ipoptester",
+    "xmpp_password": "password",
+    "ip4_mask": 16,
+    "controller_logging": "DEBUG",
+    "tincan_logging": 2
+}
+
+    ```
+
+## Running GroupVPN
+
+1.  First, launch the ipop-tincan program
+
+    ```bash
+    sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
+    ```
+    Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
+
+2.  Second, start the GroupVPN controller
+    ```bash
+    chmod 755 admin_gvpn.py
+    ```
+    ```bash
+    ./admin_gvpn.py -c config.json &> log.txt &
+    ```
+
+
+3.  Check the network devices and ip address for your device
+
+    ```bash
+    /sbin/ifconfig ipop
+    ```
+
+    [[ifconfig.png]]
+
+**Run GroupVPN on another machine using same credentials and they will connect
+with each other.**
+
+## Stopping GroupVPN
+
+1.  Kill GroupVPN
+
+    ```bash
+    pkill ipop-tincan-x86_64
+    ps aux | grep gvpn_controller.py
+    kill <pid-of-gvpn_controller.py>
+    ```
+    Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
+
+***
+
+
+
+## On-demand GroupVPN Connection mode
+
+GVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
+
+### Proactive Connection Mode
+ Proactive connection establishes connection to all remote nodes right after it starts to run. The established connections are persistent given that the GroupVPN is running. It is the default mdoe of operation, but has a drawback of connection overhead when the node number increases. Note that when new node appears on GroupVPN, it establishes connections to all nodes in the GroupVPN network. 
+
+### On-demand Connection Mode
+ On-demand connection mode establishes P2P connection only when there is a demand on connection. Technically, when a packet that is destined to a node without P2P connection yet is captured in a tap device, it starts to establish P2P connection. This mode of connection is useful for reducing connection overhead. It also disconnects P2P connection after given threshold of period without traffic.  On-demand connection is configurable through config file. Below two fields are relevant to on-demand connection mode. 
+
+```bash
+{
+    "on-demand_connection": true,
+    "on-demand_inactive_timeout": 600
+}
+```
+
+Set the "on-demand_connection" field to true allows on-demand connection. Omitting or setting false this field makes the GroupVPN run on default(proactive) mode. "On-demand_inactive_timeout" sets the threshold period of disconnecting P2P. 
+
+
