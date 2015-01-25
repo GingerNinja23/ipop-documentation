@@ -62,12 +62,12 @@ xmpp_ip_address = 192.168.14.131
 jid : ipopuser@ejabberd
 password : password
 room_name : ipoptestroom9@conference.ejabberd
-#room_password : password
+#room_password : password 
 network_prefix : 172.31.0.0 # All peers will get addresses in the range 172.31.XXX.XXX
 # JID's of peers on which action is to be taken.
 [jids]
-#ipoptester@ejabberd : None 
-ipoptester3@ejabberd : None
+#ipoptester@ejabberd : None <--commented out
+ipoptester3@ejabberd : None <--action will only be performed on this JID.
 #ipoptester12@ejabberd : None
 #ipoptester13@ejabberd : None
 #ipoptester14@ejabberd : None
@@ -87,3 +87,8 @@ To view current IP/JID allocation.
 ```python
 python manageUsers.py -s show
 ```
+Note:
+1. Use the same JID that was used to create the room to execute this script.
+2. DO NOT delete jid_ip_table.db, ip_table.db and jid_table.db files as they store the mapping between IP's allocated and JIDs.
+3. This script sends out ASYNC invitations to users.
+4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
