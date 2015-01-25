@@ -28,11 +28,11 @@ To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, s
  tar xvzf ipop-14.07.0_ubuntu12.tar.gz
  cd ipop-14.07.0_ubuntu12
 ```
-    ```bash
-      wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
-      tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
-      cd ipop-14.07.0-x86_64_CentOS6
-    ```
+```bash
+  wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+  tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+  cd ipop-14.07.0-x86_64_CentOS6
+```
 
 ### Create and configure chat room
 A utility script - create_room.py is provided to create and configure the MuC room environment. The room is configured with parameters supplied in the configuration file - room_config.ini. By default the room is members only i.e. A entity can be admitted to the room only if invited. The script should be executed with JID which is to be used to administer the setup and manage users. The config file is as below.
