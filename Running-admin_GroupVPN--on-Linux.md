@@ -137,7 +137,7 @@ Note:
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
-2.  Second, start the GroupVPN controller
+2.  Second, start the admin_gvpn controller
     ```bash
     chmod 755 admin_gvpn.py
     ```
@@ -154,17 +154,16 @@ Note:
 
     [[ifconfig.png]]
 
-**Run GroupVPN on another machine using same credentials and they will connect
-with each other.**
 
-## Stopping GroupVPN
 
-1.  Kill GroupVPN
+## Stopping admin_gvpn
+
+1.  Kill admin_gvpn
 
     ```bash
     pkill ipop-tincan-x86_64
-    ps aux | grep gvpn_controller.py
-    kill <pid-of-gvpn_controller.py>
+    ps aux | grep admin_gvpn.py
+    kill -9 <pid-of-admin_gvpn.py>
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
@@ -172,12 +171,12 @@ with each other.**
 
 
 
-## On-demand GroupVPN Connection mode
+## On-demand adminGVPN Connection mode
 
-GVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
+adminGVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
 
 ### Proactive Connection Mode
- Proactive connection establishes connection to all remote nodes right after it starts to run. The established connections are persistent given that the GroupVPN is running. It is the default mdoe of operation, but has a drawback of connection overhead when the node number increases. Note that when new node appears on GroupVPN, it establishes connections to all nodes in the GroupVPN network. 
+ Proactive connection establishes connection to all remote nodes right after it starts to run. The established connections are persistent given that the adminGVPN is running. It is the default mode of operation, but has a drawback of connection overhead when the node number increases. Note that when new node appears on adminGVPN, it establishes connections to all nodes in the adminGVPN network. 
 
 ### On-demand Connection Mode
  On-demand connection mode establishes P2P connection only when there is a demand on connection. Technically, when a packet that is destined to a node without P2P connection yet is captured in a tap device, it starts to establish P2P connection. This mode of connection is useful for reducing connection overhead. It also disconnects P2P connection after given threshold of period without traffic.  On-demand connection is configurable through config file. Below two fields are relevant to on-demand connection mode. 
