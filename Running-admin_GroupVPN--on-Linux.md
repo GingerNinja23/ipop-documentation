@@ -19,6 +19,22 @@ To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, s
     sudo pip install sleekxmpp
 ```
 
+### Download and configure admin_gvpn
+
+  Download admin_gvpn and extract for Ubuntu or CentOS
+
+    ```bash
+    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
+    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
+    cd ipop-14.07.0_ubuntu12
+    ```
+
+    ```bash
+    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+    cd ipop-14.07.0-x86_64_CentOS6
+    ```
+
 ### Create and configure chat room
 A utility script - create_room.py is provided to create and configure the MuC room environment. The room is configured with parameters supplied in the configuration file - room_config.ini. By default the room is members only i.e. A entity can be admitted to the room only if invited. The script should be executed with JID which is to be used to administer the setup and manage users. The config file is as below.
 
@@ -93,23 +109,12 @@ Note:
 3. This script sends out ASYNC invitations to users.  
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
 
-### Download and configure admin_gvpn
 
-1.  Download admin_gvpn and extract for Ubuntu or CentOS
 
-    ```bash
-    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
-    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
-    cd ipop-14.07.0_ubuntu12
-    ```
+  
 
-    ```bash
-    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
-    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
-    cd ipop-14.07.0-x86_64_CentOS6
-    ```
-
-2.  Update the `config.json` file with proper XMPP server address, and the
+### Running adminGVPN
+    1. Update the `config.json` file with proper XMPP server address, and the
     user name and password of the XMPP user. You can use existing public XMPP services,
     or you can also [[setup your own XMPP server|Installing XMPP Server]].
     GroupVPN currently supports static
@@ -127,17 +132,14 @@ Note:
 }
 
     ```
-
-### Running adminGVPN
-
-1.  First, launch the ipop-tincan program
+2.  First, launch the ipop-tincan program
 
     ```bash
     sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
     ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
-2.  Second, start the admin_gvpn controller
+3.  Second, start the admin_gvpn controller
     ```bash
     chmod 755 admin_gvpn.py
     ```
@@ -146,7 +148,7 @@ Note:
     ```
 
 
-3.  Check the network devices and ip address for your device
+4.  Check the network devices and ip address for your device
 
     ```bash
     /sbin/ifconfig ipop
