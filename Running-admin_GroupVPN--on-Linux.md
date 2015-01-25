@@ -128,7 +128,7 @@ Note:
 
     ```
 
-## Running GroupVPN
+## Running adminGVPN
 
 1.  First, launch the ipop-tincan program
 
