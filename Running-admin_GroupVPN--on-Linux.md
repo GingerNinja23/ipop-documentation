@@ -19,20 +19,20 @@ To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, s
     sudo pip install sleekxmpp
 ```
 
-### Download and configure admin_gvpn
+### Download admin_gvpn package
 
   Download admin_gvpn and extract for Ubuntu or CentOS
 
     ```bash
-    wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
-    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
-    cd ipop-14.07.0_ubuntu12
+      wget -O ipop-14.07.0_ubuntu12.tar.gz http://goo.gl/IsGzqI
+      tar xvzf ipop-14.07.0_ubuntu12.tar.gz
+      cd ipop-14.07.0_ubuntu12
     ```
 
     ```bash
-    wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
-    tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
-    cd ipop-14.07.0-x86_64_CentOS6
+      wget -O ipop-14.07.0-x86_64_CentOS6.tar.gz http://goo.gl/3nHK7Z
+      tar xvzf ipop-14.07.0-x86_64_CentOS6.tar.gz
+      cd ipop-14.07.0-x86_64_CentOS6
     ```
 
 ### Create and configure chat room
