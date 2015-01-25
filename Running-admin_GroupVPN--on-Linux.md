@@ -1,17 +1,17 @@
 These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit). Visit the downloads page to get packages for additional platforms
 
-# Overview of adminGVPN
+### Overview of adminGVPN
 
 adminGVPN is a variant of GroupVPN that leverages XMPP XEP0045 (MuC - Multi User Chat Rooms) to bootstrap IPOP links.
 Unlike SVPN, GVPN where XMPP functionality is embedded in libjingle, in this setup XMPP interaction is handled in the controller.
 adminGVPN obviates the need to manually establish one to one friendship between participating JIDs(users).
 In adminGVPN all participating peers must be members of a MuC room, to set up the environment conveniently utility scripts are provided along with the controller to create/configure the room and manage users in the room.
 
-# Prerequisites
+### Prerequisites
 1. access to a XMPP service/server with rights to create/configure/manage MuC rooms.
 2. each participating entity must have a unique JID and nickname.
 
-# Download and install dependency package.
+### Download and install dependency package.
 
 To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, sleekXMPP can be installed easily by following the below steps.
 ```bash
@@ -19,7 +19,7 @@ To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, s
     sudo pip install sleekxmpp
 ```
 
-# Create and configure chat room
+### Create and configure chat room
 A utility script - create_room.py is provided to create and configure the MuC room environment. The room is configured with parameters supplied in the configuration file - room_config.ini. By default the room is members only i.e. A entity can be admitted to the room only if invited. The script should be executed with JID which is to be used to administer the setup and manage users. The config file is as below.
 
 ```bash
@@ -51,7 +51,7 @@ python create_room.py -r room_config.ini
 ```
 upon successful execution of the script a room will be created with aforementioned parameters. Since the room is members only, use of room password is redundant and not required. A detailed log file - room_creation.logging is generated , this file captures interaction of the script with XMPP server and can be helpful for troubleshooting if script fails.
 
-# Manage users in the room.
+### Manage users in the room.
 Access to the room and allocation of unique IP4-IPOP addresses to the peers can be done conveniently by making use of the script - manageUsers.py. This script reads a input file - applicants.ini and sends out  room invitations to the JID's(peers) in the file along with handling them IP4 addresses. The script makes use of a file database to keep track of the addresses allocated. It can also be used to block access to users and free addresses allocated to them for reuse.
 Sample applicants.ini file.
 
@@ -93,7 +93,7 @@ Note:
 3. This script sends out ASYNC invitations to users.  
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
 
-## Download and configure admin_gvpn
+### Download and configure admin_gvpn
 
 1.  Download admin_gvpn and extract for Ubuntu or CentOS
 
@@ -128,7 +128,7 @@ Note:
 
     ```
 
-## Running adminGVPN
+### Running adminGVPN
 
 1.  First, launch the ipop-tincan program
 
@@ -156,7 +156,7 @@ Note:
 
 
 
-## Stopping admin_gvpn
+### Stopping admin_gvpn
 
 1.  Kill admin_gvpn
 
@@ -171,7 +171,7 @@ Note:
 
 
 
-## On-demand adminGVPN Connection mode
+### On-demand adminGVPN Connection mode
 
 adminGVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
 
