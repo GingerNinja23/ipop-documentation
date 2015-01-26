@@ -146,10 +146,26 @@ When started the controller will either wait for the invitation from a MuC room 
     /sbin/ifconfig ipop
     ```
 
-    [[ifconfig.png]]
+    [[ifconfig.png]]  
 
+5. Check status of IPOP links
+```bash
+awk '/LINK/ || /affiliation/' log.txt
+```
+if their is no output, it implies the links are not up and their are connectivity issues. In case you were able to connect earlier with the same credentials, it is likely that you have been blocked from the room. To confirm this extract your 'affiliation' status from the log file.
 
+```bash
+cat log.txt | grep -i affiliation
+```
 
+empty affiliation and role values indicate that you have been blocked. To reconnect remove cache file
+```bash
+rm access.db
+``` 
+restart controller, tincan to wait for new invitation and contact the admin to send you a fresh invite.  
+
+Note:  
+1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not clear the cache, restart controller,tincan and request invite again.  
 ### Stopping admin_gvpn
 
 1.  Kill admin_gvpn
@@ -183,5 +199,4 @@ adminGVPN has two modes on establishing the P2P connection. One create P2P conne
 ```
 
 Set the "on-demand_connection" field to true allows on-demand connection. Omitting or setting false this field makes the adminGVPN run on default(proactive) mode. "On-demand_inactive_timeout" sets the threshold period of disconnecting P2P. 
-
 
