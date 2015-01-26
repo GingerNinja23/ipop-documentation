@@ -166,6 +166,8 @@ restart controller, tincan to wait for new invitation and contact the admin to s
 
 Note:  
 1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not clear the cache, restart controller,tincan and request invite again.  
+2. ensure you delete the 'access.db' file before restarting and requesting invite as the cached information is stale.
+
 ### Stopping admin_gvpn
 
 1.  Kill admin_gvpn
