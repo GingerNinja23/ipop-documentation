@@ -187,7 +187,7 @@ rm access.db
 restart controller, tincan to wait for new invitation and contact the admin to send you a fresh invite.  
 
 Note:  
-1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not clear the cache, restart controller,tincan and request invite again.  
+1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not delete cache file, restart controller,tincan and request invite again.  
 2. ensure you delete the 'access.db' file before restarting and requesting invite as the cached information is stale.
 
 ### Stopping admin_gvpn
