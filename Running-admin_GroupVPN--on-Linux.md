@@ -109,10 +109,7 @@ Note:
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
 
 ### Running adminGVPN  
-1. Update the `config.json` file with proper XMPP server address, and the
-   user name and password of the XMPP user. You can use existing public XMPP services,
-   or you can also [[setup your own XMPP server|Installing XMPP Server]].
-    IPv4 addresses will be allocated automatically by MuC room admin by running manageUsers.py script.
+1. Update the `config.json` file with proper XMPP server address, and the full JID, nickname and password. As mentioned earlier every peer should have a unique JID and nickname. You can use existing public XMPP services,or you can also [[setup your own XMPP server|Installing XMPP Server]].IPv4 addresses will be allocated automatically by MuC room admin by running manageUsers.py script. 
 
  ```bash
    {
@@ -133,14 +130,15 @@ Note:
 ```
     Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
 
-3.  Second, start the admin_gvpn controller
+3.  Second, start the admin_gvpn controller  
+
     ```bash
     chmod 755 admin_gvpn.py
     ```
     ```bash
     ./admin_gvpn.py -c config.json &> log.txt &
     ```
-
+When started the controller will either wait for the invitation from a MuC room or will use cached access details to login to the room. The IP4 address is embedded in the invitation and is cached along with other access details in a file database for subsequent use. In case the user has been blocked by the admin from the room he will not be able to access the XMPP network until invited again. In such a scenario the cached results must be cleared and both the controller and tincan restarted.
 
 4.  Check the network devices and ip address for your device
 
