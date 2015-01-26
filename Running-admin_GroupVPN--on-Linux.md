@@ -152,6 +152,26 @@ When started the controller will either wait for the invitation from a MuC room 
 ```bash
 awk '/LINK/ || /affiliation/' log.txt
 ```
+  
+sample output
+```bash
+user@ubuntu:~/ipop-14.01.2.rc1-x86_ubuntu12$ awk '/LINK/ || /affiliation/' log.txt
+DEBUG:sleekxmpp.xmlstream.xmlstream:RECV: <presence to="ipoptester@ejabberd/1219985521142210607793323" from="ipoptestroom9@conference.ejabberd/ipoptester3" xml:lang="en"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="member" role="participant" /></x></presence>
+DEBUG:sleekxmpp.xmlstream.xmlstream:RECV: <presence to="ipoptester@ejabberd/1219985521142210607793323" from="ipoptestroom9@conference.ejabberd/ipoptester" xml:lang="en"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="member" role="participant" /><status code="110" /></x></presence>
+DEBUG:sleekxmpp.plugins.xep_0045:MUC presence from ipoptestroom9@conference.ejabberd/ipoptester3 : {u'lang': 'en', 'status': u'', 'jid': , 'room': u'ipoptestroom9@conference.ejabberd', 'nick': u'ipoptester3', 'show': u'', 'affiliation': 'member', 'role': 'participant', 'alt_nick': <nick xmlns="http://jabber.org/protocol/nick" />}
+DEBUG:sleekxmpp.plugins.xep_0045:MUC presence from ipoptestroom9@conference.ejabberd/ipoptester : {u'lang': 'en', 'status': u'', 'jid': , 'room': u'ipoptestroom9@conference.ejabberd', 'nick': u'ipoptester', 'show': u'', 'affiliation': 'member', 'role': 'participant', 'alt_nick': <nick xmlns="http://jabber.org/protocol/nick" />}
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS offline
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS offline
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS offline
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
+
+```
 if their is no output, it implies the links are not up and their are connectivity issues. In case you were able to connect earlier with the same credentials, it is likely that you have been blocked from the room. To confirm this extract your 'affiliation' status from the log file.
 
 ```bash
