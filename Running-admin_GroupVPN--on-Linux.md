@@ -122,13 +122,13 @@ Note:
     "tincan_logging": 2
 }
 
- ```
-2.  First, launch the ipop-tincan program
+ ```  
+2. First, launch the ipop-tincan program
 
 ```bash
  sudo sh -c './ipop-tincan-x86_64 1> out.log 2> err.log &'
-```
-    Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".
+```  
+Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x86_64".  
 
 3.  Second, start the admin_gvpn controller  
 
@@ -138,7 +138,7 @@ Note:
     ```bash
     ./admin_gvpn.py -c config.json &> log.txt &
     ```
-When started the controller will either wait for the invitation from a MuC room or will use cached access details to login to the room. The IP4 address is embedded in the invitation and is cached along with other access details in a file database for subsequent use. In case the user has been blocked by the admin from the room he will not be able to access the XMPP network until invited again. In such a scenario the cached results must be cleared and both the controller and tincan restarted.
+When started the controller will either wait for the invitation from a MuC room or will use cached access details to login to the room. The IP4 address is embedded in the invitation and is cached along with other access details in a file database for subsequent use. In case the user has been blocked by the admin from the room he will not be able to access the XMPP network until invited again. In such a scenario the cached results must be cleared and both the controller and tincan restarted.  
 
 4.  Check the network devices and ip address for your device
 
