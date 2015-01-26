@@ -97,7 +97,9 @@ python manageUsers.py -i invite -u applicants.ini
 To block users and free addresses allocated to them.
 ```python
 python manageUsers.py -d delete -u applicants.ini
-```
+```  
+Blocking a user will not delete the existing IPOP link with it or from it to other peers. Blocked peer will however not be able to establish new links or re-establish trimmed links so to prohibit all connections with it either all other peers will have to restart IPOP or if in ON-DEMAND just wait for the dormant link to be trimmed.
+
 To view current IP/JID allocation.
 ```python
 python manageUsers.py -s show
