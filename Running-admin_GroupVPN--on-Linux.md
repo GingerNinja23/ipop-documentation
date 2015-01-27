@@ -38,7 +38,9 @@ in terms of implementation unlike SVPN, GVPN where XMPP functionality is embedde
   
 ### Prerequisites
 1. access to a publicly accessible XMPP service/server with rights to create/configure/manage MuC rooms.
-2. each participating entity must have a unique JID and nickname.
+2. each participating entity must have a unique JID and nickname.  
+3. adminGVPN can listen to only one room at a time.  
+4. It is strongly recommended to use a separate XMPP account from your personal account for setting up adminGVP as unwanted room invitations might trigger adminGVPN.
 
 ### Download and install dependency package.
 
