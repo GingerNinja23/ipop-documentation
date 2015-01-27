@@ -26,9 +26,9 @@ This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) fea
 4. Alice sends invitation to herself(XMPP JID for adminGVPN), Bob, Carol, Tom and Mike to join the room by executing script manageUsers.py with her admin account JID, the invitation message contains unique Ipv4 IPOP address for each of them.
 5. adminGVPN running on the local machines of Alice, Bob, Carol, Tom and Mike will than automatically accept the invitation, extract the IPv4 IPOP address configure IPOP and trigger the IPOP link creation process.  
 6. After this step IPOP network should be established among them.
-7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.  
+7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.   
 
-![]((https://cloud.githubusercontent.com/assets/7332136/5924540/a6869f4a-a62a-11e4-91c2-dcc3ce6317a7.JPG)  
+![](https://cloud.githubusercontent.com/assets/7332136/5924540/a6869f4a-a62a-11e4-91c2-dcc3ce6317a7.JPG) 
   
 The above image captures this scenario, yellow connections represent IPOP links, blue one's represent connectivity with the chat room.
 
