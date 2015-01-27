@@ -1,12 +1,34 @@
 These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit). Visit the downloads page to get packages for additional platforms
 
+
 ### Overview of adminGVPN
+The idea of adminGVPN takes inspiration from a chat room (MuC) environment, where users otherwise unrelated (not necessarily friends) come together to discuss a topic of common interest and subsequently leave when done.  
+  
+It is worthwhile to make note of some salient features provided by this environment.   
+1. Notification broadcast of the availability of other members (on-line,off-line status).  
+2. Notification broadcast when a new member joins or an existing member leaves.  
+3. Broadcast of messages to all members of the room.  
+4. Access control to the room by a designated administrator, who most often is the member who created the room.  
+  
+A analogy can be drawn between "discussing a common issue" and "collaborating on a common task", such as for example sharing computing resources etc. This kind of usage scenario can definitely take advantage of a Virtual Private Network (VPN) that would make make it possible for users to run applications on top of IP layer provided by this VPN and thus enabling them to interact seamlessly even when they do not have publicly addressable IP's.  
 
-adminGVPN is a variant of GroupVPN that leverages XMPP XEP0045 (MuC - Multi User Chat Rooms) to bootstrap IPOP links.
-Unlike SVPN, GVPN where XMPP functionality is embedded in libjingle, in this setup XMPP interaction is handled in the controller.
-adminGVPN obviates the need to manually establish one to one friendship between participating JIDs(users).
-In adminGVPN all participating peers must be members of a MuC room, to set up the environment conveniently utility scripts are provided along with the controller to create/configure the room and manage users in the room.
 
+This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) features provided by XMPP protocol to bootstrap connections.  adminGVPN differs from GVPN in the sense that it lets users to create a overlay network without establishing permanent social relationships along with ease of administration in terms of setting up a network.In practice this provides below advantages  
+1. In a group with 'n' members, to include a new members you don't have to execute '2n' instructions/steps to add a new member or remove an existing member.  
+2. Allocation of unique IPv4 IPOP addresses is easier as they are handled/revoked by a single admin using an automated script.  
+
+  Let us go through a usage scenario to elaborate how adminGVPN can be utilized. Suppose five people Alice, Bob, Carol, Tom and Mike want to set up a grid computing cluster to share their computing resources to run a job. Let us assume all of them have a social network account supporting XMPP protocol and they designate Alice as the administrator of the group. The steps below detail how the group would than proceed to establish the network.  
+ 
+1. Alice should make use of a separate JID (XMPP account) for administration and for her local machine which she wants to be connected to the IPOP network .
+2. Alice creates a new MuC room for the task on her XMPP server  by executing script create_room.py with her admin account JID.  
+3. All members of the Group start adminGVPN on their local machines.  
+4. Alice sends invitation to herself(XMPP JID for adminGVPN), Bob, Carol, Tom and Mike to join the room by executing script manageUsers.py with her admin account JID, the invitation message contains unique Ipv4 IPOP address for each of them.
+5. adminGVPN running on the local machines of Alice, Bob, Carol, Tom and Mike will than automatically accept the invitation, extract the IPv4 IPOP address configure IPOP and trigger the IPOP link creation process.  
+6. After this step IPOP network should be established among them.
+7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.    
+  
+in terms of implementation unlike SVPN, GVPN where XMPP functionality is embedded in libjingle, XMPP interaction is handled in the controller which allows more flexibility to modify/tailor the bootstrap process.
+  
 ### Prerequisites
 1. access to a XMPP service/server with rights to create/configure/manage MuC rooms.
 2. each participating entity must have a unique JID and nickname.
