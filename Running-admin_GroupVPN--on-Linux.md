@@ -14,8 +14,8 @@ A analogy can be drawn between "discussing a common issue" and "collaborating on
 
 
 This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) features provided by XMPP protocol to bootstrap connections.  adminGVPN differs from GVPN in the sense that it lets users to create a overlay network without establishing permanent social relationships along with ease of administration in terms of setting up a network.In practice this provides below advantages  
-1. In a group with 'n' members, to include a new members you don't have to execute '2n' instructions/steps to add a new member or remove an existing member.  
-2. Allocation of unique IPv4 IPOP addresses is easier as they are handled/revoked by a single admin using an automated script.  
+1. In a group with 'n' members, to include a new member you don't have to execute '2n' instructions/steps to add a new member or remove an existing member,for example in GVPN we have to generate "2n" ejabberdctl instructions to accomplish this.  
+2. Allocation of unique IPv4 IPOP addresses is easier as they are handled/revoked by a single admin using an automated script, Thus one can keep track of allocated and free address pool.  
 3. Access to the XMPP overlay/Room is controlled by the administrator.  
 
   Let us go through a usage scenario to elaborate how adminGVPN can be utilized. Suppose five people Alice, Bob, Carol, Tom and Mike want to set up a grid computing cluster to share their computing resources to run a job. Let us assume all of them have a social network account supporting XMPP protocol and they designate Alice as the administrator of the group. The steps below detail how the group would than proceed to establish the network.  
