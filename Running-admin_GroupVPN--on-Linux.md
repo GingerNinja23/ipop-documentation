@@ -27,7 +27,7 @@ This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) fea
 6. After this step IPOP network should be established among them.
 7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.  
 
-![](https://www.dropbox.com/s/g4zsjcb2ynvqqyu/admingvpn.JPG?dl=0) 
+![](http://www.dropbox.com/s/g4zsjcb2ynvqqyu/admingvpn.JPG?dl=0) 
 
  
   
