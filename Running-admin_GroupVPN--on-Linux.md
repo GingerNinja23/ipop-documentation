@@ -148,7 +148,7 @@ Note:
    {
     "xmpp_username": "ipoptester@ejabberd",
     "xmpp_host": "192.168.14.131",
-    "nick": "ipoptester",
+    "nick": "ipoptester", # this should be the part of your xmpp_username before "@".
     "xmpp_password": "password",
     "ip4_mask": 16,
     "controller_logging": "DEBUG",
