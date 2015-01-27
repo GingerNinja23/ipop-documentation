@@ -27,7 +27,7 @@ This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) fea
 6. After this step IPOP network should be established among them.
 7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.  
 
-![](http://www.dropbox.com/s/g4zsjcb2ynvqqyu/admingvpn.JPG?dl=0) 
+![](https://cloud.githubusercontent.com/assets/7332136/5923750/cc693332-a623-11e4-800c-dc470bbed310.JPG) 
 
  
   
@@ -249,4 +249,3 @@ adminGVPN has two modes on establishing the P2P connection. One create P2P conne
 ```
 
 Set the "on-demand_connection" field to true allows on-demand connection. Omitting or setting false this field makes the adminGVPN run on default(proactive) mode. "On-demand_inactive_timeout" sets the threshold period of disconnecting P2P. 
-
