@@ -21,20 +21,20 @@ VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) features
   Let us go through a usage scenario to elaborate how adminGVPN can be utilized. Suppose five people Alice, Bob, Carol, Tom and Mike want to set up a grid computing cluster to share their computing resources to run a job. Let us assume all of them have a social network account supporting XMPP protocol and they designate Alice as the administrator of the group. The steps below detail how the group would than proceed to establish the network.  
  
 1. Alice should make use of a separate JID (XMPP account) for administration and for her local machine which she wants to be connected to the IPOP adminGVPN network.  
-2. Alice creates a new MuC room for the task on her XMPP server  by executing script create_room.py with her admin account JID.  
+2. Alice creates a new MuC room on her XMPP server; she does so by executing the script create_room.py with her admin account JID.  
 3. All members of the Group start adminGVPN on their local machines.  
-4. Alice sends invitation to herself(XMPP JID for adminGVPN), Bob, Carol, Tom and Mike to join the room by executing script manageUsers.py with her admin account JID, the invitation message contains unique Ipv4 IPOP address for each of them.
-5. adminGVPN running on the local machines of Alice, Bob, Carol, Tom and Mike will than automatically accept the invitation, extract the IPv4 IPOP address configure IPOP and trigger the IPOP link creation process.  
-6. After this step IPOP network should be established among them.
-7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py , this time with delete argument to block his access to the room and asks others to restart adminGVPN.   
+4. Alice sends invitation to herself (XMPP JID for adminGVPN), Bob, Carol, Tom and Mike to join the room by executing the script manageUsers.py with her admin account JID. The invitation message that goes to each resource contains a unique Ipv4 IPOP address for each of them.
+5. adminGVPN running on the local machines of Alice, Bob, Carol, Tom and Mike will then automatically accept the invitation, extract the IPv4 IPOP address, configure IPOP, and trigger the IPOP link creation process.  
+6. After this step, the IPOP network should be established among them.
+7. If Alice wants to remove Mike from the room and adminGVPN network, she executes manageUsers.py - this time with delete argument - to block his access to the room. Currently, revocation requires other nodes to restart adminGVPN.   
 
 ![](https://cloud.githubusercontent.com/assets/7332136/5927287/7c6dbd96-a63f-11e4-83a0-24fd4f6005bf.JPG) 
   
-The above image captures this scenario, yellow connections represent IPOP links, blue one's represent connectivity with the chat room.
+The above image captures this scenario: yellow connections represent IPOP links, blue ones represent connectivity with the chat room.
 
  
   
-in terms of implementation unlike SVPN, GVPN where XMPP functionality is embedded in libjingle, XMPP interaction is handled in the controller which allows more flexibility to modify/tailor the bootstrap process. 
+In terms of implementation - unlike SocialVPN and GroupVPN, where XMPP functionality is embedded in libjingle, in adminGVPN, XMPP interaction is handled in the controller - which allows more flexibility to modify and tailor the bootstrap process. Still , like SocialVPN and GroupVPN, each resource has a tap device, runs the TinCan process, and the adminVPN controller.
   
 ### Prerequisites
 1. access to a publicly accessible XMPP service/server with rights to create/configure/manage MuC rooms.
