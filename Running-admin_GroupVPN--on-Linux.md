@@ -2,7 +2,9 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit). Vis
 
 
 ### Overview of adminGVPN
-The idea of adminGVPN takes inspiration from a chat room (MuC) environment, where users otherwise unrelated (not necessarily friends) come together to discuss a topic of common interest and subsequently leave when done.  
+GroupVPN (GVPN) brings groups of resources together in a virtual cluster, within an private IP address subnet where addresses are not translated. The first implementation of the GVPN controller relies on each member of the group to have links to each other member of the group in the XMPP roster - which is challenging from management and scalability standpoints. The approach taken in AdminGVPN is different - it allows a group to be created on the XMPP server, and a group member only needs to be added once to the group in order to be connected to the VPN. The name AdminGVPN comes from the fact that this approach relies on a GVPN administrator to create a group, and authorize resources to join the group.
+
+In order to continue using the XMPP protocol, the implementation of adminGVPN leverages a multi-user chat room (MuC) environment, where users otherwise who may be unrelated (but trust an administrator to moderate who joins the group) come together to discuss a topic of common interest and subsequently leave when done.  
   
 It is worthwhile to make note of some salient features provided by this environment.   
 1. Notification broadcast of the availability of other members (on-line,off-line status).  
