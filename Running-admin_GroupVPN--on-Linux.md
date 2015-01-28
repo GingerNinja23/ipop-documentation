@@ -36,15 +36,15 @@ The above image captures this scenario: yellow connections represent IPOP links,
   
 In terms of implementation - unlike SocialVPN and GroupVPN, where XMPP functionality is embedded in libjingle, in adminGVPN, XMPP interaction is handled in the controller - which allows more flexibility to modify and tailor the bootstrap process. Still , like SocialVPN and GroupVPN, each resource has a tap device, runs the TinCan process, and the adminVPN controller.
   
-### Prerequisites
-1. access to a publicly accessible XMPP service/server with rights to create/configure/manage MuC rooms.
-2. each participating entity must have a unique JID and nickname, use of administration JID should be avoided to  in  adminGVPN controller login credential. The point to be driven home here is that a JID should not be active on more than one machine simultaneously.
+### Prerequisites to use adminGVPN
+1. Access to a publicly accessible XMPP service/server with rights to create, configure and manage MuC rooms.
+2. Each participating entity must have a unique JID and nickname. Note that the use of the administrator's JID should be avoided in the adminGVPN controller login credential - a JID should not be active on more than one machine simultaneously.
 3. adminGVPN can listen to only one room at a time.  
-4. It is strongly recommended to use a separate XMPP account from your personal account for setting up adminGVP as unwanted room invitations might trigger adminGVPN.
+4. It is strongly recommended to use a separate XMPP account from your personal account for setting up adminGVPN as unwanted room invitations might trigger adminGVPN.
 
-### Download and install dependency package.
+### Download and install dependencies
 
-To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, sleekXMPP can be installed easily by following the below steps.
+To support XMPP interactions in the controller, adminGVPN depends on SleekXMPP. The SleekXMPP package can be installed easily as follows:
 ```bash
     sudo apt-get install python-pip
     sudo pip install sleekxmpp
@@ -66,7 +66,7 @@ To abstract XMPP interaction in the controller adminGVPN depends on SleekXMPP, s
 ```
 
 ### Create and configure chat room
-A utility script - create_room.py is provided to create and configure the MuC room environment. The room is configured with parameters supplied in the configuration file - room_config.ini. By default the room is members only i.e. A entity can be admitted to the room only if invited. The script should be executed with JID which is to be used to administer the setup and manage users. The config file is as below.
+A utility script - create_room.py - is provided to create and configure the MuC room environment. The room is configured with parameters supplied in the configuration file room_config.ini. By default, the room is members only - i.e., an entity can only be admitted to the room if invited. The script should be executed with JID which is to be used to administer the setup and manage users. The configuration file is as below.
 
 ```bash
 # user's xmpp credentials for logging into xmpp account
@@ -91,15 +91,17 @@ room_allow_private_messages : True
 room_moderated : False
 ```
 
-To execute the script
+To execute the script (from any machine that can connect to the XMPP server):
 ```python
 python create_room.py -r room_config.ini
 ```
-upon successful execution of the script a room will be created with aforementioned parameters. Since the room is members only, use of room password is redundant and not required. A detailed log file - room_creation.logging is generated , this file captures interaction of the script with XMPP server and can be helpful for troubleshooting if script fails.
+
+Upon successful execution of the script, a room will be created with the configure parameters. Since the room is members only, use of room password is redundant and not required. A detailed log file - room_creation.logging - is generated. This file captures interaction of the script with XMPP server and can be helpful for troubleshooting if the script fails.
 
 ### Manage users in the room.
-Access to the room and allocation of unique IP4-IPOP addresses to the peers can be done conveniently by making use of the script - manageUsers.py. This script reads a input file - applicants.ini and sends out  room invitations to the JID's(peers) in the file along with handling them IP4 addresses. The script makes use of a file database to keep track of the addresses allocated. It can also be used to block access to users and free addresses allocated to them for reuse.
-Sample applicants.ini file.
+Access to the room and allocation of unique IP4-IPOP addresses to the peers can be done conveniently by making use of the script manageUsers.py. This script reads a input file (applicants.ini) and sends out  room invitations to the JID's (peers) in the file, along with handing IP4 addresses to them. The script makes use of a file database to keep track of the addresses allocated. It can also be used to block access to users and free addresses allocated to them for reuse.
+
+The following is a sample applicants.ini file:
 
 ```bash
 # user's xmpp credentials for logging into xmpp account
@@ -129,9 +131,10 @@ To block users and free addresses allocated to them.
 ```python
 python manageUsers.py -d delete -u applicants.ini
 ```  
+
 Blocking a user will not delete the existing IPOP link with it or from it to other peers. Blocked peer will however not be able to establish new links or re-establish trimmed links so to prohibit all connections with it either all other peers will have to restart IPOP or if in ON-DEMAND just wait for the dormant link to be trimmed.
 
-To view current IP/JID allocation.
+To view current IP/JID allocation:
 ```python
 python manageUsers.py -s show
 ```
@@ -142,7 +145,7 @@ Note:
 4 The script only supports network mask 255.255.XXX.XXX, thus only the first two octets can be modified.
 
 ### Running adminGVPN  
-1. Update the `config.json` file with proper XMPP server address, and the full JID, nickname and password. As mentioned earlier every peer should have a unique JID and nickname. You can use existing public XMPP services,or you can also [[setup your own XMPP server|Installing XMPP Server]].IPv4 addresses will be allocated automatically by MuC room admin by running manageUsers.py script. 
+1. Update the `config.json` file with proper XMPP server address, and the full JID, nickname and password. As mentioned earlier, every peer should have a unique JID and nickname. You can use existing public XMPP services,or you can also [[setup your own XMPP server|Installing XMPP Server]].IPv4 addresses will be allocated automatically by MuC room admin by running manageUsers.py script. 
 
  ```bash
    {
@@ -171,7 +174,7 @@ Note: For 32-bit ubuntu machine use "ipop-tincan-x86" in place of "ipop-tincan-x
  ```bash
     ./admin_gvpn.py -c config.json &> log.txt &
  ```
-When started the controller will either wait for the invitation from a MuC room or will use cached access details to login to the room. The IP4 address is embedded in the invitation and is cached along with other access details in a file database for subsequent use. In case the user has been blocked by the admin from the room he will not be able to access the XMPP network until invited again. In such a scenario the cached results must be cleared and both the controller and tincan restarted.  
+When started, the controller will either wait for the invitation from a MuC room, or will use cached access details to login to the room. The IPv4 address is embedded in the invitation and is cached along with other access details in a file database for subsequent use. In case the user has been blocked by the admin from the room, they will not be able to access the XMPP network until invited again. In such a scenario, the cached results must be cleared and both the controller and tincan restarted.  
 
 4. Check the network devices and ip address for your device
 
@@ -205,7 +208,7 @@ DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ip
 DEBUG:gvpn_controller:*********** LINK WITH ipoptestroom9@conference.ejabberd/ipoptester3  IS online
 
 ```
-if their is no output, it implies the links are not up and their are connectivity issues. In case you were able to connect earlier with the same credentials, it is likely that you have been blocked from the room. To confirm this extract your 'affiliation' status from the log file.
+If there is no output, it implies the links are not up and there are connectivity issues. In case you were able to connect earlier with the same credentials, it is likely that you have been blocked from the room. To confirm this extract your 'affiliation' status from the log file.
 
 ```bash
 cat log.txt | grep -i affiliation
@@ -218,7 +221,7 @@ rm access.db
 restart controller, tincan to wait for new invitation and contact the admin to send you a fresh invite.  
 
 Note:  
-1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not delete cache file, restart controller,tincan and request invite again.  
+1. invites are ASYNC and can be lost if consumed in error. If controller has accepted the invite and has access to the room 'affiliation' value must be 'member'. If not, delete the cache file, restart controller, tincan, and request invite again.  
 2. ensure you delete the 'access.db' file before restarting and requesting invite as the cached information is stale.
 
 ### Stopping admin_gvpn
@@ -238,13 +241,13 @@ Note:
 
 ### On-demand adminGVPN Connection mode
 
-adminGVPN has two modes on establishing the P2P connection. One create P2P connection once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode and latter as on-demand mode. 
+adminGVPN has two modes on establishing the P2P connection: one creates P2P connections to all online peers once it starts to run, the other starts to establish connection when there appears a packet that is destined to a node without P2P connection yet. We call former as proactive mode, and latter as on-demand mode. 
 
 ### Proactive Connection Mode
- Proactive connection establishes connection to all remote nodes right after it starts to run. The established connections are persistent given that the adminGVPN is running. It is the default mode of operation, but has a drawback of connection overhead when the node number increases. Note that when new node appears on adminGVPN, it establishes connections to all nodes in the adminGVPN network. 
+ Proactive connection establishes connection to all remote nodes right after it starts to run. The established connections are managed and kept persistent as long as adminGVPN is running. It is the default mode of operation, but has a drawback of connection overhead when the node number increases. Note that when new node appears on adminGVPN, it establishes connections to all nodes in the adminGVPN network. 
 
 ### On-demand Connection Mode
- On-demand connection mode establishes P2P connection only when there is a demand on connection. Technically, when a packet that is destined to a node without P2P connection yet is captured in a tap device, it starts to establish P2P connection. This mode of connection is useful for reducing connection overhead. It also disconnects P2P connection after given threshold of period without traffic.  On-demand connection is configurable through config file. Below two fields are relevant to on-demand connection mode. 
+ On-demand connection mode establishes P2P connection only when there is a demand on connection. Technically, when a packet that is destined to a node without P2P connection yet is captured in a tap device, it starts to establish P2P connection. This mode of connection is useful for reducing connection overhead. It also disconnects P2P connection after given threshold of period without traffic.  On-demand connection is configurable through config file. The two fields below are relevant to on-demand connection mode. 
 
 ```bash
 {
