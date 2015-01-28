@@ -2,22 +2,20 @@ These instructions are for Ubuntu 12.04 or higher or Debian Wheezy (64-bit). Vis
 
 
 ### Overview of adminGVPN
-GroupVPN (GVPN) brings groups of resources together in a virtual cluster, within an private IP address subnet where addresses are not translated. The first implementation of the GVPN controller relies on each member of the group to have links to each other member of the group in the XMPP roster - which is challenging from management and scalability standpoints. The approach taken in AdminGVPN is different - it allows a group to be created on the XMPP server, and a group member only needs to be added once to the group in order to be connected to the VPN. The name AdminGVPN comes from the fact that this approach relies on a GVPN administrator to create a group, and authorize resources to join the group.
+GroupVPN (GVPN) brings groups of resources together in a virtual cluster, within an private IP address subnet where addresses are not translated. The first implementation of the GVPN controller relies on each member of the group to have links to each other member of the group in the XMPP roster - which is challenging from management and scalability standpoints. The approach taken in adminGVPN is different - it allows a group to be created on the XMPP server, and a group member only needs to be added once to the group in order to be connected to the VPN. The name adminGVPN comes from the fact that this approach relies on a GVPN administrator to create a group, and authorize resources to join the group.
 
-In order to continue using the XMPP protocol, the implementation of adminGVPN leverages a multi-user chat room (MuC) environment, where users otherwise who may be unrelated (but trust an administrator to moderate who joins the group) come together to discuss a topic of common interest and subsequently leave when done.  
-  
-It is worthwhile to make note of some salient features provided by this environment.   
+In order to continue using the XMPP protocol, the implementation of adminGVPN leverages a multi-user chat room (MuC) environment, where users otherwise who may be unrelated (but trust an administrator to moderate who joins the group) come together to discuss a topic of common interest and subsequently leave when done.   An analogy can be drawn between "discussing a common issue" and "collaborating on a common task", such as for example sharing computing resources in a virtual cluster. 
+
+The salient features provided by MuC environments leveraged by adminGVPN include:   
 1. Notification broadcast of the availability of other members (on-line,off-line status).  
 2. Notification broadcast when a new member joins or an existing member leaves.  
 3. Broadcast of messages to all members of the room.  
 4. Access control of the room by a designated administrator, who most often is the member who created the room.  
-  
-A analogy can be drawn between "discussing a common issue" and "collaborating on a common task", such as for example sharing computing resources etc. This kind of usage scenario can definitely take advantage of a Virtual Private Network (VPN) that would make make it possible for users to run applications on top of IP layer provided by this VPN and thus enabling them to interact seamlessly even when they do not have publicly addressable IP's.  
 
+VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) features provided by XMPP protocol to bootstrap connections.  adminGVPN differs from GroupVPN in the sense that it lets users create an overlay network without the need to establish pair-wise, user-to-user links, along with ease of administration in terms of setting up a network:
 
-This VPN connectivity is provided by IPOP which leverages the XEP-0045 (MuC) features provided by XMPP protocol to bootstrap connections.  adminGVPN differs from GVPN in the sense that it lets users to create a overlay network without establishing permanent social relationships along with ease of administration in terms of setting up a network.In practice this provides below advantages  
-1. In a group with 'n' members, to include a new member you don't have to execute '2n' instructions/steps to add a new member or remove an existing member,for example in GVPN we have to generate "2n" ejabberdctl instructions to accomplish this.  
-2. Allocation of unique IPv4 IPOP addresses is easier as they are handled/revoked by a single admin using an automated script, Thus one can keep track of allocated and free address pool.  
+1. In a group with 'N' resources, creating N*(N-1) links in the XMPP server (e.g. ejabberd) can pose scalability challenges for large virtual networks. Instead, in adminGVPN, there are only 'N' links that need to be created - one for each resource authorized to join a MuC. Removing/revoking a resource from the group is also simpler, as it just entails removing them from the MuC.  
+2. Allocation of unique IPv4 IPOP addresses is easier as they are handled/revoked by a centralized administrator, using an automated script. Thus one can keep track of allocated and free addresses.  
 3. Access to the XMPP overlay/Room is controlled by the administrator.  
 
   Let us go through a usage scenario to elaborate how adminGVPN can be utilized. Suppose five people Alice, Bob, Carol, Tom and Mike want to set up a grid computing cluster to share their computing resources to run a job. Let us assume all of them have a social network account supporting XMPP protocol and they designate Alice as the administrator of the group. The steps below detail how the group would than proceed to establish the network.  
