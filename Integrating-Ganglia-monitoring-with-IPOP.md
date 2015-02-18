@@ -54,4 +54,3 @@ The below picture briefly captures the working of this data collection setup-
 1. Controller gets peer information from tincan and writes it to the respective file, a new file is created/used for every peer.  
 2. Ganglia monitoring daemon executes the python module, which reads these files, updates the current statistics.  
 3. Monitoring daemon than pushes this data to the configured master node.  
-4. Steps 1-3 are repeated.
