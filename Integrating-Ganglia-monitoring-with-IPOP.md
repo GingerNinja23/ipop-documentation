@@ -45,3 +45,4 @@ To enable ganglia monitoring in the controller, enable monitoring and mention pa
     "ganglia_path":"/home/user/ipop-14.07.01_ubuntu14/"
 }
 ```
+Important Note: You need to set up a task to restart ganglia monitoring service at intervals suitable for your setup, to enable the monitoring daemon to update its "METRICS" list. A limitation of ganglia python module setup prevents us from updating METRICS during runtime -- "METRIC's" here refer to statistics for every link, for example if there were only 5 IPOP links when the monitoring daemon was started, data for only those 5 will be captured and reported, if new links come up after the daemon started running we need to restart the monitoring service to reinitialize itself to account for these new metrics.
