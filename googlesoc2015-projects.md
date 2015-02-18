@@ -1,3 +1,9 @@
+## Overview:
+
+[IPOP](http://ipop-project.org) is an open-source user-centric software virtual network allowing end users to define and create their own virtual private networks (VPNs). IPOP virtual networks provide end-to-end IP tunneling over “TinCan” links setup and managed through a control API to create various software-defined VPN overlays. IPOP builds upon the Jingle WebRTC library to create such links, which are then use as a basis to create a P2P routing overlay for easy-to-deploy VPNs with P2P links.
+
+The following Summer of Code project ideas address user needs in the configuration, management, deployability, and security that have been raised by our users.
+
 ## 1) “Command and control” management interface for IPOP VPNs
 
 **Summary**: Users have requested Web-based user interfaces to manage their own private IPOP VPNs. This largely entails the ability to configure and manage XMPP, STUN, TURN servers, and generate configuration files for IPOP endpoints - currently, these tasks are done primarily with command-line interfaces (for XMPP servers) and manual configuration of IPOP endpoints. A Web-based application would greatly lower the barrier of use and adoption of IPOP. 
