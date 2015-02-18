@@ -1,8 +1,8 @@
-1) “Command and control” management interface for IPOP VPNs
+## 1) “Command and control” management interface for IPOP VPNs
 
-Summary: Users have requested Web-based user interfaces to manage their own private IPOP VPNs. This largely entails the ability to configure and manage XMPP, STUN, TURN servers, and generate configuration files for IPOP endpoints - currently, these tasks are done primarily with command-line interfaces (for XMPP servers) and manual configuration of IPOP endpoints. A Web-based application would greatly lower the barrier of use and adoption of IPOP. 
+**Summary**: Users have requested Web-based user interfaces to manage their own private IPOP VPNs. This largely entails the ability to configure and manage XMPP, STUN, TURN servers, and generate configuration files for IPOP endpoints - currently, these tasks are done primarily with command-line interfaces (for XMPP servers) and manual configuration of IPOP endpoints. A Web-based application would greatly lower the barrier of use and adoption of IPOP. 
 
-Requirements: The user interface support the following functions:
+**Requirements**: The user interface support the following functions:
 
 VPN configuration:
 Create new VPN groups 
@@ -21,19 +21,19 @@ Visualization:
 Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 
 
-2) Support for additional virtual device endpoints and ad-hoc links
+## 2) Support for additional virtual device endpoints and tincan links
 
-Summary: Users have requested support for OS/X, iOS, and the ability to create links over BlueTooth to cover a wider range of devices and support ad-hoc pairing.
+**Summary**: Users have requested support for OS/X, iOS, and the ability to create links over BlueTooth to cover a wider range of devices and support ad-hoc pairing.
 
-Requirements: 
+**Requirements**: 
 Extend IPOP’s tap module to support virtual network interfaces available for OS/X and iOS
 Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
 
-3) Service authentication improvements
+## 3) Service authentication improvements
 
-Summary: Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
+**Summary**: Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
 
-Requirements:
+**Requirements**:
 Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server
 Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
  
