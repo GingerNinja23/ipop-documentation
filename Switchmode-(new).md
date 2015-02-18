@@ -73,6 +73,7 @@ sudo vi /etc/default/lxc-net
 sudo vi /etc/init/lxc-net.conf
 sudo service lxc-net restart
 ```
+If the lxcbr0 address does not update, reboot your machine. 
 
 After tincan connection established, you can ping from 10.0.3.5 to ping 10.0.3.7.  
 
