@@ -1,5 +1,13 @@
 Swithmode expands down from the L-3 network packet handling to L-2 frame handling. In this mode, Ipop nodes function as a switch and make all the connected IPOP nodes and associated interface virtually be on  the same L2 link layer. 
 
+This feature is not complete with the latest release yet. So you can either download from the below link or compile by your self with the latest "devel" branch. 
+
+(for Ubuntu)
+
+(for CentOS 7)
+
+
+
 It is users caveat assigning IP address not to collide. 
 
 For the switchmode test, we use LXC with ubuntu.
