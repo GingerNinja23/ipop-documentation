@@ -1,6 +1,9 @@
-Ipop-tincan supports so called switch-mode with linux bridge. In this mode, ipop captures arp_request or arp_reply message in the bridge network and broadcast to all ipop peers. As a result, all the ipop peers and all virtual interfaces that are attached to linux bridge with ipop is in the same l2 layer. It is users caveat assigning IP address not to collide. 
+Swithmode expands down from the L-3 network packet handling to L-2 frame handling. In this mode, Ipop nodes function as a switch and make all the connected IPOP nodes and associated interface virtually be on  the same L2 link layer. 
 
-For the switchmode test, we use LXC. 
+It is users caveat assigning IP address not to collide. 
+
+For the switchmode test, we use LXC with ubuntu.
+We recommend to use LXC and ubuntu, since it is the easiest way to run containers in VM. But, since switchmode works with Linux bridge, it works with any other cloud solutions such as openstack, ec2 and etc. 
 
 Install LXC in user VM
 
