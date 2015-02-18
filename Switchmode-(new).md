@@ -6,6 +6,7 @@ This feature is not complete with the latest release yet. So you can either down
 http://www.acis.ufl.edu/~xetron/ipop/ipop_ubuntu.tar.gz
 
 (for CentOS 7)
+http://www.acis.ufl.edu/~xetron/ipop/ipop_centos7.tar.gz
 
 
 
