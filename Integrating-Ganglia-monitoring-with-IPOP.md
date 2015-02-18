@@ -47,7 +47,7 @@ To enable ganglia monitoring in the controller, enable monitoring and mention pa
 ```
 Important Note: You need to set up a task to restart ganglia monitoring service at periodic intervals suitable for your setup, to enable the monitoring daemon to update its "METRICS" list. A limitation of ganglia python module setup prevents us from updating METRICS during runtime -- "METRIC's" here refer to statistics for every link, for example if there were only 5 IPOP links when the monitoring daemon was started, data for only those 5 will be captured and reported, if new links come up after the daemon started running we need to restart the monitoring service to reinitialize itself to account for these new metrics.
 
-## Internals  
+## Internal Flow  
 
 The below picture briefly captures the working of this data collection setup-  
 ![Flow](https://cloud.githubusercontent.com/assets/7332136/6255879/7c44e29c-b781-11e4-9760-8c470100dca4.JPG)  
