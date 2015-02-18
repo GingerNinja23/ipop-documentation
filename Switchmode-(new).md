@@ -3,6 +3,7 @@ Swithmode expands down from the L-3 network packet handling to L-2 frame handlin
 This feature is not complete with the latest release yet. So you can either download from the below link or compile by your self with the latest "devel" branch. 
 
 (for Ubuntu)
+http://www.acis.ufl.edu/~xetron/ipop/ipop_ubuntu.tar.gz
 
 (for CentOS 7)
 
