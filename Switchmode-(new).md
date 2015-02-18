@@ -56,9 +56,7 @@ sudo service lxc-net restart
 
 Add below fields at controller config file. 
 ```
-   "switchmode": 1,
-   "icc": true,
-   "icc_port": 30000,
+   "switchmode": 1
 ```
 Run ipop-tincan and gvpn_controller. 
 Then, attach ipop tap device to lxcbr0 at both ends. 
