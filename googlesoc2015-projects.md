@@ -27,7 +27,9 @@ Visualization:
 Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 
 **Mentor**: TBD
+
 **Skills needed**: TBD
+
 **Deliverables**: TBD
 
 ## 2) Support for additional virtual device endpoints and tincan links
@@ -39,7 +41,9 @@ Extend IPOP’s tap module to support virtual network interfaces available for O
 Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
 
 **Mentor**: TBD
+
 **Skills needed**: TBD
+
 **Deliverables**: TBD
 
 ## 3) Service authentication improvements
@@ -51,5 +55,7 @@ Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authen
 Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
  
 **Mentor**: TBD
+
 **Skills needed**: TBD
+
 **Deliverables**: TBD
