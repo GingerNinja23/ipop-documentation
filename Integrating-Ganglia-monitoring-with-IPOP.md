@@ -25,6 +25,7 @@ Before we install the module we will have to setup the path from which the modul
 # Where to get the stats from
 net_stats_file = "/home/user/ipop-14.07.01_ubuntu14/"
 ```  
-rest of the process is generic and can be found in the below links.  
+rest of the process is generic and can be found in the below links, note we can set the environment to run on top of IPOP-overlay network-- just use IPOP IP's when configuring monitoring and master nodes.  
+  
 [python ganglia modules](https://github.com/ganglia/monitor-core/wiki/Ganglia-GMond-Python-Modules)  
 [Blog- setting up python ganglia modules](https://sachinsharm.wordpress.com/2013/08/19/setup-and-configure-ganglia-python-modules-on-centosrhel-6-3/)
