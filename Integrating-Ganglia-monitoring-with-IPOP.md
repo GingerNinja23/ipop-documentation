@@ -28,4 +28,20 @@ net_stats_file = "/home/user/ipop-14.07.01_ubuntu14/"
 rest of the process is generic and can be found in the below links, note we can set the environment to run on top of IPOP-overlay network-- just use IPOP IP's when configuring monitoring and master nodes.  
   
 [python ganglia modules](https://github.com/ganglia/monitor-core/wiki/Ganglia-GMond-Python-Modules)  
-[Blog- setting up python ganglia modules](https://sachinsharm.wordpress.com/2013/08/19/setup-and-configure-ganglia-python-modules-on-centosrhel-6-3/)
+[Blog- setting up python ganglia modules](https://sachinsharm.wordpress.com/2013/08/19/setup-and-configure-ganglia-python-modules-on-centosrhel-6-3/)  
+
+To enable ganglia monitoring in the controller, enable monitoring and mention path where IPOP statistics will be dumped (You might have to set up the path with appropriate access permissions) in config.json  
+```python
+{
+    "xmpp_username":"gangliauser1@dukgo.com",
+    "xmpp_password": "password",
+    "xmpp_host": "dukgo.com",
+    "ip4": "172.31.0.101",
+    "ip4_mask": 24,
+    "controller_logging": "INFO",
+    "tincan_logging": 1,
+    "stat_report": "True",
+    "ganglia_stat":"True",
+    "ganglia_path":"/home/user/ipop-14.07.01_ubuntu14/"
+}
+```
