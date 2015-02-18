@@ -50,7 +50,8 @@ Important Note: You need to set up a task to restart ganglia monitoring service 
 ## Internals  
 
 The below picture briefly captures the working of this data collection setup-  
-![setup](![gagnglia](https://cloud.githubusercontent.com/assets/7332136/6255879/7c44e29c-b781-11e4-9760-8c470100dca4.JPG))  
+![Flow](https://cloud.githubusercontent.com/assets/7332136/6255879/7c44e29c-b781-11e4-9760-8c470100dca4.JPG)  
+ 
 1. Controller gets peer information from tincan and writes it to the respective file, a new file is created/used for every peer.  
 2. Ganglia monitoring daemon executes the python module, which reads these files, updates the current statistics.  
 3. Monitoring daemon than pushes this data to the configured master node.  
