@@ -26,6 +26,9 @@ Monitoring of status of STUN/TURN/XMPP servers
 Visualization:
 Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 
+**Mentor**: TBD
+**Skills needed**: TBD
+**Deliverables**: TBD
 
 ## 2) Support for additional virtual device endpoints and tincan links
 
@@ -35,6 +38,10 @@ Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 Extend IPOP’s tap module to support virtual network interfaces available for OS/X and iOS
 Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
 
+**Mentor**: TBD
+**Skills needed**: TBD
+**Deliverables**: TBD
+
 ## 3) Service authentication improvements
 
 **Summary**: Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
@@ -43,3 +50,6 @@ Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links ove
 Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server
 Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
  
+**Mentor**: TBD
+**Skills needed**: TBD
+**Deliverables**: TBD
