@@ -23,8 +23,8 @@ The following Summer of Code project ideas address user needs in the configurati
 * Collect error/warning logs from IPOP nodes
 * Monitoring of status of STUN/TURN/XMPP servers
 
-Visualization:
-Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
+### Visualization:
+* Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 
 **Mentor**: TBD
 
@@ -37,8 +37,8 @@ Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 **Summary**: Users have requested support for OS/X, iOS, and the ability to create links over BlueTooth to cover a wider range of devices and support ad-hoc pairing.
 
 **Requirements**: 
-Extend IPOP’s tap module to support virtual network interfaces available for OS/X and iOS
-Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
+* Extend IPOP’s tap module to support virtual network interfaces available for OS/X and iOS
+* Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
 
 **Mentor**: TBD
 
@@ -51,9 +51,22 @@ Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links ove
 **Summary**: Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
 
 **Requirements**:
-Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server
-Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
+* Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server
+* Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
  
+**Mentor**: TBD
+
+**Skills needed**: TBD
+
+**Deliverables**: TBD
+
+## 4) Support for additional online social network back-ends
+
+**Summary**: Users have requested the ability to use various online social networks (e.g. Facebook, Twitter, LinkedIn) to create Social VPNs. Currently, IPOP only supports OSNs that support the XMPP protocol for messaging.
+
+**Requirements**:
+* Implement a connectivity layer that extend IPOP/SocialVPN to support OSN-specific APIs at least one additional major OSN (Facebook, Twitter, or LinkedIn) - possibly through a proxy layer that translates XMPP requests used by libjingle and IPOP into OSN-specific actions
+
 **Mentor**: TBD
 
 **Skills needed**: TBD
