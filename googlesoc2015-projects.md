@@ -11,12 +11,12 @@ The following Summer of Code project ideas address user needs in the configurati
 **Requirements**: The user interface support the following functions:
 
 VPN configuration:
-Create new VPN groups 
-Add and remove VPN endpoints to a group 
-Configure the IP address space of a VPN group
-Assign unique virtual IP addresses to VPN endpoints 
-Add and remove STUN and TURN endpoints to a VPN group
-Generate IPOP configuration files for VPN endpoints
+ Create new VPN groups 
+ Add and remove VPN endpoints to a group 
+ Configure the IP address space of a VPN group
+ Assign unique virtual IP addresses to VPN endpoints 
+ Add and remove STUN and TURN endpoints to a VPN group
+ Generate IPOP configuration files for VPN endpoints
 
 Monitoring:
 Collect performance information from IPOP nodes - uptime, number of links, types of links (STUN, TURN), traffic
