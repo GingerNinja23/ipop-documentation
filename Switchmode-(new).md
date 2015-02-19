@@ -1,6 +1,6 @@
-Swithmode expands down from the L-3 network packet handling to L-2 frame handling. In this mode, Ipop nodes function as a switch and make all the connected IPOP nodes and associated interface virtually be on  the same L2 link layer. 
+In switchmode, IPOP supports handling of layer-2 (L2) Ethernet frames. In this mode, IPOP nodes function as a switch and make all the connected IPOP nodes and associated interface virtually be on the same L2 link layer. 
 
-This feature is not complete with the latest release yet. So you can either download from the below link or compile by your self with the latest "devel" branch. 
+This feature is under development and not synced with the latest release yet. You may either download binaries from the links below, or compile by yourself from the latest "devel" branch. 
 
 (for Ubuntu)
 http://www.acis.ufl.edu/~xetron/ipop/ipop_ubuntu.tar.gz
@@ -10,28 +10,31 @@ http://www.acis.ufl.edu/~xetron/ipop/ipop_centos7.tar.gz
 
 
 
-It is users caveat assigning IP address not to collide. 
+Note that in switchmode, the assignment of both IP and MAC addresses to virtual network interfaces needs to be done carefully to avoid conflicts. 
 
-For the switchmode test, we use LXC with ubuntu.
-We recommend to use LXC and ubuntu, since it is the easiest way to run containers in VM. But, since switchmode works with Linux bridge, it works with any other cloud solutions such as openstack, ec2 and etc. 
+### Testing
 
-Install LXC in user VM
+The configuration of IPOP in switchmode is to a large extent the same - the main difference is that IPOP's tap device should be bound to a bridge on the L2 segments that you plan to inter-connect.
+
+To test IPOP with switchmode test, we recommend following the example below using LXC containers with ubuntu 14.04 - this is the easiest way to run containers in VM. But, since switchmode works with Linux bridge, it works with any other cloud solutions such as openstack, ec2. 
+
+First, bring up a Ubuntu VM and install LXC in it:
 
 ```
 sudo apt-get update
 sudo apt-get install lxc
 ```
 
-If 
+If this command:
 ```
 sudo lxc-ls --fancy
 ```
-emits error then run
+emits an error, update packages with:
 
 ```
 sudo apt-get upgrade
 ```
-Then create LXC instances and clone it. 
+Then, create an LXC instance and clone it:
 ```
 sudo lxc-create -t ubuntu -n c0
 sudo lxc-clone c0 c1
@@ -39,7 +42,7 @@ sudo lxc-clone c0 c2
 ...
 ```
 
-We are using below pictures as an example. 
+The following diagram illustrates an example where you'd repeat this process in two VMs: 
 
 ![](http://www.acis.ufl.edu/~xetron/ipop-project/switchmode.png)
 
