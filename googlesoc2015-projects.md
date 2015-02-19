@@ -48,17 +48,28 @@ The following Summer of Code project ideas address user needs in the configurati
 
 ## 3) Service authentication improvements
 
-**Summary**: Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
+**Summary**  
+Users have requested the ability to authenticate IPOP endpoints without storing XMPP username/password on a configuration file. Furthermore, currently tincan does not authenticate requests from a controller running on the local host
 
-**Requirements**:
-* Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server
-* Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications
+**Requirements**  
+* Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server.  
+* Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications.  
+* Extend IPOP’s the controller such that the XMPP credentials are only stored in, and retrieved from a encrypted container.  
+* Extend IPOP’s the controller such that credentials are requested interactively if they are not stored.  
+  
  
-**Mentor**: TBD
+**Mentor**  
+Ken Subratie
 
-**Skills needed**: TBD
+**Skills needed**  
+Minimum: Python, socket programming.  
+Desirable: C++, IP networks, authentication & encryption, process debugging.
 
-**Deliverables**: TBD
+**Deliverables**  
+* Encrypted container for storing and managing IPOP credentials.
+* User interface to interactively request XPMM credentials.
+* Enhancements to IPOP tincan to support a challenge–response authentication to the controller and encrypted communication over its API.
+* Enhancements to tincan to support X.509-based authentication to XMPP server.  
 
 ## 4) Support for additional online social network back-ends
 
