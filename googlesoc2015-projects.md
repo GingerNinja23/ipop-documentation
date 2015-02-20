@@ -57,6 +57,7 @@ GUI front-end application,encompassing above listed requirements.
 **Deliverables**: 
 * Implement Mac KEXT socket interface to communicate with TinCan
 * Implement shim APIs to configure network parameters such as MTU, IPv4/IPv6 Address, MAC address.
+* Make frames/packets with destined to certain range of IP address traverse from host to TinCan through KEXT APIs.
 
 
 
