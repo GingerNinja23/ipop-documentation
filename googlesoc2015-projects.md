@@ -51,6 +51,7 @@ GUI front-end application,encompassing above listed requirements.
 * Network programming skill in C/C++ with highly adept at bit/bytewise operation
 * Basic understanding on OSI network stack
 * Understanding cross-platform development environment (Windows/Linux/OSX)
+* Understanding on several prevalent protocols on layer 2,3 and 4 (TCP, UDP, ARP, IP, ICMP, DNS, UPnP)
 
 
 **Deliverables**: 
