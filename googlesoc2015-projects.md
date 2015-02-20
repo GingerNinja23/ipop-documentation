@@ -93,8 +93,8 @@ Desirable: C++, IP networks, authentication & encryption, process debugging.
 **Requirements**:
 * Implement a connectivity layer that extend IPOP/SocialVPN to support OSN-specific APIs at least one additional major OSN (Facebook, Twitter, or LinkedIn) - possibly through a proxy layer that translates XMPP requests used by libjingle and IPOP into OSN-specific actions
 
-**Mentor**: TBD
+**Mentor**: Renato Figueiredo
 
-**Skills needed**: TBD
+**Skills needed**: Use of OSN APIs, XMPP, C++, Python
 
-**Deliverables**: TBD
+**Deliverables**: IPOP code extensions supporting at least one major additional OSN.
