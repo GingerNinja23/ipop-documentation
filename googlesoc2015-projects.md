@@ -50,10 +50,13 @@ GUI front-end application,encompassing above listed requirements.
 * Understanding on Mac KEXT (Kernel Extension) API
 * Network programming skill in C/C++ with highly adept at bit/bytewise operation
 * Basic understanding on OSI network stack
-
+* Understanding cross-platform development environment (Windows/Linux/OSX)
 
 
 **Deliverables**: 
+* Implement Mac KEXT socket interface to communicate with TinCan
+* Implement shim APIs to configure network parameters such as MTU, IPv4/IPv6 Address, MAC address.
+
 
 
 ## 3) Service authentication improvements
