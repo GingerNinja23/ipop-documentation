@@ -47,9 +47,13 @@ GUI front-end application,encompassing above listed requirements.
 
 **Skills needed**: 
 Familiarity with Mac OS X developing environment
+
 Understanding on Mac KEXT (Kernel Extension) API
+
 Network programming skill in C/C++ with highly adept at bit/bytewise operation
+
 Basic understanding on OSI network stack
+
 
 
 **Deliverables**: 
