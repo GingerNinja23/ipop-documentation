@@ -26,11 +26,14 @@ The following Summer of Code project ideas address user needs in the configurati
 ### Visualization:
 * Mapping of VPN endpoints, STUN, TURN, XMPP servers and links on a map
 
-**Mentor**: TBD
+**Mentor**:  
+Saumitra Aditya
 
-**Skills needed**: TBD
+**Skills needed**:  
+Strong command over Python, basic understanding of computer networks and software design.
 
-**Deliverables**: TBD
+**Deliverables**:  
+GUI front-end application,encompassing above listed requirements.
 
 ## 2) Support for additional virtual device endpoints and tincan links
 
