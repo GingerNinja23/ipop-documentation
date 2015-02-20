@@ -43,9 +43,10 @@ GUI front-end application,encompassing above listed requirements.
 * Extend IPOP’s tap module to support virtual network interfaces available for OS/X and iOS
 * Extend IPOP’s tincan module (and jingle if needed) to support ad-hoc links over BlueTooth
 
-**Mentor**: TBD
+**Mentor**: Kyuho Jeong
 
-**Skills needed**: TBD
+**Skills needed**: Familiarity with with Mac OS X developing environment
+                   KEXT (Kernel 
 
 **Deliverables**: TBD
 
