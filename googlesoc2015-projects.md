@@ -45,10 +45,15 @@ GUI front-end application,encompassing above listed requirements.
 
 **Mentor**: Kyuho Jeong
 
-**Skills needed**: Familiarity with with Mac OS X developing environment
-                   KEXT (Kernel 
+**Skills needed**: 
+Familiarity with Mac OS X developing environment
+Understanding on Mac KEXT (Kernel Extension) API
+Network programming skill in C/C++ with highly adept at bit/bytewise operation
+Basic understanding on OSI network stack
 
-**Deliverables**: TBD
+
+**Deliverables**: 
+
 
 ## 3) Service authentication improvements
 
