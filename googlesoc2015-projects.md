@@ -95,6 +95,6 @@ Desirable: C++, IP networks, authentication & encryption, process debugging.
 
 **Mentor**: Renato Figueiredo
 
-**Skills needed**: Use of OSN APIs, XMPP, C++, Python
+**Skills needed**: Ability to use OSN REST APIs, XMPP, C++, Python
 
 **Deliverables**: IPOP code extensions supporting at least one major additional OSN.
