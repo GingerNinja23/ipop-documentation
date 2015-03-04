@@ -25,6 +25,7 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
         "xmpp_host": "talk.google.com",
         "ip4": "172.31.0.100",
         "ip4_mask": 24,
+        "stat_report": true,
         "tincan_logging": 0,
         "controller_logging": "DEBUG"
     }
