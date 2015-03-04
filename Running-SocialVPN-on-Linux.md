@@ -5,9 +5,9 @@ Visit the [downloads page ](https://github.com/ipop-project/downloads/releases) 
 1.  Download SocialVPN and extract for Ubuntu or CentOS
 
     ```bash
-    wget -O ipop-14.07.0_ubuntu12.tar.gz goo.gl/iBRgx1
-    tar xvzf ipop-14.07.0_ubuntu12.tar.gz
-    cd ipop-14.07.0_ubuntu12
+    wget -O ipop-15.01.0_ubuntu14.tar.gz http://goo.gl/iBRgx1
+    tar xvzf ipop-15.01.0_ubuntu14.tar.gz
+    cd ipop-15.01.0_ubuntu14
     ```
 
     ```bash
