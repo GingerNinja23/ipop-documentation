@@ -31,6 +31,7 @@ From the Control Panel choose _View network status and tasks_ under Network and 
     "xmpp_password": "enter-password-here",
     "ip4": "172.31.0.100",
     "ip4_mask": 24,
+    "stat_report": true,
     "controller_logging": "INFO",
     "tincan_logging": 0
     "sec": true, 
