@@ -14,9 +14,9 @@
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/sY5yvo).
+1. [Download SocialVPN for Windows](http://goo.gl/tgdp6r).
 
-2. Extract "ipop-14.07.0-x86_win7".
+2. Extract "ipop-15.01.0-x86_win7".
 
 3. Right-click "_config.json_" file and click on "_Edit_". Update with your
    XMPP service credential.  Note: SocialVPN translates IPv4 addresses automatically; you
