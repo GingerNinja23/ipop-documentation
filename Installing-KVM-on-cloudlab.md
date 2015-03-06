@@ -50,8 +50,8 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
 
 ```
 <domain type='kvm'>
- ** <name>ubuntu</name>**
-**  <uuid>f5b8c05b-9c7a-3211-49b9-2bd635f7e2ab</uuid>**
+  <name>ubuntu</name>
+  <uuid>f5b8c05b-9c7a-3211-49b9-2bd635f7e2ab</uuid>
   <memory>1048576</memory>
   <currentMemory>1048576</currentMemory>
   <vcpu>1</vcpu>
@@ -70,13 +70,13 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
     <emulator>/usr/bin/kvm</emulator>
     <disk type="file" device="disk">
       <driver name="qemu" type="raw"/>
-  **    <source file="/users/kyuho/ubuntu.img"/>**
+      <source file="/users/kyuho/ubuntu.img"/>
       <target dev="vda" bus="virtio"/>
       <address type="pci" domain="0x0000" bus="0x00" slot="0x04" function="0x0"/>
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw"/>
-      **<source file="/users/kyuho/ubuntu-14.04.2-server-amd64.iso"/>**
+      <source file="/users/kyuho/ubuntu-14.04.2-server-amd64.iso"/>
       <target dev="hdc" bus="ide"/>
       <readonly/>
       <address type="drive" controller="0" bus="1" target="0" unit="0"/>
@@ -90,7 +90,7 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
       <target port='0'/>
     </console>
     <interface type='bridge'>
-      **<mac address='52:54:00:d1:6d:b9'/>**
+      <mac address='52:54:00:d1:6d:b9'/>
       <source bridge='virbr0'/>
     </interface>
   </devices>
