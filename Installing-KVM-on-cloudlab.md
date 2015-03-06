@@ -4,7 +4,7 @@ This documents shows steps to installing KVM on cloudlab.
 * SSH to the instance.
 * Install required packages
 ```
-    sudo apt-get update; sudo apt-get install qemu-kvm libvirt-bin
+$ sudo apt-get update; sudo apt-get install qemu-kvm libvirt-bin
 ```
 
 * After installation you should see this 
