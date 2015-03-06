@@ -123,8 +123,9 @@ tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      
 $ xvnc4viewer
 ```
 
-* Complete installing ubuntu.
+* Complete installing ubuntu. Then install SSH and access. 
 
 
-Referenced from this sites
+References
+
 [1] http://xmodulo.com/use-kvm-command-line-debian-ubuntu.html
