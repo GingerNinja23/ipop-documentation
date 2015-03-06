@@ -95,8 +95,32 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
 
 ```
 
+9. now you see the instance is running.
+```
+$ sudo virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 5     ubuntu                         running
 
+$ 
+```
 
+10. Lets start installing Ubuntu on it. You may see port 5900 is open. This is for VNC client access. 
+```
+$ sudo netstat -nap
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:16505           0.0.0.0:*               LISTEN      2135/pubsubd    
+tcp        0      0 0.0.0.0:33413           0.0.0.0:*               LISTEN      1679/rpc.statd  
+**tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      5259/qemu-system-x8**
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1672/rpcbind
+```
+
+10.  With your local computer, use any of VNC client to access KVM guest. I happen to use xvnc4viewer. It will ask "server:". Type in public IP address of baremetal you created. 
+```
+$ xvnc4viewer
+```
+
+11. Complete installing ubuntu.
 
 
 Referenced from this sites
