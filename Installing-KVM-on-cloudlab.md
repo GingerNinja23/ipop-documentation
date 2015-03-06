@@ -1,10 +1,13 @@
 This documents shows steps to installing KVM on cloudlab.
 
-1. Create baremetal instance on cloudlab. 
-2. SSH to the instance.
-3. Install required packages
+* Create baremetal instance on cloudlab. 
+* SSH to the instance.
+* Install required packages
+```
     sudo apt-get update; sudo apt-get install qemu-kvm libvirt-bin
-4. After installation you should see this 
+```
+
+* After installation you should see this 
 ```
 $ sudo virsh list
  Id    Name                           State
@@ -15,7 +18,7 @@ bridge name	bridge id		STP enabled	interfaces
 virbr0		8000.000000000000	yes		
 $
 ```
-5. Thanksfully, somehow it sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. So, you can simply attach your guest interface to bridge virbr0. 
+* Thanksfully, somehow it sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. So, you can simply attach your guest interface to bridge virbr0. 
 ```
 $ sudo iptables -t nat --list
 Chain PREROUTING (policy ACCEPT)
@@ -36,13 +39,13 @@ MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-
 MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
 $ 
 ```
-6. Now create disk volume for instance. 
+* Now create disk volume for instance. 
 ```
 $ qemu-img create -f raw ubuntu.img 5G
 ```
-7. Place ubuntu server ISO files. You can use **scp** command. 
+* Place ubuntu server ISO files. You can use **scp** command. 
 
-8. Create instance with below config file. 
+* Create instance with below config file. 
 Change UUID field if you want. Check with path of img file and source ISO file. Interface type fields specifies bridge attaching. 
 
 ```
@@ -95,7 +98,7 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
 
 ```
 
-9. now you see the instance is running.
+* now you see the instance is running.
 ```
 $ sudo virsh list
  Id    Name                           State
@@ -105,7 +108,7 @@ $ sudo virsh list
 $ 
 ```
 
-10. Lets start installing Ubuntu on it. You may see port 5900 is open. This is for VNC client access. 
+* Lets start installing Ubuntu on it. You may see port 5900 is open. This is for VNC client access. 
 ```
 $ sudo netstat -nap
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
@@ -115,12 +118,12 @@ tcp        0      0 0.0.0.0:33413           0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1672/rpcbind
 ```
 
-10.  With your local computer, use any of VNC client to access KVM guest. I happen to use xvnc4viewer. It will ask "server:". Type in public IP address of baremetal you created. 
+* With your local computer, use any of VNC client to access KVM guest. I happen to use xvnc4viewer. It will ask "server:". Type in public IP address of baremetal you created. 
 ```
 $ xvnc4viewer
 ```
 
-11. Complete installing ubuntu.
+* Complete installing ubuntu.
 
 
 Referenced from this sites
