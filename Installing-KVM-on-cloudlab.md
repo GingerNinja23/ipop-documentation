@@ -114,7 +114,7 @@ $ sudo netstat -nap
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:16505           0.0.0.0:*               LISTEN      2135/pubsubd    
 tcp        0      0 0.0.0.0:33413           0.0.0.0:*               LISTEN      1679/rpc.statd  
-**tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      5259/qemu-system-x8**
+tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      5259/qemu-system-x8
 tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1672/rpcbind
 ```
 
