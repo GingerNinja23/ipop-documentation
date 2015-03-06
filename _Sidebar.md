@@ -22,8 +22,9 @@
     * [[XMPP+STUN in Ubuntu|Installing XMPP server]]
     * [[XMPP Service - RHEL 6.5|Installing ejabberd in RHEL 6.5]]
     * [[TURN Service|Installing TURN server]]
-* **Test Harness**
+* **Test and monitoring**
     * [[Test harness | EASY IPOP Test and Deployment]]
+    * [[Ganglia monitoring | Integrating Ganglia monitoring with IPOP]]
 * **Extending the code**
     * [[Controller API|Controller API]]
     * [[Writing a controller|Writing a controller]]
