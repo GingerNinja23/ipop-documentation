@@ -38,11 +38,62 @@ $
 ```
 6. Now create disk volume for instance. 
 ```
-$ qemu-img create -f raw kvm.img 5G
+$ qemu-img create -f raw ubuntu.img 5G
 ```
 7. Place ubuntu server ISO files. You can use **scp** command. 
 
 8. Create instance with below config file. 
+Change UUID field if you want. Check with path of img file and source ISO file. Interface type fields specifies bridge attaching. 
+
+```
+<domain type='kvm'>
+  <name>ubuntu</name>
+  <uuid>f5b8c05b-9c7a-3211-49b9-2bd635f7e2ab</uuid>
+  <memory>1048576</memory>
+  <currentMemory>1048576</currentMemory>
+  <vcpu>1</vcpu>
+  <os>
+    <type>hvm</type>
+    <boot dev='cdrom'/>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/kvm</emulator>
+    <disk type="file" device="disk">
+      <driver name="qemu" type="raw"/>
+      <source file="/users/kyuho/ubuntu.img"/>
+      <target dev="vda" bus="virtio"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x04" function="0x0"/>
+    </disk>
+    <disk type="file" device="cdrom">
+      <driver name="qemu" type="raw"/>
+      <source file="/users/kyuho/ubuntu-14.04.2-server-amd64.iso"/>
+      <target dev="hdc" bus="ide"/>
+      <readonly/>
+      <address type="drive" controller="0" bus="1" target="0" unit="0"/>
+    </disk>
+    <controller type="ide" index="0">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
+    </controller>
+    <input type='mouse' bus='ps2'/>
+    <graphics type='vnc' port='-1' autoport="yes" listen='0.0.0.0'/>
+    <console type='pty'>
+      <target port='0'/>
+    </console>
+    <interface type='bridge'>
+      <mac address='52:54:00:d1:6d:b9'/>
+      <source bridge='virbr0'/>
+    </interface>
+  </devices>
+</domain>
+
+```
 
 
 
