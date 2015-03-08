@@ -81,8 +81,12 @@ $ sudo iptables -D FORWARD 1
 $ sudo iptables -D FORWARD 1
 $ sudo iptables -D FORWARD 2
 $ sudo iptables -D FORWARD 2
+```
 
-
+Now we change it to Full-cone NAT. 
+```
+sudo iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source <Host IP Address>
+sudo iptables -t nat -A PREROUTING -i eth0 -j DNAT --to-destination <Guest IP Address>
 ```
 
 * Now create disk volume for instance. 
