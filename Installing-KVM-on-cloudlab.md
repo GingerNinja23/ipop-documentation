@@ -18,7 +18,7 @@ bridge name	bridge id		STP enabled	interfaces
 virbr0		8000.000000000000	yes		
 $
 ```
-* Thanksfully, somehow it sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. So, you can simply attach your guest interface to bridge virbr0. 
+* KVM sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. But this setting perform
 ```
 $ sudo iptables -t nat --list
 Chain PREROUTING (policy ACCEPT)
@@ -37,8 +37,54 @@ RETURN     all  --  192.168.122.0/24     255.255.255.255
 MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
 MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
 MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
+$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootps
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:bootps
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  192.168.122.0/24     anywhere            
+ACCEPT     all  --  anywhere             anywhere            
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootpc
 $ 
 ```
+
+You need to flush out all the entries KVM created, which are list below
+```
+ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  192.168.122.0/24     anywhere 
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+RETURN     all  --  192.168.122.0/24     base-address.mcast.net/24 
+RETURN     all  --  192.168.122.0/24     255.255.255.255     
+MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
+```
+
+You can flush it as below example.  
+```
+$ sudo iptables -t nat -F POSTROUTING
+$ sudo iptables -L --line-numbers
+$ sudo iptables -D FORWARD 1
+$ sudo iptables -D FORWARD 1
+$ sudo iptables -D FORWARD 2
+$ sudo iptables -D FORWARD 2
+
+
+```
+
 * Now create disk volume for instance. 
 ```
 $ qemu-img create -f raw ubuntu.img 5G
