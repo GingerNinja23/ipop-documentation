@@ -18,76 +18,7 @@ bridge name	bridge id		STP enabled	interfaces
 virbr0		8000.000000000000	yes		
 $
 ```
-* KVM sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. But this setting perform
-```
-$ sudo iptables -t nat --list
-Chain PREROUTING (policy ACCEPT)
-target     prot opt source               destination         
 
-Chain INPUT (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain POSTROUTING (policy ACCEPT)
-target     prot opt source               destination         
-RETURN     all  --  192.168.122.0/24     base-address.mcast.net/24 
-RETURN     all  --  192.168.122.0/24     255.255.255.255     
-MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
-MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
-MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
-$ sudo iptables -L
-Chain INPUT (policy ACCEPT)
-target     prot opt source               destination         
-ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
-ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
-ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootps
-ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:bootps
-
-Chain FORWARD (policy ACCEPT)
-target     prot opt source               destination         
-ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
-ACCEPT     all  --  192.168.122.0/24     anywhere            
-ACCEPT     all  --  anywhere             anywhere            
-REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
-REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
-
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination         
-ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootpc
-$ 
-```
-
-You need to flush out all the entries KVM created, which are list below
-```
-ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
-ACCEPT     all  --  192.168.122.0/24     anywhere 
-REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
-REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
-
-RETURN     all  --  192.168.122.0/24     base-address.mcast.net/24 
-RETURN     all  --  192.168.122.0/24     255.255.255.255     
-MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
-MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
-MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
-```
-
-You can flush it as below example.  
-```
-$ sudo iptables -t nat -F POSTROUTING
-$ sudo iptables -L --line-numbers
-$ sudo iptables -D FORWARD 1
-$ sudo iptables -D FORWARD 1
-$ sudo iptables -D FORWARD 2
-$ sudo iptables -D FORWARD 2
-```
-
-Now we change it to Full-cone NAT. 
-```
-sudo iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source <Host IP Address>
-sudo iptables -t nat -A PREROUTING -i eth0 -j DNAT --to-destination <Guest IP Address>
-```
 
 * Now create disk volume for instance. 
 ```
@@ -182,6 +113,77 @@ $ xvnc4viewer
 * Complete installing ubuntu. Then install SSH and access. 
 
 
+## NAT setting in host
+* KVM sets up all the NAT configuration for guests instance. You can see the masquarading on postrouting. But this is symmetric NAT, on which IPOP does not work with STUN connection. So it requires TURN connection. So we are going to change it to Full cone NAT from symmetric NAT.
+```
+$ sudo iptables -t nat --list
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination         
+RETURN     all  --  192.168.122.0/24     base-address.mcast.net/24 
+RETURN     all  --  192.168.122.0/24     255.255.255.255     
+MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
+$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootps
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:bootps
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  192.168.122.0/24     anywhere            
+ACCEPT     all  --  anywhere             anywhere            
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootpc
+$ 
+```
+
+You need to flush out all the entries KVM created, which are list below
+```
+ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  192.168.122.0/24     anywhere 
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+RETURN     all  --  192.168.122.0/24     base-address.mcast.net/24 
+RETURN     all  --  192.168.122.0/24     255.255.255.255     
+MASQUERADE  tcp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  udp  --  192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+MASQUERADE  all  --  192.168.122.0/24    !192.168.122.0/24    
+```
+
+You can flush it as below example.  
+```
+$ sudo iptables -t nat -F POSTROUTING
+$ sudo iptables -L --line-numbers
+$ sudo iptables -D FORWARD 1
+$ sudo iptables -D FORWARD 1
+$ sudo iptables -D FORWARD 2
+$ sudo iptables -D FORWARD 2
+```
+
+Now we change it to Full-cone NAT. 
+```
+sudo iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source <Host IP Address>
+sudo iptables -t nat -A PREROUTING -i eth0 -j DNAT --to-destination <Guest IP Address>
+```
 References
 
 [1] http://xmodulo.com/use-kvm-command-line-debian-ubuntu.html
