@@ -97,7 +97,13 @@ Change UUID field if you want. Check with path of img file and source ISO file. 
 </domain>
 
 ```
+* Then create instance
+```
+$ sudo virsh create ubuntu.xml
+Domain ubuntu created from ubuntu.xml
 
+$ 
+```
 * now you see the instance is running.
 ```
 $ sudo virsh list
