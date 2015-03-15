@@ -6,7 +6,8 @@ GroupVPN (GVPN) brings groups of resources together in a virtual cluster, within
 
 In order to continue using the XMPP protocol, the implementation of adminGVPN leverages a multi-user chat room (MuC) environment, where users otherwise who may be unrelated (but trust an administrator to moderate who joins the group) come together to discuss a topic of common interest and subsequently leave when done.   An analogy can be drawn between "discussing a common issue" and "collaborating on a common task", such as for example sharing computing resources in a virtual cluster. 
 
-The salient features provided by MuC environments leveraged by adminGVPN include:   
+The salient features provided by MuC environments leveraged by adminGVPN include:
+
 1. Notification broadcast of the availability of other members (on-line,off-line status).  
 2. Notification broadcast when a new member joins or an existing member leaves.  
 3. Broadcast of messages to all members of the room.  
