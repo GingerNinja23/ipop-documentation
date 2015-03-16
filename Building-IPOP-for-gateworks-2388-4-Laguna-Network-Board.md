@@ -24,6 +24,7 @@
     export JAVA_HOME=/usr/lib/jvm/default-java
     export PATH="$(pwd)/depot_tools:$PATH"
     export GYP_DEFINES="use_openssl=1"
+    export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6"
     ```
 ## Download source code
 
@@ -103,4 +104,10 @@ talk/libjingle.gyp:           'pkg-config': '../../../build/linux/pkg-config-wra
     }],
   ],  
 ```    
-8. execute 'gclient sync --force again to download openssl and this time there will be no errors.  
+8. Just to be sure set few environment variables again  
+```bash
+export GYP_DEFINES="use_openssl=1"
+export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6" 
+```  
+ 
+execute 'gclient sync --force again to download openssl and this time there will be no errors.  
