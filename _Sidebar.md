@@ -3,7 +3,8 @@
     * [[Android|Building the code for Android]]
     * [[OpenWRT|Building the code for OpenWRT malta]]
     * [[Raspberry Pi|Building the code for Raspberry Pi]]
-    * [[Windows 7|Building the code for Windows 7]]
+    * [[Windows 7|Building the code for Windows 7]]  
+    * [[Building IPOP for gateworks 2388 4 Laguna Network Board running OpenWRT]]
 * **IPOP packages**
     * [[For Linux distros|http://software.opensuse.org/download/package?project=network:vpn:ipop&package=ipop]]
 * **Running SocialVPN nodes**
