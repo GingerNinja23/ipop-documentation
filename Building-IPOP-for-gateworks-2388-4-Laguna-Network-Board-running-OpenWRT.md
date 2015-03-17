@@ -1,44 +1,36 @@
-## Download dependencies
-
-  Install dependencies, You might have to install few more depending on your system
-
-    a. For Ubuntu and Debian
+## Download dependencies  
   
-   ```bash
-    sudo apt-get update
-    sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
-    sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
-    ```
-  Download depot_tools for chromium repo
+For Ubuntu and Debian
   
-    ```bash
-    mkdir laguna_ipop; cd laguna_ipop
-    git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-    ```  
-
-  Set up environmental variables
-
-    a. For Ubuntu and Debian
-
-    ```bash
-    export JAVA_HOME=/usr/lib/jvm/default-java
-    export PATH="$(pwd)/depot_tools:$PATH"
-    export GYP_DEFINES="use_openssl=1"
-    export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6"
-    ```
+```bash
+sudo apt-get update
+sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
+sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
+```
+  
+Download depot_tools for chromium repo
+```bash
+mkdir laguna_ipop; cd laguna_ipop
+git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
+```      
+Set up environmental variables
+For Ubuntu and Debian
+```bash
+export JAVA_HOME=/usr/lib/jvm/default-java
+export PATH="$(pwd)/depot_tools:$PATH"
+export GYP_DEFINES="use_openssl=1"
+export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6"
+```  
 ## Download source code
-
-  Configure gclient to download libjingle code
-
-    ```bash
-    gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
-    ```  
-  Download libjingle and dependencies (this may take a while). Ignore eror messages 
-    about pkg-config looking for `gobject-2.0 gthread-2.0 gtk+-2.0`
-
-    ```bash
-    gclient sync --force
-    ```  
+Configure gclient to download libjingle code
+```bash
+gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
+```  
+Download libjingle and dependencies (this may take a while). Ignore eror messages 
+about pkg-config looking for `gobject-2.0 gthread-2.0 gtk+-2.0`
+```bash
+gclient sync --force
+```  
 This will take a few minutes 5~10 depending upon download speed, you will encounter the following errors, ignore them for the moment--
 ```bash
 ________ running '/usr/bin/python trunk/webrtc/build/gyp_webrtc -Dextra_gyp_flag=0' in '/home/saumitra/laguna_ipop'
@@ -48,31 +40,27 @@ gyp: Call to '../../../build/linux/pkg-config-wrapper "/home/saumitra/laguna_ipo
 gyp: /home/saumitra/laguna_ipop/trunk/third_party/openssl/openssl.gyp not found (cwd: /home/saumitra/laguna_ipop)
 Error: Command /usr/bin/python trunk/webrtc/build/gyp_webrtc -Dextra_gyp_flag=0 returned non-zero exit status   in /home/saumitra/laguna_ipop
 
+```    
+Download ipop-tincan from github.com/ipop-project
+```bash
+cd trunk/talk; mkdir ipop-project; cd ipop-project
+git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
+git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
 ```  
-  Download ipop-tincan from github.com/ipop-project
-
-    ```bash
-    cd trunk/talk; mkdir ipop-project; cd ipop-project
-    git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
-    git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
-    ```  
-  Return to libjingle trunk directory
-
-    ```bash
-    cd ../../
-    ```
-
-  Copy modified gyp files to trunk/talk directory
-
-    ```bash
-    rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
-    cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
-    cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
-    cp talk/ipop-project/ipop-tincan/build/all.gyp .
-    cp talk/ipop-project/ipop-tincan/build/DEPS .
-    ```  
+Return to libjingle trunk directory
+```bash
+ cd ../../
+```  
+Copy modified gyp files to trunk/talk directory
+```bash
+rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
+cp talk/ipop-project/ipop-tincan/build/ipop-tincan.gyp talk/
+cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
+cp talk/ipop-project/ipop-tincan/build/all.gyp .
+cp talk/ipop-project/ipop-tincan/build/DEPS .
+```      
 To deal with them, follow the below steps  
- Find out files, where pkg-config-wrapper is defined  
+Find out files, where pkg-config-wrapper is defined  
 ```bash
 saumitra@ipop1-ThinkPad-T520:trunk$ grep -Ir --exclude=\*.{c,h} "../../../build/linux/pkg-config-wrapper" *
 net/third_party/nss/ssl.gyp~:            'pkg-config': '../../../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)"',
