@@ -59,7 +59,7 @@ cp talk/ipop-project/ipop-tincan/build/libjingle.gyp talk/
 cp talk/ipop-project/ipop-tincan/build/all.gyp .
 cp talk/ipop-project/ipop-tincan/build/DEPS .
 ```      
-To deal with them, follow the below steps  
+To deal with errors encountered before, follow the below steps  
 Find out files, where pkg-config-wrapper is defined  
 ```bash
 saumitra@ipop1-ThinkPad-T520:trunk$ grep -Ir --exclude=\*.{c,h} "../../../build/linux/pkg-config-wrapper" *
