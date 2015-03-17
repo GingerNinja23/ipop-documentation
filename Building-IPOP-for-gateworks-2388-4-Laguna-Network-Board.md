@@ -110,4 +110,100 @@ export GYP_DEFINES="use_openssl=1"
 export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6" 
 ```  
  
-execute 'gclient sync --force again to download openssl and this time there will be no errors.  
+execute 'gclient sync --force in trunk directory again to download openssl and this time there will be no errors. 
+
+9. Use the below command  in trunk directory to set hard-fp abi   
+```bash
+sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi
+sed -i "s/'arm_fpu%': '',/'arm_fpu%': 'vfp',/g" build/common.gypi
+```  
+10. Get gateworks laguna SDK and set corresponding environment variables and few dependencies
+```bash
+cd third_party/
+wget http://dev.gateworks.com/openwrt/latest/cns3xxx/OpenWrt-SDK-cns3xxx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
+tar xvfj OpenWrt-SDK-cns3xxx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2 
+export OPENWRT_SDK=`pwd`/OpenWrt-SDK-cns3xxx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2
+export STAGING_DIR=$OPENWRT_SDK/staging_dir
+export TOOLCHAIN=$STAGING_DIR/toolchain-arm_mpcore+vfp_gcc-4.8-linaro_uClibc-0.9.33.2_eabi
+export CC="$TOOLCHAIN/bin/arm-openwrt-linux-uclibcgnueabi-gcc"
+export CXX="$TOOLCHAIN/bin/arm-openwrt-linux-uclibcgnueabi-g++"
+export AR="$TOOLCHAIN/bin/arm-openwrt-linux-uclibcgnueabi-ar"
+export CC_host="gcc"
+export CXX_host="g++"
+cd $OPENWRT_SDK
+svn export svn://svn.openwrt.org/openwrt/branches/packages_12.09/libs/expat package/expat; make
+cp build_dir/target-arm_mpcore+vfp_uClibc-0.9.33.2_eabi/expat-2.0.1/.libs/libexpat.a $TOOLCHAIN/lib
+cp build_dir/target-arm_mpcore+vfp_uClibc-0.9.33.2_eabi/expat-2.0.1/lib/*.h $TOOLCHAIN/include/
+cp -r /usr/include/X11 $TOOLCHAIN/include/
+cd ../../
+```  
+11. Comment out the "latebindingsymbol" source in trunk/talk/libjingle.gyp so no ninja files are created for it.
+```python
+ ['os_posix==1', {
+          'sources': [
+            #'base/latebindingsymboltable.cc',
+            #'base/latebindingsymboltable.h',
+            'base/posix.cc',
+            'base/posix.h',
+            'base/unixfilesystem.cc',
+            'base/unixfilesystem.h',
+          ],
+```
+12. In trunk/thirdparty/openssl/openssl.gypi comment out the below  
+```python
+ #'openssl/crypto/chacha/chacha_vec_arm.S',
+ #'openssl/crypto/chacha/chacha_vec.c',
+```  
+13. In trunk directory run below command to generate ninja files. it should throw no errors.
+```bash
+gclient runhooks --force
+```  
+14. get sum custom ninja and definition files for ipop.  
+```bash
+wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
+wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/ipop-tincan.ninja
+mv typedefs.h webrtc/typedefs.h
+mv ipop-tincan.ninja out/Release/obj/talk/ipop-tincan.ninja
+```   
+15. Now we have to set some required compiler flags, from trunk directory execute below--
+```bash
+sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Release -name *.ninja`
+sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Debug -name *.ninja`
+find out/Release -type f -name *.ninja -exec sed -i 's/mfloat-abi=softfp/mfloat-abi=hard/g' {} +
+find out/Debug -type f -name *.ninja -exec sed -i 's/mfloat-abi=softfp/mfloat-abi=hard/g' {} +
+```  
+16. Build the code using below command from trunk directory, you will encounter the below error
+```bash
+aumitra@ipop1-ThinkPad-T520:trunk$ ninja -C out/Release ipop-tincan
+ninja: Entering directory `out/Release'
+ninja: warning: multiple rules generate icudtl.dat. builds involving this target will not be correct; continuing anyway
+[792/792] LINK ipop-tincan
+FAILED: /home/saumitra/laguna_ipop/trunk/third_party/OpenWrt-SDK-cns3xxx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2/staging_dir/toolchain-arm_mpcore+vfp_gcc-4.8-linaro_uClibc-0.9.33.2_eabi/bin/arm-openwrt-linux-uclibcgnueabi-g++ -Wl,--fatal-warnings -Wl,-z,now -Wl,-z,relro -pthread -Wl,-z,noexecstack -fPIC -Wl,-O1 -Wl,--as-needed -Wl,--gc-sections -o ipop-tincan -Wl,--start-group obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.tincan.o obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.tincanconnectionmanager.o obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.xmppnetwork.o obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.controlleraccess.o obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.tincanxmppsocket.o obj/talk/ipop-project/ipop-tincan/src/ipop-tincan.tincan_utils.o obj/talk/xmpp/ipop-tincan.jingleinfotask.o obj/third_party/openssl/libopenssl.a obj/talk/libjingle_p2p.a obj/third_party/jsoncpp/libjsoncpp.a obj/talk/libipop-tap.a obj/third_party/libsrtp/libsrtp.a obj/talk/libjingle.a  -Wl,--end-group -ldl -lrt -lexpat
+obj/third_party/openssl/openssl/crypto/chacha/openssl.chacha_enc.o: In function `CRYPTO_chacha_20':
+chacha_enc.c:(.text.CRYPTO_chacha_20+0x680): undefined reference to `CRYPTO_chacha_20_neon'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+saumitra@ipop1-ThinkPad-T520:trunk$ 
+```  
+This error tells us that a method "CRYPTO_chacha_20" in file "chacha_enc.c" calls some method that was defined in the files that were commented out and not buld.  
+  
+17. We go out to "trunk/third_party/openssl/openssl/crypto/chacha/chacha_enc.c" and comment out the below line.  
+```python
+#if __arm__
+	if (CRYPTO_is_NEON_capable() &&
+	    ((intptr_t)in & 15) == 0 &&
+	    ((intptr_t)out & 15) == 0)
+		{
+		//CRYPTO_chacha_20_neon(out, in, in_len, key, nonce, counter);
+		return;
+		}
+#endif
+```  
+18. Run "ninja -C out/Release ipop-tincan" again to generate the binary in out/Release
+```bash
+saumitra@ipop1-ThinkPad-T520:trunk$ ninja -C out/Release ipop-tincan
+ninja: Entering directory `out/Release'
+ninja: warning: multiple rules generate icudtl.dat. builds involving this target will not be correct; continuing anyway
+[3/3] LINK ipop-tincan
+saumitra@ipop1-ThinkPad-T520:trunk$ 
+```
