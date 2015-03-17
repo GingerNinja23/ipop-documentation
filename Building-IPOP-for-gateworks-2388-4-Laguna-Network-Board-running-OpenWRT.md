@@ -167,7 +167,7 @@ cd ../../
 ```bash
 gclient runhooks --force
 ```  
- get sum custom ninja and definition files for ipop.  
+ get some custom ninja and definition files for ipop.  
 ```bash
 wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
 wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/ipop-tincan.ninja
@@ -196,7 +196,7 @@ collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
 saumitra@ipop1-ThinkPad-T520:trunk$ 
 ```  
-This error tells us that a method "CRYPTO_chacha_20" in file "chacha_enc.c" calls some method that was defined in the files that were commented out and not buld.  
+This error tells us that a method "CRYPTO_chacha_20" in file "chacha_enc.c" calls some method that was defined in the files that were commented out and not build.  
   
  We go out to "trunk/third_party/openssl/openssl/crypto/chacha/chacha_enc.c" and comment out the below line.  
 ```python
@@ -217,4 +217,5 @@ ninja: Entering directory `out/Release'
 ninja: warning: multiple rules generate icudtl.dat. builds involving this target will not be correct; continuing anyway
 [3/3] LINK ipop-tincan
 saumitra@ipop1-ThinkPad-T520:trunk$ 
-```
+```  
+Ignore the warning, built binary has been tested and works fine.
