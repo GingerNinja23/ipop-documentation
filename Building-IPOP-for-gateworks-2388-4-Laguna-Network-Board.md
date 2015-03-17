@@ -116,7 +116,9 @@ execute 'gclient sync --force in trunk directory again to download openssl and t
 ```bash
 sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi
 sed -i "s/'arm_fpu%': '',/'arm_fpu%': 'vfp',/g" build/common.gypi
-```  
+```    
+## Set up Gatework toolchain  
+
 10. Get gateworks laguna SDK and set corresponding environment variables and few dependencies
 ```bash
 cd third_party/
@@ -136,7 +138,9 @@ cp build_dir/target-arm_mpcore+vfp_uClibc-0.9.33.2_eabi/expat-2.0.1/.libs/libexp
 cp build_dir/target-arm_mpcore+vfp_uClibc-0.9.33.2_eabi/expat-2.0.1/lib/*.h $TOOLCHAIN/include/
 cp -r /usr/include/X11 $TOOLCHAIN/include/
 cd ../../
-```  
+```    
+## Some miscellaneous tricks to get things working  
+
 11. Comment out the "latebindingsymbol" source in trunk/talk/libjingle.gyp so no ninja files are created for it.
 ```python
  ['os_posix==1', {
@@ -153,7 +157,9 @@ cd ../../
 ```python
  #'openssl/crypto/chacha/chacha_vec_arm.S',
  #'openssl/crypto/chacha/chacha_vec.c',
-```  
+```   
+## Build ninja files  
+ 
 13. In trunk directory run below command to generate ninja files. it should throw no errors.
 ```bash
 gclient runhooks --force
@@ -171,7 +177,9 @@ sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Release -name *.ninj
 sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Debug -name *.ninja`
 find out/Release -type f -name *.ninja -exec sed -i 's/mfloat-abi=softfp/mfloat-abi=hard/g' {} +
 find out/Debug -type f -name *.ninja -exec sed -i 's/mfloat-abi=softfp/mfloat-abi=hard/g' {} +
-```  
+```   
+## Build the executable binary  
+ 
 16. Build the code using below command from trunk directory, you will encounter the below error
 ```bash
 aumitra@ipop1-ThinkPad-T520:trunk$ ninja -C out/Release ipop-tincan
