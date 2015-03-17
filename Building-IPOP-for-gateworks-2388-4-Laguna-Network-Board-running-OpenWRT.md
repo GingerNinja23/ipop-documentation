@@ -3,14 +3,14 @@
   Install dependencies, You might have to install few more depending on your system
 
     a. For Ubuntu and Debian
-
-    ```bash
+  
+   ```bash
     sudo apt-get update
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     ```
   Download depot_tools for chromium repo
-
+  
     ```bash
     mkdir laguna_ipop; cd laguna_ipop
     git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
