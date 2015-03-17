@@ -1,6 +1,6 @@
 ## Download dependencies
 
-1.  Install dependencies
+  Install dependencies
 
     a. For Ubuntu and Debian
 
@@ -9,14 +9,14 @@
     sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     ```
-2.  Download depot_tools for chromium repo
+  Download depot_tools for chromium repo
 
     ```bash
-    mkdir libjingle; cd libjingle
+    mkdir laguna_ipop; cd laguna_ipop
     git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```  
 
-3.  Set up environmental variables
+  Set up environmental variables
 
     a. For Ubuntu and Debian
 
@@ -28,12 +28,12 @@
     ```
 ## Download source code
 
-1.  Configure gclient to download libjingle code
+  Configure gclient to download libjingle code
 
     ```bash
     gclient config --name=trunk http://webrtc.googlecode.com/svn/branches/3.52
     ```  
-2.  Download libjingle and dependencies (this may take a while). Ignore eror messages 
+  Download libjingle and dependencies (this may take a while). Ignore eror messages 
     about pkg-config looking for `gobject-2.0 gthread-2.0 gtk+-2.0`
 
     ```bash
@@ -46,23 +46,23 @@ Updating projects from gyp files...
 /bin/sh: 1: ../../../build/linux/pkg-config-wrapper: not found
 gyp: Call to '../../../build/linux/pkg-config-wrapper "/home/saumitra/laguna_ipop/trunk/arm-sysroot" "arm" --libs-only-L --libs-only-other nss' returned exit status 127.
 gyp: /home/saumitra/laguna_ipop/trunk/third_party/openssl/openssl.gyp not found (cwd: /home/saumitra/laguna_ipop)
-Error: Command /usr/bin/python trunk/webrtc/build/gyp_webrtc -Dextra_gyp_flag=0 returned non-zero exit status 1 in /home/saumitra/laguna_ipop
+Error: Command /usr/bin/python trunk/webrtc/build/gyp_webrtc -Dextra_gyp_flag=0 returned non-zero exit status   in /home/saumitra/laguna_ipop
 
 ```  
-3.  Download ipop-tincan from github.com/ipop-project
+  Download ipop-tincan from github.com/ipop-project
 
     ```bash
     cd trunk/talk; mkdir ipop-project; cd ipop-project
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     git clone --depth 1 https://github.com/ipop-project/ipop-tincan.git
     ```  
-4.  Return to libjingle trunk directory
+  Return to libjingle trunk directory
 
     ```bash
     cd ../../
     ```
 
-5.  Copy modified gyp files to trunk/talk directory
+  Copy modified gyp files to trunk/talk directory
 
     ```bash
     rm -f DEPS all.gyp talk/libjingle.gyp talk/ipop-tincan.gyp
@@ -72,7 +72,7 @@ Error: Command /usr/bin/python trunk/webrtc/build/gyp_webrtc -Dextra_gyp_flag=0 
     cp talk/ipop-project/ipop-tincan/build/DEPS .
     ```  
 To deal with them, follow the below steps  
-6. Find out files, where pkg-config-wrapper is defined  
+ Find out files, where pkg-config-wrapper is defined  
 ```bash
 saumitra@ipop1-ThinkPad-T520:trunk$ grep -Ir --exclude=\*.{c,h} "../../../build/linux/pkg-config-wrapper" *
 net/third_party/nss/ssl.gyp~:            'pkg-config': '../../../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)"',
@@ -81,7 +81,8 @@ talk/ipop-project/ipop-tincan/build/libjingle.gyp:           'pkg-config': '../.
 talk/libjingle.gyp~:           'pkg-config': '../../../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)"',
 talk/libjingle.gyp:           'pkg-config': '../../../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)"',
 ```   
-7. For all the .gyp files,edit the value of 'pkg-config' variable at the top to absolute path of pkg-config-wrapper,which will be in trunk/linux/build.  
+  
+ For all the .gyp files,edit the value of 'pkg-config' variable at the top to absolute path of pkg-config-wrapper,which will be in trunk/linux/build.  
 ```python
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
@@ -104,7 +105,8 @@ talk/libjingle.gyp:           'pkg-config': '../../../build/linux/pkg-config-wra
     }],
   ],  
 ```    
-8. Just to be sure set few environment variables again  
+  
+ Just to be sure set few environment variables again  
 ```bash
 export GYP_DEFINES="use_openssl=1"
 export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6" 
@@ -112,14 +114,14 @@ export GYP_DEFINES="$GYP_DEFINES target_arch=arm arm_version=6"
  
 execute 'gclient sync --force in trunk directory again to download openssl and this time there will be no errors. 
 
-9. Use the below command  in trunk directory to set hard-fp abi   
+ Use the below command  in trunk directory to set hard-fp abi   
 ```bash
 sed -i "s/'arm_float_abi%': 'soft',/'arm_float_abi%': 'hard',/g" build/common.gypi
 sed -i "s/'arm_fpu%': '',/'arm_fpu%': 'vfp',/g" build/common.gypi
 ```    
 ## Set up Gatework toolchain  
 
-10. Get gateworks laguna SDK and set corresponding environment variables and few dependencies
+ Get gateworks laguna SDK and set corresponding environment variables and few dependencies
 ```bash
 cd third_party/
 wget http://dev.gateworks.com/openwrt/latest/cns3xxx/OpenWrt-SDK-cns3xxx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
@@ -141,7 +143,7 @@ cd ../../
 ```    
 ## Some miscellaneous tricks to get things working  
 
-11. Comment out the "latebindingsymbol" source in trunk/talk/libjingle.gyp so no ninja files are created for it.
+ Comment out the "latebindingsymbol" source in trunk/talk/libjingle.gyp so no ninja files are created for it.
 ```python
  ['os_posix==1', {
           'sources': [
@@ -152,26 +154,27 @@ cd ../../
             'base/unixfilesystem.cc',
             'base/unixfilesystem.h',
           ],
-```
-12. In trunk/thirdparty/openssl/openssl.gypi comment out the below  
+```  
+
+ In trunk/thirdparty/openssl/openssl.gypi comment out the below  
 ```python
  #'openssl/crypto/chacha/chacha_vec_arm.S',
  #'openssl/crypto/chacha/chacha_vec.c',
 ```   
 ## Build ninja files  
  
-13. In trunk directory run below command to generate ninja files. it should throw no errors.
+ In trunk directory run below command to generate ninja files. it should throw no errors.
 ```bash
 gclient runhooks --force
 ```  
-14. get sum custom ninja and definition files for ipop.  
+ get sum custom ninja and definition files for ipop.  
 ```bash
 wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/typedefs.h
 wget https://github.com/pstjuste/ipop-tincan/raw/75e2c5fae7b6375ef2ead4a93595275492a6a259/build/ipop-tincan.ninja
 mv typedefs.h webrtc/typedefs.h
 mv ipop-tincan.ninja out/Release/obj/talk/ipop-tincan.ninja
 ```   
-15. Now we have to set some required compiler flags, from trunk directory execute below--
+ Now we have to set some required compiler flags, from trunk directory execute below--
 ```bash
 sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Release -name *.ninja`
 sed -i 's/fstack-protector/fno-stack-protector/g' `find out/Debug -name *.ninja`
@@ -180,7 +183,7 @@ find out/Debug -type f -name *.ninja -exec sed -i 's/mfloat-abi=softfp/mfloat-ab
 ```   
 ## Build the executable binary  
  
-16. Build the code using below command from trunk directory, you will encounter the below error
+ Build the code using below command from trunk directory, you will encounter the below error
 ```bash
 aumitra@ipop1-ThinkPad-T520:trunk$ ninja -C out/Release ipop-tincan
 ninja: Entering directory `out/Release'
@@ -195,7 +198,7 @@ saumitra@ipop1-ThinkPad-T520:trunk$
 ```  
 This error tells us that a method "CRYPTO_chacha_20" in file "chacha_enc.c" calls some method that was defined in the files that were commented out and not buld.  
   
-17. We go out to "trunk/third_party/openssl/openssl/crypto/chacha/chacha_enc.c" and comment out the below line.  
+ We go out to "trunk/third_party/openssl/openssl/crypto/chacha/chacha_enc.c" and comment out the below line.  
 ```python
 #if __arm__
 	if (CRYPTO_is_NEON_capable() &&
@@ -207,7 +210,7 @@ This error tells us that a method "CRYPTO_chacha_20" in file "chacha_enc.c" call
 		}
 #endif
 ```  
-18. Run "ninja -C out/Release ipop-tincan" again to generate the binary in out/Release
+ Run "ninja -C out/Release ipop-tincan" again to generate the binary in out/Release
 ```bash
 saumitra@ipop1-ThinkPad-T520:trunk$ ninja -C out/Release ipop-tincan
 ninja: Entering directory `out/Release'
