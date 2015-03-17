@@ -6,7 +6,8 @@ For Ubuntu and Debian
 sudo apt-get update
 sudo apt-get install default-jdk pkg-config git subversion make gcc g++ python
 sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
-```
+```  
+You might have to install few more libraries depending on your system.
   
 Download depot_tools for chromium repo
 ```bash
@@ -70,7 +71,7 @@ talk/libjingle.gyp~:           'pkg-config': '../../../build/linux/pkg-config-wr
 talk/libjingle.gyp:           'pkg-config': '../../../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)"',
 ```   
   
- For all the .gyp files,edit the value of 'pkg-config' variable at the top to absolute path of pkg-config-wrapper,which will be in trunk/linux/build.  
+ For all the files,edit the value of 'pkg-config' variable at the top to absolute path of pkg-config-wrapper,which will be in trunk/linux/build.  
 ```python
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
