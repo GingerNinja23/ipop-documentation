@@ -1,6 +1,6 @@
 ## Download dependencies
 
-  Install dependencies
+  Install dependencies, You might have to install few more depending on your system
 
     a. For Ubuntu and Debian
 
