@@ -69,8 +69,8 @@ Users have requested the ability to authenticate IPOP endpoints without storing 
 **Requirements**  
 * Extend IPOP’s tincan module (and jingle if needed) to allow X.509-based authentication to XMPP server.  
 * Extend IPOP’s tincan module and controller library to allow authenticated controller/tincan API calls and notifications.  
-* Extend IPOP’s the controller such that the XMPP credentials are only stored in, and retrieved from a encrypted container.  
-* Extend IPOP’s the controller such that credentials are requested interactively if they are not stored.  
+* Extend IPOP’s controller such that the XMPP credentials are only stored in, and retrieved from a encrypted container.  
+* Extend IPOP’s controller such that credentials are requested interactively if they are not stored.  
   
  
 **Mentor**  
