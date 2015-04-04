@@ -14,7 +14,7 @@
 
 ## Install binaries
 
-1. [Download SocialVPN for Windows](http://goo.gl/tgdp6r).
+1. [Download SocialVPN for Windows](http://goo.gl/tgdp6r). or try this link https://github.com/ipop-project/downloads/releases/download/v15.01.0/ipop-v15.01.0-x86_win7.zip
 
 2. Extract "ipop-15.01.0-x86_win7".
 
