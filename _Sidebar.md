@@ -5,7 +5,7 @@
     * [[Raspberry Pi|Building the code for Raspberry Pi]]
     * [[Windows 7|Building the code for Windows 7]]  
     * [[Laguna 2388-4 OpenWRT|Building IPOP for gateworks 2388 4 Laguna Network Board running OpenWRT]]  
-    * [[AR71XX MIPS OpenWRT|Building IPOP for AR71XX MIPS D-Link505 running OpenWRT]] 
+    * [[AR71XX MIPS OpenWRT|Building the code for OpenWRT ar71xx]] 
 * **IPOP packages**
     * [[For Linux distros|http://software.opensuse.org/download/package?project=network:vpn:ipop&package=ipop]]
 * **Running SocialVPN nodes**
