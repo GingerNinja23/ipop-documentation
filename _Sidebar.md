@@ -19,7 +19,8 @@
     * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
     * [[Admin-GroupVPN|Running admin_GroupVPN  on Linux]]
     * [[GroupVPN configuration|Generating GroupVPN configurations]]
-    * [[IPsec|Configuring-IPsec-with-IPOP-GroupVPN]]
+    * [[IPsec|Configuring-IPsec-with-IPOP-GroupVPN]]  
+    * [[GroupVPN switch-mode on OpenWRT routers|Running GVPN Switchmode on Openwrt routers]]
 * **Deploying OSN and NAT traversal services**
     * [[Overview: XMPP,STUN,TURN|Deploying-private-XMPP,-STUN,-TURN-services]]
     * [[XMPP+STUN in Ubuntu|Installing XMPP server]]
