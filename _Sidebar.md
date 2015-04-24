@@ -16,7 +16,7 @@
 * **Running GroupVPN nodes**
     * [[Linux|Running GroupVPN on Linux]]
     * [[Windows| Running GroupVPN on Windows]]
-    * [[OpenWRT|Running GroupVPN on OpenWRT Emulator]]
+    * [[OpenWRT-Qemu|Running GroupVPN on OpenWRT Emulator]]
     * [[Admin-GroupVPN|Running admin_GroupVPN  on Linux]]
     * [[GroupVPN configuration|Generating GroupVPN configurations]]
     * [[IPsec|Configuring-IPsec-with-IPOP-GroupVPN]]  
