@@ -9,7 +9,7 @@ If you have enough storage, one way is to have extFS on uSD card or USB drive, i
 
 ## Getting things started  
 
-See building code section on wiki page, and download the latest controllers, if you have not yet.  
+See building code section on wiki page to build the code for your platform, and download the latest controllers, if you have not done it yet.  
 Once you have the binary and controllers we can start with configuration,to begin with one has to ensure that the subnet in which router allocates addresses to the client and the IPOP subnet and address are in the same range. Also ensure that addresses allocated to clients do not conflict with others in the IPOP network.Below is a sample config file.  
 ```bash
 root@OpenWrt:/etc/controllers/src# cat config.json 
