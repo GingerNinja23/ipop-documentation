@@ -1,4 +1,5 @@
-This documentation applies to generic Openwrt based routers, has been tested on AR71XX, X86 and CNS3XX based platforms.  
+This documentation applies to generic Openwrt based routers, has been tested on AR71XX, X86 and CNS3XX based platforms. For a high level view of switch mode refer to the following link--  
+[switch-mode](https://github.com/ipop-project/documentation/wiki/Switchmode-%28new%29)  
 
 ## Get dependency packages  
 ```bash  
