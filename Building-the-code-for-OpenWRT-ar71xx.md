@@ -46,7 +46,21 @@ and follow the instructions for the first two sections:
     cp build_dir/target-mips_r2_uClibc-0.9.33.2/expat-2.0.1/lib/*.h $TOOLCHAIN/include/
     cp -r /usr/include/X11 $TOOLCHAIN/include/
     cd ../../
-    ```
+    ```  
+##Some miscellaneous tricks to get things working  
+
+ Comment out the "latebindingsymbol" source in trunk/talk/libjingle.gyp so no ninja files are created for it.
+   ```python
+      ['os_posix==1', {
+          'sources': [
+            #'base/latebindingsymboltable.cc',
+            #'base/latebindingsymboltable.h',
+            'base/posix.cc',
+            'base/posix.h',
+            'base/unixfilesystem.cc',
+            'base/unixfilesystem.h',
+          ],
+   ```  
 
 ## Build ipop-tincan for OpenWRT
 
