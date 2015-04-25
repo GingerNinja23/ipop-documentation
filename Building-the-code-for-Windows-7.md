@@ -121,8 +121,8 @@ These instructions are derived from these links:
     sudo apt-get install gcc-mingw-w64-i686 unzip
     wget ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
     unzip pthreads-w32-2-9-1-release.zip
-    cp Pre-built.2/include/* /usr/lib/gcc/i686-w64-mingw32/4.6/include
-    cp Pre-built.2/lib/x86/* /usr/lib/gcc/i686-w64-mingw32/4.6/
+    cp Pre-built.2/include/* /usr/lib/gcc/i686-w64-mingw32/4.8/include
+    cp Pre-built.2/lib/x86/* /usr/lib/gcc/i686-w64-mingw32/4.8/
     git clone --depth 1 https://github.com/ipop-project/ipop-tap.git
     cd ipop-tap
     make win32_dll
