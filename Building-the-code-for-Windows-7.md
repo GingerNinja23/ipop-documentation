@@ -99,7 +99,7 @@ These instructions are derived from these links:
     move Pre-built.2\ <path-to-libjingle>\trunk\third_party\pthreads_win32
     ```
 
-2. Download the [IPOP-tap Win32 dll](http://www.acis.ufl.edu/~ipop/files/ipop-dll.zip) and 
+2. Download the [IPOP-tap Win32 dll](https://github.com/ipop-project/downloads/releases/download/ipop-dll-v15.01.01/ipop-dll.zip) and 
    extract it to ipop-dll and move the contents of to bin folder under ipop-tap directory
 
     ```
