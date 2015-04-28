@@ -18,7 +18,7 @@ These instructions are derived from these links:
     sudo apt-get install libexpat1-dev libgtk2.0-dev libnss3-dev libssl-dev 
     ```
 
-    a. For CentOS 6.5
+    b. For CentOS 6.5
 
     ```bash
     sudo yum install java-1.7.0-openjdk-devel git subversion pkg-config make gcc gcc-c++ python
@@ -35,7 +35,7 @@ These instructions are derived from these links:
     git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     ```
 
-3.  Set up environmental variables
+3.  Set up environmental variables and prepare local environment
 
     a. For Ubuntu and Debian
 
@@ -45,7 +45,7 @@ These instructions are derived from these links:
     export GYP_DEFINES="use_openssl=1"
     ```
 
-    b. For CentOS 6
+    b. For CentOS 6.5
 
     ```bash
     export JAVA_HOME=/usr/lib/jvm/java
@@ -55,7 +55,17 @@ These instructions are derived from these links:
     scl enable devtoolset-1.1 bash
     ```
 
-4.   (Optional) For 32-bit compilation set target_arch
+    ```bash
+    curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+    yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel mysql-devel
+    pyenv install 2.7.9
+    pyenv local 2.7.9
+    ```
+
+4.  (Optional) For 32-bit compilation set target_arch
 
     ```bash
     export GYP_DEFINES="$GYP_DEFINES target_arch=ia32"
