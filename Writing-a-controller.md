@@ -89,7 +89,7 @@ class UdpServer(object):
                 # we ignore connection status notification for now
                 elif msg_type == "con_stat": pass
 
-                # we create a connection if we see these types of messages
+                # we create a connection if we see these type of messages
                 elif msg_type == "con_req" or msg_type == "con_resp":
                     fpr_len = len(self.state["_fpr"])
                     fpr = msg["data"][:fpr_len]
